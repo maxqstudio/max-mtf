@@ -44,7 +44,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/MODEL-FACTORY.actual.json --output-mermaid docs/sequence/generated/MODEL-FACTORY.actual.mmd --entry ModelLab/factory/factory_orchestrator.py::run_auto_factory --entry ModelLab/max_graph/factory_graph.py::run_auto_factory_graph
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/MTF4-STRATEGY.actual.json --output-mermaid docs/sequence/generated/MTF4-STRATEGY.actual.mmd --entry ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy
+          python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/MTF4-STRATEGY.actual.json --output-mermaid docs/sequence/generated/MTF4-STRATEGY.actual.mmd --entry ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy --entry ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/PROMOTION.actual.json --output-mermaid docs/sequence/generated/PROMOTION.actual.mmd --entry ModelLab/strategy/strategy_challenger_registry.py::promote_strategy_challenger --entry ModelLab/factory/governance.py::promote
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
