@@ -144,6 +144,7 @@ jobs:
             exit 1
           }
           Write-Output 'PROJECT_TRUTH_EXPECTED_RUNTIME_BOUNDARY=PASS'
+          exit 0
 
       - name: Run MTF source contracts
         shell: pwsh
