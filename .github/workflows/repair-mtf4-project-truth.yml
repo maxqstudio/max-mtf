@@ -1,0 +1,163 @@
+name: Repair MTF4 Project Truth
+
+on:
+  push:
+    branches:
+      - work/mtf4-cli-bootstrap-governance-repair
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: repair-mtf4-project-truth
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - name: Preserve Git blob bytes
+        shell: pwsh
+        run: git config --global core.autocrlf false
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Remove temporary diagnostics from final tree
+        shell: pwsh
+        run: |
+          git rm -f .github/workflows/diagnose-project-truth.yml
+          git rm -f .github/workflows/repair-mtf4-project-truth.yml
+
+      - name: Regenerate Project Truth from current source
+        shell: pwsh
+        run: |
+          python .workflow/tools/sync_project_truth.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Validate prepared generated outputs
+        shell: pwsh
+        run: |
+          python .workflow/tools/validate_project_docs.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_doc_quality.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_handoff.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_human_comprehension.py --root . --require-pass
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_sequence_sessions.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Build privacy-clean squashed candidate
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          git add -A
+          git diff --cached --check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $tree=(git write-tree).Trim()
+          $main=(git rev-parse origin/main).Trim()
+          if ($main -ne '49a5dd577dc6946664f6ccaed67350aabcdc9ee2') {
+            Write-Error ("MAIN_MOVED=" + $main)
+            exit 1
+          }
+          $env:GIT_AUTHOR_NAME='github-actions[bot]'
+          $env:GIT_AUTHOR_EMAIL='41898282+github-actions[bot]@users.noreply.github.com'
+          $env:GIT_COMMITTER_NAME='github-actions[bot]'
+          $env:GIT_COMMITTER_EMAIL='41898282+github-actions[bot]@users.noreply.github.com'
+          $message='fix: repair MTF4 Owner acceptance bootstrap and truth sync'
+          $candidate=($message | git commit-tree $tree -p $main).Trim()
+          if (-not $candidate) { Write-Error 'CANDIDATE_COMMIT_CREATE_FAILED'; exit 1 }
+          git checkout --detach $candidate
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Write-Output ("FINAL_CANDIDATE_SHA=" + $candidate)
+          Write-Output ("FINAL_CANDIDATE_TREE=" + (git rev-parse ($candidate + '^{tree}')))
+
+      - name: Validate clean squashed snapshot
+        shell: pwsh
+        run: |
+          if (git status --porcelain) {
+            Write-Error 'WORKTREE_NOT_CLEAN_AFTER_SQUASH'
+            git status --short
+            exit 1
+          }
+          python tools/public_source_guard.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_project_docs.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_doc_quality.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_handoff.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_human_comprehension.py --root . --require-pass
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_sequence_sessions.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $rootSha=(git rev-list --max-parents=0 HEAD).Trim()
+          python .workflow/tools/validate_cross_document_consistency.py --root . --base $rootSha --require-base
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Verify project truth fails only at deferred Owner runtime
+        shell: pwsh
+        run: |
+          $output=& python .workflow/tools/validate_project_truth.py --root . 2>&1
+          $rc=$LASTEXITCODE
+          $text=($output -join "`n")
+          Write-Output $text
+          if ($rc -eq 0) {
+            Write-Error 'PROJECT_TRUTH_UNEXPECTEDLY_PASS_BEFORE_OWNER_RUNTIME'
+            exit 1
+          }
+          $report=$text | ConvertFrom-Json
+          $failures=@($report.failures)
+          if ($failures.Count -ne 1 -or $failures[0] -ne 'RUNTIME_E2E_REQUIRED_BUT_NOT_PASS:NOT_PROVEN') {
+            Write-Error ('UNEXPECTED_PROJECT_TRUTH_FAILURES=' + ($failures -join ','))
+            exit 1
+          }
+          Write-Output 'PROJECT_TRUTH_EXPECTED_RUNTIME_BOUNDARY=PASS'
+
+      - name: Run MTF source contracts
+        shell: pwsh
+        run: |
+          python -m pip install --disable-pip-version-check "numpy>=2,<3" "pandas>=2.2,<3"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m py_compile ModelLab/mtf/mtf_data.py ModelLab/mtf/mtf2.py ModelLab/mtf/mtf3.py ModelLab/strategy/mtf4_strategy.py ModelLab/strategy/strategy_optimizer.py ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Push-Location ModelLab
+          python tests/v202_mtf2_feature_label_contract_selftest.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python tests/v203_mtf3_timestamp_overlap_purge_selftest.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python tests/v204_mtf4_strategy_contract_selftest.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python tests/v205_mtf4_challenger_lineage_selftest.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python tests/v206_mtf4_owner_acceptance_harness_selftest.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Pop-Location
+
+      - name: Push clean final candidate
+        shell: pwsh
+        run: |
+          $candidate=(git rev-parse HEAD).Trim()
+          git push origin ($candidate + ':refs/heads/work/mtf4-cli-bootstrap-final-r1')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Write-Output ("PUSHED_FINAL_CANDIDATE=" + $candidate)
+
+      - name: Dispatch exact Windows Source CI
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run windows-source-ci.yml --ref work/mtf4-cli-bootstrap-final-r1 --repo maxqstudio/max-mtf
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Write-Output 'FINAL_CANDIDATE_CI_DISPATCHED=PASS'
