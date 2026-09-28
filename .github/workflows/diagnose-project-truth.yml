@@ -1,0 +1,75 @@
+name: Diagnose Project Truth
+
+on:
+  push:
+    branches:
+      - work/mtf4-cli-bootstrap-governance-repair
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Preserve Git blob bytes
+        shell: pwsh
+        run: git config --global core.autocrlf false
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate docs before other validators
+        shell: pwsh
+        run: |
+          Write-Output ("HEAD=" + (git rev-parse HEAD))
+          Write-Output "STATUS_BEFORE_BEGIN"
+          git status --porcelain=v2
+          Write-Output "STATUS_BEFORE_END"
+          python .workflow/tools/validate_project_docs.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Run same strict validators
+        shell: pwsh
+        run: |
+          python .workflow/tools/validate_doc_quality.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_handoff.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_human_comprehension.py --root . --require-pass
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/validate_sequence_sessions.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $rootSha=(git rev-list --max-parents=0 HEAD).Trim()
+          python .workflow/tools/validate_cross_document_consistency.py --root . --base $rootSha --require-base
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Validate docs again after validators
+        shell: pwsh
+        run: |
+          Write-Output "STATUS_AFTER_STRICT_BEGIN"
+          git status --porcelain=v2
+          Write-Output "STATUS_AFTER_STRICT_END"
+          python .workflow/tools/validate_project_docs.py --root .
+          $rc=$LASTEXITCODE
+          Write-Output ("SECOND_DOC_VALIDATOR_RC=" + $rc)
+          exit $rc
+
+      - name: Diagnose project truth
+        if: always()
+        shell: pwsh
+        run: |
+          Write-Output "STATUS_BEFORE_TRUTH_BEGIN"
+          git status --porcelain=v2
+          Write-Output "STATUS_BEFORE_TRUTH_END"
+          python .workflow/tools/validate_project_truth.py --root .
+          $rc=$LASTEXITCODE
+          Write-Output ("PROJECT_TRUTH_RC=" + $rc)
+          exit 0
