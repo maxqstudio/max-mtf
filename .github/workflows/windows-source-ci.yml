@@ -83,7 +83,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: maxqstudio/Skill_Workflow
-          ref: 1f9b48b9a3bf29bf2929a7d38b1ec9a645dfb720
+          ref: 2148313678f476c4990e447b4d657724f071adff
           path: .skill-workflow
           fetch-depth: 1
 
