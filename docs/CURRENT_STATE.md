@@ -3,7 +3,7 @@
 # CURRENT STATE
 
 Last updated: generated from current specs
-Authority verified at SHA: 883ebeb1ca2e70f6255e0889358ba7c822ac52f5
+Authority verified at SHA: 93e3a7cfa6fd073c593a5ee1bc55e49edf49badc
 Governance profile: strict
 
 ## Current phase
@@ -12,11 +12,11 @@ Status: READY_FOR_OWNER_MTF4_FINAL_ACCEPTANCE
 
 ## Source
 Repository: maxqstudio/max-mtf
-Branch: main
+Branch: work/mtf4-final-acceptance-tooling
 Authoritative SHA: external final acceptance evidence
-Last accepted SHA: 883ebeb1ca2e70f6255e0889358ba7c822ac52f5
+Last accepted SHA: 93e3a7cfa6fd073c593a5ee1bc55e49edf49badc
 Current candidate SHA: external final acceptance evidence
-Current source digest: 0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20
+Current source digest: c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee
 
 ## Runtime
 Environment: see SOURCE_AUTHORITY_MAP.md and RUNBOOK.md
@@ -49,6 +49,9 @@ SEQUENCE_SYNC: PASS
 - Skill_Workflow STRICT generated documentation, MTF-4 DURING sequence sessions, and cross-document/reference consistency passed on the adoption branch before deterministic sync commit.
 - The synchronized MTF-4 public source/governance tree passed Windows Source CI for source-safety, V202/V203/V204 contracts, exact Skill_Workflow selftests, STRICT docs/handoff/sequence/cross-document validation, and the intentional fail-closed Owner-runtime boundary before public-history scrub.
 - Public-history scrub is tree-preserving for product source/governance semantics and must be followed by exact final-root Windows Source CI before Owner runtime acceptance.
+- Exact synchronized MTF-4 final-acceptance source candidate 6fc93aa43bdf4d0dd21bfe4cd946b160943da03f passed Windows source-safety and V202/V203/V204/V205/V206 source contracts.
+- On 6fc93aa43bdf4d0dd21bfe4cd946b160943da03f, exact Skill_Workflow selftests plus STRICT docs, handoff, human-comprehension, sequence-session and cross-document validators passed; Project Truth remained fail-closed only because SEQUENCE_SYNC was intentionally awaiting evidence binding and Owner runtime remained NOT_PROVEN.
+- MTF-4 Owner acceptance harness is verification-only: it binds to accepted origin/main, requires MetaEditor compile, replays MT5/Python role parity, compares identical tester assumptions and rejects any Strategy Champion/registry mutation.
 
 ## Not proven
 - MTF-4 Owner MetaEditor compile, Owner MT5 runtime/parity, identical-window/cost single-TF control versus MTF Challenger backtest and final Strategy Challenger artifact are NOT_PROVEN.
@@ -63,11 +66,11 @@ SEQUENCE_SYNC: PASS
 See KNOWN_DEFECTS.md.
 
 ## Next authorized action
-- Revalidate the privacy-clean public root with Windows Source CI; only the exact green root becomes GitHub source authority for Owner MTF-4 final acceptance.
-- Owner then executes exact MetaEditor compile plus MT5 runtime/parity and identical-window/cost single-TF control versus MTF Challenger backtest against that accepted root.
-- If the MTF-4 result qualifies, register it as Strategy Challenger only; explicit Owner promotion remains required for any Strategy Champion change.
-- Bind Owner runtime evidence to the exact accepted source candidate, update Project Truth, and close MTF-4 before starting MTF-5 model research.
-- After MTF-4 closure, prove full-historical post-purge sample sufficiency before any MTF model training, information-gain ranking, permutation importance or ablation work.
+- Regenerate Project Truth from this READY semantic state and rerun exact Windows Source CI on the resulting privacy-clean readiness candidate.
+- Merge only that exact green readiness candidate to main and revalidate main before handing off to Owner runtime.
+- Owner then executes candidate-bound MetaEditor compile, MT5/Python role parity and identical-window/cost single-TF control versus MTF Challenger backtest from accepted main.
+- If the MTF-4 result qualifies, retain/register Strategy Challenger only; explicit Owner promotion remains required for any Strategy Champion change.
+- Bind Owner runtime evidence to the exact accepted main candidate and close MTF-4 before starting MTF-5 model research.
 
 ## Explicitly blocked
 - Start MTF model training, permutation importance, A/B/C/D information-gain ranking or model-family selection before MTF-4 acceptance and full-historical post-purge sample sufficiency are both proven.

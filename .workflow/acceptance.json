@@ -47,6 +47,18 @@
       "status": "PASS"
     },
     {
+      "evidence": "ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py passed on exact synchronized candidate 6fc93aa43bdf4d0dd21bfe4cd946b160943da03f.",
+      "id": "MTF4-V205",
+      "requirement": "MTF-4 Strategy Optimizer and Strategy Challenger lifecycle must preserve one exact legacy-16 or MTF-23 parameter vector through EA default mutation, fixed tester preset, EA/set parity, registry identity and Challenger metadata.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py passed on exact synchronized candidate 6fc93aa43bdf4d0dd21bfe4cd946b160943da03f.",
+      "id": "MTF4-V206",
+      "requirement": "Owner MTF-4 acceptance harness must bind to accepted main, use identical tester assumptions for control/challenger, replay MT5/Python role parity, keep private evidence outside public Git, and never promote or mutate Strategy authority.",
+      "status": "PASS"
+    },
+    {
       "evidence": "docs/sequence/sessions/MTF4-STRATEGY.during.json + generated actual graph",
       "id": "MTF4-SEQUENCE-DURING",
       "requirement": "Fresh max-mtf repository must generate current MTF-4 actual sequence in DURING mode and validate it against current source/test evidence.",
@@ -59,7 +71,7 @@
       "status": "PASS"
     },
     {
-      "evidence": "Windows Source CI on the final privacy-clean public root; source tree must be revalidated after history scrub.",
+      "evidence": "Exact synchronized product-source candidate 6fc93aa43bdf4d0dd21bfe4cd946b160943da03f passed source-safety and V202/V203/V204/V205/V206 on Windows GitHub Actions; final READY governance commit must still pass exact CI before merge.",
       "id": "MTF4-GITHUB-SOURCE-ACCEPTANCE",
       "requirement": "Final public MTF-4 source tree must pass source-safety, MTF-2/3/4 source contracts and permanent STRICT Skill_Workflow governance after privacy-history scrub.",
       "status": "PASS"
@@ -88,6 +100,8 @@
     "PASS_SOURCE_CONTRACT ? V203 MTF-3 causal purge regression",
     "PASS_SOURCE_CONTRACT ? V204 MTF-4 deterministic strategy source contract",
     "PASS_PUBLIC_BOUNDARY ? public source guard",
+    "PASS_SOURCE_CONTRACT ? V206 MTF-4 Owner acceptance harness",
+    "PASS_SOURCE_CONTRACT ? V205 MTF-4 Challenger lineage",
     "PASS_SEQUENCE ? MTF-4 DURING generated actual + validation",
     "NOT_PROVEN_OWNER_RUNTIME ? MetaEditor exact compile + MT5 parity/runtime",
     "NOT_PROVEN_CONTROL_CHALLENGER ? identical-window/cost backtest",
@@ -103,6 +117,8 @@
     "python ModelLab/tests/v202_mtf2_feature_label_contract_selftest.py",
     "python ModelLab/tests/v203_mtf3_timestamp_overlap_purge_selftest.py",
     "python ModelLab/tests/v204_mtf4_strategy_contract_selftest.py",
+    "python ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py",
+    "python ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py",
     "python .workflow/tools/sync_project_truth.py --root .",
     "python .workflow/tools/validate_project_docs.py --root .",
     "python .workflow/tools/validate_doc_quality.py --root .",

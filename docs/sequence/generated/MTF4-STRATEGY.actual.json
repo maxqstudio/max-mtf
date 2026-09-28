@@ -16,11 +16,459 @@
   },
   "edges": [
     {
+      "action": "_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json"
+    },
+    {
+      "action": "_bounds_for_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "subprocess.run",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run"
+    },
+    {
+      "action": "sha256_file",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file"
+    },
+    {
+      "action": "_compile_summary",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_summary"
+    },
+    {
+      "action": "_read_compile_log",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_read_compile_log"
+    },
+    {
+      "action": "re_search_error",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::re_search_error"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "subprocess.run",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json"
+    },
+    {
+      "action": "sha256_file",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "validate_mt5_data_root",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/mt5_installation.py::validate_mt5_data_root"
+    },
+    {
+      "action": "discover_mt5_installations",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::discover_mt5_installations"
+    },
+    {
+      "action": "_wait_file",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file"
+    },
+    {
+      "action": "subprocess.run",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "out.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "stamp",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit.stamp"
+    },
+    {
+      "action": "evaluate_mtf4_strategy",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "_candidate_metadata",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "_append_acceptance_inputs",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_append_acceptance_inputs"
+    },
+    {
+      "action": "_build_backtest_ini",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_build_backtest_ini"
+    },
+    {
+      "action": "_common_files_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir"
+    },
+    {
+      "action": "_compile_current_ea",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea"
+    },
+    {
+      "action": "_read_config",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config"
+    },
+    {
+      "action": "_registry_snapshot",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot"
+    },
+    {
+      "action": "_resolve_installation",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation"
+    },
+    {
+      "action": "_run_backtest",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest"
+    },
+    {
+      "action": "_wait_file",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file"
+    },
+    {
+      "action": "_write_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_write_json"
+    },
+    {
+      "action": "challenger_hard_gates",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates"
+    },
+    {
+      "action": "read_metrics",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics"
+    },
+    {
+      "action": "replay_mtf4_audit",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit"
+    },
+    {
+      "action": "resolve_challenger",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger"
+    },
+    {
+      "action": "sha256_file",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file"
+    },
+    {
+      "action": "source_binding",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding"
+    },
+    {
+      "action": "verify_challenger_source_identity",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity"
+    },
+    {
+      "action": "build_set_text",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::build_set_text"
+    },
+    {
+      "action": "optimizer_default_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "h.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "_git",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git"
+    },
+    {
+      "action": "sha256_file",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file"
+    },
+    {
+      "action": "MTF4OwnerAcceptanceError",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "action": "sha256_file",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "_same_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_same_params"
+    },
+    {
+      "action": "_bounds_for_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params"
+    },
+    {
+      "action": "_normalized_strategy_logic",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic"
+    },
+    {
+      "action": "h.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
       "action": "f.flush",
       "evidence": "STATIC",
       "from": "ModelLab/factory/factory_jobs.py::atomic_write_json",
       "resolver": "python_ast",
       "to": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "action": "MT5DataRoot",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/mt5_installation.py::validate_mt5_data_root",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/mt5_installation.py::MT5DataRoot"
     },
     {
       "action": "_utc",
@@ -79,6 +527,132 @@
       "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
     },
     {
+      "action": "_same_number",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_same_number"
+    },
+    {
+      "action": "_bounds_for_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "_bounds_for_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space"
+    },
+    {
+      "action": "_format_set_value",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_format_set_value"
+    },
+    {
+      "action": "normalize_optimize_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params"
+    },
+    {
+      "action": "read_ea_optimizer_defaults",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults"
+    },
+    {
+      "action": "validate_search_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "MT5Installation",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::discover_mt5_installations",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::MT5Installation"
+    },
+    {
+      "action": "_norm_path",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::discover_mt5_installations",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_norm_path"
+    },
+    {
+      "action": "out.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "out.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "canonical_ea_source",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "_bounds_for_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_search_space",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space"
+    },
+    {
       "action": "atomic_write_json",
       "evidence": "STATIC",
       "from": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
@@ -108,11 +682,228 @@
     }
   ],
   "entries": [
-    "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy"
+    "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+    "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run"
   ],
   "generated": true,
   "generated_by": "generate_sequence_actual.py",
   "nodes": [
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError",
+      "kind": "class",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError",
+      "language": "Python",
+      "line_end": 44,
+      "line_start": 43,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_append_acceptance_inputs",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_append_acceptance_inputs",
+      "language": "Python",
+      "line_end": 258,
+      "line_start": 257,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_append_acceptance_inputs"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_build_backtest_ini",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_build_backtest_ini",
+      "language": "Python",
+      "line_end": 282,
+      "line_start": 261,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_build_backtest_ini"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "language": "Python",
+      "line_end": 160,
+      "line_start": 134,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir",
+      "language": "Python",
+      "line_end": 291,
+      "line_start": 285,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "language": "Python",
+      "line_end": 254,
+      "line_start": 217,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git",
+      "language": "Python",
+      "line_end": 74,
+      "line_start": 70,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json",
+      "language": "Python",
+      "line_end": 62,
+      "line_start": 55,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "language": "Python",
+      "line_end": 112,
+      "line_start": 101,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "language": "Python",
+      "line_end": 396,
+      "line_start": 386,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "language": "Python",
+      "line_end": 131,
+      "line_start": 115,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "language": "Python",
+      "line_end": 308,
+      "line_start": 303,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file",
+      "language": "Python",
+      "line_end": 300,
+      "line_start": 294,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_write_json",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_write_json",
+      "language": "Python",
+      "line_end": 67,
+      "line_start": 65,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_write_json"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "language": "Python",
+      "line_end": 339,
+      "line_start": 329,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "language": "Python",
+      "line_end": 326,
+      "line_start": 311,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "language": "Python",
+      "line_end": 383,
+      "line_start": 342,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit.stamp",
+      "kind": "method",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit.stamp",
+      "language": "Python",
+      "line_end": 354,
+      "line_start": 353,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit.stamp"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "language": "Python",
+      "line_end": 184,
+      "line_start": 163,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "language": "Python",
+      "line_end": 542,
+      "line_start": 399,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "language": "Python",
+      "line_end": 52,
+      "line_start": 47,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "language": "Python",
+      "line_end": 98,
+      "line_start": 77,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "language": "Python",
+      "line_end": 214,
+      "line_start": 187,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "language": "Python",
+      "line_end": 44,
+      "line_start": 39,
+      "locator": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
     {
       "id": "ModelLab/factory/factory_jobs.py::atomic_write_json",
       "kind": "function",
@@ -121,6 +912,24 @@
       "line_end": 58,
       "line_start": 27,
       "locator": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "id": "ModelLab/host/mt5_installation.py::MT5DataRoot",
+      "kind": "class",
+      "label": "ModelLab/host/mt5_installation.py::MT5DataRoot",
+      "language": "Python",
+      "line_end": 17,
+      "line_start": 9,
+      "locator": "ModelLab/host/mt5_installation.py::MT5DataRoot"
+    },
+    {
+      "id": "ModelLab/host/mt5_installation.py::validate_mt5_data_root",
+      "kind": "function",
+      "label": "ModelLab/host/mt5_installation.py::validate_mt5_data_root",
+      "language": "Python",
+      "line_end": 43,
+      "line_start": 27,
+      "locator": "ModelLab/host/mt5_installation.py::validate_mt5_data_root"
     },
     {
       "id": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
@@ -177,6 +986,168 @@
       "locator": "ModelLab/strategy/mtf4_strategy.py::validate_mtf4_params"
     },
     {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::_same_number",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::_same_number",
+      "language": "Python",
+      "line_end": 48,
+      "line_start": 43,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::_same_number"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
+      "language": "Python",
+      "line_end": 70,
+      "line_start": 51,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::_same_params"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::MT5Installation",
+      "kind": "class",
+      "label": "ModelLab/strategy/strategy_optimizer.py::MT5Installation",
+      "language": "Python",
+      "line_end": 151,
+      "line_start": 147,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::MT5Installation"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params",
+      "language": "Python",
+      "line_end": 104,
+      "line_start": 95,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space",
+      "language": "Python",
+      "line_end": 92,
+      "line_start": 79,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_format_set_value",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_format_set_value",
+      "language": "Python",
+      "line_end": 559,
+      "line_start": 554,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_format_set_value"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_norm_path",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_norm_path",
+      "language": "Python",
+      "line_end": 351,
+      "line_start": 347,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_norm_path"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic",
+      "language": "Python",
+      "line_end": 301,
+      "line_start": 293,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "language": "Python",
+      "line_end": 599,
+      "line_start": 562,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::build_set_text"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source",
+      "language": "Python",
+      "line_end": 241,
+      "line_start": 225,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::discover_mt5_installations",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::discover_mt5_installations",
+      "language": "Python",
+      "line_end": 404,
+      "line_start": 354,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::discover_mt5_installations"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params",
+      "language": "Python",
+      "line_end": 437,
+      "line_start": 421,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds",
+      "language": "Python",
+      "line_end": 69,
+      "line_start": 65,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space",
+      "language": "Python",
+      "line_end": 76,
+      "line_start": 72,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
+      "language": "Python",
+      "line_end": 419,
+      "line_start": 408,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::validate_search_space",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::validate_search_space",
+      "language": "Python",
+      "line_end": 552,
+      "line_start": 525,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_summary",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_summary",
+      "language": "Python",
+      "line_end": 89,
+      "line_start": 83,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_summary"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_read_compile_log",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_read_compile_log",
+      "language": "Python",
+      "line_end": 46,
+      "line_start": 40,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_read_compile_log"
+    },
+    {
       "id": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
@@ -204,6 +1175,15 @@
       "locator": "ModelLab/strategy/strategy_optimizer_worker.py::now"
     },
     {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::re_search_error",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::re_search_error",
+      "language": "Python",
+      "line_end": 142,
+      "line_start": 139,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::re_search_error"
+    },
+    {
       "id": "ModelLab/strategy/strategy_optimizer_worker.py::update",
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer_worker.py::update",
@@ -213,7 +1193,7 @@
       "locator": "ModelLab/strategy/strategy_optimizer_worker.py::update"
     }
   ],
-  "observed_head": "4f002eeb01e4e423f087e19588d38c02cec6e463",
+  "observed_head": "1ef8737f1af13e3ef46f06198b1476f61957e2ef",
   "schema_version": 1,
-  "source_digest": "0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20"
+  "source_digest": "c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee"
 }

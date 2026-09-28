@@ -22,3 +22,10 @@ Evidence rule:
 - GitHub Actions proves the exact Git candidate and CI suite;
 - Owner MT5/MetaEditor evidence proves environment-dependent runtime behavior;
 - no Challenger becomes Champion automatically.
+
+## Support
+
+If MAX MTF is useful to you, you can support continued development:
+
+- Saweria: https://saweria.co/maxq
+- PayPal: https://paypal.me/JacksonJackson1501

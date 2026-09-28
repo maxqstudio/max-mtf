@@ -142,13 +142,6 @@
       "to": "ModelLab/mtf/mtf1_python_env_authority.py::assert_current_process_if_required"
     },
     {
-      "action": "subprocess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/acceptance/runners/run_acceptance.py::main",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
-    },
-    {
       "action": "_assert_current_evidence_policy",
       "evidence": "STATIC",
       "from": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence",
@@ -804,18 +797,9 @@
       "line_end": 38,
       "line_start": 27,
       "locator": "ModelLab/strategy/strategy_optimizer_worker.py::update"
-    },
-    {
-      "id": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
-      "kind": "method",
-      "label": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
-      "language": "Python",
-      "line_end": 104,
-      "line_start": 104,
-      "locator": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
     }
   ],
-  "observed_head": "4f002eeb01e4e423f087e19588d38c02cec6e463",
+  "observed_head": "1ef8737f1af13e3ef46f06198b1476f61957e2ef",
   "schema_version": 1,
-  "source_digest": "0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20"
+  "source_digest": "c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee"
 }

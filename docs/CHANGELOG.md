@@ -117,3 +117,29 @@ Type: acceptance
 - Public-history scrub removes transient commit metadata/history without changing accepted product-source semantics.
 - The privacy-clean root must be revalidated by Windows Source CI before Owner runtime acceptance.
 - Owner MetaEditor/MT5 runtime, identical-window control-versus-Challenger backtest and Strategy Challenger artifact remain NOT_PROVEN; MTF-5 remains blocked until MTF-4 closes.
+
+## 2026-09-28 — MTF-4 GitHub source candidate accepted for Owner final runtime
+
+Type: acceptance
+
+- Privacy-clean candidate df058e5b7341f62f462aed8c5695a7e7286e61ed passed source-safety, MTF source-contracts and STRICT governance on Windows GitHub Actions.
+- Project Truth advanced to READY_FOR_OWNER_MTF4_FINAL_ACCEPTANCE while Owner MetaEditor/MT5 runtime, identical-window control-versus-Challenger backtest and final Strategy Challenger artifact remain NOT_PROVEN.
+- Saweria and PayPal funding links are published through .github/FUNDING.yml and README support metadata.
+
+## 2026-09-28 — MTF-4 final Owner acceptance tooling enters source revalidation
+
+Type: governance
+
+- Added candidate-bound Owner MTF-4 acceptance runner for MetaEditor compile, MT5/Python role parity and identical-window/cost single-TF control versus MTF Challenger backtest.
+- Added V205 Challenger-lineage and V206 Owner-acceptance-harness source contracts; final tooling must pass exact Windows Source CI before READY status is restored.
+- Owner acceptance is verification-only and fails if Strategy Champion or Strategy Challenger registry mutates; no automatic promotion path is permitted.
+- Removed transient pre-scrub SHA claims from current acceptance authority; final readiness must bind to the exact accepted public candidate.
+
+## 2026-09-28 — MTF-4 V205/V206 synchronized source revalidation passes
+
+Type: acceptance
+
+- Exact synchronized candidate 6fc93aa43bdf4d0dd21bfe4cd946b160943da03f passed public source-safety and V202/V203/V204/V205/V206 Windows source contracts.
+- Exact Skill_Workflow selftests and STRICT docs/handoff/human/sequence/cross-document validators passed on the same candidate.
+- Sequence/source acceptance is now proven; Owner MetaEditor/MT5 runtime and control-versus-Challenger evidence remain NOT_PROVEN and are the only phase-closing runtime boundary.
+- Project Truth advances to READY_FOR_OWNER_MTF4_FINAL_ACCEPTANCE subject to one final exact readiness-candidate CI and main revalidation.

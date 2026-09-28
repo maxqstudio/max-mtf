@@ -201,6 +201,7 @@ Authority: EA_v2_00/baseline/Max_MTF.mq5 + ModelLab/strategy/mtf4_strategy.py + 
 - M5_TIMING_VETO
 - TAKE_OR_SKIP
 - STRATEGY_CHALLENGER_ELIGIBLE
+- OWNER_RUNTIME_ACCEPTANCE
 
 ### Legal transitions
 
@@ -211,6 +212,7 @@ Authority: EA_v2_00/baseline/Max_MTF.mq5 + ModelLab/strategy/mtf4_strategy.py + 
 | H1_SETUP_VETO | M5_TIMING_VETO | Continue only when H1 passes | EA_v2_00/baseline/Max_MTF.mq5 + ModelLab/strategy/mtf4_strategy.py + ModelLab/strategy/strategy_optimizer.py | none |
 | M5_TIMING_VETO | TAKE_OR_SKIP | Latest fully closed M5 may veto timing but never reverse direction | EA_v2_00/baseline/Max_MTF.mq5 + ModelLab/strategy/mtf4_strategy.py + ModelLab/strategy/strategy_optimizer.py | deterministic decision |
 | TAKE_OR_SKIP | STRATEGY_CHALLENGER_ELIGIBLE | Qualified optimizer evidence may register Strategy Challenger only | EA_v2_00/baseline/Max_MTF.mq5 + ModelLab/strategy/mtf4_strategy.py + ModelLab/strategy/strategy_optimizer.py | candidate lineage |
+| STRATEGY_CHALLENGER_ELIGIBLE | OWNER_RUNTIME_ACCEPTANCE | Verify accepted-main source binding, MetaEditor compile, MT5/Python parity and identical-window/cost control-versus-Challenger evidence without promotion | EA_v2_00/baseline/Max_MTF.mq5 + ModelLab/strategy/mtf4_strategy.py + ModelLab/strategy/strategy_optimizer.py | external Owner evidence only |
 
 ### Invariants
 

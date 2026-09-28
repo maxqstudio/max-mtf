@@ -10,10 +10,10 @@ Governance profile: strict
 
 ## Repositories
 Repository: maxqstudio/max-mtf
-Active branch: main
+Active branch: work/mtf4-final-acceptance-tooling
 Current authoritative SHA: external final acceptance evidence
-Last accepted SHA: 883ebeb1ca2e70f6255e0889358ba7c822ac52f5
-Current source digest: 0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20
+Last accepted SHA: 93e3a7cfa6fd073c593a5ee1bc55e49edf49badc
+Current source digest: c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee
 
 ## Authorities
 Source authority: Public source authority is maxqstudio/max-mtf main. Work branches are candidates until required GitHub source/governance checks pass and they are merged.

@@ -220,6 +220,10 @@ input group "Optimizer Evidence"
 input string InpOptimizerMetricsFile   = "Max_MTF_metrics.csv";
 input long   InpOptimizerRunNonce      = 0;
 
+input group "MTF-4 Acceptance Evidence"
+input string InpMtf4AuditFile          = "";
+input string InpAcceptanceMetricsFile  = "";
+
 CTrade g_trade;
 
 int g_hATR=INVALID_HANDLE;
@@ -256,6 +260,7 @@ double   g_dayStartEquity=0.0;
 int      g_csv=INVALID_HANDLE;
 int      g_championTradesCsv=INVALID_HANDLE;
 int      g_shadowTradesCsv=INVALID_HANDLE;
+int      g_mtf4AuditCsv=INVALID_HANDLE;
 ulong    g_championPositionIds[];
 datetime g_lastTrainingSignalTime=0;
 datetime g_trainingTimes[];
@@ -1530,6 +1535,74 @@ bool Mtf4BuildRoleSnapshot(const ENUM_TIMEFRAMES timeframe,const datetime decisi
    return true;
   }
 
+void OpenMtf4AuditCsv()
+  {
+   if(!InpUseMtfStrategy || StringLen(InpMtf4AuditFile)==0) return;
+   g_mtf4AuditCsv=FileOpen(InpMtf4AuditFile,FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON|FILE_SHARE_READ,",");
+   if(g_mtf4AuditCsv==INVALID_HANDLE)
+     {
+      Print("MTF4 acceptance audit FileOpen failed: ",GetLastError());
+      return;
+     }
+   FileWrite(g_mtf4AuditCsv,
+      "decision_time_mt5","symbol","period","m15_direction","rule_score","consensus",
+      "h4_close_time_mt5","h4_adx","h4_atr_ratio","h4_ma_fast","h4_ma_slow",
+      "h1_close_time_mt5","h1_adx","h1_bb_z","h1_ma_fast","h1_ma_slow",
+      "m5_close_time_mt5","m5_open","m5_close","m5_body_atr","m5_upper_wick_atr","m5_lower_wick_atr",
+      "p_h4_min_adx","p_h4_min_atr_ratio","p_h4_max_atr_ratio",
+      "p_h1_min_adx","p_h1_max_abs_bb_z","p_m5_min_body_atr","p_m5_max_opp_wick_atr",
+      "gate_decision","gate_reason");
+   FileFlush(g_mtf4AuditCsv);
+  }
+
+void LogMtf4Audit(const datetime decision_time,const int direction,const double rule_score,const double consensus,
+                  const Mtf4RoleSnapshot &h4,const Mtf4RoleSnapshot &h1,const Mtf4RoleSnapshot &m5,
+                  const string gate_decision,const string gate_reason)
+  {
+   if(g_mtf4AuditCsv==INVALID_HANDLE) return;
+   FileWrite(g_mtf4AuditCsv,
+      (long)decision_time,_Symbol,IntegerToString((int)_Period),direction,
+      DoubleToString(rule_score,12),DoubleToString(consensus,12),
+      (long)h4.close_time,DoubleToString(h4.adx,12),DoubleToString(h4.atr_ratio,12),DoubleToString(h4.ma_fast,12),DoubleToString(h4.ma_slow,12),
+      (long)h1.close_time,DoubleToString(h1.adx,12),DoubleToString(h1.bb_z,12),DoubleToString(h1.ma_fast,12),DoubleToString(h1.ma_slow,12),
+      (long)m5.close_time,DoubleToString(m5.open,_Digits),DoubleToString(m5.close,_Digits),DoubleToString(m5.body_atr,12),
+      DoubleToString(m5.upper_wick_atr,12),DoubleToString(m5.lower_wick_atr,12),
+      DoubleToString(InpMtfH4MinADX,12),DoubleToString(InpMtfH4MinATRRatio,12),DoubleToString(InpMtfH4MaxATRRatio,12),
+      DoubleToString(InpMtfH1MinADX,12),DoubleToString(InpMtfH1MaxAbsBBZ,12),
+      DoubleToString(InpMtfM5MinBodyATR,12),DoubleToString(InpMtfM5MaxOppWickATR,12),
+      gate_decision,gate_reason);
+   FileFlush(g_mtf4AuditCsv);
+  }
+
+bool WriteAcceptanceMetrics(const bool valid,const long mt5_trades,const double mean_r,const double weighted_r)
+  {
+   if(StringLen(InpAcceptanceMetricsFile)==0) return true;
+   int h=FileOpen(InpAcceptanceMetricsFile,FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,",");
+   if(h==INVALID_HANDLE)
+     {
+      Print("MTF4 acceptance metrics FileOpen failed: ",GetLastError());
+      return false;
+     }
+   FileWrite(h,
+      "mode","symbol","period","valid","trades","net_profit","profit_factor","recovery_factor",
+      "expected_payoff","equity_dd_rel_pct","sharpe_ratio","mean_r","weighted_r",
+      "r_accounted_trades","sum_net","sum_initial_risk","accounting_errors");
+   FileWrite(h,
+      (InpUseMtfStrategy?"MTF4":"CONTROL"),_Symbol,IntegerToString((int)_Period),(valid?"1":"0"),mt5_trades,
+      DoubleToString(TesterStatistics(STAT_PROFIT),12),
+      DoubleToString(TesterStatistics(STAT_PROFIT_FACTOR),12),
+      DoubleToString(TesterStatistics(STAT_RECOVERY_FACTOR),12),
+      DoubleToString(TesterStatistics(STAT_EXPECTED_PAYOFF),12),
+      DoubleToString(TesterStatistics(STAT_EQUITY_DDREL_PERCENT),12),
+      DoubleToString(TesterStatistics(STAT_SHARPE_RATIO),12),
+      DoubleToString(mean_r,12),DoubleToString(weighted_r,12),
+      g_optimizerClosedTrades,DoubleToString(g_optimizerSumNet,12),DoubleToString(g_optimizerSumRisk,12),
+      g_optimizerAccountingErrors);
+   FileFlush(h);
+   FileClose(h);
+   return true;
+  }
+
 bool Mtf4H4ContextGate(const Mtf4RoleSnapshot &r,const int direction,string &reason)
   {
    if(!r.valid || r.timeframe!=PERIOD_H4) { reason="MTF_H4_UNAVAILABLE"; return false; }
@@ -1584,9 +1657,24 @@ bool Mtf4EvaluateStrategy(const MarketSnapshot &s,const FamilySignal &families[]
       reason="MTF_ROLE_DATA_UNAVAILABLE";
       return false;
      }
-   if(!Mtf4H4ContextGate(h4,direction,reason)) return false;
-   if(!Mtf4H1SetupGate(h1,direction,reason)) return false;
-   if(!Mtf4M5TimingGate(m5,direction,reason)) return false;
+   if(!Mtf4H4ContextGate(h4,direction,reason))
+     {
+      LogMtf4Audit(decision_time,direction,rule_score,consensus,h4,h1,m5,"SKIP",reason);
+      return false;
+     }
+   if(!Mtf4H1SetupGate(h1,direction,reason))
+     {
+      LogMtf4Audit(decision_time,direction,rule_score,consensus,h4,h1,m5,"SKIP",reason);
+      return false;
+     }
+   if(!Mtf4M5TimingGate(m5,direction,reason))
+     {
+      LogMtf4Audit(decision_time,direction,rule_score,consensus,h4,h1,m5,"SKIP",reason);
+      return false;
+     }
+
+   string parity_decision=(direction>0 ? "TAKE_BUY" : "TAKE_SELL");
+   LogMtf4Audit(decision_time,direction,rule_score,consensus,h4,h1,m5,parity_decision,"");
 
    if(AnyPositionOnSymbol())
      {
@@ -2071,6 +2159,7 @@ int OnInit()
    UpdateDailyState();
    RebuildChampionPositionTracking();
    OpenTelemetry();
+   OpenMtf4AuditCsv();
    OpenTradeAuditCsv();
    OpenTrainingData();
    g_trade.SetExpertMagicNumber(InpMagic);
@@ -2099,6 +2188,7 @@ void OnDeinit(const int reason)
    if(g_csv!=INVALID_HANDLE) { FileFlush(g_csv); FileClose(g_csv); g_csv=INVALID_HANDLE; }
    if(g_championTradesCsv!=INVALID_HANDLE) { FileFlush(g_championTradesCsv); FileClose(g_championTradesCsv); g_championTradesCsv=INVALID_HANDLE; }
    if(g_shadowTradesCsv!=INVALID_HANDLE) { FileFlush(g_shadowTradesCsv); FileClose(g_shadowTradesCsv); g_shadowTradesCsv=INVALID_HANDLE; }
+   if(g_mtf4AuditCsv!=INVALID_HANDLE) { FileFlush(g_mtf4AuditCsv); FileClose(g_mtf4AuditCsv); g_mtf4AuditCsv=INVALID_HANDLE; }
   }
 
 void OnTradeTransaction(const MqlTradeTransaction &trans,const MqlTradeRequest &request,const MqlTradeResult &result)
@@ -2247,6 +2337,8 @@ double OnTester()
          return -1.0e9;
         }
      }
+   if(!WriteAcceptanceMetrics(valid,mt5_trades,mean_r,weighted_r))
+      return -1.0e9;
    return valid ? mean_r : -1.0e9;
   }
 

@@ -281,43 +281,36 @@ def _atomic_write_text(path: Path, text: str) -> None:
 
 
 def _format_ea_input_value(name: str, value: Any) -> str:
-    _lo,_hi,_step,typ=ABSOLUTE_BOUNDS[name]
+    bounds=optimizer_bounds(True)
+    if name not in bounds:
+        raise ValueError(f"unsupported optimizer input: {name}")
+    _lo,_hi,_step,typ=bounds[name]
     if typ == "int":
         return str(int(round(float(value))))
-    # Stable decimal representation; MQL accepts decimal literals without suffixes.
     out=f"{float(value):.10f}".rstrip("0").rstrip(".")
     return out if "." in out else out+".0"
 
-
 def _normalized_strategy_logic(text: str) -> str:
-    """Normalize only optimizer-owned default literals so logic mutations remain detectable."""
+    """Normalize all optimizer-owned default literals so logic mutations remain detectable."""
     out=text
-    for name in ABSOLUTE_BOUNDS:
+    for name in optimizer_bounds(True):
         pat=rf"(input\s+(?:double|int)\s+{re.escape(name)}\s*=\s*)([-+0-9.eE]+)(\s*;)"
         out,n=re.subn(pat,lambda m:m.group(1)+"<OPTIMIZED_DEFAULT>"+m.group(3),out,count=1)
         if n != 1:
             raise ValueError(f"EA optimizer input declaration not uniquely found: {name}")
     return out
 
-
 def apply_champion_to_canonical_ea(params: dict[str, Any], *, source: str | Path | None = None) -> dict:
-    """Apply champion values to the active Max MTF v2.0 baseline EA source, and nothing else.
-
-    The EA is not regenerated. Only the whitelisted optimizer input default literals
-    are changed atomically. A normalized strategy-logic hash proves strategy code did
-    not change while champion defaults were applied.
-    """
+    """Apply one complete legacy-16 or MTF-23 optimizer vector to an EA source copy."""
     src=Path(source).resolve() if source is not None else canonical_ea_source()
     if not src.is_file():
         raise FileNotFoundError(f"EA source missing: {src}")
+    bounds=_bounds_for_params(params)
     before=src.read_text(encoding="utf-8")
-    missing=[name for name in ABSOLUTE_BOUNDS if name not in params]
-    if missing:
-        raise ValueError("Champion parameter set incomplete: "+", ".join(missing))
     before_logic=hashlib.sha256(_normalized_strategy_logic(before).encode("utf-8")).hexdigest()
     after=before
     changes={}
-    for name in ABSOLUTE_BOUNDS:
+    for name in bounds:
         value=params[name]
         literal=_format_ea_input_value(name,value)
         pat=rf"(input\s+(?:double|int)\s+{re.escape(name)}\s*=\s*)([-+0-9.eE]+)(\s*;)"
@@ -336,15 +329,16 @@ def apply_champion_to_canonical_ea(params: dict[str, Any], *, source: str | Path
     _atomic_write_text(src,after)
     after_sha=hashlib.sha256(src.read_bytes()).hexdigest()
     return {
-        "schema":"MAX_STRATEGY_OPTIMIZER_EA_CHAMPION_APPLY_V1",
+        "schema":"MAX_STRATEGY_OPTIMIZER_EA_CHAMPION_APPLY_V2_PROFILE_AWARE",
         "ea_path":str(src),
         "before_sha256":before_sha,
         "after_sha256":after_sha,
         "strategy_logic_sha256":after_logic,
+        "parameter_count":len(bounds),
+        "mtf_strategy_enabled":set(MTF4_PARAM_BOUNDS).issubset(bounds),
         "changed_inputs":changes,
         "mutation_scope":"WHITELISTED_OPTIMIZER_INPUT_DEFAULTS_ONLY",
     }
-
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -613,7 +607,8 @@ def _same_numeric(a: Any, b: Any, tol: float = 1e-9) -> bool:
 
 
 def parse_set_optimizer_entries(text: str) -> dict[str, dict[str, Any]]:
-    """Parse optimizer-owned .set rows including MT5 optimize flag."""
+    """Parse legacy or MTF optimizer-owned .set rows including MT5 optimize flag."""
+    all_bounds=optimizer_bounds(True)
     out: dict[str, dict[str, Any]]={}
     for raw in str(text or "").splitlines():
         line=raw.strip()
@@ -621,12 +616,12 @@ def parse_set_optimizer_entries(text: str) -> dict[str, dict[str, Any]]:
             continue
         name,rhs=line.split('=',1)
         name=name.strip()
-        if name not in ABSOLUTE_BOUNDS:
+        if name not in all_bounds:
             continue
         parts=rhs.split('||')
         if len(parts) != 5:
             raise ValueError(f"{name}: malformed MT5 set row")
-        typ=ABSOLUTE_BOUNDS[name][3]
+        typ=all_bounds[name][3]
         value=int(round(float(parts[0]))) if typ=='int' else float(parts[0])
         out[name]={
             'value':value,
@@ -637,26 +632,22 @@ def parse_set_optimizer_entries(text: str) -> dict[str, dict[str, Any]]:
         }
     return out
 
-
 def validate_champion_tester_preset_text(text: str, champion_params: dict[str, Any]) -> dict[str, Any]:
-    """Fail closed unless every optimizer-owned input is the exact Champion and non-optimized."""
-    missing=[name for name in ABSOLUTE_BOUNDS if name not in champion_params]
-    if missing:
-        raise ValueError('Champion parameter set incomplete: '+', '.join(missing))
+    """Fail closed unless one complete legacy-16 or MTF-23 vector is fixed and non-optimized."""
+    bounds=_bounds_for_params(champion_params)
     entries=parse_set_optimizer_entries(text)
-    if set(entries) != set(ABSOLUTE_BOUNDS):
-        missing_rows=sorted(set(ABSOLUTE_BOUNDS)-set(entries))
-        extra_rows=sorted(set(entries)-set(ABSOLUTE_BOUNDS))
+    if set(entries) != set(bounds):
+        missing_rows=sorted(set(bounds)-set(entries))
+        extra_rows=sorted(set(entries)-set(bounds))
         raise ValueError(f"Champion Max_MTF.set optimizer rows mismatch; missing={missing_rows}, extra={extra_rows}")
     mismatches=[]
-    for name,(_lo,_hi,_step,typ) in ABSOLUTE_BOUNDS.items():
+    for name,(_lo,_hi,_step,typ) in bounds.items():
         expected=int(round(float(champion_params[name]))) if typ=='int' else float(champion_params[name])
         actual=entries[name]['value']
         if (typ=='int' and int(actual)!=int(expected)) or (typ!='int' and not _same_numeric(actual,expected)):
             mismatches.append(f"{name}: set={actual} champion={expected}")
         if entries[name]['optimize'] != 'N':
             mismatches.append(f"{name}: optimize={entries[name]['optimize']} expected=N")
-        # A Champion preset must be a single fixed point, never a leftover search range.
         try:
             start=float(entries[name]['start']); stop=float(entries[name]['stop']); step=float(entries[name]['step'])
             if not (_same_numeric(start,expected) and _same_numeric(stop,expected) and _same_numeric(step,0.0)):
@@ -666,20 +657,15 @@ def validate_champion_tester_preset_text(text: str, champion_params: dict[str, A
     if mismatches:
         raise RuntimeError('Champion Max_MTF.set parity failed: '+'; '.join(mismatches[:12]))
     return {
-        'schema':'MAX_STRATEGY_OPTIMIZER_CHAMPION_SET_PARITY_V1',
-        'optimizer_owned_parameter_count':len(ABSOLUTE_BOUNDS),
+        'schema':'MAX_STRATEGY_OPTIMIZER_CHAMPION_SET_PARITY_V2_PROFILE_AWARE',
+        'optimizer_owned_parameter_count':len(bounds),
+        'mtf_strategy_enabled':set(MTF4_PARAM_BOUNDS).issubset(bounds),
         'all_values_match_champion':True,
         'all_optimization_flags_disabled':True,
     }
 
-
 def write_champion_tester_preset(req: dict[str, Any], champion_params: dict[str, Any], *, path: str | Path | None = None) -> dict[str, Any]:
-    """Atomically replace canonical Tester Max_MTF.set with the exact Champion fixed point.
-
-    This is the Owner manual-backtest preset committed when a Champion is selected.
-    It intentionally keeps tester trading enabled while disabling optimization on all
-    optimizer-owned inputs.
-    """
+    """Write the exact fixed-point tester preset for one legacy or MTF Strategy Challenger."""
     data_dir=Path((req.get('installation') or {}).get('data_dir') or '')
     if path is None:
         if not str(data_dir):
@@ -687,8 +673,9 @@ def write_champion_tester_preset(req: dict[str, Any], champion_params: dict[str,
         dest=data_dir/'MQL5'/'Profiles'/'Tester'/TESTER_SET
     else:
         dest=Path(path)
+    mtf_strategy_enabled=set(MTF4_PARAM_BOUNDS).issubset(_bounds_for_params(champion_params))
     text=build_set_text(
-        req.get('search_space') or DEFAULT_SPACE,
+        req.get('search_space') or optimizer_default_space(mtf_strategy_enabled),
         confirm_symbol=str(req.get('confirm_symbol') or ''),
         champion_params=champion_params,
         fixed_param_values=req.get('fixed_param_values'),
@@ -701,20 +688,21 @@ def write_champion_tester_preset(req: dict[str, Any], champion_params: dict[str,
     validate_champion_tester_preset_text(persisted,champion_params)
     return {
         **parity,
-        'schema':'MAX_STRATEGY_OPTIMIZER_CHAMPION_TESTER_PRESET_V1',
+        'schema':'MAX_STRATEGY_OPTIMIZER_CHAMPION_TESTER_PRESET_V2_PROFILE_AWARE',
         'path':str(dest),
         'sha256':hashlib.sha256(dest.read_bytes()).hexdigest(),
         'preset_name':TESTER_SET,
-        'purpose':'OWNER_MANUAL_STRATEGY_TESTER_BACKTEST_EXACT_CHAMPION',
+        'purpose':'OWNER_MANUAL_STRATEGY_TESTER_BACKTEST_EXACT_CHALLENGER',
     }
 
-
 def assert_champion_ea_set_parity(champion_params: dict[str, Any], set_path: str | Path, *, ea_source: str | Path | None = None) -> dict[str, Any]:
-    """Prove exact Champion parity between canonical EA defaults and Tester Max_MTF.set."""
-    ea=read_ea_optimizer_defaults(ea_source)
+    """Prove exact EA/.set parity for one complete legacy-16 or MTF-23 vector."""
+    bounds=_bounds_for_params(champion_params)
+    mtf_strategy_enabled=set(MTF4_PARAM_BOUNDS).issubset(bounds)
+    ea=read_ea_optimizer_defaults(ea_source,mtf_strategy_enabled=mtf_strategy_enabled)
     preset=validate_champion_tester_preset_text(Path(set_path).read_text(encoding='utf-8'),champion_params)
     mismatches=[]
-    for name,(_lo,_hi,_step,typ) in ABSOLUTE_BOUNDS.items():
+    for name,(_lo,_hi,_step,typ) in bounds.items():
         expected=int(round(float(champion_params[name]))) if typ=='int' else float(champion_params[name])
         actual=ea[name]
         if (typ=='int' and int(actual)!=int(expected)) or (typ!='int' and not _same_numeric(actual,expected)):
@@ -722,13 +710,13 @@ def assert_champion_ea_set_parity(champion_params: dict[str, Any], set_path: str
     if mismatches:
         raise RuntimeError('Champion EA/Max_MTF.set parity failed: '+'; '.join(mismatches[:12]))
     return {
-        'schema':'MAX_STRATEGY_OPTIMIZER_CHAMPION_EA_SET_PARITY_V1',
-        'parameter_count':len(ABSOLUTE_BOUNDS),
+        'schema':'MAX_STRATEGY_OPTIMIZER_CHALLENGER_EA_SET_PARITY_V2_PROFILE_AWARE',
+        'parameter_count':len(bounds),
+        'mtf_strategy_enabled':mtf_strategy_enabled,
         'ea_defaults_match_champion':True,
         'tester_preset_matches_champion':bool(preset.get('all_values_match_champion')),
         'tester_optimization_disabled':bool(preset.get('all_optimization_flags_disabled')),
     }
-
 
 def build_tester_ini(*, expert: str, set_name: str, symbol: str, period: str, from_date: str, to_date: str,
                      deposit: float, leverage: int, model: int, report_path: str, optimization: int = 2) -> str:
@@ -1136,15 +1124,15 @@ def scientist_propose_ranges(space: dict[str, Any], rows: list[OptimizationPass]
 
 
 def validate_scientist_ranges(space: dict[str, Any], proposal: dict, optimize_params: Any = None) -> dict[str, dict[str, float | int]]:
-    """Deterministically compile an untrusted Scientist range proposal."""
+    """Deterministically compile an untrusted Scientist range proposal for the selected profile."""
     current=validate_search_space(space)
-    selected=normalize_optimize_params(optimize_params) if optimize_params is not None else list(current)
+    bounds=_bounds_for_space(current)
+    selected=normalize_optimize_params(optimize_params,allowed_names=bounds) if optimize_params is not None else list(current)
     ranges=proposal.get("ranges") if isinstance(proposal,dict) else None
     if not isinstance(ranges,dict) or set(ranges)!=set(selected):
         raise ValueError("Scientist optimizer proposal must contain exactly the Owner-selected optimization parameters")
     merged={k:dict(v) for k,v in current.items()}; merged.update(ranges)
     return validate_search_space(merged)
-
 
 def scientist_refine(space: dict[str, Any], rows: list[OptimizationPass], llm_cfg: dict, *, round_no: int, kpi_profile: dict | None = None, minimum_trades: int = 1, optimize_params: Any = None, api_key: str | None = None) -> tuple[dict[str, dict[str, float | int]], dict]:
     """Compatibility wrapper: one LLM call followed by deterministic validation."""

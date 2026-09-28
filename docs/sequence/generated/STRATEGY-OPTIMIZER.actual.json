@@ -254,11 +254,25 @@
       "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
     },
     {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
       "action": "_f",
       "evidence": "STATIC",
       "from": "ModelLab/strategy/strategy_optimizer.py::_i",
       "resolver": "python_ast",
       "to": "ModelLab/strategy/strategy_optimizer.py::_f"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
     },
     {
       "action": "_bounds_for_params",
@@ -324,6 +338,13 @@
       "to": "ModelLab/strategy/strategy_optimizer.py::_atomic_write_text"
     },
     {
+      "action": "_bounds_for_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params"
+    },
+    {
       "action": "_format_ea_input_value",
       "evidence": "STATIC",
       "from": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
@@ -343,6 +364,13 @@
       "from": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
       "resolver": "python_ast",
       "to": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source"
+    },
+    {
+      "action": "_bounds_for_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params"
     },
     {
       "action": "_same_numeric",
@@ -653,6 +681,13 @@
       "to": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
     },
     {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
       "action": "canonical_ea_source",
       "evidence": "STATIC",
       "from": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
@@ -779,6 +814,13 @@
       "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
     },
     {
+      "action": "_bounds_for_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params"
+    },
+    {
       "action": "_same_numeric",
       "evidence": "STATIC",
       "from": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
@@ -863,6 +905,13 @@
       "to": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
     },
     {
+      "action": "_bounds_for_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space"
+    },
+    {
       "action": "normalize_optimize_params",
       "evidence": "STATIC",
       "from": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
@@ -905,11 +954,25 @@
       "to": "ModelLab/strategy/strategy_optimizer.py::_atomic_write_text"
     },
     {
+      "action": "_bounds_for_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params"
+    },
+    {
       "action": "build_set_text",
       "evidence": "STATIC",
       "from": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
       "resolver": "python_ast",
       "to": "ModelLab/strategy/strategy_optimizer.py::build_set_text"
+    },
+    {
+      "action": "optimizer_default_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space"
     },
     {
       "action": "validate_champion_tester_preset_text",
@@ -1479,13 +1542,6 @@
       "to": "ModelLab/strategy/strategy_optimizer_worker.py::re_search_error"
     },
     {
-      "action": "subprocess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
-    },
-    {
       "action": "validate_request",
       "evidence": "STATIC",
       "from": "ModelLab/strategy/strategy_optimizer_worker.py::main",
@@ -1666,13 +1722,6 @@
       "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
       "resolver": "python_ast",
       "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
-    },
-    {
-      "action": "subprocess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
     },
     {
       "action": "atomic",
@@ -1869,8 +1918,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::_allocate_code",
       "language": "Python",
-      "line_end": 220,
-      "line_start": 214,
+      "line_end": 228,
+      "line_start": 222,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_allocate_code"
     },
     {
@@ -1878,8 +1927,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::_atomic_json",
       "language": "Python",
-      "line_end": 76,
-      "line_start": 64,
+      "line_end": 84,
+      "line_start": 72,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_atomic_json"
     },
     {
@@ -1887,8 +1936,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::_code",
       "language": "Python",
-      "line_end": 211,
-      "line_start": 207,
+      "line_end": 219,
+      "line_start": 215,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_code"
     },
     {
@@ -1896,8 +1945,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::_kpi_from_payload",
       "language": "Python",
-      "line_end": 130,
-      "line_start": 114,
+      "line_end": 138,
+      "line_start": 122,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_kpi_from_payload"
     },
     {
@@ -1905,8 +1954,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::_read_json",
       "language": "Python",
-      "line_end": 85,
-      "line_start": 83,
+      "line_end": 93,
+      "line_start": 91,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_read_json"
     },
     {
@@ -1914,8 +1963,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::_sha",
       "language": "Python",
-      "line_end": 39,
-      "line_start": 38,
+      "line_end": 40,
+      "line_start": 39,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_sha"
     },
     {
@@ -1923,8 +1972,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock",
       "language": "Python",
-      "line_end": 111,
-      "line_start": 88,
+      "line_end": 119,
+      "line_start": 96,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock"
     },
     {
@@ -1932,8 +1981,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle",
       "language": "Python",
-      "line_end": 241,
-      "line_start": 223,
+      "line_end": 254,
+      "line_start": 231,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle"
     },
     {
@@ -1941,8 +1990,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
       "language": "Python",
-      "line_end": 260,
-      "line_start": 244,
+      "line_end": 273,
+      "line_start": 257,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger"
     },
     {
@@ -1950,8 +1999,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::registry_path",
       "language": "Python",
-      "line_end": 80,
-      "line_start": 79,
+      "line_end": 88,
+      "line_start": 87,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::registry_path"
     },
     {
@@ -1959,8 +2008,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_challenger_registry.py::utc_now",
       "language": "Python",
-      "line_end": 35,
-      "line_start": 34,
+      "line_end": 36,
+      "line_start": 35,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::utc_now"
     },
     {
@@ -2004,8 +2053,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_extract_json_object",
       "language": "Python",
-      "line_end": 1074,
-      "line_start": 1063,
+      "line_end": 1062,
+      "line_start": 1051,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_extract_json_object"
     },
     {
@@ -2013,8 +2062,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_f",
       "language": "Python",
-      "line_end": 783,
-      "line_start": 773,
+      "line_end": 771,
+      "line_start": 761,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_f"
     },
     {
@@ -2022,7 +2071,7 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value",
       "language": "Python",
-      "line_end": 289,
+      "line_end": 291,
       "line_start": 283,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value"
     },
@@ -2031,8 +2080,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_format_set_value",
       "language": "Python",
-      "line_end": 565,
-      "line_start": 560,
+      "line_end": 559,
+      "line_start": 554,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_format_set_value"
     },
     {
@@ -2040,8 +2089,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_i",
       "language": "Python",
-      "line_end": 788,
-      "line_start": 786,
+      "line_end": 776,
+      "line_start": 774,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_i"
     },
     {
@@ -2049,8 +2098,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic",
       "language": "Python",
-      "line_end": 300,
-      "line_start": 292,
+      "line_end": 301,
+      "line_start": 293,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic"
     },
     {
@@ -2058,8 +2107,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_parameter_signature",
       "language": "Python",
-      "line_end": 800,
-      "line_start": 792,
+      "line_end": 788,
+      "line_start": 780,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_parameter_signature"
     },
     {
@@ -2067,8 +2116,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob",
       "language": "Python",
-      "line_end": 827,
-      "line_start": 802,
+      "line_end": 815,
+      "line_start": 790,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob"
     },
     {
@@ -2076,8 +2125,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_passes_nonweighted_gates",
       "language": "Python",
-      "line_end": 1004,
-      "line_start": 998,
+      "line_end": 992,
+      "line_start": 986,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_passes_nonweighted_gates"
     },
     {
@@ -2085,8 +2134,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_refinement_score",
       "language": "Python",
-      "line_end": 1016,
-      "line_start": 1006,
+      "line_end": 1004,
+      "line_start": 994,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_refinement_score"
     },
     {
@@ -2094,8 +2143,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_row_values",
       "language": "Python",
-      "line_end": 770,
-      "line_start": 765,
+      "line_end": 758,
+      "line_start": 753,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_row_values"
     },
     {
@@ -2103,8 +2152,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_same_numeric",
       "language": "Python",
-      "line_end": 612,
-      "line_start": 607,
+      "line_end": 606,
+      "line_start": 601,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_same_numeric"
     },
     {
@@ -2112,8 +2161,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::_strip_ns",
       "language": "Python",
-      "line_end": 762,
-      "line_start": 761,
+      "line_end": 750,
+      "line_start": 749,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_strip_ns"
     },
     {
@@ -2121,7 +2170,7 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
       "language": "Python",
-      "line_end": 346,
+      "line_end": 341,
       "line_start": 303,
       "locator": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea"
     },
@@ -2130,8 +2179,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
       "language": "Python",
-      "line_end": 730,
-      "line_start": 712,
+      "line_end": 719,
+      "line_start": 698,
       "locator": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity"
     },
     {
@@ -2139,8 +2188,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::best_near_miss",
       "language": "Python",
-      "line_end": 1036,
-      "line_start": 1033,
+      "line_end": 1024,
+      "line_start": 1021,
       "locator": "ModelLab/strategy/strategy_optimizer.py::best_near_miss"
     },
     {
@@ -2148,8 +2197,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
       "language": "Python",
-      "line_end": 605,
-      "line_start": 568,
+      "line_end": 599,
+      "line_start": 562,
       "locator": "ModelLab/strategy/strategy_optimizer.py::build_set_text"
     },
     {
@@ -2157,8 +2206,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::build_tester_ini",
       "language": "Python",
-      "line_end": 758,
-      "line_start": 733,
+      "line_end": 746,
+      "line_start": 721,
       "locator": "ModelLab/strategy/strategy_optimizer.py::build_tester_ini"
     },
     {
@@ -2184,8 +2233,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::champion_payload",
       "language": "Python",
-      "line_end": 1173,
-      "line_start": 1157,
+      "line_end": 1161,
+      "line_start": 1145,
       "locator": "ModelLab/strategy/strategy_optimizer.py::champion_payload"
     },
     {
@@ -2193,8 +2242,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine",
       "language": "Python",
-      "line_end": 1060,
-      "line_start": 1039,
+      "line_end": 1048,
+      "line_start": 1027,
       "locator": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine"
     },
     {
@@ -2202,8 +2251,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::discover_bootstrap_optimization_reports",
       "language": "Python",
-      "line_end": 529,
-      "line_start": 518,
+      "line_end": 523,
+      "line_start": 512,
       "locator": "ModelLab/strategy/strategy_optimizer.py::discover_bootstrap_optimization_reports"
     },
     {
@@ -2211,8 +2260,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports",
       "language": "Python",
-      "line_end": 497,
-      "line_start": 484,
+      "line_end": 491,
+      "line_start": 478,
       "locator": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports"
     },
     {
@@ -2220,8 +2269,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::expected_report_identity",
       "language": "Python",
-      "line_end": 464,
-      "line_start": 463,
+      "line_end": 458,
+      "line_start": 457,
       "locator": "ModelLab/strategy/strategy_optimizer.py::expected_report_identity"
     },
     {
@@ -2229,8 +2278,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::is_max_generated_optimizer_report",
       "language": "Python",
-      "line_end": 509,
-      "line_start": 500,
+      "line_end": 503,
+      "line_start": 494,
       "locator": "ModelLab/strategy/strategy_optimizer.py::is_max_generated_optimizer_report"
     },
     {
@@ -2238,8 +2287,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params",
       "language": "Python",
-      "line_end": 443,
-      "line_start": 427,
+      "line_end": 437,
+      "line_start": 421,
       "locator": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params"
     },
     {
@@ -2247,8 +2296,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity",
       "language": "Python",
-      "line_end": 460,
-      "line_start": 445,
+      "line_end": 454,
+      "line_start": 439,
       "locator": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity"
     },
     {
@@ -2283,8 +2332,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::optimizer_metrics_sidecar_for_report",
       "language": "Python",
-      "line_end": 515,
-      "line_start": 512,
+      "line_end": 509,
+      "line_start": 506,
       "locator": "ModelLab/strategy/strategy_optimizer.py::optimizer_metrics_sidecar_for_report"
     },
     {
@@ -2301,8 +2350,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
       "language": "Python",
-      "line_end": 995,
-      "line_start": 890,
+      "line_end": 983,
+      "line_start": 878,
       "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml"
     },
     {
@@ -2310,8 +2359,8 @@
       "kind": "method",
       "label": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.col",
       "language": "Python",
-      "line_end": 911,
-      "line_start": 907,
+      "line_end": 899,
+      "line_start": 895,
       "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.col"
     },
     {
@@ -2319,8 +2368,8 @@
       "kind": "method",
       "label": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.value_at",
       "language": "Python",
-      "line_end": 928,
-      "line_start": 927,
+      "line_end": 916,
+      "line_start": 915,
       "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.value_at"
     },
     {
@@ -2328,8 +2377,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::parse_optimizer_metrics_csv",
       "language": "Python",
-      "line_end": 888,
-      "line_start": 829,
+      "line_end": 876,
+      "line_start": 817,
       "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimizer_metrics_csv"
     },
     {
@@ -2337,8 +2386,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries",
       "language": "Python",
-      "line_end": 638,
-      "line_start": 615,
+      "line_end": 633,
+      "line_start": 609,
       "locator": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries"
     },
     {
@@ -2346,8 +2395,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
       "language": "Python",
-      "line_end": 425,
-      "line_start": 414,
+      "line_end": 419,
+      "line_start": 408,
       "locator": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults"
     },
     {
@@ -2355,8 +2404,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::report_matches_request",
       "language": "Python",
-      "line_end": 481,
-      "line_start": 467,
+      "line_end": 475,
+      "line_start": 461,
       "locator": "ModelLab/strategy/strategy_optimizer.py::report_matches_request"
     },
     {
@@ -2364,8 +2413,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config",
       "language": "Python",
-      "line_end": 1091,
-      "line_start": 1077,
+      "line_end": 1079,
+      "line_start": 1065,
       "locator": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config"
     },
     {
@@ -2373,8 +2422,8 @@
       "kind": "method",
       "label": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config.clean",
       "language": "Python",
-      "line_end": 1090,
-      "line_start": 1085,
+      "line_end": 1078,
+      "line_start": 1073,
       "locator": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config.clean"
     },
     {
@@ -2382,8 +2431,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
       "language": "Python",
-      "line_end": 1135,
-      "line_start": 1094,
+      "line_end": 1123,
+      "line_start": 1082,
       "locator": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges"
     },
     {
@@ -2400,8 +2449,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::select_champion",
       "language": "Python",
-      "line_end": 1030,
-      "line_start": 1018,
+      "line_end": 1018,
+      "line_start": 1006,
       "locator": "ModelLab/strategy/strategy_optimizer.py::select_champion"
     },
     {
@@ -2409,8 +2458,8 @@
       "kind": "method",
       "label": "ModelLab/strategy/strategy_optimizer.py::select_champion.weighted_required",
       "language": "Python",
-      "line_end": 1023,
-      "line_start": 1022,
+      "line_end": 1011,
+      "line_start": 1010,
       "locator": "ModelLab/strategy/strategy_optimizer.py::select_champion.weighted_required"
     },
     {
@@ -2418,8 +2467,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::utc_now",
       "language": "Python",
-      "line_end": 350,
-      "line_start": 349,
+      "line_end": 344,
+      "line_start": 343,
       "locator": "ModelLab/strategy/strategy_optimizer.py::utc_now"
     },
     {
@@ -2427,8 +2476,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
       "language": "Python",
-      "line_end": 673,
-      "line_start": 641,
+      "line_end": 665,
+      "line_start": 635,
       "locator": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text"
     },
     {
@@ -2436,8 +2485,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::validate_request",
       "language": "Python",
-      "line_end": 1229,
-      "line_start": 1176,
+      "line_end": 1217,
+      "line_start": 1164,
       "locator": "ModelLab/strategy/strategy_optimizer.py::validate_request"
     },
     {
@@ -2445,8 +2494,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
       "language": "Python",
-      "line_end": 1146,
-      "line_start": 1138,
+      "line_end": 1135,
+      "line_start": 1126,
       "locator": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges"
     },
     {
@@ -2454,8 +2503,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::validate_search_space",
       "language": "Python",
-      "line_end": 558,
-      "line_start": 531,
+      "line_end": 552,
+      "line_start": 525,
       "locator": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
     },
     {
@@ -2463,8 +2512,8 @@
       "kind": "function",
       "label": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
       "language": "Python",
-      "line_end": 709,
-      "line_start": 676,
+      "line_end": 696,
+      "line_start": 667,
       "locator": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset"
     },
     {
@@ -2837,15 +2886,6 @@
       "locator": "ModelLab/strategy/strategy_optimizer_worker.py::write_diagnostic"
     },
     {
-      "id": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
-      "kind": "method",
-      "label": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
-      "language": "Python",
-      "line_end": 104,
-      "line_start": 104,
-      "locator": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
-    },
-    {
       "id": "ModelLab/tests/v125_strategy_champion_kpi_evidence_selftest.py::close",
       "kind": "function",
       "label": "ModelLab/tests/v125_strategy_champion_kpi_evidence_selftest.py::close",
@@ -2873,7 +2913,7 @@
       "locator": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna"
     }
   ],
-  "observed_head": "4f002eeb01e4e423f087e19588d38c02cec6e463",
+  "observed_head": "1ef8737f1af13e3ef46f06198b1476f61957e2ef",
   "schema_version": 1,
-  "source_digest": "0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20"
+  "source_digest": "c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee"
 }

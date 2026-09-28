@@ -45,7 +45,7 @@ jobs:
         run: python -m pip install --disable-pip-version-check "numpy>=2,<3" "pandas>=2.2,<3"
       - name: Compile MTF source
         shell: pwsh
-        run: python -m py_compile ModelLab/mtf/mtf_data.py ModelLab/mtf/mtf2.py ModelLab/mtf/mtf3.py ModelLab/strategy/mtf4_strategy.py ModelLab/strategy/strategy_optimizer.py
+        run: python -m py_compile ModelLab/mtf/mtf_data.py ModelLab/mtf/mtf2.py ModelLab/mtf/mtf3.py ModelLab/strategy/mtf4_strategy.py ModelLab/strategy/strategy_optimizer.py ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py
       - name: MTF-2
         shell: pwsh
         working-directory: ModelLab
@@ -54,10 +54,18 @@ jobs:
         shell: pwsh
         working-directory: ModelLab
         run: python tests/v203_mtf3_timestamp_overlap_purge_selftest.py
-      - name: MTF-4
+      - name: MTF-4 deterministic strategy
         shell: pwsh
         working-directory: ModelLab
         run: python tests/v204_mtf4_strategy_contract_selftest.py
+      - name: MTF-4 Challenger lineage
+        shell: pwsh
+        working-directory: ModelLab
+        run: python tests/v205_mtf4_challenger_lineage_selftest.py
+      - name: MTF-4 Owner acceptance harness
+        shell: pwsh
+        working-directory: ModelLab
+        run: python tests/v206_mtf4_owner_acceptance_harness_selftest.py
 
   governance:
     runs-on: windows-latest

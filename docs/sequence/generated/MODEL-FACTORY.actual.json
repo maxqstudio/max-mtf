@@ -4118,13 +4118,6 @@
       "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
     },
     {
-      "action": "subprocess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/host/compute_backend.py::_cmd",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
-    },
-    {
       "action": "_cmd",
       "evidence": "STATIC",
       "from": "ModelLab/host/compute_backend.py::_nvidia_hardware",
@@ -4151,13 +4144,6 @@
       "from": "ModelLab/host/compute_backend.py::_opencl_runtime",
       "resolver": "python_ast",
       "to": "ModelLab/host/compute_backend.py::_dll_available"
-    },
-    {
-      "action": "subprocess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/host/compute_backend.py::_probe_lightgbm_gpu",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
     },
     {
       "action": "_cmd",
@@ -4277,13 +4263,6 @@
       "from": "ModelLab/host/cpu_resource.py::load_or_calibrate",
       "resolver": "python_ast",
       "to": "ModelLab/host/cpu_resource.py::physical_core_count"
-    },
-    {
-      "action": "subprocess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/host/hardware_profile.py::_cmd",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
     },
     {
       "action": "_cmd",
@@ -5973,39 +5952,11 @@
       "to": "ModelLab/research/hybrid_research.py::augment_policy_features"
     },
     {
-      "action": "p_sess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/models/onnx_export.py::verify_hybrid_onnx",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
-    },
-    {
-      "action": "t_sess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/models/onnx_export.py::verify_hybrid_onnx",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
-    },
-    {
       "action": "_validate_model_class_order",
       "evidence": "STATIC",
       "from": "ModelLab/models/onnx_export.py::verify_onnx",
       "resolver": "python_ast",
       "to": "ModelLab/models/onnx_export.py::_validate_model_class_order"
-    },
-    {
-      "action": "sess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/models/onnx_export.py::verify_onnx",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
-    },
-    {
-      "action": "sess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/models/onnx_export.py::verify_onnx_with_context",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
     },
     {
       "action": "clamp_hybrid_priority",
@@ -9046,13 +8997,6 @@
       "to": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_executable"
     },
     {
-      "action": "subprocess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
-    },
-    {
       "action": "_default_scientist_home",
       "evidence": "STATIC",
       "from": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_home",
@@ -9107,13 +9051,6 @@
       "from": "ModelLab/scientist/python/scientist_python_setup.py::setup",
       "resolver": "python_ast",
       "to": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_home"
-    },
-    {
-      "action": "subprocess.run",
-      "evidence": "STATIC",
-      "from": "ModelLab/scientist/python/scientist_python_setup.py::setup",
-      "resolver": "python_ast",
-      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
     },
     {
       "action": "_section_map",
@@ -14725,15 +14662,6 @@
       "locator": "ModelLab/strategy/strategy_optimizer_worker.py::update"
     },
     {
-      "id": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
-      "kind": "method",
-      "label": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
-      "language": "Python",
-      "line_end": 104,
-      "line_start": 104,
-      "locator": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
-    },
-    {
       "id": "ModelLab/tests/ui_information_hierarchy_selftest.py::is_expander_call",
       "kind": "function",
       "label": "ModelLab/tests/ui_information_hierarchy_selftest.py::is_expander_call",
@@ -14878,7 +14806,7 @@
       "locator": "ModelLab/ui/ui_bootstrap.py::log"
     }
   ],
-  "observed_head": "4f002eeb01e4e423f087e19588d38c02cec6e463",
+  "observed_head": "1ef8737f1af13e3ef46f06198b1476f61957e2ef",
   "schema_version": 1,
-  "source_digest": "0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20"
+  "source_digest": "c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee"
 }

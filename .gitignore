@@ -60,3 +60,9 @@ Data/MTF/bundles/*
 *.log
 *.tmp
 *.bak
+
+# Generated Strategy Challenger/runtime bundles
+EA_v2_00/challengers/*
+!EA_v2_00/challengers/README.txt
+EA_v2_00/archive/*
+!EA_v2_00/archive/README.txt

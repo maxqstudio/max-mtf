@@ -5,7 +5,7 @@
   "mode": "DURING",
   "scope": "CURRENT",
   "critical": true,
-  "status": "IMPLEMENTATION_IN_PROGRESS",
+  "status": "READY_FOR_OWNER_MTF4_FINAL_ACCEPTANCE",
   "implementation_base_sha": "",
   "plan": {
     "required": false,
@@ -19,7 +19,8 @@
     "graph": "docs/sequence/generated/MTF4-STRATEGY.actual.json",
     "diagram": "docs/sequence/generated/MTF4-STRATEGY.actual.mmd",
     "entries": [
-      "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy"
+      "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+      "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run"
     ]
   },
   "runtime_trace": {
@@ -28,7 +29,9 @@
   },
   "test_traceability_required": true,
   "tests": [
-    "ModelLab/tests/v204_mtf4_strategy_contract_selftest.py"
+    "ModelLab/tests/v204_mtf4_strategy_contract_selftest.py",
+    "ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py",
+    "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py"
   ],
   "acceptance_report": "artifacts/sequence/MTF4-STRATEGY.acceptance.json",
   "migration_note": "Imported MTF-4 design plan predates this fresh repository but cannot satisfy fresh-repo BEFORE ancestry; current acceptance uses DURING generated actual evidence."

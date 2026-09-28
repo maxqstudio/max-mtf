@@ -12,7 +12,8 @@
     "H1_SETUP_VETO",
     "M5_TIMING_VETO",
     "TAKE_OR_SKIP",
-    "STRATEGY_CHALLENGER_ELIGIBLE"
+    "STRATEGY_CHALLENGER_ELIGIBLE",
+    "OWNER_RUNTIME_ACCEPTANCE"
   ],
   "transitions": [
     {
@@ -54,6 +55,14 @@
       "side_effects": [
         "candidate lineage"
       ]
+    },
+    {
+      "from": "STRATEGY_CHALLENGER_ELIGIBLE",
+      "to": "OWNER_RUNTIME_ACCEPTANCE",
+      "action": "Verify accepted-main source binding, MetaEditor compile, MT5/Python parity and identical-window/cost control-versus-Challenger evidence without promotion",
+      "side_effects": [
+        "external Owner evidence only"
+      ]
     }
   ],
   "invariants": [
@@ -76,10 +85,13 @@
   "source_owners": [
     "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
     "EA_v2_00/baseline/Max_MTF.mq5::Mtf4EvaluateStrategy",
-    "ModelLab/strategy/strategy_optimizer.py::validate_request"
+    "ModelLab/strategy/strategy_optimizer.py::validate_request",
+    "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run"
   ],
   "tests": [
-    "ModelLab/tests/v204_mtf4_strategy_contract_selftest.py"
+    "ModelLab/tests/v204_mtf4_strategy_contract_selftest.py",
+    "ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py",
+    "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py"
   ],
   "sequence_session": "docs/sequence/sessions/MTF4-STRATEGY.during.json"
 }

@@ -13,6 +13,10 @@ FORBIDDEN_DIRS = (
     "artifacts/",
     "history/",
 )
+RUNTIME_ONLY_PREFIXES = (
+    "EA_v2_00/challengers/",
+    "EA_v2_00/archive/",
+)
 FORBIDDEN_EXT = {
     ".ex5", ".onnx", ".zip", ".7z", ".pfx", ".p12", ".pem", ".key",
     ".db", ".sqlite", ".sqlite3", ".pkl", ".joblib", ".npy", ".npz",
@@ -58,6 +62,10 @@ def main() -> int:
         if any(normalized.startswith(prefix) for prefix in FORBIDDEN_DIRS):
             findings.append(f"FORBIDDEN_PATH|{rel}")
             continue
+        if any(normalized.startswith(prefix) for prefix in RUNTIME_ONLY_PREFIXES):
+            if Path(normalized).name.lower() != "readme.txt":
+                findings.append(f"FORBIDDEN_RUNTIME_ARTIFACT|{rel}")
+                continue
 
         path = ROOT / rel
         suffix = path.suffix.lower()

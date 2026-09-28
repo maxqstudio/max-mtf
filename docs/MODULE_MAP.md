@@ -3,7 +3,7 @@
 # MODULE MAP
 
 Authority SHA: external final acceptance evidence
-Source digest: 0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20
+Source digest: c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee
 Generated/refreshed: current compiler run
 
 | Module / File | Language | Lines | Directory | Test file |
@@ -17,6 +17,7 @@ Generated/refreshed: current compiler run
 | ModelLab/acceptance/runners/max_python_bootstrap.py | Python | 144 | ModelLab/acceptance/runners | NO |
 | ModelLab/acceptance/runners/owner_mtf1_metaeditor_acceptance.py | Python | 399 | ModelLab/acceptance/runners | NO |
 | ModelLab/acceptance/runners/owner_mtf1_runtime_acceptance.py | Python | 779 | ModelLab/acceptance/runners | NO |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | Python | 558 | ModelLab/acceptance/runners | NO |
 | ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py | Python | 727 | ModelLab/acceptance/runners | NO |
 | ModelLab/acceptance/runners/run_acceptance.py | Python | 521 | ModelLab/acceptance/runners | NO |
 | ModelLab/acceptance/runners/ui_runtime_acceptance_bootstrap.py | Python | 89 | ModelLab/acceptance/runners | NO |
@@ -137,10 +138,10 @@ Generated/refreshed: current compiler run
 | ModelLab/scientist/skills/max_scientist_skills.py | Python | 142 | ModelLab/scientist/skills | NO |
 | ModelLab/strategy/__init__.py | Python | 1 | ModelLab/strategy | NO |
 | ModelLab/strategy/mtf4_strategy.py | Python | 174 | ModelLab/strategy | NO |
-| ModelLab/strategy/strategy_challenger_registry.py | Python | 384 | ModelLab/strategy | NO |
+| ModelLab/strategy/strategy_challenger_registry.py | Python | 397 | ModelLab/strategy | NO |
 | ModelLab/strategy/strategy_geometry.py | Python | 256 | ModelLab/strategy | NO |
 | ModelLab/strategy/strategy_inspector.py | Python | 76 | ModelLab/strategy | NO |
-| ModelLab/strategy/strategy_optimizer.py | Python | 1230 | ModelLab/strategy | NO |
+| ModelLab/strategy/strategy_optimizer.py | Python | 1218 | ModelLab/strategy | NO |
 | ModelLab/strategy/strategy_optimizer_jobs.py | Python | 154 | ModelLab/strategy | NO |
 | ModelLab/strategy/strategy_optimizer_runtime_acceptance.py | Python | 128 | ModelLab/strategy | NO |
 | ModelLab/strategy/strategy_optimizer_worker.py | Python | 642 | ModelLab/strategy | NO |
@@ -354,6 +355,8 @@ Generated/refreshed: current compiler run
 | ModelLab/tests/v202_mtf2_feature_label_contract_selftest.py | Python | 135 | ModelLab/tests | YES |
 | ModelLab/tests/v203_mtf3_timestamp_overlap_purge_selftest.py | Python | 171 | ModelLab/tests | YES |
 | ModelLab/tests/v204_mtf4_strategy_contract_selftest.py | Python | 240 | ModelLab/tests | YES |
+| ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py | Python | 145 | ModelLab/tests | YES |
+| ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py | Python | 103 | ModelLab/tests | YES |
 | ModelLab/tests/windows_artifact_path_selftest.py | Python | 50 | ModelLab/tests | YES |
 | ModelLab/tests/workflow_v073_selftest.py | Python | 60 | ModelLab/tests | YES |
 | ModelLab/tools/__init__.py | Python | 1 | ModelLab/tools | NO |
@@ -375,6 +378,6 @@ Generated/refreshed: current compiler run
 | migration_tools/MIGRATE_LINEAGE_FROM_v0_7_1_R2.ps1 | PowerShell | 30 | migration_tools | NO |
 | migration_tools/MIGRATE_LINEAGE_FROM_v0_7_1_R3.ps1 | PowerShell | 27 | migration_tools | NO |
 | tools/migrate_public_doc_refs.py | Python | 123 | tools | NO |
-| tools/public_source_guard.py | Python | 88 | tools | NO |
+| tools/public_source_guard.py | Python | 96 | tools | NO |
 
 Machine-derived facts do not invent semantic ownership.

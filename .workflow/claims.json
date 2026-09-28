@@ -71,7 +71,8 @@
         "ModelLab/strategy/strategy_challenger_registry.py::promote_strategy_challenger"
       ],
       "tests": [
-        "ModelLab/tests/v200_first_strategy_promotion_selftest.py"
+        "ModelLab/tests/v200_first_strategy_promotion_selftest.py",
+        "ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py"
       ],
       "runtime_evidence": [
         "NOT_PROVEN"

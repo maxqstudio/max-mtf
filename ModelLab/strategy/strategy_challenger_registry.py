@@ -14,6 +14,7 @@ from typing import Any
 
 from strategy.strategy_optimizer import (
     ABSOLUTE_BOUNDS,
+    _bounds_for_params,
     EA_SOURCE,
     RUNS_ROOT,
     apply_champion_to_canonical_ea,
@@ -48,18 +49,25 @@ def _same_number(a: Any, b: Any, tol: float = 1e-9) -> bool:
 
 
 def _same_params(a: dict, b: dict) -> bool:
-    for name, (_lo,_hi,_step,typ) in ABSOLUTE_BOUNDS.items():
+    try:
+        bounds_a=_bounds_for_params(a)
+        bounds_b=_bounds_for_params(b)
+    except Exception:
+        return False
+    if set(bounds_a) != set(bounds_b):
+        return False
+    for name, (_lo,_hi,_step,typ) in bounds_a.items():
         if name not in a or name not in b:
             return False
         if typ == "int":
             try:
-                if int(round(float(a[name]))) != int(round(float(b[name]))): return False
+                if int(round(float(a[name]))) != int(round(float(b[name]))):
+                    return False
             except Exception:
                 return False
         elif not _same_number(a[name],b[name]):
             return False
     return True
-
 
 def _atomic_json(path: Path, obj: Any) -> None:
     path.parent.mkdir(parents=True,exist_ok=True)
@@ -231,7 +239,12 @@ def _write_challenger_bundle(*, req: dict, params: dict, code: str, mq5: Path, k
         "challenger_id":code,"display_name":mq5.name,"status":"CHALLENGER","role_origin":role_origin,
         "ea_file":str(mq5),"ea_sha256":_sha(mq5),"set_file":str(set_path),"set_sha256":_sha(set_path),"metadata_file":str(meta_path),
         "params":dict(params),"kpi":dict(kpi),"hard_gates":dict(hard_gates or {}),"source_request":{
-            k:req.get(k) for k in ("installation","symbol","confirm_symbol","period","from_date","to_date","deposit","leverage","model","optimization","optimizer_kpi","optimizer_trade_sample")
+            k:req.get(k) for k in (
+                "installation","symbol","confirm_symbol","period","from_date","to_date",
+                "deposit","leverage","model","optimization","mtf_strategy_enabled",
+                "search_space","optimize_params","fixed_param_values",
+                "optimizer_kpi","optimizer_trade_sample","search_space_cardinality",
+            )
         },
         **provenance,
         "created_utc":utc_now(),"updated_utc":utc_now(),

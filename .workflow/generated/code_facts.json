@@ -77,6 +77,13 @@
     },
     {
       "directory": "ModelLab/acceptance/runners",
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "is_test": false,
+      "language": "Python",
+      "lines": 558
+    },
+    {
+      "directory": "ModelLab/acceptance/runners",
       "file": "ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py",
       "is_test": false,
       "language": "Python",
@@ -920,7 +927,7 @@
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "is_test": false,
       "language": "Python",
-      "lines": 384
+      "lines": 397
     },
     {
       "directory": "ModelLab/strategy",
@@ -941,7 +948,7 @@
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "is_test": false,
       "language": "Python",
-      "lines": 1230
+      "lines": 1218
     },
     {
       "directory": "ModelLab/strategy",
@@ -2436,6 +2443,20 @@
     },
     {
       "directory": "ModelLab/tests",
+      "file": "ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py",
+      "is_test": true,
+      "language": "Python",
+      "lines": 145
+    },
+    {
+      "directory": "ModelLab/tests",
+      "file": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py",
+      "is_test": true,
+      "language": "Python",
+      "lines": 103
+    },
+    {
+      "directory": "ModelLab/tests",
       "file": "ModelLab/tests/windows_artifact_path_selftest.py",
       "is_test": true,
       "language": "Python",
@@ -2586,7 +2607,7 @@
       "file": "tools/public_source_guard.py",
       "is_test": false,
       "language": "Python",
-      "lines": 88
+      "lines": 96
     }
   ],
   "python_calls": [
@@ -7977,6 +7998,1678 @@
     {
       "caller": "ModelLab/acceptance/runners/owner_mtf1_runtime_acceptance.py::main",
       "target_token": "_run_owner_runtime"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "target_token": "hashlib.sha256"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "target_token": "path.open"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "target_token": "iter"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "target_token": "f.read"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "target_token": "h.update"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "target_token": "h.hexdigest"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json",
+      "target_token": "json.loads"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json",
+      "target_token": "path.read_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json",
+      "target_token": "isinstance"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_write_json",
+      "target_token": "path.parent.mkdir"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_write_json",
+      "target_token": "path.write_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_write_json",
+      "target_token": "json.dumps"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_write_json",
+      "target_token": "dict"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git",
+      "target_token": "subprocess.run"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git",
+      "target_token": "join"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git",
+      "target_token": "cp.stdout.strip"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "_git"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "_git"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "_git"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "EA_SOURCE.resolve"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "ea.is_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "_git"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "as_posix"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "ea.relative_to"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "path.is_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "_json"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "strip"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "strip"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "strip"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "strip"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "strip"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "max"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "min"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "strip"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "cfg.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "any"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "all"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "resolve"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "expanduser"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "Path"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "resolve"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "expanduser"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "Path"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "terminal.is_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "meta.is_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "validate_mt5_data_root"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "discover_mt5_installations"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "target_token": "validate_mt5_data_root"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "_json"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "_bounds_for_params"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "isinstance"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "issubset"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "upper"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "isinstance"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "request.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "upper"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "request.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "request.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "request.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "request.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "isinstance"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "parity.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "isinstance"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "target_token": "apply.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "strip"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "cfg.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "strip"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "cfg.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "expanduser"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "Path"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "path.is_absolute"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "resolve"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "_candidate_metadata"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "sorted"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "EA_CHALLENGERS_DIR.glob"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "_candidate_metadata"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "candidates.append"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "isinstance"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "_bounds_for_params"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "isinstance"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "isinstance"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "payload.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "_same_params"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "expanduser"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "Path"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "ea_file.is_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "EA_SOURCE.read_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "ea_file.read_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "hexdigest"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "hashlib.sha256"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "encode"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "_normalized_strategy_logic"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "hexdigest"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "hashlib.sha256"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "encode"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "_normalized_strategy_logic"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "upper"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "request.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "request.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "Path"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "Path"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "EA_SOURCE.resolve"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "expert_dir.mkdir"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "shutil.copy2"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "deployed.with_suffix"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "ex5.exists"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "ex5.unlink"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "subprocess.run"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "deployed.with_suffix"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "log.exists"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "_read_compile_log"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "_compile_summary"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "summary.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "summary.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "re_search_error"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "ex5.is_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "evidence_dir.mkdir"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "compile_log.write_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "shutil.copy2"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "target_token": "archived_ex5.stat"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_build_backtest_ini",
+      "target_token": "join"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_build_backtest_ini",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_build_backtest_ini",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_build_backtest_ini",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir",
+      "target_token": "strip"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir",
+      "target_token": "os.environ.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir",
+      "target_token": "Path"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir",
+      "target_token": "path.mkdir"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file",
+      "target_token": "time.time"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file",
+      "target_token": "time.time"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file",
+      "target_token": "path.is_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file",
+      "target_token": "path.stat"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file",
+      "target_token": "time.sleep"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "target_token": "metrics_path.unlink"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "target_token": "Path"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "target_token": "subprocess.run"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "target_token": "_wait_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "path.open"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "list"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "csv.DictReader"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "row.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "out.update"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "row.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "row.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "row.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "any"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "math.isfinite"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "round"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "all"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "gates.values"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "target_token": "json.dumps"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "path.open"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "list"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "csv.DictReader"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "enumerate"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit.stamp",
+      "target_token": "isoformat"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit.stamp",
+      "target_token": "datetime.fromtimestamp"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit.stamp",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "evaluate_mtf4_strategy"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "isoformat"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "datetime.fromtimestamp"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "stamp"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "stamp"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "stamp"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "row.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "row.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "reason_counts.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "mismatches.append"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "mismatches.append"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "json.dumps"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "target_token": "path.is_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "target_token": "_json"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "target_token": "isinstance"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "target_token": "obj.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "isoformat"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "datetime.now"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "source_binding"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_read_config"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_resolve_installation"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "resolve_challenger"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "verify_challenger_source_identity"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "dict"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "dict"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "dict"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "challenger.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_registry_snapshot"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "challenger.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "isinstance"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "x.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "upper"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "uuid.uuid4"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "evidence_dir.mkdir"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_compile_current_ea"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "build_set_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "optimizer_default_space"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "build_set_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_common_files_dir"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "audit_file.unlink"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_append_acceptance_inputs"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_append_acceptance_inputs"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "Path"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "preset_dir.mkdir"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "control_set.write_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "challenger_set.write_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "control_ini.write_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_build_backtest_ini"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "challenger_ini.write_text"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_build_backtest_ini"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "int"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "cfg.get"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_run_backtest"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_run_backtest"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_wait_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "shutil.copy2"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "shutil.copy2"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "shutil.copy2"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "shutil.copy2"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "shutil.copy2"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "shutil.copy2"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "read_metrics"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "read_metrics"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "challenger_hard_gates"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "replay_mtf4_audit"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_registry_snapshot"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "isoformat"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "datetime.now"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "sha256_file"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "_write_json"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "FINAL_EVIDENCE.parent.mkdir"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "shutil.copy2"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "print"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "target_token": "json.dumps"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::main",
+      "target_token": "argparse.ArgumentParser"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::main",
+      "target_token": "ap.add_argument"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::main",
+      "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::main",
+      "target_token": "ap.parse_args"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::main",
+      "target_token": "run"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::main",
+      "target_token": "Path"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::main",
+      "target_token": "print"
+    },
+    {
+      "caller": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::main",
+      "target_token": "type"
     },
     {
       "caller": "ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py::_canonical_max_python",
@@ -113488,7 +115181,23 @@
     },
     {
       "caller": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
-      "target_token": "ABSOLUTE_BOUNDS.items"
+      "target_token": "_bounds_for_params"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
+      "target_token": "_bounds_for_params"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
+      "target_token": "bounds_a.items"
     },
     {
       "caller": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
@@ -116520,6 +118229,14 @@
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value",
+      "target_token": "optimizer_bounds"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value",
+      "target_token": "ValueError"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value",
       "target_token": "str"
     },
     {
@@ -116545,6 +118262,10 @@
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value",
       "target_token": "float"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic",
+      "target_token": "optimizer_bounds"
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic",
@@ -116588,15 +118309,11 @@
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "target_token": "_bounds_for_params"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
       "target_token": "src.read_text"
-    },
-    {
-      "caller": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
-      "target_token": "ValueError"
-    },
-    {
-      "caller": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
-      "target_token": "join"
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
@@ -116701,6 +118418,18 @@
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
       "target_token": "str"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "target_token": "len"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "target_token": "issubset"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "target_token": "set"
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::utc_now",
@@ -117476,6 +119205,10 @@
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries",
+      "target_token": "optimizer_bounds"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries",
       "target_token": "splitlines"
     },
     {
@@ -117536,11 +119269,7 @@
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
-      "target_token": "ValueError"
-    },
-    {
-      "caller": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
-      "target_token": "join"
+      "target_token": "_bounds_for_params"
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
@@ -117584,7 +119313,7 @@
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
-      "target_token": "ABSOLUTE_BOUNDS.items"
+      "target_token": "bounds.items"
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
@@ -117667,6 +119396,14 @@
       "target_token": "len"
     },
     {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
+      "target_token": "issubset"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
+      "target_token": "set"
+    },
+    {
       "caller": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
       "target_token": "Path"
     },
@@ -117692,11 +119429,27 @@
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "target_token": "issubset"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "target_token": "_bounds_for_params"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
       "target_token": "build_set_text"
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
       "target_token": "req.get"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "target_token": "optimizer_default_space"
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
@@ -117744,6 +119497,18 @@
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
+      "target_token": "_bounds_for_params"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
+      "target_token": "issubset"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
+      "target_token": "set"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
       "target_token": "read_ea_optimizer_defaults"
     },
     {
@@ -117760,7 +119525,7 @@
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
-      "target_token": "ABSOLUTE_BOUNDS.items"
+      "target_token": "bounds.items"
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
@@ -119161,6 +120926,10 @@
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
       "target_token": "validate_search_space"
+    },
+    {
+      "caller": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
+      "target_token": "_bounds_for_space"
     },
     {
       "caller": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
@@ -148007,6 +149776,30 @@
       "target_token": "AssertionError"
     },
     {
+      "caller": "ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py::req",
+      "target_token": "AssertionError"
+    },
+    {
+      "caller": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py::req",
+      "target_token": "AssertionError"
+    },
+    {
+      "caller": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py::parse_ini",
+      "target_token": "text.splitlines"
+    },
+    {
+      "caller": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py::parse_ini",
+      "target_token": "raw.strip"
+    },
+    {
+      "caller": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py::parse_ini",
+      "target_token": "line.startswith"
+    },
+    {
+      "caller": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py::parse_ini",
+      "target_token": "line.split"
+    },
+    {
       "caller": "ModelLab/tests/windows_artifact_path_selftest.py::req",
       "target_token": "AssertionError"
     },
@@ -171928,6 +173721,26 @@
     },
     {
       "caller": "tools/public_source_guard.py::main",
+      "target_token": "any"
+    },
+    {
+      "caller": "tools/public_source_guard.py::main",
+      "target_token": "normalized.startswith"
+    },
+    {
+      "caller": "tools/public_source_guard.py::main",
+      "target_token": "name.lower"
+    },
+    {
+      "caller": "tools/public_source_guard.py::main",
+      "target_token": "Path"
+    },
+    {
+      "caller": "tools/public_source_guard.py::main",
+      "target_token": "findings.append"
+    },
+    {
+      "caller": "tools/public_source_guard.py::main",
       "target_token": "path.suffix.lower"
     },
     {
@@ -172527,6 +174340,198 @@
       "line_end": 775,
       "line_start": 764,
       "locator": "ModelLab/acceptance/runners/owner_mtf1_runtime_acceptance.py::main",
+      "symbol": "main"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "class",
+      "line_end": 44,
+      "line_start": 43,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::MTF4OwnerAcceptanceError",
+      "symbol": "MTF4OwnerAcceptanceError"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 52,
+      "line_start": 47,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::sha256_file",
+      "symbol": "sha256_file"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 62,
+      "line_start": 55,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_json",
+      "symbol": "_json"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 67,
+      "line_start": 65,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_write_json",
+      "symbol": "_write_json"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 74,
+      "line_start": 70,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_git",
+      "symbol": "_git"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 98,
+      "line_start": 77,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::source_binding",
+      "symbol": "source_binding"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 112,
+      "line_start": 101,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_read_config",
+      "symbol": "_read_config"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 131,
+      "line_start": 115,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_resolve_installation",
+      "symbol": "_resolve_installation"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 160,
+      "line_start": 134,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_candidate_metadata",
+      "symbol": "_candidate_metadata"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 184,
+      "line_start": 163,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::resolve_challenger",
+      "symbol": "resolve_challenger"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 214,
+      "line_start": 187,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::verify_challenger_source_identity",
+      "symbol": "verify_challenger_source_identity"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 254,
+      "line_start": 217,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_compile_current_ea",
+      "symbol": "_compile_current_ea"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 258,
+      "line_start": 257,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_append_acceptance_inputs",
+      "symbol": "_append_acceptance_inputs"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 282,
+      "line_start": 261,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_build_backtest_ini",
+      "symbol": "_build_backtest_ini"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 291,
+      "line_start": 285,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_common_files_dir",
+      "symbol": "_common_files_dir"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 300,
+      "line_start": 294,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_wait_file",
+      "symbol": "_wait_file"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 308,
+      "line_start": 303,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_run_backtest",
+      "symbol": "_run_backtest"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 326,
+      "line_start": 311,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::read_metrics",
+      "symbol": "read_metrics"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 339,
+      "line_start": 329,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::challenger_hard_gates",
+      "symbol": "challenger_hard_gates"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 383,
+      "line_start": 342,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit",
+      "symbol": "replay_mtf4_audit"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "method",
+      "line_end": 354,
+      "line_start": 353,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::replay_mtf4_audit.stamp",
+      "symbol": "replay_mtf4_audit.stamp"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 396,
+      "line_start": 386,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::_registry_snapshot",
+      "symbol": "_registry_snapshot"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 542,
+      "line_start": 399,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::run",
+      "symbol": "run"
+    },
+    {
+      "file": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py",
+      "kind": "function",
+      "line_end": 554,
+      "line_start": 545,
+      "locator": "ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py::main",
       "symbol": "main"
     },
     {
@@ -184052,208 +186057,208 @@
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 35,
-      "line_start": 34,
+      "line_end": 36,
+      "line_start": 35,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::utc_now",
       "symbol": "utc_now"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 39,
-      "line_start": 38,
+      "line_end": 40,
+      "line_start": 39,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_sha",
       "symbol": "_sha"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 47,
-      "line_start": 42,
+      "line_end": 48,
+      "line_start": 43,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_same_number",
       "symbol": "_same_number"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 61,
-      "line_start": 50,
+      "line_end": 70,
+      "line_start": 51,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_same_params",
       "symbol": "_same_params"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 76,
-      "line_start": 64,
+      "line_end": 84,
+      "line_start": 72,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_atomic_json",
       "symbol": "_atomic_json"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 80,
-      "line_start": 79,
+      "line_end": 88,
+      "line_start": 87,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::registry_path",
       "symbol": "registry_path"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 85,
-      "line_start": 83,
+      "line_end": 93,
+      "line_start": 91,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_read_json",
       "symbol": "_read_json"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 111,
-      "line_start": 88,
+      "line_end": 119,
+      "line_start": 96,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock",
       "symbol": "_with_lock"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 130,
-      "line_start": 114,
+      "line_end": 138,
+      "line_start": 122,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_kpi_from_payload",
       "symbol": "_kpi_from_payload"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 148,
-      "line_start": 133,
+      "line_end": 156,
+      "line_start": 141,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_recover_matching_current_kpi",
       "symbol": "_recover_matching_current_kpi"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 164,
-      "line_start": 152,
+      "line_end": 172,
+      "line_start": 160,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_portable_project_path",
       "symbol": "_portable_project_path"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 181,
-      "line_start": 167,
+      "line_end": 189,
+      "line_start": 175,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_baseline_record",
       "symbol": "_baseline_record"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 195,
-      "line_start": 184,
+      "line_end": 203,
+      "line_start": 192,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::ensure_strategy_registry",
       "symbol": "ensure_strategy_registry"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "method",
-      "line_end": 193,
-      "line_start": 185,
+      "line_end": 201,
+      "line_start": 193,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::ensure_strategy_registry.mutate",
       "symbol": "ensure_strategy_registry.mutate"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 204,
-      "line_start": 198,
+      "line_end": 212,
+      "line_start": 206,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::load_strategy_registry",
       "symbol": "load_strategy_registry"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 211,
-      "line_start": 207,
+      "line_end": 219,
+      "line_start": 215,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_code",
       "symbol": "_code"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 220,
-      "line_start": 214,
+      "line_end": 228,
+      "line_start": 222,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_allocate_code",
       "symbol": "_allocate_code"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 241,
-      "line_start": 223,
+      "line_end": 254,
+      "line_start": 231,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle",
       "symbol": "_write_challenger_bundle"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 260,
-      "line_start": 244,
+      "line_end": 273,
+      "line_start": 257,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
       "symbol": "register_optimizer_challenger"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "method",
-      "line_end": 258,
-      "line_start": 255,
+      "line_end": 271,
+      "line_start": 268,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger.mutate",
       "symbol": "register_optimizer_challenger.mutate"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 280,
-      "line_start": 263,
+      "line_end": 293,
+      "line_start": 276,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_archive_baseline_before_first_promotion",
       "symbol": "_archive_baseline_before_first_promotion"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 291,
-      "line_start": 283,
+      "line_end": 304,
+      "line_start": 296,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::_demote_current",
       "symbol": "_demote_current"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 365,
-      "line_start": 294,
+      "line_end": 378,
+      "line_start": 307,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::promote_strategy_challenger",
       "symbol": "promote_strategy_challenger"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "method",
-      "line_end": 345,
-      "line_start": 335,
+      "line_end": 358,
+      "line_start": 348,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::promote_strategy_challenger.mutate",
       "symbol": "promote_strategy_challenger.mutate"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "function",
-      "line_end": 384,
-      "line_start": 368,
+      "line_end": 397,
+      "line_start": 381,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::delete_strategy_challenger",
       "symbol": "delete_strategy_challenger"
     },
     {
       "file": "ModelLab/strategy/strategy_challenger_registry.py",
       "kind": "method",
-      "line_end": 383,
-      "line_start": 370,
+      "line_end": 396,
+      "line_start": 383,
       "locator": "ModelLab/strategy/strategy_challenger_registry.py::delete_strategy_challenger.mutate",
       "symbol": "delete_strategy_challenger.mutate"
     },
@@ -184516,7 +186521,7 @@
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 289,
+      "line_end": 291,
       "line_start": 283,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value",
       "symbol": "_format_ea_input_value"
@@ -184524,15 +186529,15 @@
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 300,
-      "line_start": 292,
+      "line_end": 301,
+      "line_start": 293,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic",
       "symbol": "_normalized_strategy_logic"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 346,
+      "line_end": 341,
       "line_start": 303,
       "locator": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
       "symbol": "apply_champion_to_canonical_ea"
@@ -184540,360 +186545,360 @@
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 350,
-      "line_start": 349,
+      "line_end": 344,
+      "line_start": 343,
       "locator": "ModelLab/strategy/strategy_optimizer.py::utc_now",
       "symbol": "utc_now"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 357,
-      "line_start": 353,
+      "line_end": 351,
+      "line_start": 347,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_norm_path",
       "symbol": "_norm_path"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 410,
-      "line_start": 360,
+      "line_end": 404,
+      "line_start": 354,
       "locator": "ModelLab/strategy/strategy_optimizer.py::discover_mt5_installations",
       "symbol": "discover_mt5_installations"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 425,
-      "line_start": 414,
+      "line_end": 419,
+      "line_start": 408,
       "locator": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
       "symbol": "read_ea_optimizer_defaults"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 443,
-      "line_start": 427,
+      "line_end": 437,
+      "line_start": 421,
       "locator": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params",
       "symbol": "normalize_optimize_params"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 460,
-      "line_start": 445,
+      "line_end": 454,
+      "line_start": 439,
       "locator": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity",
       "symbol": "optimization_report_identity"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 464,
-      "line_start": 463,
+      "line_end": 458,
+      "line_start": 457,
       "locator": "ModelLab/strategy/strategy_optimizer.py::expected_report_identity",
       "symbol": "expected_report_identity"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 481,
-      "line_start": 467,
+      "line_end": 475,
+      "line_start": 461,
       "locator": "ModelLab/strategy/strategy_optimizer.py::report_matches_request",
       "symbol": "report_matches_request"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 497,
-      "line_start": 484,
+      "line_end": 491,
+      "line_start": 478,
       "locator": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports",
       "symbol": "discover_optimization_reports"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 509,
-      "line_start": 500,
+      "line_end": 503,
+      "line_start": 494,
       "locator": "ModelLab/strategy/strategy_optimizer.py::is_max_generated_optimizer_report",
       "symbol": "is_max_generated_optimizer_report"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 515,
-      "line_start": 512,
+      "line_end": 509,
+      "line_start": 506,
       "locator": "ModelLab/strategy/strategy_optimizer.py::optimizer_metrics_sidecar_for_report",
       "symbol": "optimizer_metrics_sidecar_for_report"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 529,
-      "line_start": 518,
+      "line_end": 523,
+      "line_start": 512,
       "locator": "ModelLab/strategy/strategy_optimizer.py::discover_bootstrap_optimization_reports",
       "symbol": "discover_bootstrap_optimization_reports"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 558,
-      "line_start": 531,
+      "line_end": 552,
+      "line_start": 525,
       "locator": "ModelLab/strategy/strategy_optimizer.py::validate_search_space",
       "symbol": "validate_search_space"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 565,
-      "line_start": 560,
+      "line_end": 559,
+      "line_start": 554,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_format_set_value",
       "symbol": "_format_set_value"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 605,
-      "line_start": 568,
+      "line_end": 599,
+      "line_start": 562,
       "locator": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
       "symbol": "build_set_text"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 612,
-      "line_start": 607,
+      "line_end": 606,
+      "line_start": 601,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_same_numeric",
       "symbol": "_same_numeric"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 638,
-      "line_start": 615,
+      "line_end": 633,
+      "line_start": 609,
       "locator": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries",
       "symbol": "parse_set_optimizer_entries"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 673,
-      "line_start": 641,
+      "line_end": 665,
+      "line_start": 635,
       "locator": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
       "symbol": "validate_champion_tester_preset_text"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 709,
-      "line_start": 676,
+      "line_end": 696,
+      "line_start": 667,
       "locator": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
       "symbol": "write_champion_tester_preset"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 730,
-      "line_start": 712,
+      "line_end": 719,
+      "line_start": 698,
       "locator": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
       "symbol": "assert_champion_ea_set_parity"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 758,
-      "line_start": 733,
+      "line_end": 746,
+      "line_start": 721,
       "locator": "ModelLab/strategy/strategy_optimizer.py::build_tester_ini",
       "symbol": "build_tester_ini"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 762,
-      "line_start": 761,
+      "line_end": 750,
+      "line_start": 749,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_strip_ns",
       "symbol": "_strip_ns"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 770,
-      "line_start": 765,
+      "line_end": 758,
+      "line_start": 753,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_row_values",
       "symbol": "_row_values"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 783,
-      "line_start": 773,
+      "line_end": 771,
+      "line_start": 761,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_f",
       "symbol": "_f"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 788,
-      "line_start": 786,
+      "line_end": 776,
+      "line_start": 774,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_i",
       "symbol": "_i"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 800,
-      "line_start": 792,
+      "line_end": 788,
+      "line_start": 780,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_parameter_signature",
       "symbol": "_parameter_signature"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 827,
-      "line_start": 802,
+      "line_end": 815,
+      "line_start": 790,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob",
       "symbol": "_parse_frame_inputs_blob"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 888,
-      "line_start": 829,
+      "line_end": 876,
+      "line_start": 817,
       "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimizer_metrics_csv",
       "symbol": "parse_optimizer_metrics_csv"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 995,
-      "line_start": 890,
+      "line_end": 983,
+      "line_start": 878,
       "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
       "symbol": "parse_optimization_xml"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "method",
-      "line_end": 911,
-      "line_start": 907,
+      "line_end": 899,
+      "line_start": 895,
       "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.col",
       "symbol": "parse_optimization_xml.col"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "method",
-      "line_end": 928,
-      "line_start": 927,
+      "line_end": 916,
+      "line_start": 915,
       "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.value_at",
       "symbol": "parse_optimization_xml.value_at"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1004,
-      "line_start": 998,
+      "line_end": 992,
+      "line_start": 986,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_passes_nonweighted_gates",
       "symbol": "_passes_nonweighted_gates"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1016,
-      "line_start": 1006,
+      "line_end": 1004,
+      "line_start": 994,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_refinement_score",
       "symbol": "_refinement_score"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1030,
-      "line_start": 1018,
+      "line_end": 1018,
+      "line_start": 1006,
       "locator": "ModelLab/strategy/strategy_optimizer.py::select_champion",
       "symbol": "select_champion"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "method",
-      "line_end": 1023,
-      "line_start": 1022,
+      "line_end": 1011,
+      "line_start": 1010,
       "locator": "ModelLab/strategy/strategy_optimizer.py::select_champion.weighted_required",
       "symbol": "select_champion.weighted_required"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1036,
-      "line_start": 1033,
+      "line_end": 1024,
+      "line_start": 1021,
       "locator": "ModelLab/strategy/strategy_optimizer.py::best_near_miss",
       "symbol": "best_near_miss"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1060,
-      "line_start": 1039,
+      "line_end": 1048,
+      "line_start": 1027,
       "locator": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine",
       "symbol": "deterministic_refine"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1074,
-      "line_start": 1063,
+      "line_end": 1062,
+      "line_start": 1051,
       "locator": "ModelLab/strategy/strategy_optimizer.py::_extract_json_object",
       "symbol": "_extract_json_object"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1091,
-      "line_start": 1077,
+      "line_end": 1079,
+      "line_start": 1065,
       "locator": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config",
       "symbol": "sanitize_scientist_llm_config"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "method",
-      "line_end": 1090,
-      "line_start": 1085,
+      "line_end": 1078,
+      "line_start": 1073,
       "locator": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config.clean",
       "symbol": "sanitize_scientist_llm_config.clean"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1135,
-      "line_start": 1094,
+      "line_end": 1123,
+      "line_start": 1082,
       "locator": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
       "symbol": "scientist_propose_ranges"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1146,
-      "line_start": 1138,
+      "line_end": 1135,
+      "line_start": 1126,
       "locator": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
       "symbol": "validate_scientist_ranges"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1154,
-      "line_start": 1149,
+      "line_end": 1142,
+      "line_start": 1137,
       "locator": "ModelLab/strategy/strategy_optimizer.py::scientist_refine",
       "symbol": "scientist_refine"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1173,
-      "line_start": 1157,
+      "line_end": 1161,
+      "line_start": 1145,
       "locator": "ModelLab/strategy/strategy_optimizer.py::champion_payload",
       "symbol": "champion_payload"
     },
     {
       "file": "ModelLab/strategy/strategy_optimizer.py",
       "kind": "function",
-      "line_end": 1229,
-      "line_start": 1176,
+      "line_end": 1217,
+      "line_start": 1164,
       "locator": "ModelLab/strategy/strategy_optimizer.py::validate_request",
       "symbol": "validate_request"
     },
@@ -190002,6 +192007,30 @@
       "symbol": "req"
     },
     {
+      "file": "ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py",
+      "kind": "function",
+      "line_end": 29,
+      "line_start": 27,
+      "locator": "ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py::req",
+      "symbol": "req"
+    },
+    {
+      "file": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py",
+      "kind": "function",
+      "line_end": 15,
+      "line_start": 13,
+      "locator": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py::req",
+      "symbol": "req"
+    },
+    {
+      "file": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py",
+      "kind": "function",
+      "line_end": 49,
+      "line_start": 41,
+      "locator": "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py::parse_ini",
+      "symbol": "parse_ini"
+    },
+    {
       "file": "ModelLab/tests/windows_artifact_path_selftest.py",
       "kind": "function",
       "line_end": 11,
@@ -191700,30 +193729,30 @@
     {
       "file": "tools/public_source_guard.py",
       "kind": "function",
-      "line_end": 49,
-      "line_start": 42,
+      "line_end": 53,
+      "line_start": 46,
       "locator": "tools/public_source_guard.py::tracked_files",
       "symbol": "tracked_files"
     },
     {
       "file": "tools/public_source_guard.py",
       "kind": "function",
-      "line_end": 84,
-      "line_start": 52,
+      "line_end": 92,
+      "line_start": 56,
       "locator": "tools/public_source_guard.py::main",
       "symbol": "main"
     }
   ],
   "schema_version": 1,
-  "source_digest": "0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20",
+  "source_digest": "c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee",
   "source_summary": {
-    "files": 368,
+    "files": 371,
     "languages": {
       "PowerShell": 7,
-      "Python": 361
+      "Python": 364
     },
-    "lines": 59792,
-    "test_files": 212
+    "lines": 60607,
+    "test_files": 214
   },
   "tests": [
     "ModelLab/tests/abort_lifecycle_selftest.py",
@@ -191936,6 +193965,8 @@
     "ModelLab/tests/v202_mtf2_feature_label_contract_selftest.py",
     "ModelLab/tests/v203_mtf3_timestamp_overlap_purge_selftest.py",
     "ModelLab/tests/v204_mtf4_strategy_contract_selftest.py",
+    "ModelLab/tests/v205_mtf4_challenger_lineage_selftest.py",
+    "ModelLab/tests/v206_mtf4_owner_acceptance_harness_selftest.py",
     "ModelLab/tests/windows_artifact_path_selftest.py",
     "ModelLab/tests/workflow_v073_selftest.py"
   ]
