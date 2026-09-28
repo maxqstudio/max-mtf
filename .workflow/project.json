@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "MAX MTF",
+    "repository": "maxqstudio/max-mtf",
+    "purpose": "Quantitative trading research and governed deployment system for strategy optimization, multi-timeframe data authority, model research, Challenger/Champion lifecycle, ONNX deployment, and MT5 execution.",
+    "primary_users": [
+      "Owner/operator",
+      "Control Room reviewer",
+      "Builder/repair agent",
+      "Quant research reviewer"
+    ],
+    "expected_outcomes": [
+      "Produce causally valid research evidence and qualified Strategy/Model Challengers",
+      "Keep promotion authority explicit and auditable",
+      "Preserve exact source, data, model, and runtime lineage across research and deployment",
+      "Fail closed when required scientific or external runtime evidence is missing",
+      "Keep the public Git repository source-only; Owner runtime evidence and private market/runtime artifacts stay outside public Git history"
+    ]
+  },
+  "technology": {
+    "languages": [
+      "Python 3.12",
+      "MQL5",
+      "Windows CMD/PowerShell",
+      "JSON/CSV/Markdown"
+    ],
+    "frameworks": [
+      "Streamlit",
+      "LangGraph",
+      "MetaTrader5 Python",
+      "PyTorch",
+      "scikit-learn",
+      "XGBoost",
+      "LightGBM",
+      "ONNX/ONNX Runtime"
+    ],
+    "persistence": [
+      "JSON/CSV file-backed state",
+      "SQLite LangGraph checkpoints",
+      "sealed evidence artifacts",
+      "MT5 reports and trade logs"
+    ],
+    "external_systems": [
+      "MetaTrader 5 terminal",
+      "MetaEditor",
+      "MT5 Strategy Tester",
+      "NVIDIA/CUDA runtime when required",
+      "LLM provider endpoints",
+      "browser runtime for UI acceptance"
+    ]
+  },
+  "entry_points": [
+    {
+      "name": "GitHub Windows Source CI",
+      "path": ".github/workflows/windows-source-ci.yml",
+      "purpose": "Run public-source safety, MTF source contracts, and governance validation on GitHub-hosted Windows runners"
+    },
+    {
+      "name": "Control Room",
+      "path": "ModelLab/START_UI.cmd",
+      "purpose": "Bootstrap Python 3.12 environment and start Streamlit operator UI"
+    },
+    {
+      "name": "Local cumulative acceptance",
+      "path": "ModelLab/RUN_ACCEPTANCE.cmd",
+      "purpose": "Run the canonical ordered 75-gate local acceptance suite"
+    },
+    {
+      "name": "MTF-1 final closure",
+      "path": "ModelLab/RUN_MTF1_FINAL_CLOSURE.cmd",
+      "purpose": "Bind fresh local acceptance, Owner MT5 proof, MetaEditor proof and final read-only verification"
+    },
+    {
+      "name": "MTF-1 Owner runtime",
+      "path": "ModelLab/RUN_MTF1_OWNER_ACCEPTANCE.cmd",
+      "purpose": "Collect and verify native Owner MT5 M5/M15/H1/H4 evidence"
+    },
+    {
+      "name": "Strategy Optimizer worker",
+      "path": "ModelLab/strategy/strategy_optimizer_worker.py",
+      "purpose": "Execute bounded MT5 strategy optimization rounds and produce Strategy Challengers"
+    },
+    {
+      "name": "AUTO Factory",
+      "path": "ModelLab/factory/factory_orchestrator.py::run_auto_factory",
+      "purpose": "Route production AUTO research to LangGraph and deterministic Factory stages"
+    },
+    {
+      "name": "Scientist Chat",
+      "path": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "purpose": "Provide read-only evidence-grounded research discussion and bounded analysis"
+    }
+  ],
+  "constraints": [
+    "maxqstudio/max-mtf main is public source authority; work branches are candidates until accepted and merged.",
+    "Public Git history is source-only: Owner runtime evidence, broker provenance, market data, compiled artifacts, model binaries, local calibration and secrets are forbidden.",
+    "GitHub Actions is development/source-test authority between Owner acceptance checkpoints; environment-dependent MT5/MetaEditor runtime acceptance is Owner-only at phase end.",
+    "No automatic Strategy or Model Champion replacement.",
+    "Scientist is advisory and cannot override deterministic admission, PASS/FAIL, protected holdouts, or promotion.",
+    "Editable configuration does not rewrite frozen execution evidence.",
+    "MTF-1 closure prerequisite for later phases is historical external evidence; every later implementation, research, runtime and promotion claim requires phase-specific proof.",
+    "Generated canonical documentation under docs/ is a deterministic projection of .workflow specs plus observed source facts.",
+    "Current Skill_Workflow authority is maxqstudio/Skill_Workflow@1f9b48b9a3bf29bf2929a7d38b1ec9a645dfb720."
+  ]
+}

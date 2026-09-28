@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "TRUTH-BASELINE-001",
+      "claim": "BASELINE-MTF-V2 is an active baseline release and is not a Strategy Champion or Model Champion.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        "ModelLab/runtime/active_release.json",
+        "ModelLab/runtime/strategy_authority.json",
+        "ModelLab/governance/champion_registry.json"
+      ],
+      "tests": [
+        "ModelLab/tests/v200_zero_champion_lifecycle_selftest.py",
+        "ModelLab/tests/v201_active_release_identity_selftest.py"
+      ],
+      "runtime_evidence": [
+        "NOT_APPLICABLE"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "TRUTH-MTF-DATA-001",
+      "claim": "MTF-1 canonical value authority is M5; M15/H1/H4 are deterministic derived views and native higher-timeframe bars are parity evidence.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        "ModelLab/mtf/mtf_data.py::build_canonical_views",
+        "ModelLab/mtf/mtf_data.py::build_alignment_index"
+      ],
+      "tests": [
+        "ModelLab/tests/v201_mtf_value_authority_selftest.py",
+        "ModelLab/tests/v201_mtf_resampling_parity_selftest.py",
+        "ModelLab/tests/v201_mtf_alignment_selftest.py"
+      ],
+      "runtime_evidence": [
+        "PASS_EXTERNAL_OWNER_MT5_NATIVE_MTF_RUNTIME"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "TRUTH-MTF-CLOSE-001",
+      "claim": "MTF-1 final closure requires fresh local acceptance, Owner MT5 proof, MetaEditor proof and one shared closure_run_id; local 75/75 alone is insufficient.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        "ModelLab/mtf/mtf1_closure_bootstrap.py::_run_canonical_chain",
+        "ModelLab/mtf/mtf1_final_closure.py::verify_final_closure_payload"
+      ],
+      "tests": [
+        "ModelLab/tests/v201_closure_run_id_binding_selftest.py",
+        "ModelLab/tests/v201_final_verify_read_only_selftest.py"
+      ],
+      "runtime_evidence": [
+        "PASS_EXTERNAL_MTF1_FINAL_CLOSURE_5c30bf4e7fb17be94c988a90eccf1975"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "TRUTH-STRATEGY-001",
+      "claim": "An eligible Strategy Optimizer winner becomes a Strategy Challenger; Strategy Champion changes only through explicit promotion.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner",
+        "ModelLab/strategy/strategy_challenger_registry.py::promote_strategy_challenger"
+      ],
+      "tests": [
+        "ModelLab/tests/v200_first_strategy_promotion_selftest.py"
+      ],
+      "runtime_evidence": [
+        "NOT_PROVEN"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "TRUTH-MODEL-001",
+      "claim": "A qualified Factory winner is registered as Model Challenger before explicit production Champion promotion.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        "ModelLab/factory/factory_challenger_bridge.py::register_factory_winner_as_model_challenger",
+        "ModelLab/factory/governance.py::promote"
+      ],
+      "tests": [
+        "ModelLab/tests/v200_zero_champion_lifecycle_selftest.py"
+      ],
+      "runtime_evidence": [
+        "NOT_PROVEN"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "TRUTH-SCIENTIST-001",
+      "claim": "Scientist is advisory; deterministic code owns candidate admission, scientific PASS/FAIL, protected holdout authority and promotion.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        "ModelLab/models/models.py::strict_scientist_candidate_admission",
+        "ModelLab/factory/governance.py::assess_promotion"
+      ],
+      "tests": [
+        "ModelLab/tests/v201_scientist_strict_candidate_admission_selftest.py",
+        "ModelLab/tests/v201_scientist_hypothesis_admission_selftest.py"
+      ],
+      "runtime_evidence": [
+        "NOT_APPLICABLE"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "TRUTH-AUTO-001",
+      "claim": "Production AUTO source entry delegates to LangGraph while deterministic Factory stage functions remain stage authority; legacy compatibility is explicitly gated.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        "ModelLab/factory/factory_orchestrator.py::run_auto_factory",
+        "ModelLab/max_graph/factory_graph.py::run_auto_factory_graph"
+      ],
+      "tests": [
+        "ModelLab/tests/scientist_knowledge_sync_selftest.py"
+      ],
+      "runtime_evidence": [
+        "NOT_PROVEN"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "TRUTH-EA-001",
+      "claim": "Current EA retains the inherited seven-family legacy path and also contains an explicit opt-in MTF-4 deterministic H4/H1/M15/M5 Strategy Challenger path; M15 remains sole direction authority and MTF-4 Owner runtime is not yet proven.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        "EA_v2_00/baseline/Max_MTF.mq5::Mtf4EvaluateStrategy",
+        "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+        "ModelLab/strategy/strategy_optimizer.py::validate_request"
+      ],
+      "tests": [
+        "ModelLab/tests/v204_mtf4_strategy_contract_selftest.py"
+      ],
+      "runtime_evidence": [
+        "NOT_PROVEN"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "TRUTH-SCI-PY-001",
+      "claim": "Scientist Python is bounded analytical support and does not change Factory/governance authority.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+        "governance/CURRENT_AUTHORITY.json"
+      ],
+      "tests": [
+        "ModelLab/tests/v201_scientist_python_analysis_runtime_selftest.py"
+      ],
+      "runtime_evidence": [
+        "PASS_EXTERNAL_OWNER_WINDOWS_RUNTIME"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "TRUTH-DOC-001",
+      "claim": "STRICT documentation is generated from .workflow semantic specs plus observed code facts; generated canonical Markdown under docs/ is not upstream authority.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        ".workflow/tools/generate_project_docs.py",
+        ".workflow/tools/validate_project_docs.py"
+      ],
+      "tests": [
+        ".workflow/tools/validate_project_docs.py",
+        ".workflow/tools/sync_project_truth.py"
+      ],
+      "runtime_evidence": [
+        "NOT_APPLICABLE"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "TRUTH-SEQUENCE-001",
+      "claim": "In fresh max-mtf history, active critical workflows use DURING generated actual evidence while completed imported phases use AFTER/HISTORICAL evidence; retrospective BEFORE ancestry is not asserted.",
+      "documents": [
+        "PROJECT_TRUTH_SYNC.md"
+      ],
+      "source_owners": [
+        ".workflow/tools/generate_sequence_actual.py",
+        ".workflow/tools/validate_sequence_contract.py",
+        ".workflow/tools/validate_sequence_sessions.py"
+      ],
+      "tests": [
+        ".workflow/tools/validate_sequence_sessions.py"
+      ],
+      "runtime_evidence": [
+        "NOT_APPLICABLE"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "relations": []
+}

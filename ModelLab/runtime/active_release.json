@@ -1,0 +1,15 @@
+{
+  "schema": "MAX_MTF_ACTIVE_RELEASE_V1",
+  "release_id": "BASELINE-MTF-V2",
+  "status": "BASELINE_NOT_CHAMPION",
+  "ea": {
+    "path": "EA_v2_00/baseline/Max_MTF.mq5",
+    "sha256": "9fa6e50231cec4d907b14e3237a118bf3bac22c55682f83ea06303e73c140345",
+    "version": "2.00"
+  },
+  "model": null,
+  "strategy_champion_id": null,
+  "model_champion_id": null,
+  "deployed_mt5": null,
+  "generated_utc": "2026-09-18T07:55:25.787204+00:00"
+}

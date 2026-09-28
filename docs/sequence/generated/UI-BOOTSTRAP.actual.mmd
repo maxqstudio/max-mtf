@@ -1,0 +1,93 @@
+%% GENERATED FILE - DO NOT EDIT
+%% SOURCE_DIGEST: 0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20
+%% OBSERVED_HEAD: 4f002eeb01e4e423f087e19588d38c02cec6e463
+%% GENERATED_BY: generate_sequence_actual.py
+sequenceDiagram
+    participant ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0 as ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256
+    participant ModelLab_factory_factory_jobs_py__atomic_write_json_1 as ModelLab/factory/factory_jobs.py::atomic_write_json
+    participant ModelLab_host_accelerator_bootstrap_py___run_2 as ModelLab/host/accelerator_bootstrap.py::_run
+    participant ModelLab_host_accelerator_bootstrap_py__install_torch_for_host_3 as ModelLab/host/accelerator_bootstrap.py::install_torch_for_host
+    participant ModelLab_host_accelerator_bootstrap_py__nvidia_detected_4 as ModelLab/host/accelerator_bootstrap.py::nvidia_detected
+    participant ModelLab_host_accelerator_bootstrap_py__torch_cuda_probe_5 as ModelLab/host/accelerator_bootstrap.py::torch_cuda_probe
+    participant ModelLab_scientist_python_scientist_python_child_py___SafeArray_6 as ModelLab/scientist/python/scientist_python_child.py::_SafeArray
+    participant ModelLab_scientist_python_scientist_python_child_py___build_capabilities_split_7 as ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split
+    participant ModelLab_scientist_python_scientist_python_child_py___callable_call_8 as ModelLab/scientist/python/scientist_python_child.py::_callable.call
+    participant ModelLab_scientist_python_scientist_python_child_py___plain_stat_9 as ModelLab/scientist/python/scientist_python_child.py::_plain_stat
+    participant ModelLab_scientist_python_scientist_python_child_py___reject_generated_callables_10 as ModelLab/scientist/python/scientist_python_child.py::_reject_generated_callables
+    participant ModelLab_scientist_python_scientist_python_child_py___scalar_11 as ModelLab/scientist/python/scientist_python_child.py::_scalar
+    participant ModelLab_scientist_python_scientist_python_child_py___unwrap_12 as ModelLab/scientist/python/scientist_python_child.py::_unwrap
+    participant ModelLab_scientist_skills_max_scientist_skills_py___section_map_flush_13 as ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush
+    participant ModelLab_strategy_strategy_optimizer_worker_py__atomic_14 as ModelLab/strategy/strategy_optimizer_worker.py::atomic
+    participant ModelLab_strategy_strategy_optimizer_worker_py__evidence_dir_15 as ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir
+    participant ModelLab_strategy_strategy_optimizer_worker_py__now_16 as ModelLab/strategy/strategy_optimizer_worker.py::now
+    participant ModelLab_strategy_strategy_optimizer_worker_py__update_17 as ModelLab/strategy/strategy_optimizer_worker.py::update
+    participant ModelLab_tests_stage10_scientist_chat_backend_contract_selftest_py__test_job_cas_and_idempotency_run_18 as ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run
+    participant ModelLab_ui_ui_bootstrap_py___filesystem_candidates_19 as ModelLab/ui/ui_bootstrap.py::_filesystem_candidates
+    participant ModelLab_ui_ui_bootstrap_py___is_target_20 as ModelLab/ui/ui_bootstrap.py::_is_target
+    participant ModelLab_ui_ui_bootstrap_py___registry_candidates_21 as ModelLab/ui/ui_bootstrap.py::_registry_candidates
+    participant ModelLab_ui_ui_bootstrap_py___run_capture_22 as ModelLab/ui/ui_bootstrap.py::_run_capture
+    participant ModelLab_ui_ui_bootstrap_py__discover_python312_23 as ModelLab/ui/ui_bootstrap.py::discover_python312
+    participant ModelLab_ui_ui_bootstrap_py__ensure_python312_24 as ModelLab/ui/ui_bootstrap.py::ensure_python312
+    participant ModelLab_ui_ui_bootstrap_py__log_25 as ModelLab/ui/ui_bootstrap.py::log
+    participant ModelLab_ui_ui_bootstrap_py__main_26 as ModelLab/ui/ui_bootstrap.py::main
+    participant ModelLab_ui_ui_launcher_py___check_host_python_27 as ModelLab/ui/ui_launcher.py::_check_host_python
+    participant ModelLab_ui_ui_launcher_py___free_streamlit_port_28 as ModelLab/ui/ui_launcher.py::_free_streamlit_port
+    participant ModelLab_ui_ui_launcher_py___host_version_29 as ModelLab/ui/ui_launcher.py::_host_version
+    participant ModelLab_ui_ui_launcher_py___pip_env_30 as ModelLab/ui/ui_launcher.py::_pip_env
+    participant ModelLab_ui_ui_launcher_py___remove_path_31 as ModelLab/ui/ui_launcher.py::_remove_path
+    participant ModelLab_ui_ui_launcher_py___venv_version_32 as ModelLab/ui/ui_launcher.py::_venv_version
+    participant ModelLab_ui_ui_launcher_py__digest_requirements_33 as ModelLab/ui/ui_launcher.py::digest_requirements
+    participant ModelLab_ui_ui_launcher_py__ensure_env_34 as ModelLab/ui/ui_launcher.py::ensure_env
+    participant ModelLab_ui_ui_launcher_py__main_35 as ModelLab/ui/ui_launcher.py::main
+    participant ModelLab_ui_ui_launcher_py__venv_python_36 as ModelLab/ui/ui_launcher.py::venv_python
+    ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0->>ModelLab_strategy_strategy_optimizer_worker_py__update_17: h.update [STATIC]
+    ModelLab_factory_factory_jobs_py__atomic_write_json_1->>ModelLab_scientist_skills_max_scientist_skills_py___section_map_flush_13: f.flush [STATIC]
+    ModelLab_host_accelerator_bootstrap_py___run_2->>ModelLab_tests_stage10_scientist_chat_backend_contract_selftest_py__test_job_cas_and_idempotency_run_18: subprocess.run [STATIC]
+    ModelLab_host_accelerator_bootstrap_py__install_torch_for_host_3->>ModelLab_host_accelerator_bootstrap_py___run_2: _run [STATIC]
+    ModelLab_host_accelerator_bootstrap_py__install_torch_for_host_3->>ModelLab_host_accelerator_bootstrap_py__nvidia_detected_4: nvidia_detected [STATIC]
+    ModelLab_host_accelerator_bootstrap_py__install_torch_for_host_3->>ModelLab_host_accelerator_bootstrap_py__torch_cuda_probe_5: torch_cuda_probe [STATIC]
+    ModelLab_host_accelerator_bootstrap_py__nvidia_detected_4->>ModelLab_host_accelerator_bootstrap_py___run_2: _run [STATIC]
+    ModelLab_host_accelerator_bootstrap_py__torch_cuda_probe_5->>ModelLab_host_accelerator_bootstrap_py___run_2: _run [STATIC]
+    ModelLab_host_accelerator_bootstrap_py__torch_cuda_probe_5->>ModelLab_strategy_strategy_optimizer_worker_py__update_17: payload.update [STATIC]
+    ModelLab_scientist_python_scientist_python_child_py___build_capabilities_split_7->>ModelLab_scientist_python_scientist_python_child_py___plain_stat_9: _plain_stat [STATIC]
+    ModelLab_scientist_python_scientist_python_child_py___build_capabilities_split_7->>ModelLab_scientist_python_scientist_python_child_py___unwrap_12: _unwrap [STATIC]
+    ModelLab_scientist_python_scientist_python_child_py___callable_call_8->>ModelLab_scientist_python_scientist_python_child_py___reject_generated_callables_10: _reject_generated_callables [STATIC]
+    ModelLab_scientist_python_scientist_python_child_py___callable_call_8->>ModelLab_scientist_python_scientist_python_child_py___unwrap_12: _unwrap [STATIC]
+    ModelLab_scientist_python_scientist_python_child_py___plain_stat_9->>ModelLab_scientist_python_scientist_python_child_py___SafeArray_6: _SafeArray [STATIC]
+    ModelLab_scientist_python_scientist_python_child_py___plain_stat_9->>ModelLab_scientist_python_scientist_python_child_py___scalar_11: _scalar [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__atomic_14->>ModelLab_factory_factory_jobs_py__atomic_write_json_1: atomic_write_json [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_17->>ModelLab_strategy_strategy_optimizer_worker_py__atomic_14: atomic [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_17->>ModelLab_strategy_strategy_optimizer_worker_py__evidence_dir_15: evidence_dir [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_17->>ModelLab_strategy_strategy_optimizer_worker_py__now_16: now [STATIC]
+    ModelLab_ui_ui_bootstrap_py___is_target_20->>ModelLab_tests_stage10_scientist_chat_backend_contract_selftest_py__test_job_cas_and_idempotency_run_18: subprocess.run [STATIC]
+    ModelLab_ui_ui_bootstrap_py___run_capture_22->>ModelLab_tests_stage10_scientist_chat_backend_contract_selftest_py__test_job_cas_and_idempotency_run_18: subprocess.run [STATIC]
+    ModelLab_ui_ui_bootstrap_py___run_capture_22->>ModelLab_ui_ui_bootstrap_py__log_25: log [STATIC]
+    ModelLab_ui_ui_bootstrap_py__discover_python312_23->>ModelLab_ui_ui_bootstrap_py___filesystem_candidates_19: _filesystem_candidates [STATIC]
+    ModelLab_ui_ui_bootstrap_py__discover_python312_23->>ModelLab_ui_ui_bootstrap_py___is_target_20: _is_target [STATIC]
+    ModelLab_ui_ui_bootstrap_py__discover_python312_23->>ModelLab_ui_ui_bootstrap_py___registry_candidates_21: _registry_candidates [STATIC]
+    ModelLab_ui_ui_bootstrap_py__discover_python312_23->>ModelLab_ui_ui_bootstrap_py___run_capture_22: _run_capture [STATIC]
+    ModelLab_ui_ui_bootstrap_py__ensure_python312_24->>ModelLab_ui_ui_bootstrap_py__discover_python312_23: discover_python312 [STATIC]
+    ModelLab_ui_ui_bootstrap_py__ensure_python312_24->>ModelLab_ui_ui_bootstrap_py__log_25: log [STATIC]
+    ModelLab_ui_ui_bootstrap_py__main_26->>ModelLab_scientist_python_scientist_python_child_py___callable_call_8: subprocess.call [STATIC]
+    ModelLab_ui_ui_bootstrap_py__main_26->>ModelLab_ui_ui_bootstrap_py__ensure_python312_24: ensure_python312 [STATIC]
+    ModelLab_ui_ui_bootstrap_py__main_26->>ModelLab_ui_ui_bootstrap_py__log_25: log [STATIC]
+    ModelLab_ui_ui_launcher_py___check_host_python_27->>ModelLab_scientist_python_scientist_python_child_py___build_capabilities_split_7: sys.version.split [STATIC]
+    ModelLab_ui_ui_launcher_py___check_host_python_27->>ModelLab_ui_ui_launcher_py___host_version_29: _host_version [STATIC]
+    ModelLab_ui_ui_launcher_py___venv_version_32->>ModelLab_scientist_python_scientist_python_child_py___build_capabilities_split_7: out.split [STATIC]
+    ModelLab_ui_ui_launcher_py___venv_version_32->>ModelLab_ui_ui_launcher_py__venv_python_36: venv_python [STATIC]
+    ModelLab_ui_ui_launcher_py__digest_requirements_33->>ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0: hashlib.sha256 [STATIC]
+    ModelLab_ui_ui_launcher_py__digest_requirements_33->>ModelLab_strategy_strategy_optimizer_worker_py__update_17: h.update [STATIC]
+    ModelLab_ui_ui_launcher_py__ensure_env_34->>ModelLab_host_accelerator_bootstrap_py__install_torch_for_host_3: install_torch_for_host [STATIC]
+    ModelLab_ui_ui_launcher_py__ensure_env_34->>ModelLab_host_accelerator_bootstrap_py__nvidia_detected_4: nvidia_detected [STATIC]
+    ModelLab_ui_ui_launcher_py__ensure_env_34->>ModelLab_host_accelerator_bootstrap_py__torch_cuda_probe_5: torch_cuda_probe [STATIC]
+    ModelLab_ui_ui_launcher_py__ensure_env_34->>ModelLab_ui_ui_launcher_py___check_host_python_27: _check_host_python [STATIC]
+    ModelLab_ui_ui_launcher_py__ensure_env_34->>ModelLab_ui_ui_launcher_py___pip_env_30: _pip_env [STATIC]
+    ModelLab_ui_ui_launcher_py__ensure_env_34->>ModelLab_ui_ui_launcher_py___remove_path_31: _remove_path [STATIC]
+    ModelLab_ui_ui_launcher_py__ensure_env_34->>ModelLab_ui_ui_launcher_py___venv_version_32: _venv_version [STATIC]
+    ModelLab_ui_ui_launcher_py__ensure_env_34->>ModelLab_ui_ui_launcher_py__digest_requirements_33: digest_requirements [STATIC]
+    ModelLab_ui_ui_launcher_py__ensure_env_34->>ModelLab_ui_ui_launcher_py__venv_python_36: venv_python [STATIC]
+    ModelLab_ui_ui_launcher_py__main_35->>ModelLab_scientist_python_scientist_python_child_py___callable_call_8: subprocess.call [STATIC]
+    ModelLab_ui_ui_launcher_py__main_35->>ModelLab_ui_ui_launcher_py___free_streamlit_port_28: _free_streamlit_port [STATIC]
+    ModelLab_ui_ui_launcher_py__main_35->>ModelLab_ui_ui_launcher_py___pip_env_30: _pip_env [STATIC]
+    ModelLab_ui_ui_launcher_py__main_35->>ModelLab_ui_ui_launcher_py__ensure_env_34: ensure_env [STATIC]
+    ModelLab_ui_ui_launcher_py__main_35->>ModelLab_ui_ui_launcher_py__venv_python_36: venv_python [STATIC]

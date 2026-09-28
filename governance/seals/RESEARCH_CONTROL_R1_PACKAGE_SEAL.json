@@ -1,0 +1,69 @@
+{
+  "schema": "MAX_RESEARCH_CONTROL_R1_PACKAGE_SEAL_V1",
+  "generated_utc": "2026-09-13T06:57:42.712225+00:00",
+  "package_root": "MAX_RESEARCH_AGENT_ONNX_FACTORY_v0_7_5_R6_RESEARCH_CONTROL_R1_CANDIDATE",
+  "scientific_authority": "v0.7.5 R6",
+  "control_revision": "Research Control R1",
+  "candidate_status": "OWNER_VISUAL_RUNTIME_REVIEW_REQUIRED",
+  "cumulative_acceptance": {
+    "status": "PASS",
+    "passed": 84,
+    "total": 84,
+    "first_failed_gate": null
+  },
+  "post_acceptance_checks": {
+    "release_sync_selftest": "PASS",
+    "research_mode_authority_selftest": "PASS",
+    "manual_research_contract_selftest": "PASS",
+    "manual_orchestrator_selftest": "PASS",
+    "scientist_chat_streaming_selftest": "PASS",
+    "scientist_chat_readonly_selftest": "PASS",
+    "data_quality_authority_selftest": "PASS",
+    "cpcv_seed_confirmation_selftest": "PASS",
+    "python_compileall": "PASS"
+  },
+  "tree_digest_excluding_this_seal_sha256": "65206a854235b629bfa5626b7dbac6a7a993e25f915ab8211fe6505a8c11a362",
+  "file_count_excluding_this_seal": 439,
+  "external_gates": [
+    {
+      "gate": "STREAMLIT_1_63_RUNTIME_RENDER_ACCEPTANCE",
+      "status": "NOT_RUN_ENVIRONMENT_BLOCKED",
+      "reason": "Build container has no Streamlit 1.63/Python 3.12 runtime and cannot reach PyPI. One-click real-browser runner RUN_UI_RUNTIME_ACCEPTANCE.ps1 is included for Owner-machine execution; it now checks an adaptive viewport matrix plus the exact Owner primary-screen size. Static browser evidence does not substitute for this gate."
+    },
+    {
+      "gate": "OWNER_DESKTOP_EXACT_RESOLUTION_RENDER",
+      "status": "NOT_RUN",
+      "reason": "Exact Owner desktop resolution is not available in build environment. The included runtime runner reads the Owner primary-screen size and performs a dedicated real Streamlit render automatically."
+    },
+    {
+      "gate": "PYTHON_ONNX_CONVERTER_RUNTIME_PARITY",
+      "status": "NOT_RUN_HERE",
+      "reason": "onnx/onnxruntime/skl2onnx/onnxmltools unavailable in build environment; source contract enforces temporal batch=1 but real ORT parity still requires Owner runtime"
+    },
+    {
+      "gate": "TRANSFORMER_FAMILY_ONNX_RUNTIME_PARITY",
+      "status": "NOT_RUN_HERE",
+      "reason": "PatchTST/iTransformer/TFT real ONNX export plus onnxruntime parity requires Owner runtime toolchain"
+    },
+    {
+      "gate": "TRANSFORMER_FAMILY_CUDA_RUNTIME",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "CUDA GPU runtime/training must be accepted on the Owner PC when the RTX system is available"
+    },
+    {
+      "gate": "MQL5_METAEDITOR_COMPILE",
+      "status": "NOT_RUN_HERE",
+      "reason": "MetaEditor unavailable in build environment"
+    },
+    {
+      "gate": "OWNER_MT5_DATA_QUALITY_RECONCILIATION_AND_GAP_REPAIR",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Actual same-broker MetaTrader5 reconciliation plus Strategy Tester first-write-wins gap-fill requires Owner MT5 installation/feed"
+    },
+    {
+      "gate": "OWNER_MT5_RUNTIME_LIVE_PLUS_TESTER",
+      "status": "REQUIRED_ON_OWNER_MACHINE"
+    }
+  ],
+  "truth_note": "Local selftest/compile seal does not substitute for Owner visual/runtime or external toolchain evidence."
+}

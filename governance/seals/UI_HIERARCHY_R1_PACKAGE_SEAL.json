@@ -1,0 +1,109 @@
+{
+  "schema": "MAX_UI_HIERARCHY_R1_PACKAGE_SEAL_V1",
+  "generated_utc": "2026-09-13T11:58:04.888256+00:00",
+  "package_root": "MAX_RESEARCH_AGENT_ONNX_FACTORY_v0_7_5_R6_UI_HIERARCHY_R1_CANDIDATE",
+  "scientific_authority": "v0.7.5 R6",
+  "control_revision": "Research Control R1",
+  "knowledge_revision": "Scientist Knowledge R1",
+  "chat_state_revision": "Chat State R1",
+  "ui_revision": "UI Hierarchy R1",
+  "status": "CANDIDATE_OWNER_VISUAL_RUNTIME_REVIEW_REQUIRED",
+  "exact_tree_local_acceptance": {
+    "status": "PASS",
+    "passed": 86,
+    "total": 86,
+    "first_failed_gate": null,
+    "generated_utc": "2026-09-13T11:56:18.252263+00:00"
+  },
+  "workflow_contract_audit": {
+    "status": "PASS",
+    "checks_passed": 23,
+    "checks_total": 23,
+    "first_failed_gate": null
+  },
+  "scientist_knowledge_sync": {
+    "watched_source_doc_files": 82,
+    "status": "PASS"
+  },
+  "scientific_core_preservation": {
+    "selected_core_all_byte_identical": true,
+    "selected_core_count": 13
+  },
+  "ui_hierarchy_contract": {
+    "scope": "Data through Advanced",
+    "primary_content": "FLAT_SECTIONS",
+    "nested_card_in_card": false,
+    "advanced_single_concern_navigation": true,
+    "scientist_groups": [
+      "Connection",
+      "Routing",
+      "Chat profile",
+      "Cost"
+    ]
+  },
+  "acceptance_harness": {
+    "guided_lineage_smoke_native_thread_cap": "ACCEPTANCE_ONLY",
+    "shell_owned_terminal_smoke": true,
+    "production_cpu_calibration_changed": false
+  },
+  "sealed_file_count_excluding_seal": 460,
+  "sealed_bytes_excluding_seal": 4603305,
+  "tree_sha256_excluding_seal": "9856f9ada894b2928059a12264aef00c37b8e56df7d0a69d07ec61413c6a3a0d",
+  "tree_hash_method": "SHA256 over sorted UTF-8 relative_path + NUL + binary SHA256(file) + LF",
+  "critical_artifact_sha256": {
+    "governance/CURRENT_AUTHORITY.json": "2883dc978e3a6987e44f9160d9f7e74ddafe69e3a0dd845b3d5a6c4c56588c08",
+    "governance/PACKAGE_MANIFEST.json": "a9743697f2134013245368099ea7cac7180447d7becd2ad3b7a76ccbc81488cb",
+    "governance/PROJECT_HANDOFF_CURRENT.md": "f0f24f85fbc16f3a7608302f84a31311937e210f885f32b901be3c1fd89798ad",
+    "governance/CONTRACT_AUDIT_INDEX.md": "6564d83b75c5433367b05d9433f66574577d5f538e58c482b283c577b470134f",
+    "README_FIRST.md": "75d7da161d4bda7a626bcddfb0ee1e9abb013f664fc36a00e8fce29a23178b67",
+    "ModelLab/evidence/current/BUILD_ACCEPTANCE_v0_7_5_R6.json": "3b9e26cb7579cc2892a0c6e281905a84413239f80f260c4abec43ffddba622ea",
+    "ModelLab/docs/ui/UI_HIERARCHY_R1.md": "6f6cc41a9f58f9c8f56104e4078b7dd9f66ac0ca5e574770dfa3d023384df4a0",
+    "ModelLab/docs/repairs/REPAIR_v0_7_5_R6_UI_HIERARCHY_R1.md": "69bc7d78e9cae392b7ea17ccfc7448f25aa1b496ac038b733be84fcb2868ff39",
+    "ModelLab/evidence/ui/UI_HIERARCHY_R1_ACCEPTANCE.json": "93613159f326283acd2e21848df64cc73f88ec2b400fe0d2bf16434f1dd7fb1d",
+    "ModelLab/evidence/ui/UI_HIERARCHY_R1_BACKEND_AUDIT.json": "5ad73f325aa18f6a684bf75e888c3fff15dcf2963818662ba6b2fc65fbbe51da",
+    "ModelLab/SCIENTIST_KNOWLEDGE_BASE.json": "e17ff4f50a216b27df67fe66885a22316bfa5ff21f6ce34850110a56147eb99e",
+    "ModelLab/evidence/current/WORKFLOW_CONTRACT_AUDIT_R1.json": "c9ded2224868b367c2ce3acf2155c43404a9885e4c9f9ee65d6888a0ff2eafd8"
+  },
+  "external_gates": [
+    {
+      "gate": "STREAMLIT_1_63_RUNTIME_RENDER_ACCEPTANCE",
+      "status": "NOT_RUN_ENVIRONMENT_BLOCKED",
+      "reason": "Build container has no Streamlit 1.63/Python 3.12 runtime and cannot reach PyPI. One-click real-browser runner RUN_UI_RUNTIME_ACCEPTANCE.ps1 is included for Owner-machine execution; it now checks an adaptive viewport matrix plus the exact Owner primary-screen size. Static browser evidence does not substitute for this gate."
+    },
+    {
+      "gate": "OWNER_DESKTOP_EXACT_RESOLUTION_RENDER",
+      "status": "NOT_RUN",
+      "reason": "Exact Owner desktop resolution is not available in build environment. The included runtime runner reads the Owner primary-screen size and performs a dedicated real Streamlit render automatically."
+    },
+    {
+      "gate": "PYTHON_ONNX_CONVERTER_RUNTIME_PARITY",
+      "status": "NOT_RUN_HERE",
+      "reason": "onnx/onnxruntime/skl2onnx/onnxmltools unavailable in build environment; source contract enforces temporal batch=1 but real ORT parity still requires Owner runtime"
+    },
+    {
+      "gate": "TRANSFORMER_FAMILY_ONNX_RUNTIME_PARITY",
+      "status": "NOT_RUN_HERE",
+      "reason": "PatchTST/iTransformer/TFT real ONNX export plus onnxruntime parity requires Owner runtime toolchain"
+    },
+    {
+      "gate": "TRANSFORMER_FAMILY_CUDA_RUNTIME",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "CUDA GPU runtime/training must be accepted on the Owner PC when the RTX system is available"
+    },
+    {
+      "gate": "MQL5_METAEDITOR_COMPILE",
+      "status": "NOT_RUN_HERE",
+      "reason": "MetaEditor unavailable in build environment"
+    },
+    {
+      "gate": "OWNER_MT5_DATA_QUALITY_RECONCILIATION_AND_GAP_REPAIR",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Actual same-broker MetaTrader5 reconciliation plus Strategy Tester first-write-wins gap-fill requires Owner MT5 installation/feed"
+    },
+    {
+      "gate": "OWNER_MT5_RUNTIME_LIVE_PLUS_TESTER",
+      "status": "REQUIRED_ON_OWNER_MACHINE"
+    }
+  ],
+  "truth_rule": "This seal proves local source/contracts/selftests only. Owner Windows Streamlit visual/runtime acceptance remains required; external ONNX/CUDA/MT5/MetaEditor gates remain NOT_RUN/required where stated."
+}

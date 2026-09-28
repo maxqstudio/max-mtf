@@ -1,0 +1,109 @@
+{
+  "schema": "MAX_EXTERNAL_RUNTIME_GATES_V1",
+  "authority": "SINGLE_CANONICAL_EXTERNAL_RUNTIME_GATE_REGISTRY",
+  "rule": "External/runtime gates are never promoted to PASS without actual execution evidence from the required environment.",
+  "gates": [
+    {
+      "gate": "LANGGRAPH_RUNTIME_CHECKPOINT_RESUME",
+      "status": "NOT_RUN_ENVIRONMENT_BLOCKED",
+      "reason": "Requires pinned LangGraph + SQLite checkpoint runtime execution. Static/source acceptance does not substitute for actual StateGraph checkpoint/resume evidence."
+    },
+    {
+      "gate": "STREAMLIT_1_63_RUNTIME_RENDER_ACCEPTANCE",
+      "status": "NOT_RUN_ENVIRONMENT_BLOCKED",
+      "reason": "Requires real Streamlit/Python browser rendering through RUN_UI_RUNTIME_ACCEPTANCE.ps1 on the Owner environment.",
+      "runner": "ModelLab/acceptance/runners/RUN_UI_RUNTIME_ACCEPTANCE.ps1",
+      "bootstrap_module": "acceptance.runners.ui_runtime_acceptance_bootstrap",
+      "browser_module": "acceptance.runners.ui_runtime_browser_acceptance",
+      "requirements": "ModelLab/requirements/requirements-ui-acceptance.txt",
+      "required_pin": "playwright==1.57.0",
+      "dependency_runtime": "acceptance-only ui-acceptance312 environment"
+    },
+    {
+      "gate": "OWNER_DESKTOP_EXACT_RESOLUTION_RENDER",
+      "status": "NOT_RUN",
+      "reason": "Requires the Owner primary-screen resolution and real rendered UI evidence."
+    },
+    {
+      "gate": "GOLDEN_RESEARCH_E2E_FULL_RUNTIME",
+      "status": "NOT_RUN_HERE",
+      "reason": "Requires the full runtime dependency stack and one-click ModelLab/tools/research/RUN_RESEARCH_E2E.cmd execution."
+    },
+    {
+      "gate": "PYTHON_ONNX_CONVERTER_RUNTIME_PARITY",
+      "status": "NOT_RUN_HERE",
+      "reason": "Requires real onnx/onnxruntime conversion and inference parity execution."
+    },
+    {
+      "gate": "TRANSFORMER_FAMILY_ONNX_RUNTIME_PARITY",
+      "status": "NOT_RUN_HERE",
+      "reason": "PatchTST/iTransformer/TFT real ONNX export and onnxruntime parity require the Owner runtime toolchain."
+    },
+    {
+      "gate": "CUDA_ACCELERATOR_BOOTSTRAP_RUNTIME",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Launcher must detect NVIDIA, install the pinned CUDA PyTorch stack, and execute an actual CUDA tensor probe; silent CPU fallback is not accepted when NVIDIA is detected."
+    },
+    {
+      "gate": "TRANSFORMER_FAMILY_CUDA_RUNTIME",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "CUDA training/runtime for supported temporal families must be accepted on the Owner GPU environment."
+    },
+    {
+      "gate": "MQL5_METAEDITOR_COMPILE",
+      "status": "NOT_RUN_HERE",
+      "reason": "Requires MetaEditor on the Owner MT5 environment."
+    },
+    {
+      "gate": "OWNER_MT5_DATA_QUALITY_RECONCILIATION_AND_GAP_REPAIR",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires actual same-broker MetaTrader5 reconciliation and Strategy Tester first-write-wins gap repair evidence."
+    },
+    {
+      "gate": "OWNER_MT5_RUNTIME_LIVE_PLUS_TESTER",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires real Owner MT5 terminal/live plus Strategy Tester runtime evidence."
+    },
+    {
+      "gate": "OWNER_MT5_STRATEGY_OPTIMIZER_V2_RUNTIME",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires real MetaEditor compile, native MT5 optimization report, R-accounting sidecar parity, and Strategy Challenger export evidence."
+    },
+    {
+      "gate": "OWNER_MT5_NATIVE_MTF_RESAMPLING_PARITY",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires actual Owner MT5 native M5/M15/H1/H4 bars for one exact broker/symbol/window. The MTF-1 closure contract archives those raw inputs, replays canonical resampling/parity/alignment/DQ/lineage, and production verification re-fetches the same Owner MT5 window and requires native-input identity.",
+      "runner": "ModelLab/RUN_MTF1_OWNER_ACCEPTANCE.cmd",
+      "evidence": "owner_acceptance/evidence/mtf1/OWNER_MTF1_RUNTIME_ACCEPTANCE.json",
+      "requirement": "REQUIRED_ON_OWNER_MACHINE",
+      "verifier": "ModelLab/acceptance/verification/VERIFY_MTF1_OWNER_ACCEPTANCE.cmd"
+    },
+    {
+      "gate": "OWNER_MT5_TERMINAL_DATA_ROOT_DETECTION",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires actual MT5 Python runtime provenance and terminal_info().data_path resolving to a verified terminal data root containing MQL5; MTF-1 closure evidence is closure-run-bound and live-revalidated, while raw drive roots/unverified paths fail closed.",
+      "runner": "ModelLab/RUN_MTF1_OWNER_ACCEPTANCE.cmd",
+      "evidence": "owner_acceptance/evidence/mtf1/OWNER_MTF1_RUNTIME_ACCEPTANCE.json",
+      "requirement": "REQUIRED_ON_OWNER_MACHINE",
+      "verifier": "ModelLab/acceptance/verification/VERIFY_MTF1_OWNER_ACCEPTANCE.cmd"
+    },
+    {
+      "gate": "METAEDITOR_MAX_MTF_V2_COMPILE",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires actual MetaEditor compilation of the exact canonical Max_MTF.mq5 on the Owner Windows/MT5 toolchain. The MTF-1 closure verifier verifies the current configured MetaEditor executable/hash and size, exact command/source/deployed MQ5 identity, the exact signed subprocess process_returncode as DIAGNOSTIC_ONLY evidence matching the archived process record, a freshly reparsed zero-error compiler log identifying the expected source, and a fresh binary-like EX5 whose archived mtime is inside the compile execution window for the same closure_run_id. Compile PASS is reconstructed from log + fresh EX5 + execution provenance; process return code alone is not semantic compile authority.",
+      "requirement": "REQUIRED_ON_OWNER_MACHINE",
+      "runner": "ModelLab/RUN_MTF1_METAEDITOR_ACCEPTANCE.cmd",
+      "evidence": "owner_acceptance/evidence/mtf1/OWNER_MTF1_METAEDITOR_ACCEPTANCE.json",
+      "verifier": "ModelLab/acceptance/verification/VERIFY_MTF1_METAEDITOR_ACCEPTANCE.cmd"
+    },
+    {
+      "gate": "MTF_STRATEGY_RUNTIME",
+      "status": "NOT_APPLICABLE_MTF1",
+      "reason": "MTF-1 is data authority only; MTF strategy execution is intentionally not implemented or activated until later phases.",
+      "requirement": "NOT_APPLICABLE_MTF1"
+    }
+  ],
+  "project": "Max MTF",
+  "phase": "MTF_1_EXTERNAL_EXECUTION_PROOF",
+  "requirement_semantics": "requirement is the immutable phase obligation; runtime PASS exists only in candidate-bound execution evidence. MTF-1 production verifiers replay archived raw artifacts, revalidate current configured external tools/runtime, and bind all closure evidence to one closure_run_id."
+}

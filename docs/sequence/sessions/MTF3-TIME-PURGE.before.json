@@ -1,0 +1,45 @@
+{
+  "acceptance_report": "artifacts/sequence/MTF3-TIME-PURGE.acceptance.json",
+  "actual": {
+    "diagram": "docs/sequence/generated/MTF3-TIME-PURGE.actual.mmd",
+    "entries": [
+      "ModelLab/mtf/mtf3.py::build_mtf3_split_authority"
+    ],
+    "graph": "docs/sequence/generated/MTF3-TIME-PURGE.actual.json",
+    "source_digest": "2794f13119e1dab671914aeea5609ae94ad51eebd7dac3c8623d6891aa6e93ce"
+  },
+  "critical": true,
+  "implementation_base_sha": "",
+  "mode": "AFTER",
+  "phase": "MTF_3_TIME_BASED_PURGE",
+  "plan": {
+    "required": false,
+    "frozen": false,
+    "contract": "",
+    "frozen_commit": "",
+    "sha256": "",
+    "diagram": ""
+  },
+  "runtime_trace": {
+    "graph": "",
+    "required": false
+  },
+  "schema_version": 1,
+  "scope": "HISTORICAL",
+  "session_id": "MTF3-TIME-PURGE",
+  "status": "ACCEPTED_HISTORICAL_SUPERSEDED_BY_MTF4",
+  "test_traceability_required": true,
+  "tests": [
+    "ModelLab/tests/v203_mtf3_timestamp_overlap_purge_selftest.py"
+  ],
+  "acceptance_evidence": {
+    "targeted_selftest": "ModelLab/tests/v203_mtf3_timestamp_overlap_purge_selftest.py",
+    "real_canonical_audit": "ModelLab/evidence/current/MTF3_REAL_CANONICAL_PURGE_AUDIT_V1.json",
+    "cumulative_acceptance": "ModelLab/evidence/current/BUILD_ACCEPTANCE_v2_0_1.json",
+    "cumulative_report_sha256": "ad4fdd1a687ba144c111bec0db471117f6d2bf8429e532e47e35a5a16cb0b4f1",
+    "source_tree_signature": "17d692267a125587a9dc44ff25809c515a1a5c8c1693488fbb3d8268ae9da6e4",
+    "suite_signature": "1a29b4c5db502a49fbc4ecefbde8772f400ac836b051505ce1c4c44f6246f1c1",
+    "research_trainability_claimed": false
+  },
+  "migration_note": "Completed phase imported into fresh max-mtf without asserting old repository Git ancestry. Historical runtime provenance remains external."
+}

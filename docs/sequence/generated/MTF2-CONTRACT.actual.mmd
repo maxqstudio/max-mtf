@@ -1,0 +1,78 @@
+%% GENERATED FILE - DO NOT EDIT
+%% SOURCE_DIGEST: 2794f13119e1dab671914aeea5609ae94ad51eebd7dac3c8623d6891aa6e93ce
+%% OBSERVED_HEAD: cd6a777b78e2715f7c62f7921af189d407f40985
+%% GENERATED_BY: generate_sequence_actual.py
+sequenceDiagram
+    participant ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0 as ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256
+    participant ModelLab_factory_factory_jobs_py__atomic_write_json_1 as ModelLab/factory/factory_jobs.py::atomic_write_json
+    participant ModelLab_mtf_mtf2_py__MTF2Error_2 as ModelLab/mtf/mtf2.py::MTF2Error
+    participant ModelLab_mtf_mtf2_py___first_touch_3 as ModelLab/mtf/mtf2.py::_first_touch
+    participant ModelLab_mtf_mtf2_py___numeric_4 as ModelLab/mtf/mtf2.py::_numeric
+    participant ModelLab_mtf_mtf2_py___primitive_frame_5 as ModelLab/mtf/mtf2.py::_primitive_frame
+    participant ModelLab_mtf_mtf2_py___require_columns_6 as ModelLab/mtf/mtf2.py::_require_columns
+    participant ModelLab_mtf_mtf2_py___role_columns_7 as ModelLab/mtf/mtf2.py::_role_columns
+    participant ModelLab_mtf_mtf2_py___validate_geometry_8 as ModelLab/mtf/mtf2.py::_validate_geometry
+    participant ModelLab_mtf_mtf2_py___zscore_last_9 as ModelLab/mtf/mtf2.py::_zscore_last
+    participant ModelLab_mtf_mtf2_py__audit_feature_causality_10 as ModelLab/mtf/mtf2.py::audit_feature_causality
+    participant ModelLab_mtf_mtf2_py__build_ablation_views_11 as ModelLab/mtf/mtf2.py::build_ablation_views
+    participant ModelLab_mtf_mtf2_py__build_directional_labels_12 as ModelLab/mtf/mtf2.py::build_directional_labels
+    participant ModelLab_mtf_mtf2_py__build_mtf2_dataset_13 as ModelLab/mtf/mtf2.py::build_mtf2_dataset
+    participant ModelLab_mtf_mtf2_py__build_role_feature_matrix_14 as ModelLab/mtf/mtf2.py::build_role_feature_matrix
+    participant ModelLab_mtf_mtf2_py__feature_schema_payload_15 as ModelLab/mtf/mtf2.py::feature_schema_payload
+    participant ModelLab_mtf_mtf2_py__feature_schema_sha256_16 as ModelLab/mtf/mtf2.py::feature_schema_sha256
+    participant ModelLab_mtf_mtf_data_py__audit_alignment_17 as ModelLab/mtf/mtf_data.py::audit_alignment
+    participant ModelLab_scientist_skills_max_scientist_skills_py___section_map_flush_18 as ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush
+    participant ModelLab_strategy_strategy_optimizer_worker_py__atomic_19 as ModelLab/strategy/strategy_optimizer_worker.py::atomic
+    participant ModelLab_strategy_strategy_optimizer_worker_py__evidence_dir_20 as ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir
+    participant ModelLab_strategy_strategy_optimizer_worker_py__now_21 as ModelLab/strategy/strategy_optimizer_worker.py::now
+    participant ModelLab_strategy_strategy_optimizer_worker_py__update_22 as ModelLab/strategy/strategy_optimizer_worker.py::update
+    participant ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___BoolSeries_23 as ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_BoolSeries
+    participant ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_24 as ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series
+    participant ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_25 as ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype
+    participant ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_isna_26 as ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna
+    participant ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_map_27 as ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.map
+    ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0->>ModelLab_strategy_strategy_optimizer_worker_py__update_22: h.update [STATIC]
+    ModelLab_factory_factory_jobs_py__atomic_write_json_1->>ModelLab_scientist_skills_max_scientist_skills_py___section_map_flush_18: f.flush [STATIC]
+    ModelLab_mtf_mtf2_py___numeric_4->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_25: astype [STATIC]
+    ModelLab_mtf_mtf2_py___primitive_frame_5->>ModelLab_mtf_mtf2_py__MTF2Error_2: MTF2Error [STATIC]
+    ModelLab_mtf_mtf2_py___primitive_frame_5->>ModelLab_mtf_mtf2_py___numeric_4: _numeric [STATIC]
+    ModelLab_mtf_mtf2_py___primitive_frame_5->>ModelLab_mtf_mtf2_py___require_columns_6: _require_columns [STATIC]
+    ModelLab_mtf_mtf2_py___primitive_frame_5->>ModelLab_mtf_mtf2_py___zscore_last_9: _zscore_last [STATIC]
+    ModelLab_mtf_mtf2_py___primitive_frame_5->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_25: closes.dt.hour.astype [STATIC]
+    ModelLab_mtf_mtf2_py___require_columns_6->>ModelLab_mtf_mtf2_py__MTF2Error_2: MTF2Error [STATIC]
+    ModelLab_mtf_mtf2_py___validate_geometry_8->>ModelLab_mtf_mtf2_py__MTF2Error_2: MTF2Error [STATIC]
+    ModelLab_mtf_mtf2_py__audit_feature_causality_10->>ModelLab_mtf_mtf2_py___role_columns_7: _role_columns [STATIC]
+    ModelLab_mtf_mtf2_py__audit_feature_causality_10->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_isna_26: dep.isna [STATIC]
+    ModelLab_mtf_mtf2_py__audit_feature_causality_10->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_isna_26: source.isna [STATIC]
+    ModelLab_mtf_mtf2_py__build_ablation_views_11->>ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0: hashlib.sha256 [STATIC]
+    ModelLab_mtf_mtf2_py__build_ablation_views_11->>ModelLab_mtf_mtf2_py___role_columns_7: _role_columns [STATIC]
+    ModelLab_mtf_mtf2_py__build_ablation_views_11->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_25: astype [STATIC]
+    ModelLab_mtf_mtf2_py__build_directional_labels_12->>ModelLab_mtf_mtf2_py__MTF2Error_2: MTF2Error [STATIC]
+    ModelLab_mtf_mtf2_py__build_directional_labels_12->>ModelLab_mtf_mtf2_py___first_touch_3: _first_touch [STATIC]
+    ModelLab_mtf_mtf2_py__build_directional_labels_12->>ModelLab_mtf_mtf2_py___numeric_4: _numeric [STATIC]
+    ModelLab_mtf_mtf2_py__build_directional_labels_12->>ModelLab_mtf_mtf2_py___primitive_frame_5: _primitive_frame [STATIC]
+    ModelLab_mtf_mtf2_py__build_directional_labels_12->>ModelLab_mtf_mtf2_py___require_columns_6: _require_columns [STATIC]
+    ModelLab_mtf_mtf2_py__build_directional_labels_12->>ModelLab_mtf_mtf2_py___validate_geometry_8: _validate_geometry [STATIC]
+    ModelLab_mtf_mtf2_py__build_directional_labels_12->>ModelLab_strategy_strategy_optimizer_worker_py__update_22: result.update [STATIC]
+    ModelLab_mtf_mtf2_py__build_directional_labels_12->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_25: m5_close.astype [STATIC]
+    ModelLab_mtf_mtf2_py__build_mtf2_dataset_13->>ModelLab_mtf_mtf2_py__MTF2Error_2: MTF2Error [STATIC]
+    ModelLab_mtf_mtf2_py__build_mtf2_dataset_13->>ModelLab_mtf_mtf2_py__audit_feature_causality_10: audit_feature_causality [STATIC]
+    ModelLab_mtf_mtf2_py__build_mtf2_dataset_13->>ModelLab_mtf_mtf2_py__build_ablation_views_11: build_ablation_views [STATIC]
+    ModelLab_mtf_mtf2_py__build_mtf2_dataset_13->>ModelLab_mtf_mtf2_py__build_directional_labels_12: build_directional_labels [STATIC]
+    ModelLab_mtf_mtf2_py__build_mtf2_dataset_13->>ModelLab_mtf_mtf2_py__build_role_feature_matrix_14: build_role_feature_matrix [STATIC]
+    ModelLab_mtf_mtf2_py__build_role_feature_matrix_14->>ModelLab_mtf_mtf2_py__MTF2Error_2: MTF2Error [STATIC]
+    ModelLab_mtf_mtf2_py__build_role_feature_matrix_14->>ModelLab_mtf_mtf2_py___primitive_frame_5: _primitive_frame [STATIC]
+    ModelLab_mtf_mtf2_py__build_role_feature_matrix_14->>ModelLab_mtf_mtf2_py___role_columns_7: _role_columns [STATIC]
+    ModelLab_mtf_mtf2_py__build_role_feature_matrix_14->>ModelLab_mtf_mtf2_py__feature_schema_sha256_16: feature_schema_sha256 [STATIC]
+    ModelLab_mtf_mtf2_py__build_role_feature_matrix_14->>ModelLab_mtf_mtf_data_py__audit_alignment_17: audit_alignment [STATIC]
+    ModelLab_mtf_mtf2_py__build_role_feature_matrix_14->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_25: astype [STATIC]
+    ModelLab_mtf_mtf2_py__build_role_feature_matrix_14->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_map_27: map [STATIC]
+    ModelLab_mtf_mtf2_py__feature_schema_sha256_16->>ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0: hashlib.sha256 [STATIC]
+    ModelLab_mtf_mtf2_py__feature_schema_sha256_16->>ModelLab_mtf_mtf2_py__feature_schema_payload_15: feature_schema_payload [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__atomic_19->>ModelLab_factory_factory_jobs_py__atomic_write_json_1: atomic_write_json [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_22->>ModelLab_strategy_strategy_optimizer_worker_py__atomic_19: atomic [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_22->>ModelLab_strategy_strategy_optimizer_worker_py__evidence_dir_20: evidence_dir [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_22->>ModelLab_strategy_strategy_optimizer_worker_py__now_21: now [STATIC]
+    ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_25->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_24: _Series [STATIC]
+    ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_isna_26->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___BoolSeries_23: _BoolSeries [STATIC]
+    ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_map_27->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_24: _Series [STATIC]

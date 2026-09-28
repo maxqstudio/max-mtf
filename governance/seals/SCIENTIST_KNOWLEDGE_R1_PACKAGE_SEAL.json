@@ -1,0 +1,83 @@
+{
+  "schema": "MAX_SCIENTIST_KNOWLEDGE_R1_PACKAGE_SEAL_V1",
+  "generated_utc": "2026-09-13T07:36:55.253059+00:00",
+  "package_root": "MAX_RESEARCH_AGENT_ONNX_FACTORY_v0_7_5_R6_RESEARCH_CONTROL_R1_SCIENTIST_KNOWLEDGE_R1_CANDIDATE",
+  "scientific_authority": "v0.7.5 R6",
+  "control_revision": "Research Control R1",
+  "knowledge_revision": "Scientist Knowledge R1",
+  "status": "CANDIDATE_OWNER_VISUAL_RUNTIME_REVIEW_REQUIRED",
+  "exact_tree_local_acceptance": {
+    "status": "PASS",
+    "passed": 85,
+    "total": 85,
+    "first_failed_gate": null,
+    "generated_utc": "2026-09-13T07:35:45.061412+00:00"
+  },
+  "workflow_contract_audit": {
+    "status": "PASS",
+    "checks_passed": 21,
+    "checks_total": 21,
+    "first_failed_gate": null
+  },
+  "scientist_knowledge_sync": {
+    "watched_source_doc_files": 81,
+    "status": "PASS"
+  },
+  "scientific_core_preservation": {
+    "selected_core_all_byte_identical": true,
+    "selected_core_count": 13
+  },
+  "sealed_file_count_excluding_seal": 450,
+  "sealed_bytes_excluding_seal": 4543145,
+  "tree_sha256_excluding_seal": "2aabbab0fa3aa9221fb6ac76afb761794d878d8928ed3337bb973b766af156e1",
+  "critical_artifact_sha256": {
+    "governance/CURRENT_AUTHORITY.json": "0b8ed46438b5221b83db21f9ff7adefa12e94686dfdb8b19b2d2cd3cb1b66cb7",
+    "governance/PACKAGE_MANIFEST.json": "80274388e241d11f5226cc5176a95e4c223b1e4343010902c3283f31caaa03f0",
+    "ModelLab/SCIENTIST_KNOWLEDGE_BASE.json": "b872a7b28d597ab678621202b9a4213256c807d60a99bb5990b6f149e72bd8d2",
+    "ModelLab/evidence/current/WORKFLOW_CONTRACT_AUDIT_R1.json": "936765eba5d3e2d2792cbb309775c0fe664e167422d0da965971aed0da768ffa",
+    "ModelLab/evidence/research/SCIENTIST_KNOWLEDGE_R1_ACCEPTANCE.json": "f00f351c538afe844da6aabe8c2ca612f08239a1a339f358eff88a22384f4748",
+    "ModelLab/evidence/research/SCIENTIST_KNOWLEDGE_R1_BACKEND_AUDIT.json": "4b754d4274e3cb123a54fe38ad6c21b5da4d661a755c8e10cd2e6fdee804aadd"
+  },
+  "external_gates": [
+    {
+      "gate": "STREAMLIT_1_63_RUNTIME_RENDER_ACCEPTANCE",
+      "status": "NOT_RUN_ENVIRONMENT_BLOCKED",
+      "reason": "Build container has no Streamlit 1.63/Python 3.12 runtime and cannot reach PyPI. One-click real-browser runner RUN_UI_RUNTIME_ACCEPTANCE.ps1 is included for Owner-machine execution; it now checks an adaptive viewport matrix plus the exact Owner primary-screen size. Static browser evidence does not substitute for this gate."
+    },
+    {
+      "gate": "OWNER_DESKTOP_EXACT_RESOLUTION_RENDER",
+      "status": "NOT_RUN",
+      "reason": "Exact Owner desktop resolution is not available in build environment. The included runtime runner reads the Owner primary-screen size and performs a dedicated real Streamlit render automatically."
+    },
+    {
+      "gate": "PYTHON_ONNX_CONVERTER_RUNTIME_PARITY",
+      "status": "NOT_RUN_HERE",
+      "reason": "onnx/onnxruntime/skl2onnx/onnxmltools unavailable in build environment; source contract enforces temporal batch=1 but real ORT parity still requires Owner runtime"
+    },
+    {
+      "gate": "TRANSFORMER_FAMILY_ONNX_RUNTIME_PARITY",
+      "status": "NOT_RUN_HERE",
+      "reason": "PatchTST/iTransformer/TFT real ONNX export plus onnxruntime parity requires Owner runtime toolchain"
+    },
+    {
+      "gate": "TRANSFORMER_FAMILY_CUDA_RUNTIME",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "CUDA GPU runtime/training must be accepted on the Owner PC when the RTX system is available"
+    },
+    {
+      "gate": "MQL5_METAEDITOR_COMPILE",
+      "status": "NOT_RUN_HERE",
+      "reason": "MetaEditor unavailable in build environment"
+    },
+    {
+      "gate": "OWNER_MT5_DATA_QUALITY_RECONCILIATION_AND_GAP_REPAIR",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Actual same-broker MetaTrader5 reconciliation plus Strategy Tester first-write-wins gap-fill requires Owner MT5 installation/feed"
+    },
+    {
+      "gate": "OWNER_MT5_RUNTIME_LIVE_PLUS_TESTER",
+      "status": "REQUIRED_ON_OWNER_MACHINE"
+    }
+  ],
+  "truth_rule": "This seal proves the packaged local tree/evidence only. It does not promote Owner visual/runtime, real ONNX Runtime/CUDA, MetaEditor/MQL5, or same-broker MT5 gates that remain NOT_RUN/required externally."
+}

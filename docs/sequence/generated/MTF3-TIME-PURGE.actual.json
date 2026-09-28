@@ -1,0 +1,509 @@
+{
+  "coverage": {
+    "js_ts_http_module_scan": true,
+    "limitations": [
+      "dynamic dispatch",
+      "dependency injection",
+      "reflection",
+      "callbacks/events",
+      "framework magic not visible statically",
+      "JS/TS function-level call ownership is not fully resolved"
+    ],
+    "python_ast": true,
+    "python_parse_failures": [],
+    "python_route_decorators": true,
+    "runtime_trace": false
+  },
+  "edges": [
+    {
+      "action": "h.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "f.flush",
+      "evidence": "STATIC",
+      "from": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::_ids_sha256",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "astype",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::_protected_arrays",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::_split_fingerprint",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "MTF3Error",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::_utc_series",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::MTF3Error"
+    },
+    {
+      "action": "values.isna",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::_utc_series",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna"
+    },
+    {
+      "action": "MTF3Error",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::audit_time_purge_split",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::MTF3Error"
+    },
+    {
+      "action": "_overlap_witness",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::audit_time_purge_split",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::_overlap_witness"
+    },
+    {
+      "action": "_protected_arrays",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::audit_time_purge_split",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::_protected_arrays"
+    },
+    {
+      "action": "MTF3Error",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::build_comparison_intervals",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::MTF3Error"
+    },
+    {
+      "action": "_utc_series",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::build_comparison_intervals",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::_utc_series"
+    },
+    {
+      "action": "astype",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::build_comparison_intervals",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype"
+    },
+    {
+      "action": "execution.isna",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::build_comparison_intervals",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::build_mtf3_split_authority",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "_ids_sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::build_mtf3_split_authority",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::_ids_sha256"
+    },
+    {
+      "action": "build_comparison_intervals",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::build_mtf3_split_authority",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::build_comparison_intervals"
+    },
+    {
+      "action": "mtf3_cpcv_splits",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::build_mtf3_split_authority",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::mtf3_cpcv_splits"
+    },
+    {
+      "action": "mtf3_expanding_folds",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::build_mtf3_split_authority",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::mtf3_expanding_folds"
+    },
+    {
+      "action": "astype",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::build_mtf3_split_authority",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype"
+    },
+    {
+      "action": "MTF3Error",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::mtf3_cpcv_splits",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::MTF3Error"
+    },
+    {
+      "action": "_split_fingerprint",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::mtf3_cpcv_splits",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::_split_fingerprint"
+    },
+    {
+      "action": "purge_train_against_protected",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::mtf3_cpcv_splits",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::purge_train_against_protected"
+    },
+    {
+      "action": "astype",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::mtf3_cpcv_splits",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype"
+    },
+    {
+      "action": "MTF3Error",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::mtf3_expanding_folds",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::MTF3Error"
+    },
+    {
+      "action": "_split_fingerprint",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::mtf3_expanding_folds",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::_split_fingerprint"
+    },
+    {
+      "action": "purge_train_against_protected",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::mtf3_expanding_folds",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::purge_train_against_protected"
+    },
+    {
+      "action": "astype",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::mtf3_expanding_folds",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype"
+    },
+    {
+      "action": "MTF3Error",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::purge_train_against_protected",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::MTF3Error"
+    },
+    {
+      "action": "_overlap_witness",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::purge_train_against_protected",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::_overlap_witness"
+    },
+    {
+      "action": "_protected_arrays",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::purge_train_against_protected",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::_protected_arrays"
+    },
+    {
+      "action": "audit_time_purge_split",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::purge_train_against_protected",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf3.py::audit_time_purge_split"
+    },
+    {
+      "action": "astype",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf3.py::purge_train_against_protected",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype"
+    },
+    {
+      "action": "atomic_write_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "resolver": "python_ast",
+      "to": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "action": "atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "_Series",
+      "evidence": "STATIC",
+      "from": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series"
+    },
+    {
+      "action": "_BoolSeries",
+      "evidence": "STATIC",
+      "from": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_BoolSeries"
+    }
+  ],
+  "entries": [
+    "ModelLab/mtf/mtf3.py::build_mtf3_split_authority"
+  ],
+  "generated": true,
+  "generated_by": "generate_sequence_actual.py",
+  "nodes": [
+    {
+      "id": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "language": "Python",
+      "line_end": 44,
+      "line_start": 39,
+      "locator": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "id": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "kind": "function",
+      "label": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "language": "Python",
+      "line_end": 58,
+      "line_start": 27,
+      "locator": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::MTF3Error",
+      "kind": "class",
+      "label": "ModelLab/mtf/mtf3.py::MTF3Error",
+      "language": "Python",
+      "line_end": 24,
+      "line_start": 23,
+      "locator": "ModelLab/mtf/mtf3.py::MTF3Error"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::_ids_sha256",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::_ids_sha256",
+      "language": "Python",
+      "line_end": 41,
+      "line_start": 39,
+      "locator": "ModelLab/mtf/mtf3.py::_ids_sha256"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::_overlap_witness",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::_overlap_witness",
+      "language": "Python",
+      "line_end": 150,
+      "line_start": 137,
+      "locator": "ModelLab/mtf/mtf3.py::_overlap_witness"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::_protected_arrays",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::_protected_arrays",
+      "language": "Python",
+      "line_end": 134,
+      "line_start": 124,
+      "locator": "ModelLab/mtf/mtf3.py::_protected_arrays"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::_split_fingerprint",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::_split_fingerprint",
+      "language": "Python",
+      "line_end": 63,
+      "line_start": 44,
+      "locator": "ModelLab/mtf/mtf3.py::_split_fingerprint"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::_utc_series",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::_utc_series",
+      "language": "Python",
+      "line_end": 36,
+      "line_start": 27,
+      "locator": "ModelLab/mtf/mtf3.py::_utc_series"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::audit_time_purge_split",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::audit_time_purge_split",
+      "language": "Python",
+      "line_end": 206,
+      "line_start": 153,
+      "locator": "ModelLab/mtf/mtf3.py::audit_time_purge_split"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::build_comparison_intervals",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::build_comparison_intervals",
+      "language": "Python",
+      "line_end": 121,
+      "line_start": 66,
+      "locator": "ModelLab/mtf/mtf3.py::build_comparison_intervals"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::build_mtf3_split_authority",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::build_mtf3_split_authority",
+      "language": "Python",
+      "line_end": 454,
+      "line_start": 418,
+      "locator": "ModelLab/mtf/mtf3.py::build_mtf3_split_authority"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::mtf3_cpcv_splits",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::mtf3_cpcv_splits",
+      "language": "Python",
+      "line_end": 415,
+      "line_start": 358,
+      "locator": "ModelLab/mtf/mtf3.py::mtf3_cpcv_splits"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::mtf3_expanding_folds",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::mtf3_expanding_folds",
+      "language": "Python",
+      "line_end": 355,
+      "line_start": 296,
+      "locator": "ModelLab/mtf/mtf3.py::mtf3_expanding_folds"
+    },
+    {
+      "id": "ModelLab/mtf/mtf3.py::purge_train_against_protected",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf3.py::purge_train_against_protected",
+      "language": "Python",
+      "line_end": 293,
+      "line_start": 209,
+      "locator": "ModelLab/mtf/mtf3.py::purge_train_against_protected"
+    },
+    {
+      "id": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
+      "kind": "method",
+      "label": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
+      "language": "Python",
+      "line_end": 91,
+      "line_start": 87,
+      "locator": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "language": "Python",
+      "line_end": 22,
+      "line_start": 21,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir",
+      "language": "Python",
+      "line_end": 25,
+      "line_start": 24,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::now",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::now",
+      "language": "Python",
+      "line_end": 20,
+      "line_start": 20,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "language": "Python",
+      "line_end": 38,
+      "line_start": 27,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "id": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_BoolSeries",
+      "kind": "class",
+      "label": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_BoolSeries",
+      "language": "Python",
+      "line_end": 40,
+      "line_start": 38,
+      "locator": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_BoolSeries"
+    },
+    {
+      "id": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series",
+      "kind": "class",
+      "label": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series",
+      "language": "Python",
+      "line_end": 37,
+      "line_start": 32,
+      "locator": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series"
+    },
+    {
+      "id": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype",
+      "kind": "method",
+      "label": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype",
+      "language": "Python",
+      "line_end": 33,
+      "line_start": 33,
+      "locator": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype"
+    },
+    {
+      "id": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna",
+      "kind": "method",
+      "label": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna",
+      "language": "Python",
+      "line_end": 34,
+      "line_start": 34,
+      "locator": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna"
+    }
+  ],
+  "observed_head": "cd6a777b78e2715f7c62f7921af189d407f40985",
+  "schema_version": 1,
+  "source_digest": "2794f13119e1dab671914aeea5609ae94ad51eebd7dac3c8623d6891aa6e93ce"
+}

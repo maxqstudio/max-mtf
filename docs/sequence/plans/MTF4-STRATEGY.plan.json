@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "flow_id": "MTF4-STRATEGY",
+  "title": "MTF-4 deterministic Strategy Challenger implementation",
+  "status": "FROZEN",
+  "nodes": [
+    {
+      "id": "tick",
+      "label": "M15 decision tick",
+      "locator": "EA_v2_00/baseline/Max_MTF.mq5::OnTick",
+      "kind": "actor"
+    },
+    {
+      "id": "eval",
+      "label": "EA deterministic MTF evaluation",
+      "locator": "EA_v2_00/baseline/Max_MTF.mq5::Mtf4EvaluateStrategy"
+    },
+    {
+      "id": "snap",
+      "label": "EA closed role snapshots",
+      "locator": "EA_v2_00/baseline/Max_MTF.mq5::Mtf4BuildRoleSnapshot"
+    },
+    {
+      "id": "h4",
+      "label": "EA H4 context veto",
+      "locator": "EA_v2_00/baseline/Max_MTF.mq5::Mtf4H4ContextGate"
+    },
+    {
+      "id": "h1",
+      "label": "EA H1 setup veto",
+      "locator": "EA_v2_00/baseline/Max_MTF.mq5::Mtf4H1SetupGate"
+    },
+    {
+      "id": "m15",
+      "label": "Existing M15 primary direction",
+      "locator": "EA_v2_00/baseline/Max_MTF.mq5::RuleMetaScore"
+    },
+    {
+      "id": "m5",
+      "label": "EA latest-closed M5 timing veto",
+      "locator": "EA_v2_00/baseline/Max_MTF.mq5::Mtf4M5TimingGate"
+    },
+    {
+      "id": "open",
+      "label": "Existing risk/execution",
+      "locator": "EA_v2_00/baseline/Max_MTF.mq5::OpenTrade"
+    },
+    {
+      "id": "py_eval",
+      "label": "Python deterministic parity evaluator",
+      "locator": "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+      "kind": "actor"
+    },
+    {
+      "id": "py_h4",
+      "label": "Python H4 parity gate",
+      "locator": "ModelLab/strategy/mtf4_strategy.py::h4_context_gate"
+    },
+    {
+      "id": "py_h1",
+      "label": "Python H1 parity gate",
+      "locator": "ModelLab/strategy/mtf4_strategy.py::h1_setup_gate"
+    },
+    {
+      "id": "py_m5",
+      "label": "Python M5 parity gate",
+      "locator": "ModelLab/strategy/mtf4_strategy.py::m5_timing_gate"
+    },
+    {
+      "id": "promote",
+      "label": "Automatic Strategy Champion promotion",
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_eligible_champion"
+    }
+  ],
+  "edges": [
+    {
+      "from": "py_eval",
+      "to": "py_h4",
+      "action": "apply H4 context veto in machine-extractable parity authority",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "V204 + actual Python call graph"
+    },
+    {
+      "from": "py_eval",
+      "to": "py_h1",
+      "action": "apply H1 setup veto in machine-extractable parity authority",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "V204 + actual Python call graph"
+    },
+    {
+      "from": "py_eval",
+      "to": "py_m5",
+      "action": "apply latest-closed M5 timing veto in machine-extractable parity authority",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "V204 + actual Python call graph"
+    },
+    {
+      "from": "tick",
+      "to": "eval",
+      "action": "enter MTF evaluation only on primary M15 closed-bar decision when MTF mode is enabled",
+      "requirement": "MUST",
+      "verification": "DOCUMENT",
+      "evidence": "MQL is outside current static generator; V204 source audit + MetaEditor/MT5 acceptance"
+    },
+    {
+      "from": "eval",
+      "to": "snap",
+      "action": "obtain fully closed H4/H1/M15/M5 role data at decision time",
+      "requirement": "MUST",
+      "verification": "DOCUMENT",
+      "evidence": "V204 source audit + missing/stale role negative path"
+    },
+    {
+      "from": "eval",
+      "to": "m15",
+      "action": "derive the only allowed BUY/SELL direction from existing M15 strategy authority",
+      "requirement": "MUST",
+      "verification": "DOCUMENT",
+      "evidence": "V204 source audit"
+    },
+    {
+      "from": "eval",
+      "to": "h4",
+      "action": "apply H4 context as veto/alignment gate",
+      "requirement": "MUST",
+      "verification": "DOCUMENT",
+      "evidence": "V204 + MT5/Python parity"
+    },
+    {
+      "from": "eval",
+      "to": "h1",
+      "action": "apply H1 setup as veto/alignment gate",
+      "requirement": "MUST",
+      "verification": "DOCUMENT",
+      "evidence": "V204 + MT5/Python parity"
+    },
+    {
+      "from": "eval",
+      "to": "m5",
+      "action": "apply latest-closed M5 timing as instantaneous veto",
+      "requirement": "MUST",
+      "verification": "DOCUMENT",
+      "evidence": "V204 + MT5/Python parity"
+    },
+    {
+      "from": "eval",
+      "to": "open",
+      "action": "pass unchanged M15 direction into existing risk/execution only after all role gates pass",
+      "requirement": "MUST",
+      "verification": "DOCUMENT",
+      "evidence": "V204 + Owner MT5 acceptance"
+    },
+    {
+      "from": "py_eval",
+      "to": "eval",
+      "action": "Python replay and EA share one deterministic role-gate contract",
+      "requirement": "MUST",
+      "verification": "DOCUMENT",
+      "evidence": "V204 parity fixtures + Owner parity evidence"
+    },
+    {
+      "from": "m5",
+      "to": "m15",
+      "action": "reverse or originate M15 direction",
+      "requirement": "MUST_NOT",
+      "verification": "DOCUMENT",
+      "evidence": "V204 role-ownership negative test"
+    },
+    {
+      "from": "eval",
+      "to": "promote",
+      "action": "auto-promote eligible MTF result to Strategy Champion",
+      "requirement": "MUST_NOT",
+      "verification": "DOCUMENT",
+      "evidence": "existing Challenger-only lifecycle + V204"
+    }
+  ]
+}

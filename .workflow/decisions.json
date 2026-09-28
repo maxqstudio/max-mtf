@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "decisions": [
+    {
+      "id": "DEC-001",
+      "title": "STRICT generated documentation authority",
+      "status": "ACCEPTED",
+      "decision": "Use .workflow machine-readable semantic specs plus deterministic Project Truth Compiler as upstream documentation authority; generated canonical Markdown under docs/ is a read-only projection.",
+      "rationale": "The project is financial/ML/audit-sensitive and frequently handed across agents; deterministic generation prevents drift and manual self-reference."
+    },
+    {
+      "id": "DEC-002",
+      "title": "MTF-1 remains data authority only",
+      "status": "ACCEPTED",
+      "decision": "MTF-1 establishes causal multi-timeframe data/closure authority and does not activate future hierarchical H4/H1/M15/M5 trading execution.",
+      "rationale": "Scientific sequencing requires data causality/external proof before strategy implementation."
+    },
+    {
+      "id": "DEC-003",
+      "title": "Explicit Challenger to Champion promotion",
+      "status": "ACCEPTED",
+      "decision": "Strategy and Model winners first become Challengers; Champion replacement requires explicit legal promotion.",
+      "rationale": "Prevents automated research results from mutating production authority."
+    },
+    {
+      "id": "DEC-004",
+      "title": "Scientist remains advisory",
+      "status": "ACCEPTED",
+      "decision": "LLM Scientist may reason, review and propose bounded experiments but deterministic code owns admission, gates, protected evidence and promotion.",
+      "rationale": "Separates creative research assistance from auditable scientific and production authority."
+    },
+    {
+      "id": "DEC-005",
+      "title": "AFTER sequence reconstruction for existing code",
+      "status": "ACCEPTED",
+      "decision": "Adopt new sequence contracts in AFTER mode for existing MAX implementation; do not fabricate retrospective BEFORE plans.",
+      "rationale": "Skill_Workflow sequence governance was introduced after the implementation already existed."
+    },
+    {
+      "id": "DEC-006",
+      "title": "MTF-2 finite-window role features",
+      "status": "ACCEPTED",
+      "decision": "MTF-2 V1 uses compact role-specific finite-window market features from canonical M5-derived views. It does not default to 4 x CP32, recursive EMA/ADX/RSI dependencies, or repeated rule-family/rule_meta_score features across roles. M15 remains the directional owner.",
+      "rationale": "Finite windows make dependency_start_time exact and auditable, reduce duplicated rule-engine bias, and isolate incremental timeframe information before model-complexity escalation."
+    },
+    {
+      "id": "DEC-007",
+      "title": "Typed-time label horizon is mandatory",
+      "status": "ACCEPTED",
+      "decision": "Future M5 may be used only for post-decision directional labels/evaluation. A real label horizon must be explicit in minutes or derived from max_hold_bars only when bar_minutes/timeframe lineage is explicit. Legacy max_hold_bars by itself fails closed and cannot become purge authority.",
+      "rationale": "Current legacy Strategy authority records max_hold_bars but not its timeframe; silently interpreting 54 as H1, M15 or M5 would change the economic horizon by multiples and invalidate purge semantics."
+    },
+    {
+      "id": "DEC-008",
+      "title": "MTF-2 new implementation uses genuine BEFORE sequence governance",
+      "status": "ACCEPTED",
+      "decision": "Freeze the MTF-2 source-call plan before implementation. Existing pre-sequence code remains represented in AFTER mode; the future MTF-2 BEFORE session will bind this frozen planning commit to the implemented actual graph rather than fabricating a retrospective plan.",
+      "rationale": "MTF-2 has not been implemented yet, so this is the first phase where genuine plan-before-code lineage is available."
+    },
+    {
+      "id": "DEC-009",
+      "title": "Supersede MTF-2 V1 cyclic-time duplication before research",
+      "status": "ACCEPTED",
+      "decision": "MAX_MTF2_ROLE_FEATURE_LABEL_V1 is not edited retrospectively. V2 supersedes it before model experiments by removing M5 hour_sin/hour_cos because M15 and latest-closed M5 share the same decision timestamp, making those cyclic-time values exact duplicates. V2 also preregisters deterministic redundancy reporting and defers trained permutation/ablation claims until MTF-3 purge authority passes.",
+      "rationale": "Keeping the frozen V1 history preserves preregistration lineage; removing exact duplicate time features reduces redundant dimensionality without using protected outcome evidence."
+    },
+    {
+      "id": "DEC-010",
+      "title": "Supersede MTF-2 V2 exact body-return duplicates before research",
+      "status": "ACCEPTED",
+      "decision": "MAX_MTF2_ROLE_FEATURE_LABEL_V2 remains immutable history. V3 removes signed_body_atr from H1, M15 and M5 because V2 targeted redundancy evidence showed exact equality with ret_1_atr on continuous canonical bars. No trained outcome or protected holdout evidence is used for this repair.",
+      "rationale": "The smallest correct schema keeps one representation of the same one-bar move rather than weakening duplicate detection or carrying redundant dimensions into research."
+    },
+    {
+      "id": "DEC-011",
+      "title": "MTF-3 uses exact timestamp overlap with D-common comparison dependency",
+      "status": "ACCEPTED",
+      "decision": "MTF-3 replaces guessed bar-count purge for MTF research with exact per-sample timestamp intervals. Protected validation/test outcome windows start at M15 decision_time and end at max(label_end_time, execution_end_time). A train sample is removed whenever its full dependency/outcome interval intersects or touches a protected window. A/B/C/D comparisons use the D-complete dependency_start authority so folds and purged decision IDs are identical across ablations. While the M5 execution label is inactive, execution_end_time equals label_end_time; any future execution layer must supply an explicit timestamp.",
+      "rationale": "Exact timestamps remove ambiguity across H4/H1/M15/M5 horizons, while one D-common dependency authority prevents feature-role ablations from being confounded by different training samples."
+    },
+    {
+      "id": "DEC-012",
+      "title": "MTF-4 keeps M15 as sole direction owner",
+      "status": "ACCEPTED",
+      "decision": "MTF-4 deterministic strategy uses H4 context, H1 setup and latest-closed M5 timing only as veto gates around the existing M15 directional strategy. No higher/lower timeframe may originate or reverse direction, and MTF-4 does not introduce a future-M5 wait state.",
+      "rationale": "This proves incremental deterministic MTF geometry with the smallest behavioral change, preserves role clarity, and leaves the dedicated M5 execution state machine to MTF-7."
+    }
+  ]
+}

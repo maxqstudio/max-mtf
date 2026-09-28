@@ -1,0 +1,67 @@
+%% GENERATED FILE - DO NOT EDIT
+%% SOURCE_DIGEST: 2794f13119e1dab671914aeea5609ae94ad51eebd7dac3c8623d6891aa6e93ce
+%% OBSERVED_HEAD: cd6a777b78e2715f7c62f7921af189d407f40985
+%% GENERATED_BY: generate_sequence_actual.py
+sequenceDiagram
+    participant ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0 as ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256
+    participant ModelLab_factory_factory_jobs_py__atomic_write_json_1 as ModelLab/factory/factory_jobs.py::atomic_write_json
+    participant ModelLab_mtf_mtf3_py__MTF3Error_2 as ModelLab/mtf/mtf3.py::MTF3Error
+    participant ModelLab_mtf_mtf3_py___ids_sha256_3 as ModelLab/mtf/mtf3.py::_ids_sha256
+    participant ModelLab_mtf_mtf3_py___overlap_witness_4 as ModelLab/mtf/mtf3.py::_overlap_witness
+    participant ModelLab_mtf_mtf3_py___protected_arrays_5 as ModelLab/mtf/mtf3.py::_protected_arrays
+    participant ModelLab_mtf_mtf3_py___split_fingerprint_6 as ModelLab/mtf/mtf3.py::_split_fingerprint
+    participant ModelLab_mtf_mtf3_py___utc_series_7 as ModelLab/mtf/mtf3.py::_utc_series
+    participant ModelLab_mtf_mtf3_py__audit_time_purge_split_8 as ModelLab/mtf/mtf3.py::audit_time_purge_split
+    participant ModelLab_mtf_mtf3_py__build_comparison_intervals_9 as ModelLab/mtf/mtf3.py::build_comparison_intervals
+    participant ModelLab_mtf_mtf3_py__build_mtf3_split_authority_10 as ModelLab/mtf/mtf3.py::build_mtf3_split_authority
+    participant ModelLab_mtf_mtf3_py__mtf3_cpcv_splits_11 as ModelLab/mtf/mtf3.py::mtf3_cpcv_splits
+    participant ModelLab_mtf_mtf3_py__mtf3_expanding_folds_12 as ModelLab/mtf/mtf3.py::mtf3_expanding_folds
+    participant ModelLab_mtf_mtf3_py__purge_train_against_protected_13 as ModelLab/mtf/mtf3.py::purge_train_against_protected
+    participant ModelLab_scientist_skills_max_scientist_skills_py___section_map_flush_14 as ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush
+    participant ModelLab_strategy_strategy_optimizer_worker_py__atomic_15 as ModelLab/strategy/strategy_optimizer_worker.py::atomic
+    participant ModelLab_strategy_strategy_optimizer_worker_py__evidence_dir_16 as ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir
+    participant ModelLab_strategy_strategy_optimizer_worker_py__now_17 as ModelLab/strategy/strategy_optimizer_worker.py::now
+    participant ModelLab_strategy_strategy_optimizer_worker_py__update_18 as ModelLab/strategy/strategy_optimizer_worker.py::update
+    participant ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___BoolSeries_19 as ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_BoolSeries
+    participant ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_20 as ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series
+    participant ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_21 as ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.astype
+    participant ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_isna_22 as ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna
+    ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0->>ModelLab_strategy_strategy_optimizer_worker_py__update_18: h.update [STATIC]
+    ModelLab_factory_factory_jobs_py__atomic_write_json_1->>ModelLab_scientist_skills_max_scientist_skills_py___section_map_flush_14: f.flush [STATIC]
+    ModelLab_mtf_mtf3_py___ids_sha256_3->>ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0: hashlib.sha256 [STATIC]
+    ModelLab_mtf_mtf3_py___protected_arrays_5->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_21: astype [STATIC]
+    ModelLab_mtf_mtf3_py___split_fingerprint_6->>ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0: hashlib.sha256 [STATIC]
+    ModelLab_mtf_mtf3_py___utc_series_7->>ModelLab_mtf_mtf3_py__MTF3Error_2: MTF3Error [STATIC]
+    ModelLab_mtf_mtf3_py___utc_series_7->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_isna_22: values.isna [STATIC]
+    ModelLab_mtf_mtf3_py__audit_time_purge_split_8->>ModelLab_mtf_mtf3_py__MTF3Error_2: MTF3Error [STATIC]
+    ModelLab_mtf_mtf3_py__audit_time_purge_split_8->>ModelLab_mtf_mtf3_py___overlap_witness_4: _overlap_witness [STATIC]
+    ModelLab_mtf_mtf3_py__audit_time_purge_split_8->>ModelLab_mtf_mtf3_py___protected_arrays_5: _protected_arrays [STATIC]
+    ModelLab_mtf_mtf3_py__build_comparison_intervals_9->>ModelLab_mtf_mtf3_py__MTF3Error_2: MTF3Error [STATIC]
+    ModelLab_mtf_mtf3_py__build_comparison_intervals_9->>ModelLab_mtf_mtf3_py___utc_series_7: _utc_series [STATIC]
+    ModelLab_mtf_mtf3_py__build_comparison_intervals_9->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_21: astype [STATIC]
+    ModelLab_mtf_mtf3_py__build_comparison_intervals_9->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_isna_22: execution.isna [STATIC]
+    ModelLab_mtf_mtf3_py__build_mtf3_split_authority_10->>ModelLab_acceptance_runners_ui_runtime_browser_acceptance_py__sha256_0: hashlib.sha256 [STATIC]
+    ModelLab_mtf_mtf3_py__build_mtf3_split_authority_10->>ModelLab_mtf_mtf3_py___ids_sha256_3: _ids_sha256 [STATIC]
+    ModelLab_mtf_mtf3_py__build_mtf3_split_authority_10->>ModelLab_mtf_mtf3_py__build_comparison_intervals_9: build_comparison_intervals [STATIC]
+    ModelLab_mtf_mtf3_py__build_mtf3_split_authority_10->>ModelLab_mtf_mtf3_py__mtf3_cpcv_splits_11: mtf3_cpcv_splits [STATIC]
+    ModelLab_mtf_mtf3_py__build_mtf3_split_authority_10->>ModelLab_mtf_mtf3_py__mtf3_expanding_folds_12: mtf3_expanding_folds [STATIC]
+    ModelLab_mtf_mtf3_py__build_mtf3_split_authority_10->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_21: astype [STATIC]
+    ModelLab_mtf_mtf3_py__mtf3_cpcv_splits_11->>ModelLab_mtf_mtf3_py__MTF3Error_2: MTF3Error [STATIC]
+    ModelLab_mtf_mtf3_py__mtf3_cpcv_splits_11->>ModelLab_mtf_mtf3_py___split_fingerprint_6: _split_fingerprint [STATIC]
+    ModelLab_mtf_mtf3_py__mtf3_cpcv_splits_11->>ModelLab_mtf_mtf3_py__purge_train_against_protected_13: purge_train_against_protected [STATIC]
+    ModelLab_mtf_mtf3_py__mtf3_cpcv_splits_11->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_21: astype [STATIC]
+    ModelLab_mtf_mtf3_py__mtf3_expanding_folds_12->>ModelLab_mtf_mtf3_py__MTF3Error_2: MTF3Error [STATIC]
+    ModelLab_mtf_mtf3_py__mtf3_expanding_folds_12->>ModelLab_mtf_mtf3_py___split_fingerprint_6: _split_fingerprint [STATIC]
+    ModelLab_mtf_mtf3_py__mtf3_expanding_folds_12->>ModelLab_mtf_mtf3_py__purge_train_against_protected_13: purge_train_against_protected [STATIC]
+    ModelLab_mtf_mtf3_py__mtf3_expanding_folds_12->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_21: astype [STATIC]
+    ModelLab_mtf_mtf3_py__purge_train_against_protected_13->>ModelLab_mtf_mtf3_py__MTF3Error_2: MTF3Error [STATIC]
+    ModelLab_mtf_mtf3_py__purge_train_against_protected_13->>ModelLab_mtf_mtf3_py___overlap_witness_4: _overlap_witness [STATIC]
+    ModelLab_mtf_mtf3_py__purge_train_against_protected_13->>ModelLab_mtf_mtf3_py___protected_arrays_5: _protected_arrays [STATIC]
+    ModelLab_mtf_mtf3_py__purge_train_against_protected_13->>ModelLab_mtf_mtf3_py__audit_time_purge_split_8: audit_time_purge_split [STATIC]
+    ModelLab_mtf_mtf3_py__purge_train_against_protected_13->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_21: astype [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__atomic_15->>ModelLab_factory_factory_jobs_py__atomic_write_json_1: atomic_write_json [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_18->>ModelLab_strategy_strategy_optimizer_worker_py__atomic_15: atomic [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_18->>ModelLab_strategy_strategy_optimizer_worker_py__evidence_dir_16: evidence_dir [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_18->>ModelLab_strategy_strategy_optimizer_worker_py__now_17: now [STATIC]
+    ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_astype_21->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_20: _Series [STATIC]
+    ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___Series_isna_22->>ModelLab_tests_v201_inherited_v147_strategy_geometry_handoff_selftest_py___BoolSeries_19: _BoolSeries [STATIC]

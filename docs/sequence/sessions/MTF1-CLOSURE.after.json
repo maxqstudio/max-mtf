@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "session_id": "MTF1-CLOSURE",
+  "phase": "MTF_1_EXTERNAL_EXECUTION_PROOF",
+  "mode": "AFTER",
+  "scope": "HISTORICAL",
+  "critical": true,
+  "status": "IMPORTED_HISTORICAL_EXTERNAL_RUNTIME_PROVEN",
+  "implementation_base_sha": "",
+  "plan": {
+    "required": false,
+    "frozen": false,
+    "contract": "",
+    "frozen_commit": "",
+    "sha256": "",
+    "diagram": ""
+  },
+  "actual": {
+    "graph": "docs/sequence/generated/MTF1-CLOSURE.actual.json",
+    "diagram": "docs/sequence/generated/MTF1-CLOSURE.actual.mmd",
+    "source_digest": "",
+    "entries": [
+      "ModelLab/mtf/mtf1_closure_bootstrap.py::main",
+      "ModelLab/mtf/mtf_data.py::collect_native_frames_from_mt5"
+    ]
+  },
+  "test_traceability_required": true,
+  "tests": [
+    "ModelLab/tests/v201_mtf_value_authority_selftest.py",
+    "ModelLab/tests/v201_owner_raw_replay_authenticity_selftest.py",
+    "ModelLab/tests/v201_closure_run_id_binding_selftest.py"
+  ],
+  "runtime_trace": {
+    "required": false,
+    "graph": ""
+  },
+  "acceptance_report": "artifacts/sequence/MTF1-CLOSURE.acceptance.json",
+  "migration_note": "Completed phase imported into fresh max-mtf without asserting old repository Git ancestry. Historical runtime provenance remains external."
+}

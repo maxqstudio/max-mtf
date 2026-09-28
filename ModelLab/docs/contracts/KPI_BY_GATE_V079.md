@@ -1,0 +1,68 @@
+# Max v0.7.9 — KPI by Gate Contract
+
+## Scope
+
+v0.7.9 separates Strategy Optimizer acceptance from ModelLab Research acceptance and separates Research statistical thresholds by gate. Deterministic code remains the only PASS/FAIL authority.
+
+## Upstream Strategy Optimizer
+
+Strategy Optimizer is an MT5 EA parameter-search tool before ModelLab Research. It is not Discovery and does not run WFA, CPCV, Tournament, Monte Carlo, or Fresh Forward.
+
+Hard eligibility is frozen into each optimizer request:
+
+- Profit Factor >= 1.00
+- Recovery Factor >= 0.00
+- Expectancy >= 0.00 R/trade
+- minimum closed trades = AUTO from exact optimization range
+- H1 baseline = 20 trades/month
+
+The timeframe engine is shared with Research but the baseline is not. For `tf_minutes`, the raw factor is `sqrt(60 / tf_minutes)`, clamped to `[0.20, 4.00]`. The scaled monthly trade rate is rounded up to an integer. The exact evaluated duration is then prorated using that integer rate and the final required closed-trade count is rounded up again.
+
+## Research trade-sample authority
+
+ModelLab Research uses H1 baseline = 8 trades/month. The same timeframe scaling and integer round-up rule applies. Discovery/CPCV may apply an explicit evaluation-exposure fraction; Tournament and Fresh Forward use their full evaluated window. There is no hidden 75% sufficiency haircut in v0.7.9.
+
+## Research KPI profiles
+
+`gate_kpis` is part of the frozen scientific contract and is hashed into the Factory stage contract.
+
+1. **Discovery** — Full chronological WFA qualification. Owns WFA survival/economic/time/stress/risk-adjusted thresholds.
+2. **CPCV** — Owns aggregate/worst-path/sample and canonical CPCV risk thresholds. PBO is `NOT_COMPUTABLE` unless a canonical cross-strategy matrix exists; pseudo-PBO is forbidden.
+3. **Tournament** — Owns hard eligibility thresholds. Ranking may order PASS survivors but cannot rescue FAIL and does not impose Top-K elimination.
+4. **Monte Carlo** — Owns bootstrap tail thresholds: P05 PF, P05 expectancy, P95 max DD, P05 recovery, and configured probability loss/ruin/survival.
+5. **Fresh Forward** — Owns untouched Forward statistical thresholds. Thresholds are frozen before Fresh data is opened. v0.7.9 does not activate a hidden degradation gate.
+6. **Champion Promotion** — not a sixth market/statistical test. It verifies upstream PASS, artifact integrity, no post-Fresh scientific-contract mutation, ONNX export, and ONNX parity.
+
+## Immutability
+
+Changing a gate profile after Research has started must not mutate the active Factory. The frozen Factory contract contains the complete gate-profile snapshot. A changed profile is applicable only to a new Factory/generation.
+
+## Evidence
+
+Gate evidence must expose the threshold actually used and the observed metric whenever the metric is computable. Existing compatibility booleans may be retained, but they are not a second threshold authority.
+
+## Scientist contract
+
+Scientist Chat receives `gate_kpis`, Research trade-sample policy, and the separate Strategy Optimizer KPI profile as read-only context. KPI recommendations must be made per gate. Champion must be described as promotion/integrity/runtime authority, not as a sixth statistical gate.
+
+## v0.7.9 presentation/ownership clarification
+
+- Advanced groups related controls into `Research`, `Scientist`, `KPI & Evaluation`, `Compute & hardware`, and `Legacy diagnostics`; statistical ownership is unchanged.
+- Each Research gate is rendered as one visual section. Risk-adjusted metrics do not create extra gate separators.
+- CPCV exposes PBO as a first-class threshold/status block. It remains non-authoritative while canonical cross-strategy computation is unavailable.
+- PSR benchmark Sharpe is rendered in the PSR row instead of as an orphan full-width field.
+- Strategy Optimizer KPI is configured on the Strategy Optimizer page, not mixed into Research gate KPI.
+
+
+## v0.7.9 Scientist KPI semantics
+
+The Scientist must interpret each gate by its scientific role instead of treating every available risk metric as a recommended hard gate. `enabled=true` in the live Owner config is execution state, not proof that the placement is scientifically optimal.
+
+- **Discovery** — early screening + Full 3-fold chronological WFA. Preserve candidate diversity; core performance, sample sufficiency and fold consistency are primary. Risk-adjusted metrics may be diagnostics and should not all be enabled mechanically.
+- **CPCV** — purged combinatorial robustness. Primary evidence is aggregate/worst-path/distribution/sample stability. PBO is CPCV-only and remains `NOT_COMPUTABLE` without a canonical cross-strategy matrix; pseudo-PBO is forbidden.
+- **Tournament** — deterministic hard eligibility + ranking of CPCV survivors. It is not the untouched Fresh/OOS stage. Ranking cannot rescue a hard-gate failure and current contract has no Top-K elimination.
+- **Monte Carlo** — resampling/path-tail robustness. P05/P95, loss/ruin probability and survival belong here. PSR/DSR are not Monte-Carlo-native metrics.
+- **Fresh Forward** — untouched final generalization. Thresholds must be predeclared and immutable for the active snapshot. Owner production policy reference remains Expectancy >= +0.50R, PF >= 1.50, RF >= 3.00, Max DD < 10%, with H1 trade-sample baseline 8/month AUTO-scaled. If runtime metrics use different units (for example R-drawdown), Scientist must flag the mismatch rather than silently convert it.
+- **Champion** — promotion/integrity/runtime authority only; no sixth statistical market test.
+
+PSR requires an explicit benchmark and adequate sample. DSR requires defensible trial-universe/effective-trials accounting; it must not be made authoritative merely because a migrated legacy config says `enabled=true`.

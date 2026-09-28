@@ -1,0 +1,169 @@
+{
+  "schema": "MAX_DATA_SCIENTIST_SKILL_PACK_V1",
+  "skills": [
+    {
+      "skill_id": "max-research-data-scientist",
+      "file": "skills/max_scientist/max-research-data-scientist/SKILL.md",
+      "sha256": "d6050af012fd4c7000e24ad9a4fc3c9a089eb8c7159521b17c0560ae75dddd1d",
+      "tags": [
+        "core"
+      ],
+      "runtime_doctrine": "Observe deterministic evidence; form falsifiable hypotheses; run bounded attributable experiments; learn from lineage; never change gates, execution authority, protected OOS, promotion or risk.",
+      "max_authority": "ADVISORY",
+      "may_compute_authoritative_metrics": false,
+      "may_emit_pass_fail": false,
+      "may_rank_challengers": false,
+      "may_promote": false,
+      "may_trade": false,
+      "may_mutate_frozen_contract": false
+    },
+    {
+      "skill_id": "scientific-method",
+      "file": "skills/max_scientist/scientific-method/SKILL.md",
+      "sha256": "66783d3d17d1c6903fac3d9c4e4a805dbb530d9f6443dedc0cd15d6409dcf46d",
+      "tags": [
+        "core",
+        "hypothesis"
+      ],
+      "runtime_doctrine": "State mechanism, prediction and falsification before execution; preserve negative results; avoid parameter shopping and post-hoc stories.",
+      "max_authority": "ADVISORY",
+      "may_compute_authoritative_metrics": false,
+      "may_emit_pass_fail": false,
+      "may_rank_challengers": false,
+      "may_promote": false,
+      "may_trade": false,
+      "may_mutate_frozen_contract": false
+    },
+    {
+      "skill_id": "data-quality-point-in-time",
+      "file": "skills/max_scientist/data-quality-point-in-time/SKILL.md",
+      "sha256": "216ce63786d59ca7a5ec71c8ef2e0768b23ba453e9680b771c56993e63ff8fe8",
+      "tags": [
+        "data",
+        "leakage",
+        "point_in_time"
+      ],
+      "runtime_doctrine": "Every feature must be available at decision time; learned transforms fit train-only; preserve source lineage and temporal gaps.",
+      "max_authority": "ADVISORY",
+      "may_compute_authoritative_metrics": false,
+      "may_emit_pass_fail": false,
+      "may_rank_challengers": false,
+      "may_promote": false,
+      "may_trade": false,
+      "may_mutate_frozen_contract": false
+    },
+    {
+      "skill_id": "feature-label-research",
+      "file": "skills/max_scientist/feature-label-research/SKILL.md",
+      "sha256": "559ab89954eaed4175bd940a2401fc1cba0bbd3d425f4b7a317a901182ecb442",
+      "tags": [
+        "feature",
+        "label",
+        "coverage"
+      ],
+      "runtime_doctrine": "Audit feature causality, context-vs-supervised rows, execution eligibility, label/KPI utility alignment and temporal continuity before tuning models.",
+      "max_authority": "ADVISORY",
+      "may_compute_authoritative_metrics": false,
+      "may_emit_pass_fail": false,
+      "may_rank_challengers": false,
+      "may_promote": false,
+      "may_trade": false,
+      "may_mutate_frozen_contract": false
+    },
+    {
+      "skill_id": "experiment-design",
+      "file": "skills/max_scientist/experiment-design/SKILL.md",
+      "sha256": "ccdfed9fe42ba7c8356d20cfaabd6b0250e29a647de632d4bea85855bf343da7",
+      "tags": [
+        "experiment",
+        "budget"
+      ],
+      "runtime_doctrine": "Choose the smallest bounded intervention that tests one mechanism; use controls/ablations and explicit escalation rules.",
+      "max_authority": "ADVISORY",
+      "may_compute_authoritative_metrics": false,
+      "may_emit_pass_fail": false,
+      "may_rank_challengers": false,
+      "may_promote": false,
+      "may_trade": false,
+      "may_mutate_frozen_contract": false
+    },
+    {
+      "skill_id": "time-series-validation",
+      "file": "skills/max_scientist/time-series-validation/SKILL.md",
+      "sha256": "c70314454df8eb232763a5c13fedce198b945d5c4722090904e288dc73a55643",
+      "tags": [
+        "fold",
+        "wfa",
+        "cpcv",
+        "validation"
+      ],
+      "runtime_doctrine": "Chronology, purge/embargo, held-fold isolation and protected Fresh boundaries are immutable scientific constraints.",
+      "max_authority": "ADVISORY",
+      "may_compute_authoritative_metrics": false,
+      "may_emit_pass_fail": false,
+      "may_rank_challengers": false,
+      "may_promote": false,
+      "may_trade": false,
+      "may_mutate_frozen_contract": false
+    },
+    {
+      "skill_id": "model-research",
+      "file": "skills/max_scientist/model-research/SKILL.md",
+      "sha256": "77927cbe584f6eb0935a28f7dfde54784791a840a3a8ab32f6b53d721b364bda",
+      "tags": [
+        "model",
+        "family",
+        "capacity",
+        "seed"
+      ],
+      "runtime_doctrine": "Select family/capacity from data and failure mechanism; demand controlled incremental evidence for hybrids/complex architectures.",
+      "max_authority": "ADVISORY",
+      "may_compute_authoritative_metrics": false,
+      "may_emit_pass_fail": false,
+      "may_rank_challengers": false,
+      "may_promote": false,
+      "may_trade": false,
+      "may_mutate_frozen_contract": false
+    },
+    {
+      "skill_id": "robustness-overfitting",
+      "file": "skills/max_scientist/robustness-overfitting/SKILL.md",
+      "sha256": "54ae9c37c665e2eac8931ee40226772e257dee9b22cd5e1e663f7b3e6edc95eb",
+      "tags": [
+        "robustness",
+        "pbo",
+        "dsr",
+        "stress",
+        "seed"
+      ],
+      "runtime_doctrine": "Inspect worst folds, trial multiplicity, sensitivity, seeds and tails; canonical MAX DSR/PBO remain deterministic authority.",
+      "max_authority": "ADVISORY",
+      "may_compute_authoritative_metrics": false,
+      "may_emit_pass_fail": false,
+      "may_rank_challengers": false,
+      "may_promote": false,
+      "may_trade": false,
+      "may_mutate_frozen_contract": false
+    },
+    {
+      "skill_id": "research-diagnosis",
+      "file": "skills/max_scientist/research-diagnosis/SKILL.md",
+      "sha256": "19ee5ce81896ea0291f3dea2a184d20ab67e60b8f4b40186e22e2c0b1ba1246e",
+      "tags": [
+        "failure",
+        "diagnosis",
+        "learning_policy"
+      ],
+      "runtime_doctrine": "Diagnose blocker class from margins/coverage/folds; prioritize blocker removal over composite-score chasing; treat learning-policy ranking as advisory prior.",
+      "max_authority": "ADVISORY",
+      "may_compute_authoritative_metrics": false,
+      "may_emit_pass_fail": false,
+      "may_rank_challengers": false,
+      "may_promote": false,
+      "may_trade": false,
+      "may_mutate_frozen_contract": false
+    }
+  ],
+  "skill_count": 9,
+  "authority": "ADVISORY_METHOD_ONLY"
+}

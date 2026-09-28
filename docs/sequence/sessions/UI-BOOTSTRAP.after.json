@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "session_id": "UI-BOOTSTRAP",
+  "phase": "CONTROL_ROOM_BOOTSTRAP",
+  "mode": "DURING",
+  "scope": "CURRENT",
+  "critical": true,
+  "status": "CURRENT_FRESH_REPO_DURING",
+  "implementation_base_sha": "",
+  "plan": {
+    "required": false,
+    "frozen": false,
+    "contract": "",
+    "frozen_commit": "",
+    "sha256": "",
+    "diagram": ""
+  },
+  "actual": {
+    "graph": "docs/sequence/generated/UI-BOOTSTRAP.actual.json",
+    "diagram": "docs/sequence/generated/UI-BOOTSTRAP.actual.mmd",
+    "source_digest": "",
+    "entries": [
+      "ModelLab/ui/ui_bootstrap.py::main",
+      "ModelLab/ui/ui_launcher.py::main"
+    ]
+  },
+  "test_traceability_required": true,
+  "tests": [
+    "ModelLab/tests/v200_ui_bootstrap_selftest.py",
+    "ModelLab/tests/v201_final_closure_python_env_authority_selftest.py"
+  ],
+  "runtime_trace": {
+    "required": false,
+    "graph": ""
+  },
+  "acceptance_report": "artifacts/sequence/UI-BOOTSTRAP.acceptance.json",
+  "migration_note": "Fresh max-mtf history begins after this implementation existed; DURING mode observes current source without retrospective BEFORE claims."
+}

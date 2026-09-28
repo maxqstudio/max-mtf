@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "date": "2026-09-26",
+      "title": "Project Truth Compiler and sequence-governance migration",
+      "type": "governance",
+      "changes": [
+        "Adopt latest Skill_Workflow deterministic generated-documentation model for STRICT profile.",
+        "Introduce .workflow semantic authority specs and vendored project-local compiler/validators.",
+        "Reconstruct current critical workflow sequences in AFTER mode without retroactive plans."
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "title": "MTF-1 final closure proven",
+      "type": "governance",
+      "changes": [
+        "Closed MTF-1 under closure_run_id 5c30bf4e7fb17be94c988a90eccf1975.",
+        "Bound fresh 75/75 local acceptance to Owner MT5 runtime and MetaEditor compile evidence.",
+        "Read-only final verification returned MTF_1_CLOSED; MTF-2 prerequisite block is removed but MTF-2 remains NOT_STARTED."
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "title": "MTF-2 causal feature/label contract preregistered",
+      "type": "governance",
+      "changes": [
+        "Preregistered compact finite-window H4/H1/M15/M5 role features and A/B/C/D ablations before implementation.",
+        "Made future-M5 directional labels post-decision-only and rejected untyped max_hold_bars as horizon/purge authority.",
+        "Frozen a genuine BEFORE implementation sequence plan; model training remains blocked until executable MTF-2 source and exact timestamp-overlap purge validation exist."
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "title": "MTF-2 V2 removes cyclic-time duplicate features",
+      "type": "governance",
+      "changes": [
+        "Superseded frozen V1 without rewriting history after identifying exact M15/M5 cyclic-time duplicates at the same decision timestamp.",
+        "Removed M5 hour_sin/hour_cos from V2 and preregistered exact-duplicate/high-correlation audit semantics.",
+        "Deferred trained permutation/A-B-C-D information-gain claims until MTF-3 exact timestamp-overlap purge authority passes."
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "title": "MTF-2 V3 removes body-return exact duplicates",
+      "type": "governance",
+      "changes": [
+        "Preserved V2 as immutable preregistration history after targeted redundancy audit failed before training.",
+        "Removed signed_body_atr from H1/M15/M5 where ret_1_atr already represents the same one-bar move on continuous canonical bars.",
+        "Kept high-correlation pairs diagnostic-only and protected holdouts excluded from schema adaptation."
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "title": "MTF-2 V3 feature/label implementation acceptance passes",
+      "type": "acceptance",
+      "changes": [
+        "V202 targeted MTF-2 feature/label contract selftest passes for frozen V3 with A/B/C/D counts 14/23/29/37.",
+        "Fresh cumulative local acceptance passes 75/75 FRESH_FULL on source tree 48d9d0beceec0f1e7d01c3280490d86b636df800b2bd8a67e192755756b383a3 and canonical suite 1a29b4c5db502a49fbc4ecefbde8772f400ac836b051505ce1c4c44f6246f1c1.",
+        "MTF-2 source implementation is accepted for staging; real-market redundancy evidence, MTF-3 timestamp-overlap purge, trained information-gain evidence, ONNX, shadow and promotion remain unproven."
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "title": "MTF-3 exact timestamp purge contract preregistered",
+      "type": "governance",
+      "changes": [
+        "Preregistered exact per-sample dependency/decision/label/execution timestamp authority before MTF-3 source implementation.",
+        "Defined fail-safe overlap purge/embargo from timestamps rather than bar counts and retained exactly 15 N=6,k=2 CPCV combinations.",
+        "Locked A/B/C/D scientific comparison to one D-common dependency authority so fold and purge identities cannot differ across ablations."
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "title": "MTF-3 BEFORE plan corrected to executable call graph",
+      "type": "governance",
+      "changes": [
+        "Corrected the frozen MTF-3 sequence plan before source implementation so required SOURCE edges represent real function calls rather than semantic data-flow.",
+        "Added one build_mtf3_split_authority orchestrator node; exact timestamp purge semantics and acceptance criteria are unchanged."
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "title": "MTF-3 exact timestamp purge acceptance passes",
+      "type": "acceptance",
+      "changes": [
+        "V203 targeted exact-timestamp dependency/purge selftest and genuine BEFORE source-plan match pass while legacy single-TF split source remains unchanged.",
+        "Real sealed MTF-1 canonical-market audit emits all 15 CPCV combinations and zero forbidden overlap after purge; WFA kept rows are 562/751/940.",
+        "Fresh cumulative local acceptance passes 75/75 FRESH_FULL on source tree 17d692267a125587a9dc44ff25809c515a1a5c8c1693488fbb3d8268ae9da6e4 with report SHA256 ad4fdd1a687ba144c111bec0db471117f6d2bf8429e532e47e35a5a16cb0b4f1.",
+        "Research trainability is not claimed because the 30-day closure window yields zero kept train rows in CPCV splits 1-5; MTF-4 contract-first Strategy Challenger work is authorized next."
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "title": "MTF-4 deterministic Strategy Challenger contract preregistered",
+      "type": "governance",
+      "changes": [
+        "Frozen M15 as sole directional owner; H4 context, H1 setup and latest-closed M5 timing are veto-only.",
+        "Reused the existing Strategy Optimizer and Challenger lifecycle instead of introducing a parallel optimizer or auto-promotion path.",
+        "Reserved multi-bar/learned M5 timing for MTF-7 and kept all model training blocked."
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "title": "MTF-4 BEFORE plan corrected for MQL evidence boundary",
+      "type": "governance",
+      "changes": [
+        "Removed an impossible Python-to-MQL SOURCE edge before implementation.",
+        "Marked MQL call semantics as DOCUMENT because the current static actual-graph generator does not parse .mq5; V204 plus MetaEditor/MT5 own executable MQL proof.",
+        "Added machine-extractable Python parity gate SOURCE edges so genuine BEFORE sequence validation remains substantive rather than decorative."
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "title": "Fresh public max-mtf authority and Skill Workflow adoption",
+      "type": "governance",
+      "changes": [
+        "Moved public source authority to fresh repository maxqstudio/max-mtf rooted at 883ebeb1ca2e70f6255e0889358ba7c822ac52f5 with no inherited max-mtf PR/Actions/history.",
+        "Kept Owner runtime evidence, market/runtime data, compiled/model artifacts and private provenance outside public Git.",
+        "Adopted Skill_Workflow 1f9b48b9a3bf29bf2929a7d38b1ec9a645dfb720 vendored truth-sync/STRICT selftest updates.",
+        "Reclassified current MTF-4 sequence as DURING in the fresh repository because implementation predates the new repository root; retrospective BEFORE lineage is forbidden.",
+        "Recorded MTF-4 source/V204 as implemented while keeping Owner MT5/MetaEditor runtime, control-versus-Challenger backtest and Strategy Challenger artifact explicitly NOT_PROVEN."
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "title": "MTF-4 GitHub source acceptance",
+      "type": "acceptance",
+      "changes": [
+        "Windows Source CI passed source-safety, MTF-2/3/4 source contracts and permanent STRICT governance on the synchronized public source/governance tree.",
+        "Exact Skill_Workflow 1f9b48b9 selftests passed from an isolated checkout; vendored project validators passed docs, handoff, human comprehension, sequence sessions and cross-document consistency.",
+        "Project Truth remains intentionally NOT_PROVEN only across Owner-runtime/behavioral boundaries required by PROJECT_PROFILE.yaml.",
+        "MTF-4 Owner MetaEditor compile, MT5 parity, identical-window control-versus-Challenger backtest and Strategy Challenger artifact remain NOT_PROVEN."
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "title": "MTF-4 GitHub phase prepared for privacy-clean root",
+      "type": "acceptance",
+      "changes": [
+        "The MTF-4 source/governance tree passed Windows Source CI before public-history scrub.",
+        "Public-history scrub removes transient commit metadata/history without changing accepted product-source semantics.",
+        "The privacy-clean root must be revalidated by Windows Source CI before Owner runtime acceptance.",
+        "Owner MetaEditor/MT5 runtime, identical-window control-versus-Challenger backtest and Strategy Challenger artifact remain NOT_PROVEN; MTF-5 remains blocked until MTF-4 closes."
+      ]
+    }
+  ]
+}

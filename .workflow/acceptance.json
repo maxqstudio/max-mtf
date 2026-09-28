@@ -1,0 +1,134 @@
+{
+  "evidence_boundary": "Public GitHub source tests and deterministic governance validators prove only the exact checked-out source/spec snapshot. MTF-4 Owner MT5/MetaEditor runtime, identical-window control/challenger backtest and Strategy Challenger production evidence remain external phase-end gates and are NOT_PROVEN.",
+  "human_comprehension_questions": {
+    "How does failure/recovery behave?": "PASS",
+    "How does important data flow through the system?": "PASS",
+    "What are the important lifecycle states and transitions?": "PASS",
+    "What are the main user/domain workflows?": "PASS",
+    "What are the major components and how do they relate?": "PASS",
+    "What is mutable and what is immutable?": "PASS",
+    "What is proven and what is not proven?": "PASS",
+    "What is the current project state?": "PASS",
+    "What is the project and what problem does it solve?": "PASS",
+    "What may happen next and what is blocked?": "PASS",
+    "Who uses it and what are the primary outcomes?": "PASS",
+    "Who/what is authoritative for important decisions?": "PASS"
+  },
+  "human_comprehension_status": "PASS",
+  "requirements": [
+    {
+      "evidence": "tools/public_source_guard.py + .github/workflows/windows-source-ci.yml",
+      "id": "PUBLIC-SOURCE-BOUNDARY",
+      "requirement": "Public Git must contain source/governance/tests only and exclude Owner runtime evidence, private data, compiled/model artifacts, calibration and secrets.",
+      "status": "PASS"
+    },
+    {
+      "evidence": ".workflow/tools/sync_project_truth.py + .workflow/tools/selftest_strict_project_workflow.py",
+      "id": "SKILL-WORKFLOW",
+      "requirement": "Vendored STRICT workflow tools used by this project must match Skill_Workflow authority 1f9b48b9a3bf29bf2929a7d38b1ec9a645dfb720 for current files.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "ModelLab/tests/v202_mtf2_feature_label_contract_selftest.py",
+      "id": "MTF2-V202",
+      "requirement": "MTF-2 V3 role feature/label source contract remains regression-safe.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "ModelLab/tests/v203_mtf3_timestamp_overlap_purge_selftest.py",
+      "id": "MTF3-V203",
+      "requirement": "MTF-3 exact timestamp dependency/purge source contract and legacy split byte authority remain regression-safe.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "ModelLab/tests/v204_mtf4_strategy_contract_selftest.py",
+      "id": "MTF4-V204",
+      "requirement": "MTF-4 deterministic role gates, closed-bar causality, M15 direction ownership, 16/23 optimizer profile identity and Challenger-only lifecycle must pass targeted source acceptance.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "docs/sequence/sessions/MTF4-STRATEGY.during.json + generated actual graph",
+      "id": "MTF4-SEQUENCE-DURING",
+      "requirement": "Fresh max-mtf repository must generate current MTF-4 actual sequence in DURING mode and validate it against current source/test evidence.",
+      "status": "PASS"
+    },
+    {
+      "evidence": ".workflow/tools/sync_project_truth.py + validate_project_docs.py + validate_doc_quality.py",
+      "id": "DOC-COMPILER",
+      "requirement": "STRICT generated canonical Markdown under docs/ must exactly match deterministic Project Truth Compiler output.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "Windows Source CI on the final privacy-clean public root; source tree must be revalidated after history scrub.",
+      "id": "MTF4-GITHUB-SOURCE-ACCEPTANCE",
+      "requirement": "Final public MTF-4 source tree must pass source-safety, MTF-2/3/4 source contracts and permanent STRICT Skill_Workflow governance after privacy-history scrub.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "Owner-only phase-end external evidence",
+      "id": "MTF4-OWNER-RUNTIME",
+      "requirement": "Final MTF-4 candidate must compile in Owner MetaEditor and pass candidate-bound MT5 runtime/parity acceptance.",
+      "status": "NOT_PROVEN"
+    },
+    {
+      "evidence": "Owner-only phase-end MT5 acceptance",
+      "id": "MTF4-CONTROL-BACKTEST",
+      "requirement": "Single-TF control and MTF Challenger must be evaluated on identical symbol/window/cost assumptions.",
+      "status": "NOT_PROVEN"
+    },
+    {
+      "evidence": "phase-end candidate-bound Strategy Challenger artifact",
+      "id": "MTF4-STRATEGY-CHALLENGER",
+      "requirement": "A qualified MTF Strategy result may become Strategy Challenger only; no automatic Champion mutation.",
+      "status": "NOT_PROVEN"
+    }
+  ],
+  "runtime_checks": [
+    "PASS_SOURCE_CONTRACT ? V202 MTF-2 regression",
+    "PASS_SOURCE_CONTRACT ? V203 MTF-3 causal purge regression",
+    "PASS_SOURCE_CONTRACT ? V204 MTF-4 deterministic strategy source contract",
+    "PASS_PUBLIC_BOUNDARY ? public source guard",
+    "PASS_SEQUENCE ? MTF-4 DURING generated actual + validation",
+    "NOT_PROVEN_OWNER_RUNTIME ? MetaEditor exact compile + MT5 parity/runtime",
+    "NOT_PROVEN_CONTROL_CHALLENGER ? identical-window/cost backtest",
+    "BLOCKED_MODEL_RESEARCH ? MTF-4 closure + full historical post-purge sample sufficiency required"
+  ],
+  "runtime_status": "NOT_PROVEN",
+  "schema_version": 1,
+  "sequence_mode": "DURING",
+  "sequence_session": "docs/sequence/sessions/MTF4-STRATEGY.during.json",
+  "sequence_sync_status": "PASS",
+  "test_commands": [
+    "python tools/public_source_guard.py",
+    "python ModelLab/tests/v202_mtf2_feature_label_contract_selftest.py",
+    "python ModelLab/tests/v203_mtf3_timestamp_overlap_purge_selftest.py",
+    "python ModelLab/tests/v204_mtf4_strategy_contract_selftest.py",
+    "python .workflow/tools/sync_project_truth.py --root .",
+    "python .workflow/tools/validate_project_docs.py --root .",
+    "python .workflow/tools/validate_doc_quality.py --root .",
+    "python .workflow/tools/validate_sequence_sessions.py --root .",
+    "python .workflow/tools/validate_handoff.py --root .",
+    "python .workflow/tools/validate_human_comprehension.py --root . --require-pass",
+    "python .workflow/tools/validate_cross_document_consistency.py --root ."
+  ],
+  "truth_gates": {
+    "BEHAVIORAL_SYNC": "NOT_PROVEN",
+    "CROSS_DOCUMENT_CONSISTENCY": "PASS",
+    "DOC_LAYOUT": "PASS",
+    "DOC_READABILITY": "PASS",
+    "DOC_SOURCE_TRACEABILITY": "PASS",
+    "DOC_TEST_TRACEABILITY": "PASS",
+    "HUMAN_COMPREHENSION": "PASS",
+    "PROJECT_DOCS_NORMALIZED": "PASS",
+    "PROJECT_DOCS_SYNC": "PASS",
+    "PROJECT_STATE_SYNC": "NOT_PROVEN",
+    "PROVENANCE_SYNC": "PASS",
+    "REFERENCE_SYNC": "PASS",
+    "RUNTIME_E2E": "NOT_PROVEN",
+    "SEMANTIC_SYNC": "PASS",
+    "SEQUENCE_SYNC": "PASS",
+    "SOURCE_TESTS": "PASS",
+    "STRUCTURAL_SYNC": "PASS",
+    "TEST_RUNTIME_TRACEABILITY": "NOT_PROVEN"
+  }
+}

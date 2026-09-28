@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "flow_id": "FLOW-MTF4-STRATEGY",
+  "title": "MTF-4 deterministic Strategy Challenger",
+  "purpose": "Evaluate deterministic H4 context, H1 setup, M15 direction and M5 timing roles while preserving M15 as sole direction authority and stopping at Strategy Challenger eligibility.",
+  "critical": true,
+  "entry_condition": "MTF mode is explicitly enabled on M15 and required closed H4/H1/M5 role data is causally available.",
+  "authority": "EA_v2_00/baseline/Max_MTF.mq5 + ModelLab/strategy/mtf4_strategy.py + ModelLab/strategy/strategy_optimizer.py",
+  "states": [
+    "M15_DIRECTION",
+    "H4_CONTEXT_VETO",
+    "H1_SETUP_VETO",
+    "M5_TIMING_VETO",
+    "TAKE_OR_SKIP",
+    "STRATEGY_CHALLENGER_ELIGIBLE"
+  ],
+  "transitions": [
+    {
+      "from": "M15_DIRECTION",
+      "to": "H4_CONTEXT_VETO",
+      "action": "Preserve M15 direction and apply H4 context gate",
+      "side_effects": [
+        "none"
+      ]
+    },
+    {
+      "from": "H4_CONTEXT_VETO",
+      "to": "H1_SETUP_VETO",
+      "action": "Continue only when H4 passes",
+      "side_effects": [
+        "none"
+      ]
+    },
+    {
+      "from": "H1_SETUP_VETO",
+      "to": "M5_TIMING_VETO",
+      "action": "Continue only when H1 passes",
+      "side_effects": [
+        "none"
+      ]
+    },
+    {
+      "from": "M5_TIMING_VETO",
+      "to": "TAKE_OR_SKIP",
+      "action": "Latest fully closed M5 may veto timing but never reverse direction",
+      "side_effects": [
+        "deterministic decision"
+      ]
+    },
+    {
+      "from": "TAKE_OR_SKIP",
+      "to": "STRATEGY_CHALLENGER_ELIGIBLE",
+      "action": "Qualified optimizer evidence may register Strategy Challenger only",
+      "side_effects": [
+        "candidate lineage"
+      ]
+    }
+  ],
+  "invariants": [
+    "M15 is the sole directional owner.",
+    "H4/H1/M5 are veto-only and cannot originate or reverse direction.",
+    "Missing/future required role data fails closed.",
+    "MTF-4 does not introduce a future M5 ENTER/WAIT/CANCEL state machine.",
+    "No automatic Strategy Champion promotion."
+  ],
+  "failure_behavior": [
+    "Any missing, stale, future or invalid role input returns SKIP/fail-closed.",
+    "Owner runtime/backtest evidence remains NOT_PROVEN until phase-end execution."
+  ],
+  "restart_behavior": [
+    "GitHub source tests may rerun from the same immutable candidate; Owner runtime is deferred to phase end."
+  ],
+  "rollback_behavior": [
+    "Failed source/runtime acceptance cannot mutate Strategy Champion."
+  ],
+  "source_owners": [
+    "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+    "EA_v2_00/baseline/Max_MTF.mq5::Mtf4EvaluateStrategy",
+    "ModelLab/strategy/strategy_optimizer.py::validate_request"
+  ],
+  "tests": [
+    "ModelLab/tests/v204_mtf4_strategy_contract_selftest.py"
+  ],
+  "sequence_session": "docs/sequence/sessions/MTF4-STRATEGY.during.json"
+}

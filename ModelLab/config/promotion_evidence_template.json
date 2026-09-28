@@ -1,0 +1,26 @@
+{
+  "mt5_parity": {
+    "status": "PENDING",
+    "rows": 0,
+    "max_abs_error": 0.0
+  },
+  "strategy_tester": {
+    "status": "PENDING"
+  },
+  "shadow_forward": {
+    "status": "PENDING",
+    "trades": 0,
+    "profit_factor": 0.0,
+    "expectancy_r": 0.0,
+    "max_drawdown_r": 0.0,
+    "champion": {
+      "profit_factor": 0.0,
+      "expectancy_r": 0.0,
+      "max_drawdown_r": 0.0,
+      "total_r": 0.0,
+      "recovery_factor": 0.0
+    },
+    "total_r": 0.0,
+    "recovery_factor": 0.0
+  }
+}

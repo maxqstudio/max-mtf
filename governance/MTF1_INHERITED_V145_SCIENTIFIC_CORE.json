@@ -1,0 +1,739 @@
+{
+  "schema": "MAX_MTF_INHERITED_V145_SCIENTIFIC_CORE_V4",
+  "source_project": "Max Research Agent ONNX Factory",
+  "source_version": "1.4.5",
+  "source_package_sha256": "371a4575ed87a845fb7bdfee4f8ded45fe811a77dcf33c8ed93e9f48ee92c190",
+  "scope": "V1_4_5_CORE_BYTE_IDENTICAL_EXCEPT_EXPLICIT_SELECTIVE_INHERITED_BUGFIX_PORTS",
+  "files": {
+    "ModelLab/research/kpi.py": "274ad08001c9050156525661a84f3c26209858d2568010dbf07701b2e7dd66f6",
+    "ModelLab/research/cpcv.py": "4358259d7eed365860d1b6ac331683b1ae168c5385197b67b70e66bb4f508d13",
+    "ModelLab/research/risk_kpi.py": "c09b2dacea4b06f5aea4dea2588778bf7c437e25fc432c8ef72dd97ec6083b2d",
+    "ModelLab/research/sample_policy.py": "f461061ba21530d5b5fb005e44662ee7332b0d0dea72349ff7266aada33e616e",
+    "ModelLab/models/models.py": "e6b98b3864e999114bd45b2adc1de8bf049a07674520c9ea2bd38b7960c853bd",
+    "ModelLab/research/research_architect.py": "661b6ac67de1eaca5508aaa9715d57721be553c6db58e72b8397244a48cca047",
+    "ModelLab/models/model_registry.py": "d4b5b86d6ba6e3c9c8267afd11f78bfbf653cfab2f16680cbde7888dabbf0520",
+    "ModelLab/factory/supervisor_agent.py": "f6fcaf234681eb1cd1784149c77371aa2d168ce9297d83f0f1739e74a8ed24c6",
+    "ModelLab/research/research_engine_v3.py": "e965d5f8376b65741877bc676de1f3c2b06a3b4e9b754a57d36b194479db96aa",
+    "ModelLab/research/evaluation.py": "ce3e17a900fb787d942653c3131bda7869775aef0d69eab59d7baad3bcea131b",
+    "ModelLab/research/temporal_research.py": "a9019ebd310be18aa72a9bac3ec1775bbc2370b77c92a598b34b729f48992d3a",
+    "ModelLab/research/policy_discovery.py": "74b230d1c186d2c74910744f347945c720430a5f72e604e36f0886aadc828aec",
+    "ModelLab/research/experiment_blocks.py": "a60d8947fe8cd97bbd89a43b78d5c4ab5dacfc81eaa057199338a63c311af144",
+    "ModelLab/data/leakage_adversarial_ci.py": "6efcc194fdb985af1915169ecdf97114105879bbab8acf6d71083eb91080d522",
+    "ModelLab/models/capacity_governor.py": "7fbe3c5d068a80009b3f20a0e1ef0fc3879cc308042f17ce2db05079f0a73827",
+    "ModelLab/research/creativity_governor.py": "7d384577dbc0fced371e6fb4a7fca5311902cc491fadc46412349eec3b7845f0",
+    "ModelLab/host/resource_preflight.py": "db82fae8dea28bb945f8f7302641ccd455de736cb13ef48ec389198fff144bbc",
+    "ModelLab/models/topology_allocation.py": "51c7e07e2f8d33793f32dcd0c4f09ea520af0d402fac8ec19411e6f89ac5e1bf",
+    "ModelLab/research/pbo.py": "269c442c53f79a67aa190ce6b4767697ef3a774538d7fabec28f1cb2dc21c4d2",
+    "ModelLab/data/labels.py": "7a5d3b170c6714eb552ca0fba9e89d24da0bf01d3a0e1fa5327feaa860b0e8fc"
+  },
+  "selective_bugfix_port": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_SELECTIVE_PORT_ONLY",
+    "source_bugfix_line": "Max single-TF v1.4.7 contracts only; no wholesale source replacement",
+    "required_gates": [
+      "V201_INHERITED_V147_STRATEGY_GEOMETRY_HANDOFF",
+      "V201_INHERITED_V147_FAILED_CPCV_RESUME",
+      "V201_CPCV_LIVE_KPI_TELEMETRY"
+    ],
+    "files": {
+      "ModelLab/factory/champion_factory.py": {
+        "current_sha256": "5c10af1e4db19d91bc3a05092f9ccda49335bcba8635e6dfc0b7663f83e0a240",
+        "contracts": [
+          "V201_INHERITED_V147_STRATEGY_GEOMETRY_HANDOFF"
+        ],
+        "v1_4_5_base_sha256": "e3487461916baa3375589c9759583e0ce2e64753d3c56f9d869e154dbf5b0732"
+      },
+      "ModelLab/factory/factory_jobs.py": {
+        "current_sha256": "0fdbfa65c5b2a90dae60a133e35346b4f99a9f1f700fe606197029386976df5d",
+        "contracts": [
+          "V201_INHERITED_V147_FAILED_CPCV_RESUME"
+        ],
+        "v1_4_5_base_sha256": "78c1791b00fdb7ffcc7db476ed3b7ea423c38044c803b936d5c535ec4edddd23"
+      },
+      "ModelLab/factory/factory_worker.py": {
+        "current_sha256": "ad744bfad0c0110b74b8bd3964528ff4a6123fbdab7b84ce9bba08be03fc8ab6",
+        "contracts": [
+          "V201_INHERITED_V147_FAILED_CPCV_RESUME"
+        ],
+        "v1_4_5_base_sha256": null
+      },
+      "ModelLab/strategy/strategy_geometry.py": {
+        "current_sha256": "1f4eff70be2810c07005b9b9575cb32e951bb73ddc19200f55ddee84a6fde859",
+        "contracts": [
+          "V201_INHERITED_V147_STRATEGY_GEOMETRY_HANDOFF"
+        ],
+        "v1_4_5_base_sha256": null
+      },
+      "ModelLab/core/inherited_v147.py": {
+        "current_sha256": "c0e0537425a9521a1bacc5e75875bff0c6106afd62039df07649ab833d59a192",
+        "contracts": [
+          "V201_INHERITED_V147_STRATEGY_GEOMETRY_HANDOFF",
+          "V201_INHERITED_V147_FAILED_CPCV_RESUME",
+          "V201_CPCV_LIVE_KPI_TELEMETRY"
+        ],
+        "v1_4_5_base_sha256": null
+      },
+      "ModelLab/ui/app.py": {
+        "current_sha256": "3500583f6042355076b3f4abfc86128d617094256a9d5003f8b9a448e8aa0d3c",
+        "contracts": [
+          "V201_INHERITED_V147_FAILED_CPCV_RESUME",
+          "V201_CPCV_LIVE_KPI_TELEMETRY"
+        ],
+        "v1_4_5_base_sha256": null
+      }
+    },
+    "layout_migration_note": "Current SHA values bind relocated canonical bytes; top-level frozen inherited baseline hashes remain lineage-only and unchanged."
+  },
+  "selective_scientific_repair": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_TRAINING_SCIENCE_REPAIR_ONLY",
+    "scope": "PURGED_INTERNAL_DL_EARLYSTOP_AND_TRANSFORMER_MOE_ROUTER_DIAGNOSTICS_ONLY",
+    "required_gates": [
+      "V201_DL_INTERNAL_EARLYSTOP_PURGE",
+      "V201_MOE_TOP1_ROUTER_GRADIENT",
+      "V201_MOE_ROUTING_DIAGNOSTICS"
+    ],
+    "files": {
+      "ModelLab/core/temporal_index.py": {
+        "current_sha256": "7e8ad66644723ca5cc730cfa7a92aa64d5ea8020c92f10a274fa0be17acb9e54"
+      },
+      "ModelLab/research/gru_research.py": {
+        "current_sha256": "a35d5a4515fb6df5ba9acc318a5f5f0f3f9686fb18ff542c26876957289c60ed"
+      },
+      "ModelLab/research/temporal_research.py": {
+        "current_sha256": "c7582b745235d0d34255a8095752ea4280e031079619352f871f67a7c4c5935b"
+      },
+      "ModelLab/research/hybrid_research.py": {
+        "current_sha256": "9a2481cb5013760ec5a7a0bf80209262a34a55decad1fb34257670679ff30f09"
+      },
+      "ModelLab/models/models.py": {
+        "current_sha256": "19224595c31b35418ea8ad254cb44cc24bf6a0aeba1d733590ec431157e07a98"
+      },
+      "ModelLab/models/model_lab.py": {
+        "current_sha256": "8ee56ec412625bed112538b1d44f7b2a5cb43c1e5a82f2c37bc078f7f6e75560"
+      },
+      "ModelLab/factory/supervisor_agent.py": {
+        "current_sha256": "3714bae3efdda654dad7737fd3df6d3e7438ea86e09c79c24790d2d7092ff87c"
+      },
+      "ModelLab/research/cpcv.py": {
+        "current_sha256": "4d3fd350621377cc7c95be062dd5c9b7c1bb78c3a9abcc94efa806f33fb9f5f6"
+      },
+      "ModelLab/factory/champion_factory.py": {
+        "current_sha256": "5c10af1e4db19d91bc3a05092f9ccda49335bcba8635e6dfc0b7663f83e0a240"
+      },
+      "ModelLab/config/models/model_registry.json": {
+        "current_sha256": "b72bbd312cb5eefcae129cbdecf09d73fd8aa248f088fe53be109c8d8e1d0754"
+      }
+    },
+    "layout_migration_note": "Current SHA values bind relocated canonical bytes; top-level frozen inherited baseline hashes remain lineage-only and unchanged."
+  },
+  "selective_scientist_sync_repair": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_SCIENTIST_E2E_SYNC_ONLY",
+    "scope": "STRICT_RESEARCH_INTENT_TO_EXECUTABLE_IDENTITY_PLUS_SINGLE_CANONICAL_TRAINING_METHOD_CONTEXT",
+    "required_gates": [
+      "V201_SCIENTIST_KNOWLEDGE_SYNC",
+      "V201_SCIENTIST_STRICT_CANDIDATE_ADMISSION",
+      "V201_TRAINING_METHOD_CONTRACT_E2E_SYNC",
+      "V201_MANUAL_EXACT_PARAMETER_IDENTITY",
+      "V201_MEMORY_EXACT_RECHECK_LINEAGE",
+      "V201_SCIENTIST_HYPOTHESIS_ADMISSION"
+    ],
+    "files": {
+      "ModelLab/models/models.py": {
+        "current_sha256": "19224595c31b35418ea8ad254cb44cc24bf6a0aeba1d733590ec431157e07a98"
+      },
+      "ModelLab/scientist/core/scientist.py": {
+        "current_sha256": "3eb6219ff09f2a24cd88f51e2424bea864f846bf17eb4ed12f3b80956e2b6553"
+      },
+      "ModelLab/factory/supervisor_agent.py": {
+        "current_sha256": "3714bae3efdda654dad7737fd3df6d3e7438ea86e09c79c24790d2d7092ff87c"
+      },
+      "ModelLab/models/model_registry.py": {
+        "current_sha256": "c80d41add47fe6871c8ab8b80ef265865d81303b57c3e305443466f519a67515"
+      },
+      "ModelLab/research/research_architect.py": {
+        "current_sha256": "0804e2bbc591d4178e059d1d3d39865b293f25cd8cec5dfc35440bac24b4317e"
+      },
+      "ModelLab/research/research_control.py": {
+        "current_sha256": "2867df7b044b75540fb87f730224898c45091fc92705828c365f2bee6b59e36b"
+      },
+      "ModelLab/scientist/knowledge/scientist_knowledge.py": {
+        "current_sha256": "24c77851f6b14bb67102fe27a54e449fa3368c9eb490ad953503de44723be003"
+      },
+      "ModelLab/scientist/chat/scientist_chat.py": {
+        "current_sha256": "f2adc164e2d7afa04d55933caf95ca83384a49e0bdd93b0cae0a7572bd45204c"
+      },
+      "ModelLab/ui/app.py": {
+        "current_sha256": "3500583f6042355076b3f4abfc86128d617094256a9d5003f8b9a448e8aa0d3c"
+      },
+      "ModelLab/max_graph/scientist_director_graph.py": {
+        "current_sha256": "abd4122dfbf73c375614c5f74b8042e7bebf07987a8d771f037e93bb8e8f0c8d"
+      },
+      "ModelLab/core/training_method_contract.py": {
+        "current_sha256": "cb23e6e4030a9b14c80c0b97129e8bc81e0296f9ff5a487f5d7a74ef1d898d8a"
+      },
+      "ModelLab/governance/MODEL_TRAINING_METHOD_CONTRACT_V1.json": {
+        "current_sha256": "9cff380177ef82771aa2f2e74634a35c1db472ca1a2d00cb0e4bab06507cf99d"
+      },
+      "ModelLab/research/research_memory.py": {
+        "current_sha256": "9f6a07e9ecb3a83dbc691b9a6a0c1d328fe8e58f31d52a6b01388246c97cd38e"
+      },
+      "ModelLab/research/scientific_hypotheses.py": {
+        "current_sha256": "fc714ccefac6597806ecc4e9980da28e43fca23aa3ab82d3a69808cbe8354c3b"
+      }
+    },
+    "layout_migration_note": "Current SHA values bind relocated canonical bytes; top-level frozen inherited baseline hashes remain lineage-only and unchanged."
+  },
+  "selective_dynamic_capacity_repair": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_DYNAMIC_MODEL_CAPACITY_ONLY",
+    "scope": "EVIDENCE_AWARE_THREE_CEILING_CAPACITY_PLUS_TRANSFORMER_TFT_LEGAL_HEADROOM_AND_FAMILY_SPECIFIC_SEARCH_DIVERSITY_ONLY",
+    "required_gates": [
+      "V201_DYNAMIC_MODEL_CAPACITY_AUTHORITY",
+      "V201_DYNAMIC_CAPACITY_SEARCH_DIVERSITY_FAMILY_EVIDENCE",
+      "V201_TRANSFORMER_TFT_LEGAL_CAPACITY_HEADROOM"
+    ],
+    "files": {
+      "ModelLab/models/capacity_governor.py": {
+        "current_sha256": "9b1554a7485d570e94b9e6137f3d957b33c3b606a05e719be55d0e7b4d10ada1"
+      },
+      "ModelLab/host/resource_preflight.py": {
+        "current_sha256": "d9bbb3954ceb53c36384d8a8366b7e6c2ab1572f8e9e15c1616abcf44d540745"
+      },
+      "ModelLab/models/model_registry.py": {
+        "current_sha256": "c80d41add47fe6871c8ab8b80ef265865d81303b57c3e305443466f519a67515"
+      },
+      "ModelLab/research/research_architect.py": {
+        "current_sha256": "0804e2bbc591d4178e059d1d3d39865b293f25cd8cec5dfc35440bac24b4317e"
+      },
+      "ModelLab/research/research_control.py": {
+        "current_sha256": "2867df7b044b75540fb87f730224898c45091fc92705828c365f2bee6b59e36b"
+      },
+      "ModelLab/scientist/core/scientist.py": {
+        "current_sha256": "3eb6219ff09f2a24cd88f51e2424bea864f846bf17eb4ed12f3b80956e2b6553"
+      },
+      "ModelLab/models/models.py": {
+        "current_sha256": "19224595c31b35418ea8ad254cb44cc24bf6a0aeba1d733590ec431157e07a98"
+      },
+      "ModelLab/factory/champion_factory.py": {
+        "current_sha256": "5c10af1e4db19d91bc3a05092f9ccda49335bcba8635e6dfc0b7663f83e0a240"
+      },
+      "ModelLab/ui/app.py": {
+        "current_sha256": "3500583f6042355076b3f4abfc86128d617094256a9d5003f8b9a448e8aa0d3c"
+      },
+      "ModelLab/scientist/knowledge/scientist_knowledge.py": {
+        "current_sha256": "24c77851f6b14bb67102fe27a54e449fa3368c9eb490ad953503de44723be003"
+      },
+      "ModelLab/config/config.json": {
+        "current_sha256": "f2ea51163ef598766f6d13f1fdd6bf1b8ddff8db38596e6e86251853948ada49"
+      },
+      "ModelLab/config/models/model_registry.json": {
+        "current_sha256": "b72bbd312cb5eefcae129cbdecf09d73fd8aa248f088fe53be109c8d8e1d0754"
+      }
+    },
+    "layout_migration_note": "Current SHA values bind relocated canonical bytes; top-level frozen inherited baseline hashes remain lineage-only and unchanged."
+  },
+  "selective_scientist_python_analysis_runtime": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_INTEGRATED_ONE_CLICK_SCIENTIST_PYTHON_OWNER_ACCEPTANCE_ONLY",
+    "scope": "OPTIONAL_GUARDED_ANALYTICAL_SUPPORT_PLUS_IN_CANDIDATE_OWNER_WINDOWS_ACCEPTANCE_ONLY_NO_FACTORY_DECISION_AUTHORITY_NO_MTF2",
+    "required_gates": [
+      "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+      "V201_SCIENTIST_KNOWLEDGE_SYNC"
+    ],
+    "files": {
+      "ModelLab/scientist/python/scientist_python_runtime.py": {
+        "current_sha256": "f84217bdf7e4b4ad501edad164543bf1664156c5c8d0b8560e7891f0bac52c94",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/scientist/python/scientist_python_child.py": {
+        "current_sha256": "d18d6a5fdc0b5c5d8a4c45cc638d0a6a15f34fac2374923462bcbe9973fe7e14",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/scientist/python/scientist_python_setup.py": {
+        "current_sha256": "7af22337c271a3f23e70d90eb536bdf169a7d997f7d2d8cc050d7ce97ba910e2",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/requirements/requirements-scientist-python.txt": {
+        "current_sha256": "90f3acc7900e1461afbd463edf44d01fb1392b7be8323b69fda9dff5d108f5e9",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/tools/scientist_python/RUN_SCIENTIST_PYTHON_SETUP.cmd": {
+        "current_sha256": "64c9287185a7583a6fff9bfe23ec526c78c5f8b9176f7b591d38663dbe4ab228",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/tools/scientist_python/RUN_SCIENTIST_PYTHON_HEALTHCHECK.cmd": {
+        "current_sha256": "a9f41b4048e70a31822995e26ac98f42cd0cad3fa10f9c6fbe620a448bf5cdfc",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/scientist/core/scientist.py": {
+        "current_sha256": "3eb6219ff09f2a24cd88f51e2424bea864f846bf17eb4ed12f3b80956e2b6553",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/scientist/chat/scientist_chat.py": {
+        "current_sha256": "f2adc164e2d7afa04d55933caf95ca83384a49e0bdd93b0cae0a7572bd45204c",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/scientist/knowledge/scientist_knowledge.py": {
+        "current_sha256": "24c77851f6b14bb67102fe27a54e449fa3368c9eb490ad953503de44723be003",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/docs/contracts/SCIENTIST_PYTHON_ANALYSIS_RUNTIME_V1.md": {
+        "current_sha256": "55fc50f9054ff9ad3a5d01043da2cecd2aa74731d86cf24b8e96425872317302",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/scientist/python/scientist_python_capabilities.py": {
+        "current_sha256": "1311202cd4d85917821b0a044723d93880d2508333d2ce268cc03046b9483503",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py": {
+        "current_sha256": "f680dda31df0265edab304fb73e581089c009538d2977f010fc978a361da50bc",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/RUN_SCIENTIST_PYTHON_OWNER_ACCEPTANCE.cmd": {
+        "current_sha256": "b54d9ec9494c80b1b4db4dd1128ca3fdfa049fb58801aa5487bf144fbc158b8c",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/acceptance/verification/VERIFY_SCIENTIST_PYTHON_OWNER_ACCEPTANCE.cmd": {
+        "current_sha256": "e36bc7a5362b684f02ea52dcec46d7f2e0aad3c1e7cb1b1f37cdbccdc98b7093",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      }
+    },
+    "layout_migration_note": "Current SHA values bind relocated canonical bytes; top-level frozen inherited baseline hashes remain lineage-only and unchanged."
+  },
+  "selective_modellab_layout_migration": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_MODELLAB_CANONICAL_LAYOUT_MIGRATION_ONLY",
+    "scope": "PACKAGE_PATH_IMPORT_LAUNCHER_AND_PATH_AUTHORITY_RELOCATION_ONLY_NO_SCIENTIFIC_SEMANTICS_CHANGE",
+    "layout_manifest": "ModelLab/governance/MODELLAB_LAYOUT_MANIFEST.json",
+    "required_gate": "V201_RELEASE_PORTABILITY",
+    "root_contract": "MODELLAB_ROOT_OPERATOR_SURFACE_ONLY",
+    "mtf2_status": "BLOCKED"
+  },
+  "selective_owner_acceptance_canonical_max_python_binding": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_OWNER_ACCEPTANCE_CANONICAL_MAX_PYTHON_BINDING_REPAIR_ONLY",
+    "scope": "OWNER_ACCEPTANCE_AND_RUN_ACCEPTANCE_CANONICAL_MAX_PYTHON_3_12_VENV_BINDING_ONLY_NO_SCIENTIFIC_SEMANTICS_CHANGE",
+    "canonical_authority": "ui.ui_bootstrap.ensure_python312 + ui.ui_launcher.ensure_env/venv_python",
+    "required_gates": [
+      "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+      "V201_RELEASE_PORTABILITY",
+      "V201_FINAL_CLOSURE_PYTHON_ENV_AUTHORITY"
+    ],
+    "files": {
+      "ModelLab/acceptance/runners/max_python_bootstrap.py": {
+        "current_sha256": "95d2ea5714fb6d5700033c152cfc09b87ed709dd7804a5a2da7a495d9bf4dbab",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py": {
+        "current_sha256": "f680dda31df0265edab304fb73e581089c009538d2977f010fc978a361da50bc",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/verification/modellab_layout_verify.py": {
+        "current_sha256": "7ae1bcce869aa404204c25ec5f3b5ecb2598ad3f2b29f9cef5036e546acd2f52",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/RUN_ACCEPTANCE.cmd": {
+        "current_sha256": "785f661db2fd31b1ba98ed3c4656918413d4276b06eb3ebd11a5a520178f0ffd",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/RUN_SCIENTIST_PYTHON_OWNER_ACCEPTANCE.cmd": {
+        "current_sha256": "b54d9ec9494c80b1b4db4dd1128ca3fdfa049fb58801aa5487bf144fbc158b8c",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/verification/VERIFY_SCIENTIST_PYTHON_OWNER_ACCEPTANCE.cmd": {
+        "current_sha256": "e36bc7a5362b684f02ea52dcec46d7f2e0aad3c1e7cb1b1f37cdbccdc98b7093",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/tools/scientist_python/RUN_SCIENTIST_PYTHON_SETUP.cmd": {
+        "current_sha256": "64c9287185a7583a6fff9bfe23ec526c78c5f8b9176f7b591d38663dbe4ab228",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/tools/scientist_python/RUN_SCIENTIST_PYTHON_HEALTHCHECK.cmd": {
+        "current_sha256": "a9f41b4048e70a31822995e26ac98f42cd0cad3fa10f9c6fbe620a448bf5cdfc",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/run_acceptance.py": {
+        "current_sha256": "76c0ba6b90e157dddf29f419edd60a54b56af1dd239b541028ba97dc933e5403",
+        "contracts": [
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+          "V201_RELEASE_PORTABILITY"
+        ]
+      }
+    },
+    "scientist_python_remains_separate": true,
+    "mtf2_status": "BLOCKED"
+  },
+  "selective_ui_acceptance_runtime_import_classification": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_UI_ACCEPTANCE_RUNTIME_IMPORT_CLASSIFICATION_REPAIR_ONLY",
+    "scope": "EXPLICIT_ACCEPTANCE_ONLY_EXTERNAL_RUNTIME_IMPORT_CLASSIFICATION_FOR_PLAYWRIGHT_BROWSER_RUNNER_NO_PRODUCTION_DEPENDENCY_MERGE",
+    "required_gate": "V201_RELEASE_PORTABILITY",
+    "external_runtime_gate": "STREAMLIT_1_63_RUNTIME_RENDER_ACCEPTANCE",
+    "canonical_max_playwright_required": false,
+    "dedicated_ui_acceptance_environment": "ui-acceptance312",
+    "files": {
+      "ModelLab/acceptance/verification/modellab_layout_verify.py": {
+        "current_sha256": "7ae1bcce869aa404204c25ec5f3b5ecb2598ad3f2b29f9cef5036e546acd2f52",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/ui_runtime_acceptance_bootstrap.py": {
+        "current_sha256": "406acba4e8dd894bf03ba9d8d276b5e4256fe21875c9479f25a4d71c0cfb5906",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py": {
+        "current_sha256": "c9870f0d7ffba79ef130cf776517bc50fe419edf0202a2dfc575fdb3eccd82ed",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/requirements/requirements-ui-acceptance.txt": {
+        "current_sha256": "795a560ce03080e64529fc8e425a26bf36a27c499e1a5ff6fc2378fb75e33706",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "governance/EXTERNAL_RUNTIME_GATES.json": {
+        "current_sha256": "4dff3156357bfdf804eb6ca03a071c669a4f495b779e925382dd769d9a85fd44",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "governance/PACKAGE_MANIFEST.json": {
+        "current_sha256": "4b169cc49ced17631a44d2b859564ebf495b0f1d694f2de802fbc0f8af86c7d0",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      }
+    },
+    "mtf2_status": "BLOCKED"
+  },
+  "selective_windows_acceptance_utf8_process_contract_repair": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_WINDOWS_ACCEPTANCE_UTF8_PROCESS_CONTRACT_REPAIR_ONLY",
+    "build_scope": "MAX_MTF_V2_0_1_WINDOWS_ACCEPTANCE_UTF8_PROCESS_CONTRACT_REPAIR",
+    "scope": "ACCEPTANCE_PYTHON_PROCESS_TEXT_IO_UTF8_PROPAGATION_ONLY_NO_SCIENTIFIC_SEMANTICS_CHANGE",
+    "required_gate": "V201_RELEASE_PORTABILITY",
+    "cumulative_gate_count": 75,
+    "required_python_environment": {
+      "PYTHONUTF8": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "acceptance_marker": "MAX_MTF_ACCEPTANCE_UTF8=1",
+    "negative_fixture": "CP1252_LIKE_CHILD_MUST_FAIL_WITHOUT_CANONICAL_UTF8_ENV",
+    "files": {
+      "ModelLab/acceptance/runners/acceptance_process_env.py": {
+        "current_sha256": "429eee5e7ebfd7a5dcace17d1eb87c20edb557cce718abcb10acdbfad9f2b509",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/run_acceptance.py": {
+        "current_sha256": "76c0ba6b90e157dddf29f419edd60a54b56af1dd239b541028ba97dc933e5403",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/max_python_bootstrap.py": {
+        "current_sha256": "95d2ea5714fb6d5700033c152cfc09b87ed709dd7804a5a2da7a495d9bf4dbab",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py": {
+        "current_sha256": "f680dda31df0265edab304fb73e581089c009538d2977f010fc978a361da50bc",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/verification/modellab_layout_verify.py": {
+        "current_sha256": "7ae1bcce869aa404204c25ec5f3b5ecb2598ad3f2b29f9cef5036e546acd2f52",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/cuda_runtime_acceptance.py": {
+        "current_sha256": "bbf88624201b3ce932225b1745f288bb2e33956565266954553a7db7c32affad",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/langgraph_runtime_acceptance.py": {
+        "current_sha256": "fe890989b3b9ddabe2177a09e384b7fc67699ec8763f3b2fd9963b48c6f1b69e",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/ui_runtime_acceptance_bootstrap.py": {
+        "current_sha256": "406acba4e8dd894bf03ba9d8d276b5e4256fe21875c9479f25a4d71c0cfb5906",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py": {
+        "current_sha256": "c9870f0d7ffba79ef130cf776517bc50fe419edf0202a2dfc575fdb3eccd82ed",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/scientist/knowledge/scientist_knowledge.py": {
+        "current_sha256": "24c77851f6b14bb67102fe27a54e449fa3368c9eb490ad953503de44723be003",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/docs/repairs/V201_WINDOWS_ACCEPTANCE_UTF8_PROCESS_CONTRACT_REPAIR.md": {
+        "current_sha256": "feb9c632451cfacb2dabda937cb28380d7fd41066db1df161fae57718e25289c",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "governance/PACKAGE_MANIFEST.json": {
+        "current_sha256": "4b169cc49ced17631a44d2b859564ebf495b0f1d694f2de802fbc0f8af86c7d0",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "governance/CURRENT_AUTHORITY.json": {
+        "current_sha256": "1d5d4595acb7a817617009bf90b01b2c6337094904168dc7a87081e0fc9d2fce",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/governance/MODELLAB_LAYOUT_MANIFEST.json": {
+        "current_sha256": "4b6b907aa85b1dc13ddc7a675cabefecf1ff091e649c3db1ee9a0b18d9a04b01",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      }
+    },
+    "scientific_semantics_change": false,
+    "canonical_max_python_binding_change": false,
+    "scientist_python_environment_change": false,
+    "mtf2_status": "BLOCKED"
+  },
+  "selective_windows_utf8_newline_portability_selftest_repair": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_WINDOWS_UTF8_NEWLINE_PORTABILITY_SELFTEST_REPAIR_ONLY",
+    "build_scope": "MAX_MTF_V2_0_1_WINDOWS_UTF8_NEWLINE_PORTABILITY_SELFTEST_REPAIR",
+    "scope": "V201_RELEASE_PORTABILITY_SELFTEST_NEWLINE_SEMANTICS_ONLY_NO_PROCESS_CONTRACT_OR_SCIENTIFIC_CHANGE",
+    "required_gate": "V201_RELEASE_PORTABILITY",
+    "cumulative_gate_count": 75,
+    "selftest_path": "ModelLab/tests/v201_release_portability_selftest.py",
+    "strict_decode": "utf-8 errors=strict",
+    "utf8_byte_tokens": [
+      "\u2192",
+      "\u2194",
+      "\u2014",
+      "\u2265"
+    ],
+    "newline_normalization": "CRLF_CR_LF_ONLY",
+    "utf_c_cases": {
+      "UTF-C1": "LF semantic text PASS",
+      "UTF-C2": "CRLF semantic text PASS",
+      "UTF-C3": "malformed UTF-8 sequence FAIL",
+      "UTF-C4": "actual text/content change FAIL"
+    },
+    "preserve_negative_cp1252_fixture": true,
+    "preserve_real_cpcv_redirected_regression": true,
+    "previous_process_contract_preserved": true,
+    "global_lf_forcing": false,
+    "files": {
+      "ModelLab/docs/repairs/V201_WINDOWS_ACCEPTANCE_UTF8_PROCESS_CONTRACT_REPAIR.md": {
+        "current_sha256": "feb9c632451cfacb2dabda937cb28380d7fd41066db1df161fae57718e25289c",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "governance/PACKAGE_MANIFEST.json": {
+        "current_sha256": "4b169cc49ced17631a44d2b859564ebf495b0f1d694f2de802fbc0f8af86c7d0",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "governance/CURRENT_AUTHORITY.json": {
+        "current_sha256": "1d5d4595acb7a817617009bf90b01b2c6337094904168dc7a87081e0fc9d2fce",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      }
+    },
+    "scientific_semantics_change": false,
+    "canonical_max_python_binding_change": false,
+    "scientist_python_environment_change": false,
+    "mtf2_status": "BLOCKED"
+  },
+  "selective_owner_acceptance_postseal_evidence_exitcode_repair": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_OWNER_ACCEPTANCE_POSTSEAL_EVIDENCE_AND_EXITCODE_REPAIR_ONLY",
+    "build_scope": "MAX_MTF_V2_0_1_OWNER_ACCEPTANCE_POSTSEAL_EVIDENCE_AND_EXITCODE_REPAIR",
+    "required_gates": [
+      "V201_LOCAL_ACCEPTANCE_RESULT_INTEGRITY",
+      "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+    ],
+    "cumulative_gate_count": 75,
+    "current_acceptance_claim_policy": "ONE_MUTABLE_CANDIDATE_BUILD_CLAIM_PLUS_CANONICAL_REPORT_AND_SYNC_RECORD",
+    "historical_repair_evidence_policy": "IMMUTABLE_NOT_REBOUND_TO_LATER_OWNER_REPORT_SHA",
+    "owner_cmd_returncode_policy": "EXACT_CHILD_RETURNCODE_LABEL_FLOW_NO_DELAYED_EXPANSION",
+    "bootstrap_unavailable_exit_code": 103,
+    "scientific_semantics_change": false,
+    "mtf2_status": "BLOCKED",
+    "files": {
+      "ModelLab/acceptance/runners/run_acceptance.py": {
+        "current_sha256": "76c0ba6b90e157dddf29f419edd60a54b56af1dd239b541028ba97dc933e5403",
+        "contracts": [
+          "V201_LOCAL_ACCEPTANCE_RESULT_INTEGRITY",
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/RUN_SCIENTIST_PYTHON_OWNER_ACCEPTANCE.cmd": {
+        "current_sha256": "b54d9ec9494c80b1b4db4dd1128ca3fdfa049fb58801aa5487bf144fbc158b8c",
+        "contracts": [
+          "V201_LOCAL_ACCEPTANCE_RESULT_INTEGRITY",
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/acceptance/verification/VERIFY_SCIENTIST_PYTHON_OWNER_ACCEPTANCE.cmd": {
+        "current_sha256": "e36bc7a5362b684f02ea52dcec46d7f2e0aad3c1e7cb1b1f37cdbccdc98b7093",
+        "contracts": [
+          "V201_LOCAL_ACCEPTANCE_RESULT_INTEGRITY",
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/docs/repairs/V201_OWNER_ACCEPTANCE_POSTSEAL_EVIDENCE_AND_EXITCODE_REPAIR.md": {
+        "current_sha256": "95eedd823322509ead4162a3df9f8005cee6cd4f533aaba863afa0e5cc6d36f9",
+        "contracts": [
+          "V201_LOCAL_ACCEPTANCE_RESULT_INTEGRITY",
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "governance/PACKAGE_MANIFEST.json": {
+        "current_sha256": "4b169cc49ced17631a44d2b859564ebf495b0f1d694f2de802fbc0f8af86c7d0",
+        "contracts": [
+          "V201_LOCAL_ACCEPTANCE_RESULT_INTEGRITY",
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "governance/CURRENT_AUTHORITY.json": {
+        "current_sha256": "1d5d4595acb7a817617009bf90b01b2c6337094904168dc7a87081e0fc9d2fce",
+        "contracts": [
+          "V201_LOCAL_ACCEPTANCE_RESULT_INTEGRITY",
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+        ]
+      },
+      "ModelLab/governance/MODELLAB_LAYOUT_MANIFEST.json": {
+        "current_sha256": "4b6b907aa85b1dc13ddc7a675cabefecf1ff091e649c3db1ee9a0b18d9a04b01",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      }
+    }
+  },
+  "selective_scientist_python_owner_runtime_authority_reconciliation": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_SCIENTIST_PYTHON_OWNER_RUNTIME_AUTHORITY_RECONCILIATION_ONLY",
+    "build_scope": "MAX_MTF_V2_0_1_SCIENTIST_PYTHON_OWNER_RUNTIME_AUTHORITY_RECONCILIATION",
+    "scope": "GOVERNANCE_STATUS_AND_EVIDENCE_BINDING_ONLY_NO_SCIENTIFIC_RUNTIME_OR_FACTORY_AUTHORITY_CHANGE",
+    "required_gates": [
+      "V201_RELEASE_PORTABILITY",
+      "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+      "V201_LOCAL_ACCEPTANCE_RESULT_INTEGRITY"
+    ],
+    "owner_runtime_status": "READY_PASS",
+    "evidence_policy": "CANONICAL_ONE_CLICK_OWNER_WINDOWS_RUNTIME_PLUS_READ_ONLY_VERIFIER_CANDIDATE_BOUND",
+    "files": {
+      "governance/CURRENT_AUTHORITY.json": {
+        "current_sha256": "1d5d4595acb7a817617009bf90b01b2c6337094904168dc7a87081e0fc9d2fce",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY",
+          "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+          "V201_LOCAL_ACCEPTANCE_RESULT_INTEGRITY"
+        ]
+      }
+    },
+    "scientific_semantics_change": false,
+    "factory_decision_authority_change": false,
+    "mtf2_status": "BLOCKED"
+  },
+  "selective_mtf1_final_closure_bootstrap_import_repair": {
+    "authority": "CURRENT_MAX_MTF_V2_0_1_MTF1_FINAL_CLOSURE_BOOTSTRAP_IMPORT_REPAIR_ONLY",
+    "build_scope": "MAX_MTF_V2_0_1_MTF1_FINAL_CLOSURE_BOOTSTRAP_IMPORT_REPAIR",
+    "scope": "OWNER_FINAL_CLOSURE_LAUNCHER_IMPORT_PATH_ONLY_NO_CLOSURE_STAGE_OR_SCIENTIFIC_CHANGE",
+    "required_gates": [
+      "V201_FINAL_CLOSURE_PYTHON_ENV_AUTHORITY",
+      "V201_METAEDITOR_FINAL_CLOSURE_WIRING",
+      "V201_RELEASE_PORTABILITY"
+    ],
+    "repair": "ModelLab launcher exports its own directory on PYTHONPATH before invoking mtf.mtf1_closure_bootstrap so bootstrap Python can import core/ui authorities.",
+    "files": {
+      "ModelLab/RUN_MTF1_FINAL_CLOSURE.cmd": {
+        "current_sha256": "f8b34e8ca6ffbb9136e607641e4a0ef48aad3a3e742ab930e56066a81b382d43",
+        "contracts": [
+          "V201_FINAL_CLOSURE_PYTHON_ENV_AUTHORITY",
+          "V201_METAEDITOR_FINAL_CLOSURE_WIRING"
+        ]
+      },
+      "ModelLab/governance/MODELLAB_LAYOUT_MANIFEST.json": {
+        "current_sha256": "4b6b907aa85b1dc13ddc7a675cabefecf1ff091e649c3db1ee9a0b18d9a04b01",
+        "contracts": [
+          "V201_RELEASE_PORTABILITY"
+        ]
+      },
+      "ModelLab/tests/v201_final_closure_python_env_authority_selftest.py": {
+        "current_sha256": "92f5830e3ce98d21b0a72bf5a2b87737543ccd255f44381a9d95a9324a0e969b",
+        "contracts": [
+          "V201_FINAL_CLOSURE_PYTHON_ENV_AUTHORITY"
+        ]
+      }
+    },
+    "closure_stage_plan_change": false,
+    "scientific_semantics_change": false,
+    "trading_authority_change": false,
+    "mtf2_status": "BLOCKED"
+  }
+}

@@ -1,0 +1,135 @@
+name: Windows Source CI
+
+on:
+  push:
+    branches: [main, "work/**", "repair/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-safety:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - name: Preserve Git blob bytes
+        shell: pwsh
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce source-only public boundary
+        shell: pwsh
+        run: python tools/public_source_guard.py
+
+  mtf-source-contracts:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Preserve Git blob bytes
+        shell: pwsh
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install lightweight dependencies
+        shell: pwsh
+        run: python -m pip install --disable-pip-version-check "numpy>=2,<3" "pandas>=2.2,<3"
+      - name: Compile MTF source
+        shell: pwsh
+        run: python -m py_compile ModelLab/mtf/mtf_data.py ModelLab/mtf/mtf2.py ModelLab/mtf/mtf3.py ModelLab/strategy/mtf4_strategy.py ModelLab/strategy/strategy_optimizer.py
+      - name: MTF-2
+        shell: pwsh
+        working-directory: ModelLab
+        run: python tests/v202_mtf2_feature_label_contract_selftest.py
+      - name: MTF-3
+        shell: pwsh
+        working-directory: ModelLab
+        run: python tests/v203_mtf3_timestamp_overlap_purge_selftest.py
+      - name: MTF-4
+        shell: pwsh
+        working-directory: ModelLab
+        run: python tests/v204_mtf4_strategy_contract_selftest.py
+
+  governance:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Preserve Git blob bytes
+        shell: pwsh
+        run: git config --global core.autocrlf false
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout exact Skill Workflow authority
+        uses: actions/checkout@v4
+        with:
+          repository: maxqstudio/Skill_Workflow
+          ref: 1f9b48b9a3bf29bf2929a7d38b1ec9a645dfb720
+          path: .skill-workflow
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Self-test exact Skill Workflow authority
+        shell: pwsh
+        run: |
+          function Run-Python([string[]]$Args) {
+            & python @Args
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          Run-Python @(".skill-workflow/scripts/selftest_project_truth_compiler.py")
+          Run-Python @(".skill-workflow/scripts/selftest_strict_project_workflow.py")
+          Remove-Item -Recurse -Force .skill-workflow
+
+      - name: Validate STRICT project governance
+        shell: pwsh
+        run: |
+          function Run-Python([string[]]$Args) {
+            & python @Args
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          Run-Python @(".workflow/tools/validate_project_docs.py","--root",".")
+          Run-Python @(".workflow/tools/validate_doc_quality.py","--root",".")
+          Run-Python @(".workflow/tools/validate_handoff.py","--root",".")
+          Run-Python @(".workflow/tools/validate_human_comprehension.py","--root",".","--require-pass")
+          Run-Python @(".workflow/tools/validate_sequence_sessions.py","--root",".")
+          $rootSha = (git rev-list --max-parents=0 HEAD).Trim()
+          $headSha = (git rev-parse HEAD).Trim()
+          if ($rootSha -eq $headSha) {
+            Run-Python @(".workflow/tools/validate_cross_document_consistency.py","--root",".")
+          } else {
+            Run-Python @(".workflow/tools/validate_cross_document_consistency.py","--root",".","--base",$rootSha,"--require-base")
+          }
+
+      - name: Verify project truth remains fail-closed until Owner runtime
+        shell: pwsh
+        run: |
+          $output = & python .workflow/tools/validate_project_truth.py --root . 2>&1
+          $rc = $LASTEXITCODE
+          $text = ($output -join "`n")
+          Write-Output $text
+          if ($rc -eq 0) {
+            Write-Error "PROJECT_TRUTH_UNEXPECTEDLY_PASS_BEFORE_OWNER_RUNTIME"
+            exit 1
+          }
+          $report = $text | ConvertFrom-Json
+          $failures = @($report.failures)
+          if ($failures.Count -ne 1 -or $failures[0] -ne "RUNTIME_E2E_REQUIRED_BUT_NOT_PASS:NOT_PROVEN") {
+            Write-Error ("UNEXPECTED_PROJECT_TRUTH_FAILURES=" + ($failures -join ","))
+            exit 1
+          }
+          Write-Output "PROJECT_TRUTH_EXPECTED_RUNTIME_BOUNDARY=PASS"
+          exit 0

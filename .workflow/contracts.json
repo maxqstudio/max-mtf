@@ -1,0 +1,1479 @@
+{
+  "schema_version": 1,
+  "api_contracts": [],
+  "data_contracts": [
+    {
+      "name": "Active release record",
+      "source_of_truth": "Releases/active/release.json mirrored by ModelLab/runtime/active_release.json",
+      "mutability": "Mutable only through release authority",
+      "legal_writes": [
+        "ModelLab/core/release_authority.py"
+      ],
+      "retention": "Current + historical release lineage",
+      "invariants": [
+        "EA path/hash/version parity must validate",
+        "Baseline may exist with null Strategy/Model Champion",
+        "Portable project-relative paths only"
+      ]
+    },
+    {
+      "name": "MTF canonical bundle",
+      "source_of_truth": "M5 canonical value authority plus deterministic M15/H1/H4 derivation",
+      "mutability": "Immutable once sealed for an execution/evidence run",
+      "legal_writes": [
+        "ModelLab/mtf/mtf_data.py",
+        "MTF-1 acceptance/closure tools"
+      ],
+      "retention": "Sealed bundle + lineage + raw/native evidence",
+      "invariants": [
+        "No future-bar directional leakage",
+        "Closed-bar mutation fails closed",
+        "Unsupported source kind fails closed",
+        "Broker symbol resolution must be deterministic",
+        "Native higher-TF bars are parity evidence, not value authority"
+      ]
+    },
+    {
+      "name": "Strategy Challenger registry",
+      "source_of_truth": "ModelLab/runtime/strategy_challenger_registry.json",
+      "mutability": "Mutable lifecycle registry with archived history",
+      "legal_writes": [
+        "ModelLab/strategy/strategy_challenger_registry.py"
+      ],
+      "retention": "Active + archived/demoted strategy evidence",
+      "invariants": [
+        "Optimizer winner registers Challenger first",
+        "Owner promotion is explicit",
+        "Current Champion mutation is never implicit"
+      ]
+    },
+    {
+      "name": "Model Challenger/Champion registry",
+      "source_of_truth": "ModelLab/governance/challenger_registry.json and champion_registry.json",
+      "mutability": "Mutable only through deterministic governance actions",
+      "legal_writes": [
+        "ModelLab/factory/factory_challenger_bridge.py",
+        "ModelLab/factory/governance.py"
+      ],
+      "retention": "Lineage-preserving history",
+      "invariants": [
+        "Factory winner is Challenger before Champion",
+        "Promotion eligibility is deterministic",
+        "No automatic Champion replacement"
+      ]
+    },
+    {
+      "name": "Factory research evidence",
+      "source_of_truth": "Factory run directories, sealed stage artifacts and research memory",
+      "mutability": "Append/seal according to stage contract",
+      "legal_writes": [
+        "ModelLab/factory/champion_factory.py",
+        "ModelLab/factory/factory_jobs.py",
+        "ModelLab/max_graph/factory_graph.py"
+      ],
+      "retention": "Run lineage retained for audit/restart",
+      "invariants": [
+        "Discovery/Pool/CPCV/Tournament/Monte Carlo/Fresh order is governed",
+        "Protected holdout evidence is not tuning authority",
+        "Resume cannot silently rewrite committed stages"
+      ]
+    },
+    {
+      "name": "Current acceptance evidence",
+      "source_of_truth": "ModelLab/evidence/current/BUILD_ACCEPTANCE_v2_0_1.json plus one mutable CANDIDATE_BUILD claim",
+      "mutability": "Volatile current acceptance report; historical repair evidence immutable",
+      "legal_writes": [
+        "ModelLab/acceptance/runners/run_acceptance.py"
+      ],
+      "retention": "Current report + immutable history",
+      "invariants": [
+        "75 exact ordered results required",
+        "FRESH_FULL required for fresh acceptance",
+        "Current evidence binds source-tree and suite signatures",
+        "Local PASS does not imply external runtime PASS"
+      ]
+    },
+    {
+      "name": "Generated documentation specs",
+      "source_of_truth": ".workflow/*.json + .workflow/workflows/*.json",
+      "mutability": "Mutable upstream semantic governance",
+      "legal_writes": [
+        "Authorized documentation/governance repair"
+      ],
+      "retention": "Versioned in Git",
+      "invariants": [
+        "Generated canonical Markdown under docs/ is not upstream authority",
+        "Compiler output must be reproducible",
+        "Sequence diagrams are generated artifacts"
+      ]
+    },
+    {
+      "name": "MTF-2 role feature / directional label preregistration",
+      "source_of_truth": ".workflow/contracts.json::MAX_MTF2_ROLE_FEATURE_LABEL_V1",
+      "mutability": "Frozen V1 preregistration; semantic changes require a new contract_id/version before experiments",
+      "legal_writes": [
+        "Governed MTF-2 contract transaction only; executable source must match by regression test"
+      ],
+      "retention": "Git history + feature-schema hash + exact candidate/data lineage",
+      "invariants": [
+        "M5 remains canonical value authority and H4/H1/M15 remain deterministic M5-derived views.",
+        "M15 owns SELL/SKIP/BUY direction; M5 closed context cannot flip direction or resurrect SKIP.",
+        "V1 uses compact finite-window market features, not naive 4 x CP32 duplication or recursive EMA/ADX/RSI dependencies.",
+        "Every directional feature is bound to a role bar with close_time_utc <= decision_time; future M5 is label/evaluation-only.",
+        "Legacy max_hold_bars without explicit timeframe/bar_minutes is illegal as a label or purge horizon.",
+        "A/B/C/D use identical D-complete decision IDs, labels, protected windows, folds and comparable search budget.",
+        "MTF-2 has no learned M5 ENTER/WAIT/CANCEL model; learned execution timing is later-phase and evidence-gated."
+      ],
+      "contract_id": "MAX_MTF2_ROLE_FEATURE_LABEL_V1",
+      "schema_version": 1,
+      "canonical_value_authority": "M5",
+      "primary_decision_timeframe": "M15",
+      "output_feature_naming": "{timeframe_lower}__{primitive_id}",
+      "support_windows": {
+        "true_range": "max(high-low,abs(high-prev_close),abs(low-prev_close))",
+        "atr14_sma": "mean(last 14 true_range values); exact dependency includes prior close => 15 source bars",
+        "atr50_sma": "mean(last 50 true_range values); exact dependency includes prior close => 51 source bars"
+      },
+      "primitive_registry": [
+        {
+          "id": "ret_1_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-close_t-1)/atr14_sma_t,-5,5)"
+        },
+        {
+          "id": "ret_3_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-close_t-3)/atr14_sma_t,-8,8)"
+        },
+        {
+          "id": "ret_6_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-close_t-6)/atr14_sma_t,-12,12)"
+        },
+        {
+          "id": "ret_20_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 21,
+          "formula": "clip((close_t-close_t-20)/atr14_sma_t,-20,20)"
+        },
+        {
+          "id": "atr_ratio_14_50",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 51,
+          "formula": "clip(atr14_sma_t/atr50_sma_t,0,4)"
+        },
+        {
+          "id": "efficiency_10",
+          "source_columns": [
+            "close"
+          ],
+          "lookback_bars": 11,
+          "formula": "abs(close_t-close_t-10)/sum(abs(close_i-close_i-1),i=t-9..t); zero path => 0"
+        },
+        {
+          "id": "range_position_20",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 20,
+          "formula": "clip(2*(close_t-min(low_t-19..t))/(max(high_t-19..t)-min(low_t-19..t))-1,-1,1); zero span => 0"
+        },
+        {
+          "id": "distance_high_20_atr",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 21,
+          "formula": "clip((close_t-max(high_t-20..t-1))/atr14_sma_t,-10,10)"
+        },
+        {
+          "id": "distance_low_20_atr",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 21,
+          "formula": "clip((close_t-min(low_t-20..t-1))/atr14_sma_t,-10,10)"
+        },
+        {
+          "id": "range_atr",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((high_t-low_t)/atr14_sma_t,0,8)"
+        },
+        {
+          "id": "signed_body_atr",
+          "source_columns": [
+            "open",
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-open_t)/atr14_sma_t,-5,5)"
+        },
+        {
+          "id": "upper_wick_atr",
+          "source_columns": [
+            "open",
+            "high",
+            "close",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((high_t-max(open_t,close_t))/atr14_sma_t,0,5)"
+        },
+        {
+          "id": "lower_wick_atr",
+          "source_columns": [
+            "open",
+            "high",
+            "close",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((min(open_t,close_t)-low_t)/atr14_sma_t,0,5)"
+        },
+        {
+          "id": "tick_volume_z_30",
+          "source_columns": [
+            "tick_volume"
+          ],
+          "lookback_bars": 30,
+          "formula": "clip(zscore_current_over_last_30,-5,5); zero variance => 0"
+        },
+        {
+          "id": "spread_z_30",
+          "source_columns": [
+            "spread"
+          ],
+          "lookback_bars": 30,
+          "formula": "clip(zscore_current_over_last_30,-5,5); zero variance => 0"
+        },
+        {
+          "id": "hour_sin",
+          "source_columns": [
+            "close_time_utc"
+          ],
+          "lookback_bars": 1,
+          "formula": "sin(2*pi*UTC_hour/24)"
+        },
+        {
+          "id": "hour_cos",
+          "source_columns": [
+            "close_time_utc"
+          ],
+          "lookback_bars": 1,
+          "formula": "cos(2*pi*UTC_hour/24)"
+        }
+      ],
+      "role_features": {
+        "TF+2": {
+          "timeframe": "H4",
+          "role": "context_regime",
+          "features": [
+            "ret_6_atr",
+            "ret_20_atr",
+            "atr_ratio_14_50",
+            "efficiency_10",
+            "range_position_20",
+            "range_atr"
+          ]
+        },
+        "TF+1": {
+          "timeframe": "H1",
+          "role": "setup",
+          "features": [
+            "ret_1_atr",
+            "ret_3_atr",
+            "ret_6_atr",
+            "distance_high_20_atr",
+            "distance_low_20_atr",
+            "efficiency_10",
+            "range_position_20",
+            "range_atr",
+            "signed_body_atr",
+            "tick_volume_z_30"
+          ]
+        },
+        "TF": {
+          "timeframe": "M15",
+          "role": "primary_direction",
+          "features": [
+            "ret_1_atr",
+            "ret_3_atr",
+            "ret_6_atr",
+            "distance_high_20_atr",
+            "distance_low_20_atr",
+            "efficiency_10",
+            "range_position_20",
+            "atr_ratio_14_50",
+            "range_atr",
+            "signed_body_atr",
+            "upper_wick_atr",
+            "lower_wick_atr",
+            "tick_volume_z_30",
+            "hour_sin",
+            "hour_cos"
+          ]
+        },
+        "TF-1": {
+          "timeframe": "M5",
+          "role": "closed_execution_context_only",
+          "features": [
+            "ret_1_atr",
+            "ret_3_atr",
+            "range_position_20",
+            "range_atr",
+            "signed_body_atr",
+            "upper_wick_atr",
+            "lower_wick_atr",
+            "tick_volume_z_30",
+            "spread_z_30",
+            "hour_sin",
+            "hour_cos"
+          ]
+        }
+      },
+      "directional_label": {
+        "id": "MTF2_DIRECTIONAL_LABEL_V1",
+        "classes": {
+          "SELL": 0,
+          "SKIP": 1,
+          "BUY": 2
+        },
+        "decision_time": "M15 close_time_utc",
+        "future_path_authority": "canonical M5 bars strictly unavailable to directional features and used only after decision_time for label/evaluation",
+        "entry_reference": "open of the canonical M5 bar whose open_time_utc equals decision_time; missing exact bar => invalid label",
+        "risk_scale": "finite M15 atr14_sma at decision_time",
+        "required_geometry_fields": [
+          "geometry_id",
+          "sl_atr",
+          "tp_atr",
+          "horizon_minutes",
+          "min_edge_r",
+          "min_margin_r"
+        ],
+        "horizon_rule": "horizon_minutes must be positive and divisible by 5; max_hold_bars is accepted only when explicit bar_minutes/timeframe lineage is also supplied; max_hold_bars alone fails closed",
+        "barrier_rule": "first-touch SL/TP on future M5 high/low; same M5 bar touching both barriers => AMBIGUOUS_DROP",
+        "timeout_rule": "if neither barrier touches by label_end_time, use last fully closed M5 close within the full horizon; incomplete end-of-dataset horizon => invalid label",
+        "target_rule": "reuse deterministic long_r/short_r edge-and-margin semantics for SELL/SKIP/BUY; this counterfactual label is not production execution-parity evidence",
+        "execution_label": "NOT_ACTIVE_IN_MTF2"
+      },
+      "temporal_dependency": {
+        "dependency_start_time": "earliest source-bar open_time_utc required by all registered features in the selected ablation roles",
+        "decision_time": "M15 close_time_utc",
+        "label_start_time": "decision_time",
+        "label_end_time": "decision_time + explicit horizon_minutes",
+        "execution_end_time": "NULL in MTF-2 directional-only contract; later execution-label phases must define it explicitly",
+        "purge_rule": "before any MTF experiment, exact timestamp intervals must reject every train sample whose dependency/label interval overlaps validation/test protected intervals; bar-count guessing is forbidden",
+        "embargo_rule": "time-based authority only; no fallback to untyped max_hold_bars",
+        "implementation_phase": "MTF-3 exact overlap validator is mandatory before model training"
+      },
+      "ablations": {
+        "A": [
+          "TF"
+        ],
+        "B": [
+          "TF+1",
+          "TF"
+        ],
+        "C": [
+          "TF+2",
+          "TF+1",
+          "TF"
+        ],
+        "D": [
+          "TF+2",
+          "TF+1",
+          "TF",
+          "TF-1"
+        ],
+        "comparison_sample_authority": "intersection of decision rows feature-ready for D and label-ready under one frozen geometry, so A/B/C/D compare identical decision IDs",
+        "controls": "same data window, labels, protected boundaries, folds, deterministic seeds, model family and comparable search budget",
+        "stop_rule": "absence of reproducible WFA/CPCV information gain blocks automatic escalation to larger DL or learned M5 timing"
+      }
+    },
+    {
+      "name": "MTF-2 role feature / directional label preregistration V2",
+      "source_of_truth": ".workflow/contracts.json::MAX_MTF2_ROLE_FEATURE_LABEL_V2",
+      "mutability": "Frozen V2 preregistration; semantic changes require a new contract_id/version before experiments",
+      "legal_writes": [
+        "Governed MTF-2 contract transaction only; executable source must match by regression test"
+      ],
+      "retention": "Git history + feature-schema hash + exact candidate/data lineage",
+      "invariants": [
+        "M5 remains canonical value authority and H4/H1/M15 remain deterministic M5-derived views.",
+        "M15 owns SELL/SKIP/BUY direction; M5 closed context cannot flip direction or resurrect SKIP.",
+        "V2 uses compact finite-window market features, not naive 4 x CP32 duplication or recursive EMA/ADX/RSI dependencies.",
+        "Every directional feature is bound to a role bar with close_time_utc <= decision_time; future M5 is label/evaluation-only.",
+        "Legacy max_hold_bars without explicit timeframe/bar_minutes is illegal as a label or purge horizon.",
+        "A/B/C/D use identical D-complete decision IDs, labels, protected windows, folds and comparable search budget.",
+        "MTF-2 has no learned M5 ENTER/WAIT/CANCEL model; learned execution timing is later-phase and evidence-gated.",
+        "Exact duplicate non-constant feature values on the D-complete comparison sample are a schema defect; high absolute correlation is audit evidence, not an automatic feature-drop authority."
+      ],
+      "contract_id": "MAX_MTF2_ROLE_FEATURE_LABEL_V2",
+      "schema_version": 2,
+      "canonical_value_authority": "M5",
+      "primary_decision_timeframe": "M15",
+      "output_feature_naming": "{timeframe_lower}__{primitive_id}",
+      "support_windows": {
+        "true_range": "max(high-low,abs(high-prev_close),abs(low-prev_close))",
+        "atr14_sma": "mean(last 14 true_range values); exact dependency includes prior close => 15 source bars",
+        "atr50_sma": "mean(last 50 true_range values); exact dependency includes prior close => 51 source bars"
+      },
+      "primitive_registry": [
+        {
+          "id": "ret_1_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-close_t-1)/atr14_sma_t,-5,5)"
+        },
+        {
+          "id": "ret_3_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-close_t-3)/atr14_sma_t,-8,8)"
+        },
+        {
+          "id": "ret_6_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-close_t-6)/atr14_sma_t,-12,12)"
+        },
+        {
+          "id": "ret_20_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 21,
+          "formula": "clip((close_t-close_t-20)/atr14_sma_t,-20,20)"
+        },
+        {
+          "id": "atr_ratio_14_50",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 51,
+          "formula": "clip(atr14_sma_t/atr50_sma_t,0,4)"
+        },
+        {
+          "id": "efficiency_10",
+          "source_columns": [
+            "close"
+          ],
+          "lookback_bars": 11,
+          "formula": "abs(close_t-close_t-10)/sum(abs(close_i-close_i-1),i=t-9..t); zero path => 0"
+        },
+        {
+          "id": "range_position_20",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 20,
+          "formula": "clip(2*(close_t-min(low_t-19..t))/(max(high_t-19..t)-min(low_t-19..t))-1,-1,1); zero span => 0"
+        },
+        {
+          "id": "distance_high_20_atr",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 21,
+          "formula": "clip((close_t-max(high_t-20..t-1))/atr14_sma_t,-10,10)"
+        },
+        {
+          "id": "distance_low_20_atr",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 21,
+          "formula": "clip((close_t-min(low_t-20..t-1))/atr14_sma_t,-10,10)"
+        },
+        {
+          "id": "range_atr",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((high_t-low_t)/atr14_sma_t,0,8)"
+        },
+        {
+          "id": "signed_body_atr",
+          "source_columns": [
+            "open",
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-open_t)/atr14_sma_t,-5,5)"
+        },
+        {
+          "id": "upper_wick_atr",
+          "source_columns": [
+            "open",
+            "high",
+            "close",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((high_t-max(open_t,close_t))/atr14_sma_t,0,5)"
+        },
+        {
+          "id": "lower_wick_atr",
+          "source_columns": [
+            "open",
+            "high",
+            "close",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((min(open_t,close_t)-low_t)/atr14_sma_t,0,5)"
+        },
+        {
+          "id": "tick_volume_z_30",
+          "source_columns": [
+            "tick_volume"
+          ],
+          "lookback_bars": 30,
+          "formula": "clip(zscore_current_over_last_30,-5,5); zero variance => 0"
+        },
+        {
+          "id": "spread_z_30",
+          "source_columns": [
+            "spread"
+          ],
+          "lookback_bars": 30,
+          "formula": "clip(zscore_current_over_last_30,-5,5); zero variance => 0"
+        },
+        {
+          "id": "hour_sin",
+          "source_columns": [
+            "close_time_utc"
+          ],
+          "lookback_bars": 1,
+          "formula": "sin(2*pi*UTC_hour/24)"
+        },
+        {
+          "id": "hour_cos",
+          "source_columns": [
+            "close_time_utc"
+          ],
+          "lookback_bars": 1,
+          "formula": "cos(2*pi*UTC_hour/24)"
+        }
+      ],
+      "role_features": {
+        "TF+2": {
+          "timeframe": "H4",
+          "role": "context_regime",
+          "features": [
+            "ret_6_atr",
+            "ret_20_atr",
+            "atr_ratio_14_50",
+            "efficiency_10",
+            "range_position_20",
+            "range_atr"
+          ]
+        },
+        "TF+1": {
+          "timeframe": "H1",
+          "role": "setup",
+          "features": [
+            "ret_1_atr",
+            "ret_3_atr",
+            "ret_6_atr",
+            "distance_high_20_atr",
+            "distance_low_20_atr",
+            "efficiency_10",
+            "range_position_20",
+            "range_atr",
+            "signed_body_atr",
+            "tick_volume_z_30"
+          ]
+        },
+        "TF": {
+          "timeframe": "M15",
+          "role": "primary_direction",
+          "features": [
+            "ret_1_atr",
+            "ret_3_atr",
+            "ret_6_atr",
+            "distance_high_20_atr",
+            "distance_low_20_atr",
+            "efficiency_10",
+            "range_position_20",
+            "atr_ratio_14_50",
+            "range_atr",
+            "signed_body_atr",
+            "upper_wick_atr",
+            "lower_wick_atr",
+            "tick_volume_z_30",
+            "hour_sin",
+            "hour_cos"
+          ]
+        },
+        "TF-1": {
+          "timeframe": "M5",
+          "role": "closed_execution_context_only",
+          "features": [
+            "ret_1_atr",
+            "ret_3_atr",
+            "range_position_20",
+            "range_atr",
+            "signed_body_atr",
+            "upper_wick_atr",
+            "lower_wick_atr",
+            "tick_volume_z_30",
+            "spread_z_30"
+          ]
+        }
+      },
+      "directional_label": {
+        "id": "MTF2_DIRECTIONAL_LABEL_V1",
+        "classes": {
+          "SELL": 0,
+          "SKIP": 1,
+          "BUY": 2
+        },
+        "decision_time": "M15 close_time_utc",
+        "future_path_authority": "canonical M5 bars strictly unavailable to directional features and used only after decision_time for label/evaluation",
+        "entry_reference": "open of the canonical M5 bar whose open_time_utc equals decision_time; missing exact bar => invalid label",
+        "risk_scale": "finite M15 atr14_sma at decision_time",
+        "required_geometry_fields": [
+          "geometry_id",
+          "sl_atr",
+          "tp_atr",
+          "horizon_minutes",
+          "min_edge_r",
+          "min_margin_r"
+        ],
+        "horizon_rule": "horizon_minutes must be positive and divisible by 5; max_hold_bars is accepted only when explicit bar_minutes/timeframe lineage is also supplied; max_hold_bars alone fails closed",
+        "barrier_rule": "first-touch SL/TP on future M5 high/low; same M5 bar touching both barriers => AMBIGUOUS_DROP",
+        "timeout_rule": "if neither barrier touches by label_end_time, use last fully closed M5 close within the full horizon; incomplete end-of-dataset horizon => invalid label",
+        "target_rule": "reuse deterministic long_r/short_r edge-and-margin semantics for SELL/SKIP/BUY; this counterfactual label is not production execution-parity evidence",
+        "execution_label": "NOT_ACTIVE_IN_MTF2"
+      },
+      "temporal_dependency": {
+        "dependency_start_time": "earliest source-bar open_time_utc required by all registered features in the selected ablation roles",
+        "decision_time": "M15 close_time_utc",
+        "label_start_time": "decision_time",
+        "label_end_time": "decision_time + explicit horizon_minutes",
+        "execution_end_time": "NULL in MTF-2 directional-only contract; later execution-label phases must define it explicitly",
+        "purge_rule": "before any MTF experiment, exact timestamp intervals must reject every train sample whose dependency/label interval overlaps validation/test protected intervals; bar-count guessing is forbidden",
+        "embargo_rule": "time-based authority only; no fallback to untyped max_hold_bars",
+        "implementation_phase": "MTF-3 exact overlap validator is mandatory before model training"
+      },
+      "ablations": {
+        "A": [
+          "TF"
+        ],
+        "B": [
+          "TF+1",
+          "TF"
+        ],
+        "C": [
+          "TF+2",
+          "TF+1",
+          "TF"
+        ],
+        "D": [
+          "TF+2",
+          "TF+1",
+          "TF",
+          "TF-1"
+        ],
+        "comparison_sample_authority": "intersection of decision rows feature-ready for D and label-ready under one frozen geometry, so A/B/C/D compare identical decision IDs",
+        "controls": "same data window, labels, protected boundaries, folds, deterministic seeds, model family and comparable search budget",
+        "stop_rule": "absence of reproducible WFA/CPCV information gain blocks automatic escalation to larger DL or learned M5 timing"
+      },
+      "supersedes": "MAX_MTF2_ROLE_FEATURE_LABEL_V1",
+      "supersession_reason": "V1 duplicated M15 and M5 hour_sin/hour_cos at the same M15 decision timestamp; V2 removes M5 cyclic-time duplicates before any model experiment.",
+      "redundancy_audit": {
+        "exact_duplicate_rule": "On D-complete rows, non-constant feature columns with identical finite value vectors are forbidden.",
+        "constant_feature_rule": "Report constants by role/sample; do not auto-drop based on synthetic or protected-holdout evidence.",
+        "high_correlation_rule": "Report absolute Pearson correlation >= 0.995 on D-complete rows for review; correlation alone does not authorize automatic deletion.",
+        "protected_evidence_rule": "Locked/Fresh/Forward/Shadow evidence may not be used to adapt the frozen feature schema."
+      },
+      "scientific_acceptance": {
+        "mtf2_source_acceptance": [
+          "Executable feature schema equals MAX_MTF2_ROLE_FEATURE_LABEL_V2 exactly and feature_schema_sha256 is stable.",
+          "Every feature exposes role/timeframe/lookback/source/cutoff metadata through the frozen registry.",
+          "Causal feature audit has zero future role-close violations and deliberate future-M5 mutation cannot change directional features at t.",
+          "Directional labels consume only post-decision canonical M5 path under explicit horizon_minutes; untyped max_hold_bars fails closed.",
+          "A/B/C/D use identical D-complete decision IDs and exact dependency/label timestamps.",
+          "No exact duplicate non-constant feature vectors exist on the audited comparison sample; high-correlation pairs are reported."
+        ],
+        "regression_acceptance": [
+          "V202_MTF2_FEATURE_LABEL_CONTRACT targeted selftest PASS.",
+          "Canonical existing 75-gate fresh cumulative acceptance remains 75/75 FRESH_FULL; MTF-2 does not rewrite the legacy acceptance gate count."
+        ],
+        "deferred_until_mtf3": [
+          "Permutation importance and trained A/B/C/D information-gain claims.",
+          "Any model-based role ranking, learned M5 ENTER/WAIT/CANCEL model, or model complexity escalation."
+        ],
+        "future_ablation_protocol": [
+          "Run only after exact timestamp-overlap purge authority is PASS.",
+          "Use the same D-complete decision IDs, labels, protected windows, folds, fixed seeds, model family, policy search budget and evaluation budget for A/B/C/D.",
+          "Treat A as M15 control; B/C/D are incremental comparisons, not independent datasets.",
+          "Do not claim MTF information gain from a single seed/fold or protected holdout.",
+          "If reproducible information gain is absent, stop escalation rather than increasing model capacity."
+        ]
+      }
+    },
+    {
+      "name": "MTF-2 role feature / directional label preregistration V3",
+      "source_of_truth": ".workflow/contracts.json::MAX_MTF2_ROLE_FEATURE_LABEL_V3",
+      "mutability": "Frozen V3 preregistration; semantic changes require a new contract_id/version before experiments",
+      "legal_writes": [
+        "Governed MTF-2 contract transaction only; executable source must match by regression test"
+      ],
+      "retention": "Git history + feature-schema hash + exact candidate/data lineage",
+      "invariants": [
+        "M5 remains canonical value authority and H4/H1/M15 remain deterministic M5-derived views.",
+        "M15 owns SELL/SKIP/BUY direction; M5 closed context cannot flip direction or resurrect SKIP.",
+        "V2 uses compact finite-window market features, not naive 4 x CP32 duplication or recursive EMA/ADX/RSI dependencies.",
+        "Every directional feature is bound to a role bar with close_time_utc <= decision_time; future M5 is label/evaluation-only.",
+        "Legacy max_hold_bars without explicit timeframe/bar_minutes is illegal as a label or purge horizon.",
+        "A/B/C/D use identical D-complete decision IDs, labels, protected windows, folds and comparable search budget.",
+        "MTF-2 has no learned M5 ENTER/WAIT/CANCEL model; learned execution timing is later-phase and evidence-gated.",
+        "Exact duplicate non-constant feature values on the D-complete comparison sample are a schema defect; high absolute correlation is audit evidence, not an automatic feature-drop authority."
+      ],
+      "contract_id": "MAX_MTF2_ROLE_FEATURE_LABEL_V3",
+      "schema_version": 3,
+      "canonical_value_authority": "M5",
+      "primary_decision_timeframe": "M15",
+      "output_feature_naming": "{timeframe_lower}__{primitive_id}",
+      "support_windows": {
+        "true_range": "max(high-low,abs(high-prev_close),abs(low-prev_close))",
+        "atr14_sma": "mean(last 14 true_range values); exact dependency includes prior close => 15 source bars",
+        "atr50_sma": "mean(last 50 true_range values); exact dependency includes prior close => 51 source bars"
+      },
+      "primitive_registry": [
+        {
+          "id": "ret_1_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-close_t-1)/atr14_sma_t,-5,5)"
+        },
+        {
+          "id": "ret_3_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-close_t-3)/atr14_sma_t,-8,8)"
+        },
+        {
+          "id": "ret_6_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-close_t-6)/atr14_sma_t,-12,12)"
+        },
+        {
+          "id": "ret_20_atr",
+          "source_columns": [
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 21,
+          "formula": "clip((close_t-close_t-20)/atr14_sma_t,-20,20)"
+        },
+        {
+          "id": "atr_ratio_14_50",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 51,
+          "formula": "clip(atr14_sma_t/atr50_sma_t,0,4)"
+        },
+        {
+          "id": "efficiency_10",
+          "source_columns": [
+            "close"
+          ],
+          "lookback_bars": 11,
+          "formula": "abs(close_t-close_t-10)/sum(abs(close_i-close_i-1),i=t-9..t); zero path => 0"
+        },
+        {
+          "id": "range_position_20",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 20,
+          "formula": "clip(2*(close_t-min(low_t-19..t))/(max(high_t-19..t)-min(low_t-19..t))-1,-1,1); zero span => 0"
+        },
+        {
+          "id": "distance_high_20_atr",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 21,
+          "formula": "clip((close_t-max(high_t-20..t-1))/atr14_sma_t,-10,10)"
+        },
+        {
+          "id": "distance_low_20_atr",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 21,
+          "formula": "clip((close_t-min(low_t-20..t-1))/atr14_sma_t,-10,10)"
+        },
+        {
+          "id": "range_atr",
+          "source_columns": [
+            "high",
+            "low",
+            "close"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((high_t-low_t)/atr14_sma_t,0,8)"
+        },
+        {
+          "id": "signed_body_atr",
+          "source_columns": [
+            "open",
+            "close",
+            "high",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((close_t-open_t)/atr14_sma_t,-5,5)"
+        },
+        {
+          "id": "upper_wick_atr",
+          "source_columns": [
+            "open",
+            "high",
+            "close",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((high_t-max(open_t,close_t))/atr14_sma_t,0,5)"
+        },
+        {
+          "id": "lower_wick_atr",
+          "source_columns": [
+            "open",
+            "high",
+            "close",
+            "low"
+          ],
+          "lookback_bars": 15,
+          "formula": "clip((min(open_t,close_t)-low_t)/atr14_sma_t,0,5)"
+        },
+        {
+          "id": "tick_volume_z_30",
+          "source_columns": [
+            "tick_volume"
+          ],
+          "lookback_bars": 30,
+          "formula": "clip(zscore_current_over_last_30,-5,5); zero variance => 0"
+        },
+        {
+          "id": "spread_z_30",
+          "source_columns": [
+            "spread"
+          ],
+          "lookback_bars": 30,
+          "formula": "clip(zscore_current_over_last_30,-5,5); zero variance => 0"
+        },
+        {
+          "id": "hour_sin",
+          "source_columns": [
+            "close_time_utc"
+          ],
+          "lookback_bars": 1,
+          "formula": "sin(2*pi*UTC_hour/24)"
+        },
+        {
+          "id": "hour_cos",
+          "source_columns": [
+            "close_time_utc"
+          ],
+          "lookback_bars": 1,
+          "formula": "cos(2*pi*UTC_hour/24)"
+        }
+      ],
+      "role_features": {
+        "TF+2": {
+          "timeframe": "H4",
+          "role": "context_regime",
+          "features": [
+            "ret_6_atr",
+            "ret_20_atr",
+            "atr_ratio_14_50",
+            "efficiency_10",
+            "range_position_20",
+            "range_atr"
+          ]
+        },
+        "TF+1": {
+          "timeframe": "H1",
+          "role": "setup",
+          "features": [
+            "ret_1_atr",
+            "ret_3_atr",
+            "ret_6_atr",
+            "distance_high_20_atr",
+            "distance_low_20_atr",
+            "efficiency_10",
+            "range_position_20",
+            "range_atr",
+            "tick_volume_z_30"
+          ]
+        },
+        "TF": {
+          "timeframe": "M15",
+          "role": "primary_direction",
+          "features": [
+            "ret_1_atr",
+            "ret_3_atr",
+            "ret_6_atr",
+            "distance_high_20_atr",
+            "distance_low_20_atr",
+            "efficiency_10",
+            "range_position_20",
+            "atr_ratio_14_50",
+            "range_atr",
+            "upper_wick_atr",
+            "lower_wick_atr",
+            "tick_volume_z_30",
+            "hour_sin",
+            "hour_cos"
+          ]
+        },
+        "TF-1": {
+          "timeframe": "M5",
+          "role": "closed_execution_context_only",
+          "features": [
+            "ret_1_atr",
+            "ret_3_atr",
+            "range_position_20",
+            "range_atr",
+            "upper_wick_atr",
+            "lower_wick_atr",
+            "tick_volume_z_30",
+            "spread_z_30"
+          ]
+        }
+      },
+      "directional_label": {
+        "id": "MTF2_DIRECTIONAL_LABEL_V1",
+        "classes": {
+          "SELL": 0,
+          "SKIP": 1,
+          "BUY": 2
+        },
+        "decision_time": "M15 close_time_utc",
+        "future_path_authority": "canonical M5 bars strictly unavailable to directional features and used only after decision_time for label/evaluation",
+        "entry_reference": "open of the canonical M5 bar whose open_time_utc equals decision_time; missing exact bar => invalid label",
+        "risk_scale": "finite M15 atr14_sma at decision_time",
+        "required_geometry_fields": [
+          "geometry_id",
+          "sl_atr",
+          "tp_atr",
+          "horizon_minutes",
+          "min_edge_r",
+          "min_margin_r"
+        ],
+        "horizon_rule": "horizon_minutes must be positive and divisible by 5; max_hold_bars is accepted only when explicit bar_minutes/timeframe lineage is also supplied; max_hold_bars alone fails closed",
+        "barrier_rule": "first-touch SL/TP on future M5 high/low; same M5 bar touching both barriers => AMBIGUOUS_DROP",
+        "timeout_rule": "if neither barrier touches by label_end_time, use last fully closed M5 close within the full horizon; incomplete end-of-dataset horizon => invalid label",
+        "target_rule": "reuse deterministic long_r/short_r edge-and-margin semantics for SELL/SKIP/BUY; this counterfactual label is not production execution-parity evidence",
+        "execution_label": "NOT_ACTIVE_IN_MTF2"
+      },
+      "temporal_dependency": {
+        "dependency_start_time": "earliest source-bar open_time_utc required by all registered features in the selected ablation roles",
+        "decision_time": "M15 close_time_utc",
+        "label_start_time": "decision_time",
+        "label_end_time": "decision_time + explicit horizon_minutes",
+        "execution_end_time": "NULL in MTF-2 directional-only contract; later execution-label phases must define it explicitly",
+        "purge_rule": "before any MTF experiment, exact timestamp intervals must reject every train sample whose dependency/label interval overlaps validation/test protected intervals; bar-count guessing is forbidden",
+        "embargo_rule": "time-based authority only; no fallback to untyped max_hold_bars",
+        "implementation_phase": "MTF-3 exact overlap validator is mandatory before model training"
+      },
+      "ablations": {
+        "A": [
+          "TF"
+        ],
+        "B": [
+          "TF+1",
+          "TF"
+        ],
+        "C": [
+          "TF+2",
+          "TF+1",
+          "TF"
+        ],
+        "D": [
+          "TF+2",
+          "TF+1",
+          "TF",
+          "TF-1"
+        ],
+        "comparison_sample_authority": "intersection of decision rows feature-ready for D and label-ready under one frozen geometry, so A/B/C/D compare identical decision IDs",
+        "controls": "same data window, labels, protected boundaries, folds, deterministic seeds, model family and comparable search budget",
+        "stop_rule": "absence of reproducible WFA/CPCV information gain blocks automatic escalation to larger DL or learned M5 timing"
+      },
+      "supersedes": "MAX_MTF2_ROLE_FEATURE_LABEL_V2",
+      "supersession_reason": "V2 targeted redundancy audit proved ret_1_atr and signed_body_atr exact duplicates on continuous canonical bars for H1/M15/M5. V3 removes signed_body_atr from roles already carrying ret_1_atr before any model experiment.",
+      "redundancy_audit": {
+        "exact_duplicate_rule": "On D-complete rows, non-constant feature columns with identical finite value vectors are forbidden.",
+        "constant_feature_rule": "Report constants by role/sample; do not auto-drop based on synthetic or protected-holdout evidence.",
+        "high_correlation_rule": "Report absolute Pearson correlation >= 0.995 on D-complete rows for review; correlation alone does not authorize automatic deletion.",
+        "protected_evidence_rule": "Locked/Fresh/Forward/Shadow evidence may not be used to adapt the frozen feature schema."
+      },
+      "scientific_acceptance": {
+        "mtf2_source_acceptance": [
+          "Executable feature schema equals MAX_MTF2_ROLE_FEATURE_LABEL_V3 exactly and feature_schema_sha256 is stable.",
+          "Every feature exposes role/timeframe/lookback/source/cutoff metadata through the frozen registry.",
+          "Causal feature audit has zero future role-close violations and deliberate future-M5 mutation cannot change directional features at t.",
+          "Directional labels consume only post-decision canonical M5 path under explicit horizon_minutes; untyped max_hold_bars fails closed.",
+          "A/B/C/D use identical D-complete decision IDs and exact dependency/label timestamps.",
+          "No exact duplicate non-constant feature vectors exist on the audited comparison sample; high-correlation pairs are reported."
+        ],
+        "regression_acceptance": [
+          "V202_MTF2_FEATURE_LABEL_CONTRACT targeted selftest PASS.",
+          "Canonical existing 75-gate fresh cumulative acceptance remains 75/75 FRESH_FULL; MTF-2 does not rewrite the legacy acceptance gate count."
+        ],
+        "deferred_until_mtf3": [
+          "Permutation importance and trained A/B/C/D information-gain claims.",
+          "Any model-based role ranking, learned M5 ENTER/WAIT/CANCEL model, or model complexity escalation."
+        ],
+        "future_ablation_protocol": [
+          "Run only after exact timestamp-overlap purge authority is PASS.",
+          "Use the same D-complete decision IDs, labels, protected windows, folds, fixed seeds, model family, policy search budget and evaluation budget for A/B/C/D.",
+          "Treat A as M15 control; B/C/D are incremental comparisons, not independent datasets.",
+          "Do not claim MTF information gain from a single seed/fold or protected holdout.",
+          "If reproducible information gain is absent, stop escalation rather than increasing model capacity."
+        ]
+      },
+      "design_repair": {
+        "removed_exact_duplicates": [
+          {
+            "role": "TF+1",
+            "timeframe": "H1",
+            "removed": "signed_body_atr",
+            "retained": "ret_1_atr"
+          },
+          {
+            "role": "TF",
+            "timeframe": "M15",
+            "removed": "signed_body_atr",
+            "retained": "ret_1_atr"
+          },
+          {
+            "role": "TF-1",
+            "timeframe": "M5",
+            "removed": "signed_body_atr",
+            "retained": "ret_1_atr"
+          }
+        ],
+        "basis": "On continuous canonical OHLC bars where open_t == close_t-1, signed_body_atr and ret_1_atr are algebraically identical. V2 targeted audit exposed the duplicate before training.",
+        "protected_outcome_used": false
+      }
+    },
+    {
+      "name": "MTF-3 exact timestamp dependency / purge authority V1",
+      "source_of_truth": ".workflow/contracts.json::MAX_MTF3_TIME_DEPENDENCY_PURGE_V1",
+      "mutability": "Frozen V1 preregistration; semantic changes require a new contract_id/version before any MTF experiment",
+      "legal_writes": [
+        "Governed MTF-3 contract transaction only; executable source must match by targeted regression test"
+      ],
+      "retention": "Git history + exact split evidence + source/data lineage",
+      "invariants": [
+        "Primary fold ordering authority is M15 decision_time_utc; MTF purge never guesses chronology from a mixed-timeframe row count.",
+        "Every comparison sample exposes dependency_start_time_utc, decision_time_utc, label_end_time_utc and execution_end_time_utc.",
+        "A/B/C/D scientific comparisons use one D-common dependency interval authority so train/test decision IDs and purge decisions remain identical across role ablations.",
+        "A train sample is illegal when its exact dependency/outcome interval intersects or touches any protected validation/test outcome interval.",
+        "Current directional-only baseline may set execution_end_time_utc equal to label_end_time_utc only while MTF2 execution_label is NOT_ACTIVE_IN_MTF2; any active execution layer must provide an explicit execution end timestamp.",
+        "Untyped max_hold_bars, purge_bars or embargo_bars cannot become MTF-3 dependency authority.",
+        "CPCV remains exactly N=6,k=2 => 15 deterministic combinations; MTF-3 changes purge semantics, not the combinatorial methodology.",
+        "Existing single-TF temporal_index/research.cpcv behavior remains untouched while MTF research is OFF."
+      ],
+      "contract_id": "MAX_MTF3_TIME_DEPENDENCY_PURGE_V1",
+      "schema_version": 1,
+      "input_contract": "MAX_MTF2_ROLE_FEATURE_LABEL_V3",
+      "primary_decision_timeframe": "M15",
+      "comparison_dependency_authority": {
+        "mode": "D_COMMON_EARLIEST_DEPENDENCY",
+        "rule": "Use ablation D dependency_start_time_utc as the comparison dependency_start for A/B/C/D because D is the complete registered role set and A/B/C/D must share identical folds and purge decisions.",
+        "adaptation_from_protected_outcomes": false
+      },
+      "sample_interval": {
+        "dependency_start_time_utc": "Earliest source-bar open timestamp required by the D-complete registered feature set.",
+        "decision_time_utc": "Canonical M15 primary-decision close timestamp.",
+        "label_end_time_utc": "Explicit post-decision directional label horizon end from MTF2 typed minutes authority.",
+        "execution_end_time_utc": "Equal to label_end_time_utc only under the current directional-only baseline; otherwise must be explicit.",
+        "train_interval": "[dependency_start_time_utc, max(label_end_time_utc, execution_end_time_utc)]",
+        "protected_validation_test_interval": "[decision_time_utc, max(label_end_time_utc, execution_end_time_utc)]",
+        "boundary_semantics": "FAIL_SAFE_CLOSED_TOUCH_COUNTS_AS_OVERLAP"
+      },
+      "overlap_rule": {
+        "illegal_when": "train_dependency_start <= protected_end AND train_sample_end >= protected_decision_time",
+        "pre_boundary_purge": "Removes earlier train samples whose label/execution future reaches a protected decision/outcome window.",
+        "post_boundary_embargo": "Removes later train samples whose feature dependency reaches backward into a protected decision/outcome window.",
+        "bar_count_fallback": false
+      },
+      "execution_horizon_rule": {
+        "current_mode": "DIRECTIONAL_LABEL_END_UNTIL_EXECUTION_LABEL_ACTIVE",
+        "current_execution_label_state": "NOT_ACTIVE_IN_MTF2",
+        "current_rule": "execution_end_time_utc = label_end_time_utc",
+        "future_rule": "Once an ENTER/WAIT/CANCEL or other execution layer is active, explicit per-sample execution_end_time_utc is mandatory and directional-label fallback is forbidden."
+      },
+      "wfa": {
+        "boundary_authority": "sorted unique M15 decision_time_utc",
+        "split_style": "EXPANDING_CHRONOLOGICAL",
+        "validation_rows_unchanged_by_purge": true,
+        "train_rows_purged_by_exact_timestamp_overlap": true,
+        "no_silent_protected_boundary_crossing": true
+      },
+      "cpcv": {
+        "n_groups": 6,
+        "test_groups": 2,
+        "combinations": 15,
+        "group_authority": "contiguous blocks of sorted M15 decision timestamps",
+        "test_rows_unchanged_by_purge": true,
+        "train_complement_purged_by_exact_timestamp_overlap": true,
+        "evidence_requires_purged_decision_ids": true,
+        "evidence_requires_exact_overlap_reason": true
+      },
+      "scientific_comparison": {
+        "same_decision_ids_for_abcd": true,
+        "same_protected_windows_for_abcd": true,
+        "same_fold_assignments_for_abcd": true,
+        "same_purge_decisions_for_abcd": true,
+        "model_training_allowed_after_mtf3_acceptance_only": true
+      },
+      "acceptance": [
+        "Targeted MTF-3 selftest proves exact interval construction and rejects malformed/untimed dependencies.",
+        "Adversarial pre-boundary label/execution overlap and post-boundary H4-lookback overlap are both purged with exact timestamp evidence.",
+        "Every legal WFA/CPCV split audits to zero train-vs-protected outcome overlaps.",
+        "CPCV emits exactly 15 N=6,k=2 splits and each split records purged decision IDs with overlap timestamps/reason.",
+        "A/B/C/D consume identical comparison dependency authority and split decision IDs.",
+        "Existing canonical 75-gate fresh cumulative acceptance remains 75/75 FRESH_FULL; no single-TF methodology is replaced."
+      ],
+      "deferred": [
+        "Model fitting, feature permutation, A/B/C/D information-gain ranking and model-family selection.",
+        "MTF Strategy Challenger, ONNX, shadow, deployment and promotion."
+      ]
+    },
+    {
+      "name": "MTF-4 deterministic Strategy Challenger authority V1",
+      "source_of_truth": ".workflow/contracts.json::MAX_MTF4_DETERMINISTIC_STRATEGY_CHALLENGER_V1",
+      "mutability": "Frozen V1 preregistration; semantic role or causality changes require a new contract version before implementation",
+      "legal_writes": [
+        "Governed MTF-4 contract transaction before source implementation; later optimizer requests may freeze numeric ranges without changing role ownership"
+      ],
+      "retention": "Git history + exact parameter-vector lineage + MT5/Python parity + control/challenger backtest evidence",
+      "contract_id": "MAX_MTF4_DETERMINISTIC_STRATEGY_CHALLENGER_V1",
+      "schema_version": 1,
+      "prerequisites": [
+        "MAX_MTF2_ROLE_FEATURE_LABEL_V3",
+        "MAX_MTF3_TIME_DEPENDENCY_PURGE_V1"
+      ],
+      "primary_decision_timeframe": "M15",
+      "strategy_chain": [
+        "H4_CONTEXT_GATE",
+        "H1_SETUP_GATE",
+        "M15_PRIMARY_DIRECTION",
+        "M5_CLOSED_BAR_TIMING_GATE",
+        "EXISTING_RISK_EXECUTION"
+      ],
+      "invariants": [
+        "M15 is the only directional owner. H4/H1/M5 may veto but never create or reverse direction.",
+        "MTF mode evaluates one primary decision on a newly closed M15 bar; all H4/H1/M5 inputs must be fully closed at or before that M15 decision time.",
+        "Missing, stale, non-causal or unavailable required timeframe data fails closed to SKIP and cannot fall back to single-TF inside MTF mode.",
+        "M5 timing in MTF-4 is an instantaneous latest-closed-bar veto only; no ENTER/WAIT/CANCEL state machine or multi-bar timing window is introduced before MTF-7.",
+        "Existing SL/TP/MaxHold/risk authority remains unchanged and is not re-owned by H4/H1/M15/M5 role parameters.",
+        "InpUseMtfStrategy=false preserves the accepted single-TF control path.",
+        "Eligible optimization result terminates as Strategy Challenger; no automatic Strategy Champion mutation or model training is allowed."
+      ],
+      "role_semantics": {
+        "H4": {
+          "purpose": "context gate",
+          "direction_source": "sign(MA_fast - MA_slow) only as a context alignment veto, never as final direction",
+          "required_checks": [
+            "ADX minimum",
+            "ATR-ratio bounded volatility regime",
+            "alignment with M15 direction"
+          ],
+          "planned_parameters": [
+            "InpMtfH4MinADX",
+            "InpMtfH4MinATRRatio",
+            "InpMtfH4MaxATRRatio"
+          ]
+        },
+        "H1": {
+          "purpose": "setup/structure gate",
+          "required_checks": [
+            "ADX minimum",
+            "absolute Bollinger z extension maximum",
+            "alignment with M15 direction"
+          ],
+          "planned_parameters": [
+            "InpMtfH1MinADX",
+            "InpMtfH1MaxAbsBBZ"
+          ]
+        },
+        "M15": {
+          "purpose": "primary directional decision",
+          "authority": "Existing seven-family rule_score + consensus + InpEntryThreshold/InpMinConsensus and current strategy-family weights",
+          "new_directional_parameters": []
+        },
+        "M5": {
+          "purpose": "instantaneous entry-timing veto using latest fully closed M5 bar available at M15 decision time",
+          "required_checks": [
+            "one-bar body/return sign agrees with M15 direction",
+            "minimum absolute body ATR",
+            "opposite wick ATR maximum"
+          ],
+          "planned_parameters": [
+            "InpMtfM5MinBodyATR",
+            "InpMtfM5MaxOppWickATR"
+          ],
+          "may_reverse_direction": false,
+          "may_wait_across_future_bars": false
+        },
+        "risk_execution": {
+          "authority": [
+            "InpRiskPct",
+            "InpSL_ATR",
+            "InpTP_ATR",
+            "InpMaxHoldBars",
+            "InpMaxSpreadPoints",
+            "InpMaxDailyLossPct",
+            "existing volume/order execution"
+          ],
+          "unchanged_by_role_gates": true
+        }
+      },
+      "optimizer_integration": {
+        "existing_optimizer": "ModelLab/strategy/strategy_optimizer.py",
+        "lifecycle": "Strategy Optimizer -> eligible Strategy Challenger -> explicit Owner promotion only",
+        "legacy_parameter_universe_preserved": true,
+        "mtf_parameter_names": [
+          "InpMtfH4MinADX",
+          "InpMtfH4MinATRRatio",
+          "InpMtfH4MaxATRRatio",
+          "InpMtfH1MinADX",
+          "InpMtfH1MaxAbsBBZ",
+          "InpMtfM5MinBodyATR",
+          "InpMtfM5MaxOppWickATR"
+        ],
+        "ranges_authority": "Numeric defaults/hard bounds must be frozen in source + optimizer acceptance before first MT5 optimization; Scientist may only narrow/shift within deterministic hard bounds.",
+        "identical_control_cost_window_required": true
+      },
+      "planned_source": {
+        "ea": "EA_v2_00/baseline/Max_MTF.mq5",
+        "python_parity": "ModelLab/strategy/mtf4_strategy.py",
+        "targeted_selftest": "ModelLab/tests/v204_mtf4_strategy_contract_selftest.py",
+        "one_click_owner_runner": "ModelLab/RUN_MTF4_STRATEGY_ACCEPTANCE.ps1"
+      },
+      "acceptance": [
+        "Genuine BEFORE plan matches every machine-extractable Python SOURCE edge; documented MQL edges are separately enforced by V204 source audit plus MetaEditor/Owner MT5 evidence.",
+        "Single-TF control with InpUseMtfStrategy=false preserves legacy decision behavior.",
+        "H4/H1/M5 are veto-only and cannot create or reverse M15 direction.",
+        "Every role snapshot is closed-bar causal at the M15 decision timestamp.",
+        "Missing any required timeframe fails closed to SKIP in MTF mode.",
+        "Exact MTF parameter-vector lineage is preserved from optimizer request through MT5 report and Strategy Challenger artifact.",
+        "MT5 and Python replay agree on deterministic MTF gate/geometry decisions for the same closed-bar inputs.",
+        "Control and MTF Challenger are backtested on identical symbol/window/cost assumptions.",
+        "No automatic Strategy Champion mutation occurs.",
+        "Fresh cumulative local acceptance remains PASS before MTF-4 closure."
+      ],
+      "deferred": [
+        "A/B/C/D model training and information-gain ranking (MTF-5).",
+        "Multi-encoder DL (MTF-6).",
+        "Multi-bar or learned M5 ENTER/WAIT/CANCEL timing state machine (MTF-7).",
+        "ONNX/shadow/model promotion."
+      ],
+      "sequence_evidence_boundary": {
+        "static_generator_scope": "Current Skill Workflow actual-graph generator resolves Python AST and JS/TS HTTP, not MQL5.",
+        "source_verified_edges": "Python parity evaluator -> H4/H1/M5 gate calls.",
+        "mql_verified_by": "Targeted V204 source audit plus MetaEditor compile and Owner MT5 runtime/parity acceptance.",
+        "no_fake_cross_language_call_edge": true
+      }
+    }
+  ],
+  "ui_surfaces": [
+    {
+      "name": "Control Room — Data / DQ",
+      "purpose": "Inspect dataset readiness, integrity, MTF status and repair controls.",
+      "actions": [
+        "select dataset",
+        "run deterministic DQ",
+        "inspect readiness"
+      ],
+      "authority": "Data/domain modules; UI must not synthesize PASS",
+      "flow_id": "FLOW-MTF-DATA-CLOSURE"
+    },
+    {
+      "name": "Control Room — Strategy Optimizer",
+      "purpose": "Configure/start/resume bounded native MT5 strategy optimization.",
+      "actions": [
+        "configure frozen request",
+        "start/resume/abort",
+        "inspect evidence",
+        "register Challenger"
+      ],
+      "authority": "Strategy Optimizer jobs/worker and registry",
+      "flow_id": "FLOW-STRATEGY-OPTIMIZER"
+    },
+    {
+      "name": "Control Room — Research / Factory",
+      "purpose": "Run Manual/AUTO research and inspect deterministic stage evidence.",
+      "actions": [
+        "start/resume Factory",
+        "inspect stage/KPI evidence",
+        "review Challenger"
+      ],
+      "authority": "Factory/Research/Model governance",
+      "flow_id": "FLOW-MODEL-FACTORY"
+    },
+    {
+      "name": "Control Room — Scientist",
+      "purpose": "Read-only evidence-grounded discussion and bounded Python analysis.",
+      "actions": [
+        "chat",
+        "inspect read-only context",
+        "request analytical support"
+      ],
+      "authority": "Scientist context + deterministic admission; no promotion authority",
+      "flow_id": "FLOW-SCIENTIST"
+    },
+    {
+      "name": "Control Room — Challenger / Champion",
+      "purpose": "Inspect eligible Strategy/Model Challengers and execute explicit promotion actions.",
+      "actions": [
+        "inspect evidence",
+        "explicit promote/demote where legal"
+      ],
+      "authority": "Strategy/model governance registries",
+      "flow_id": "FLOW-PROMOTION"
+    },
+    {
+      "name": "Control Room — Runtime / Release",
+      "purpose": "Present active release, runtime readiness and external-gate status.",
+      "actions": [
+        "inspect active release",
+        "inspect external evidence"
+      ],
+      "authority": "Release authority and external runtime evidence",
+      "flow_id": "FLOW-RELEASE"
+    }
+  ],
+  "runbook_steps": [
+    {
+      "name": "Start Control Room",
+      "command": "ModelLab\\START_UI.cmd",
+      "expected": "Canonical Python 3.12 environment resolves and Streamlit starts; runtime UI PASS still requires browser acceptance."
+    },
+    {
+      "name": "Run local cumulative acceptance",
+      "command": "ModelLab\\RUN_ACCEPTANCE.cmd",
+      "expected": "Exact ordered 75-gate suite; PASS requires 75/75, FRESH_FULL and current-evidence sync."
+    },
+    {
+      "name": "Run MTF-1 Owner MT5 acceptance",
+      "command": "ModelLab\\RUN_MTF1_OWNER_ACCEPTANCE.cmd",
+      "expected": "Candidate-bound native M5/M15/H1/H4, terminal-root, parity, DQ, alignment and lineage evidence."
+    },
+    {
+      "name": "Run MTF-1 MetaEditor acceptance",
+      "command": "ModelLab\\RUN_MTF1_METAEDITOR_ACCEPTANCE.cmd",
+      "expected": "Candidate-bound compiler log/tool/source/EX5 semantic proof."
+    },
+    {
+      "name": "Run MTF-1 final closure",
+      "command": "ModelLab\\RUN_MTF1_FINAL_CLOSURE.cmd",
+      "expected": "One closure_run_id binds canonical Python environment, fresh local acceptance, Owner MT5, MetaEditor and read-only final verification."
+    },
+    {
+      "name": "Run generated-doc sync",
+      "command": "python .workflow\\tools\\sync_project_truth.py --root .",
+      "expected": "Deterministic docs regenerate and PROJECT_DOCS_SYNC records PASS only when reproducible."
+    },
+    {
+      "name": "Validate sequence sessions",
+      "command": "python .workflow\\tools\\validate_sequence_sessions.py --root .",
+      "expected": "All CURRENT AFTER-mode generated actual graphs bind the current source digest and declared tests."
+    }
+  ]
+}

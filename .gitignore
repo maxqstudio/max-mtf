@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+credentials.*
+secrets.*
+
+# Private Owner/runtime evidence
+owner_acceptance/
+ModelLab/evidence/
+Releases/
+artifacts/
+history/
+ModelLab/config/cpu_calibration.json
+
+# Market/runtime data
+Data/MTF/native/*
+!Data/MTF/native/README.txt
+Data/MTF/bundles/*
+!Data/MTF/bundles/README.txt
+*.csv
+*.parquet
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated/binary runtime/model artifacts
+*.ex5
+*.onnx
+*.zip
+*.7z
+*.pkl
+*.joblib
+*.npy
+*.npz
+*.pt
+*.pth
+*.bin
+*.dll
+*.exe
+*.log
+*.tmp
+*.bak

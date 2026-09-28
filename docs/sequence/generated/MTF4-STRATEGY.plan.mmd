@@ -1,0 +1,30 @@
+%% GENERATED FILE - DO NOT EDIT
+%% PLAN_SHA256: e70aad9551f1ed992f7c6dcf880c80a3ce56e7e549918c86e047ce001035ad47
+%% FLOW_ID: MTF4-STRATEGY
+sequenceDiagram
+    actor tick_0 as M15 decision tick
+    participant eval_1 as EA deterministic MTF evaluation
+    participant snap_2 as EA closed role snapshots
+    participant h4_3 as EA H4 context veto
+    participant h1_4 as EA H1 setup veto
+    participant m15_5 as Existing M15 primary direction
+    participant m5_6 as EA latest-closed M5 timing veto
+    participant open_7 as Existing risk/execution
+    actor py_eval_8 as Python deterministic parity evaluator
+    participant py_h4_9 as Python H4 parity gate
+    participant py_h1_10 as Python H1 parity gate
+    participant py_m5_11 as Python M5 parity gate
+    participant promote_12 as Automatic Strategy Champion promotion
+    py_eval_8->>py_h4_9: apply H4 context veto in machine-extractable parity authority [MUST,V204 + actual Python call graph]
+    py_eval_8->>py_h1_10: apply H1 setup veto in machine-extractable parity authority [MUST,V204 + actual Python call graph]
+    py_eval_8->>py_m5_11: apply latest-closed M5 timing veto in machine-extractable parity authority [MUST,V204 + actual Python call graph]
+    tick_0->>eval_1: enter MTF evaluation only on primary M15 closed-bar decision when MTF mode is enabled [MUST,MQL is outside current static generator; V204 source audit + MetaEditor/MT5 acceptance]
+    eval_1->>snap_2: obtain fully closed H4/H1/M15/M5 role data at decision time [MUST,V204 source audit + missing/stale role negative path]
+    eval_1->>m15_5: derive the only allowed BUY/SELL direction from existing M15 strategy authority [MUST,V204 source audit]
+    eval_1->>h4_3: apply H4 context as veto/alignment gate [MUST,V204 + MT5/Python parity]
+    eval_1->>h1_4: apply H1 setup as veto/alignment gate [MUST,V204 + MT5/Python parity]
+    eval_1->>m5_6: apply latest-closed M5 timing as instantaneous veto [MUST,V204 + MT5/Python parity]
+    eval_1->>open_7: pass unchanged M15 direction into existing risk/execution only after all role gates pass [MUST,V204 + Owner MT5 acceptance]
+    py_eval_8->>eval_1: Python replay and EA share one deterministic role-gate contract [MUST,V204 parity fixtures + Owner parity evidence]
+    m5_6->>m15_5: reverse or originate M15 direction [MUST_NOT,V204 role-ownership negative test]
+    eval_1->>promote_12: auto-promote eligible MTF result to Strategy Champion [MUST_NOT,existing Challenger-only lifecycle + V204]

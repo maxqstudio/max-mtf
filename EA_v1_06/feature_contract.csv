@@ -1,0 +1,33 @@
+index,name,definition
+0,ret1_atr,1-bar return / (ATR/close)
+1,ret3_atr,3-bar return / (ATR/close)
+2,ret6_atr,6-bar return / (ATR/close)
+3,fast_ma_gap_atr,(EMA20-close)/ATR
+4,slow_ma_gap_atr,(EMA50-close)/ATR
+5,fast_ma_slope_atr,(EMA20[t]-EMA20[t-1])/ATR
+6,adx_scaled,ADX14/100
+7,plus_di_scaled,+DI/100
+8,minus_di_scaled,-DI/100
+9,rsi_centered,(RSI14-50)/50
+10,atr_percent,ATR14/close*100
+11,atr_ratio,ATR14/ATR50
+12,bollinger_z,(close-mid)/half_bandwidth
+13,bollinger_width_pct,(upper-lower)/close*100
+14,efficiency10,abs(net move)/sum abs moves over 10 bars
+15,candle_body_atr,body/ATR
+16,upper_wick_atr,upper wick/ATR
+17,lower_wick_atr,lower wick/ATR
+18,range_atr,range/ATR
+19,tick_volume_z,tick volume z-score vs prior 30
+20,hour_sin,sin server hour
+21,hour_cos,cos server hour
+22,weekday_sin,sin weekday
+23,weekday_cos,cos weekday
+24,trend_family,trend signal*quality
+25,range_family,range signal*quality
+26,breakout_family,breakout signal*quality
+27,pullback_family,pullback signal*quality
+28,session_family,session signal*quality
+29,shock_family,shock signal*quality
+30,relative_family,relative-value signal*quality
+31,rule_meta_score,fixed pre-ONNX meta score

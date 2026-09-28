@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "session_id": "MODEL-FACTORY",
+  "phase": "MODEL_RESEARCH_FACTORY",
+  "mode": "DURING",
+  "scope": "CURRENT",
+  "critical": true,
+  "status": "CURRENT_FRESH_REPO_DURING",
+  "implementation_base_sha": "",
+  "plan": {
+    "required": false,
+    "frozen": false,
+    "contract": "",
+    "frozen_commit": "",
+    "sha256": "",
+    "diagram": ""
+  },
+  "actual": {
+    "graph": "docs/sequence/generated/MODEL-FACTORY.actual.json",
+    "diagram": "docs/sequence/generated/MODEL-FACTORY.actual.mmd",
+    "source_digest": "",
+    "entries": [
+      "ModelLab/factory/factory_orchestrator.py::run_auto_factory",
+      "ModelLab/max_graph/factory_graph.py::run_auto_factory_graph"
+    ]
+  },
+  "test_traceability_required": true,
+  "tests": [
+    "ModelLab/tests/v201_dynamic_model_capacity_authority_selftest.py",
+    "ModelLab/tests/research_kernel_selftest.py",
+    "ModelLab/tests/cpcv_seed_confirmation_selftest.py"
+  ],
+  "runtime_trace": {
+    "required": false,
+    "graph": ""
+  },
+  "acceptance_report": "artifacts/sequence/MODEL-FACTORY.acceptance.json",
+  "migration_note": "Fresh max-mtf history begins after this implementation existed; DURING mode observes current source without retrospective BEFORE claims."
+}

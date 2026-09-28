@@ -1,0 +1,18 @@
+%% GENERATED FILE - DO NOT EDIT
+%% PLAN_SHA256: 0cc45a520db8c1bffec35645dae3f40c26fc4d9022e96099b925ef439dfd0127
+%% FLOW_ID: MTF3-TIME-PURGE
+sequenceDiagram
+    actor authority_0 as Build complete MTF-3 split authority
+    participant intervals_1 as Build D-common sample intervals
+    participant purge_2 as Purge train rows by exact protected overlap
+    participant audit_3 as Audit zero protected overlap
+    participant wfa_4 as Build exact-time expanding WFA folds
+    participant cpcv_5 as Build exact-time 15-split CPCV
+    participant legacy_6 as Legacy bar-count CPCV
+    authority_0->>intervals_1: construct one D-common exact timestamp interval table [MUST,MAX_MTF3_TIME_DEPENDENCY_PURGE_V1]
+    authority_0->>wfa_4: construct exact-time expanding WFA folds [MUST,MTF3 WFA authority]
+    authority_0->>cpcv_5: construct exact-time 15-split CPCV [MUST,MTF3 CPCV authority]
+    wfa_4->>purge_2: purge expanding train complement against validation outcome timestamps [MUST,MTF3 WFA authority]
+    cpcv_5->>purge_2: purge each CPCV train complement against test outcome timestamps [MUST,15 split MTF3 CPCV authority]
+    purge_2->>audit_3: prove remaining train intervals do not touch protected outcome windows [MUST,exact timestamp overlap audit]
+    cpcv_5->>legacy_6: must not delegate MTF purge authority to legacy bar-count CPCV [MUST_NOT,no bar-count fallback]

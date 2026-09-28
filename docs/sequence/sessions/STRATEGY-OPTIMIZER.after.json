@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "session_id": "STRATEGY-OPTIMIZER",
+  "phase": "STRATEGY_OPTIMIZER",
+  "mode": "DURING",
+  "scope": "CURRENT",
+  "critical": true,
+  "status": "CURRENT_FRESH_REPO_DURING",
+  "implementation_base_sha": "",
+  "plan": {
+    "required": false,
+    "frozen": false,
+    "contract": "",
+    "frozen_commit": "",
+    "sha256": "",
+    "diagram": ""
+  },
+  "actual": {
+    "graph": "docs/sequence/generated/STRATEGY-OPTIMIZER.actual.json",
+    "diagram": "docs/sequence/generated/STRATEGY-OPTIMIZER.actual.mmd",
+    "source_digest": "",
+    "entries": [
+      "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "ModelLab/strategy/strategy_optimizer_worker.py::main"
+    ]
+  },
+  "test_traceability_required": true,
+  "tests": [
+    "ModelLab/tests/v200_optimizer_namespace_selftest.py",
+    "ModelLab/tests/v200_first_strategy_promotion_selftest.py",
+    "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py"
+  ],
+  "runtime_trace": {
+    "required": false,
+    "graph": ""
+  },
+  "acceptance_report": "artifacts/sequence/STRATEGY-OPTIMIZER.acceptance.json",
+  "migration_note": "Fresh max-mtf history begins after this implementation existed; DURING mode observes current source without retrospective BEFORE claims."
+}

@@ -1,0 +1,821 @@
+{
+  "coverage": {
+    "js_ts_http_module_scan": true,
+    "limitations": [
+      "dynamic dispatch",
+      "dependency injection",
+      "reflection",
+      "callbacks/events",
+      "framework magic not visible statically",
+      "JS/TS function-level call ownership is not fully resolved"
+    ],
+    "python_ast": true,
+    "python_parse_failures": [],
+    "python_route_decorators": true,
+    "runtime_trace": false
+  },
+  "edges": [
+    {
+      "action": "acceptance_utf8_env",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::_acceptance_child_env",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/acceptance_process_env.py::acceptance_utf8_env"
+    },
+    {
+      "action": "_load_json_object",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::_assert_current_evidence_policy",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_load_json_object"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::_hash_bytes",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "_assert_current_evidence_policy",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::_iter_current_v201_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_assert_current_evidence_policy"
+    },
+    {
+      "action": "_load_json_object",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::_iter_current_v201_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_load_json_object"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::_runtime_authority_signature",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "h.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::_runtime_authority_signature",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "_hash_bytes",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::_suite_sig",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_hash_bytes"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::_tree_sig",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "h.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::_tree_sig",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "_acceptance_child_env",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_acceptance_child_env"
+    },
+    {
+      "action": "_runtime_authority_signature",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_runtime_authority_signature"
+    },
+    {
+      "action": "_suite_sig",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_suite_sig"
+    },
+    {
+      "action": "_tree_sig",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_tree_sig"
+    },
+    {
+      "action": "sync_current_build_evidence",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence"
+    },
+    {
+      "action": "validate_local_acceptance_report",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::validate_local_acceptance_report"
+    },
+    {
+      "action": "write",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::write"
+    },
+    {
+      "action": "assert_current_process_if_required",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::assert_current_process_if_required"
+    },
+    {
+      "action": "subprocess.run",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
+    },
+    {
+      "action": "_assert_current_evidence_policy",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_assert_current_evidence_policy"
+    },
+    {
+      "action": "_load_json_object",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_load_json_object"
+    },
+    {
+      "action": "validate_current_build_evidence",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::validate_current_build_evidence"
+    },
+    {
+      "action": "validate_local_acceptance_report",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::validate_local_acceptance_report"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "_iter_current_v201_build_evidence",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::validate_current_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_iter_current_v201_build_evidence"
+    },
+    {
+      "action": "validate_local_acceptance_report",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::validate_current_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::validate_local_acceptance_report"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::validate_current_build_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "_external_gates",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::validate_local_acceptance_report",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_external_gates"
+    },
+    {
+      "action": "_suite_sig",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::validate_local_acceptance_report",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_suite_sig"
+    },
+    {
+      "action": "_tree_sig",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::validate_local_acceptance_report",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_tree_sig"
+    },
+    {
+      "action": "_external_gates",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::write",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_external_gates"
+    },
+    {
+      "action": "_suite_sig",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::write",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_suite_sig"
+    },
+    {
+      "action": "_tree_sig",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::write",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/run_acceptance.py::_tree_sig"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/run_acceptance.py::write",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "h.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "f.flush",
+      "evidence": "STATIC",
+      "from": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "action": "ClosureRunError",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_closure_run.py::read_run",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_closure_run.py::ClosureRunError"
+    },
+    {
+      "action": "_valid_run_id",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_closure_run.py::read_run",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_closure_run.py::_valid_run_id"
+    },
+    {
+      "action": "split",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::_torch_base_version",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
+    },
+    {
+      "action": "read_run",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::assert_current_process_if_required",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_closure_run.py::read_run"
+    },
+    {
+      "action": "ClosurePythonEnvironmentError",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::assert_current_process_if_required",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::ClosurePythonEnvironmentError"
+    },
+    {
+      "action": "_norm_path",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::assert_current_process_if_required",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::_norm_path"
+    },
+    {
+      "action": "verify_environment_evidence",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::assert_current_process_if_required",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::verify_environment_evidence"
+    },
+    {
+      "action": "_norm_path",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::build_stage_plan",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::_norm_path"
+    },
+    {
+      "action": "ClosurePythonEnvironmentError",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::read_environment_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::ClosurePythonEnvironmentError"
+    },
+    {
+      "action": "ClosurePythonEnvironmentError",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::validate_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::ClosurePythonEnvironmentError"
+    },
+    {
+      "action": "_norm_path",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::validate_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::_norm_path"
+    },
+    {
+      "action": "_torch_base_version",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::validate_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::_torch_base_version"
+    },
+    {
+      "action": "ClosurePythonEnvironmentError",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::verify_environment_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::ClosurePythonEnvironmentError"
+    },
+    {
+      "action": "_norm_path",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::verify_environment_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::_norm_path"
+    },
+    {
+      "action": "build_stage_plan",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::verify_environment_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::build_stage_plan"
+    },
+    {
+      "action": "read_environment_evidence",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::verify_environment_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::read_environment_evidence"
+    },
+    {
+      "action": "validate_identity",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::verify_environment_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/mtf/mtf1_python_env_authority.py::validate_identity"
+    },
+    {
+      "action": "sys.version.split",
+      "evidence": "STATIC",
+      "from": "ModelLab/mtf/mtf1_python_env_authority.py::verify_environment_evidence",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
+    },
+    {
+      "action": "_plain_stat",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat"
+    },
+    {
+      "action": "_unwrap",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_unwrap"
+    },
+    {
+      "action": "_SafeArray",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray"
+    },
+    {
+      "action": "_scalar",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_scalar"
+    },
+    {
+      "action": "atomic_write_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "resolver": "python_ast",
+      "to": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "action": "atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    }
+  ],
+  "entries": [
+    "ModelLab/acceptance/runners/run_acceptance.py::main"
+  ],
+  "generated": true,
+  "generated_by": "generate_sequence_actual.py",
+  "nodes": [
+    {
+      "id": "ModelLab/acceptance/runners/acceptance_process_env.py::acceptance_utf8_env",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/acceptance_process_env.py::acceptance_utf8_env",
+      "language": "Python",
+      "line_end": 23,
+      "line_start": 11,
+      "locator": "ModelLab/acceptance/runners/acceptance_process_env.py::acceptance_utf8_env"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::_acceptance_child_env",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::_acceptance_child_env",
+      "language": "Python",
+      "line_end": 470,
+      "line_start": 466,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::_acceptance_child_env"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::_assert_current_evidence_policy",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::_assert_current_evidence_policy",
+      "language": "Python",
+      "line_end": 324,
+      "line_start": 298,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::_assert_current_evidence_policy"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::_external_gates",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::_external_gates",
+      "language": "Python",
+      "line_end": 198,
+      "line_start": 164,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::_external_gates"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::_hash_bytes",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::_hash_bytes",
+      "language": "Python",
+      "line_end": 100,
+      "line_start": 100,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::_hash_bytes"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::_iter_current_v201_build_evidence",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::_iter_current_v201_build_evidence",
+      "language": "Python",
+      "line_end": 345,
+      "line_start": 327,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::_iter_current_v201_build_evidence"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::_load_json_object",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::_load_json_object",
+      "language": "Python",
+      "line_end": 295,
+      "line_start": 288,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::_load_json_object"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::_runtime_authority_signature",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::_runtime_authority_signature",
+      "language": "Python",
+      "line_end": 154,
+      "line_start": 145,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::_runtime_authority_signature"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::_suite_sig",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::_suite_sig",
+      "language": "Python",
+      "line_end": 101,
+      "line_start": 101,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::_suite_sig"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::_tree_sig",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::_tree_sig",
+      "language": "Python",
+      "line_end": 137,
+      "line_start": 103,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::_tree_sig"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::main",
+      "language": "Python",
+      "line_end": 519,
+      "line_start": 472,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::main"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence",
+      "language": "Python",
+      "line_end": 463,
+      "line_start": 399,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::sync_current_build_evidence"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::validate_current_build_evidence",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::validate_current_build_evidence",
+      "language": "Python",
+      "line_end": 396,
+      "line_start": 348,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::validate_current_build_evidence"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::validate_local_acceptance_report",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::validate_local_acceptance_report",
+      "language": "Python",
+      "line_end": 268,
+      "line_start": 200,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::validate_local_acceptance_report"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/run_acceptance.py::write",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/run_acceptance.py::write",
+      "language": "Python",
+      "line_end": 281,
+      "line_start": 270,
+      "locator": "ModelLab/acceptance/runners/run_acceptance.py::write"
+    },
+    {
+      "id": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "language": "Python",
+      "line_end": 44,
+      "line_start": 39,
+      "locator": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "id": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "kind": "function",
+      "label": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "language": "Python",
+      "line_end": 58,
+      "line_start": 27,
+      "locator": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_closure_run.py::ClosureRunError",
+      "kind": "class",
+      "label": "ModelLab/mtf/mtf1_closure_run.py::ClosureRunError",
+      "language": "Python",
+      "line_end": 19,
+      "line_start": 18,
+      "locator": "ModelLab/mtf/mtf1_closure_run.py::ClosureRunError"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_closure_run.py::_valid_run_id",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf1_closure_run.py::_valid_run_id",
+      "language": "Python",
+      "line_end": 24,
+      "line_start": 22,
+      "locator": "ModelLab/mtf/mtf1_closure_run.py::_valid_run_id"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_closure_run.py::read_run",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf1_closure_run.py::read_run",
+      "language": "Python",
+      "line_end": 45,
+      "line_start": 27,
+      "locator": "ModelLab/mtf/mtf1_closure_run.py::read_run"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_python_env_authority.py::ClosurePythonEnvironmentError",
+      "kind": "class",
+      "label": "ModelLab/mtf/mtf1_python_env_authority.py::ClosurePythonEnvironmentError",
+      "language": "Python",
+      "line_end": 35,
+      "line_start": 34,
+      "locator": "ModelLab/mtf/mtf1_python_env_authority.py::ClosurePythonEnvironmentError"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_python_env_authority.py::_norm_path",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf1_python_env_authority.py::_norm_path",
+      "language": "Python",
+      "line_end": 45,
+      "line_start": 38,
+      "locator": "ModelLab/mtf/mtf1_python_env_authority.py::_norm_path"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_python_env_authority.py::_torch_base_version",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf1_python_env_authority.py::_torch_base_version",
+      "language": "Python",
+      "line_end": 126,
+      "line_start": 125,
+      "locator": "ModelLab/mtf/mtf1_python_env_authority.py::_torch_base_version"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_python_env_authority.py::assert_current_process_if_required",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf1_python_env_authority.py::assert_current_process_if_required",
+      "language": "Python",
+      "line_end": 260,
+      "line_start": 246,
+      "locator": "ModelLab/mtf/mtf1_python_env_authority.py::assert_current_process_if_required"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_python_env_authority.py::build_stage_plan",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf1_python_env_authority.py::build_stage_plan",
+      "language": "Python",
+      "line_end": 60,
+      "line_start": 48,
+      "locator": "ModelLab/mtf/mtf1_python_env_authority.py::build_stage_plan"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_python_env_authority.py::read_environment_evidence",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf1_python_env_authority.py::read_environment_evidence",
+      "language": "Python",
+      "line_end": 209,
+      "line_start": 199,
+      "locator": "ModelLab/mtf/mtf1_python_env_authority.py::read_environment_evidence"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_python_env_authority.py::validate_identity",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf1_python_env_authority.py::validate_identity",
+      "language": "Python",
+      "line_end": 159,
+      "line_start": 129,
+      "locator": "ModelLab/mtf/mtf1_python_env_authority.py::validate_identity"
+    },
+    {
+      "id": "ModelLab/mtf/mtf1_python_env_authority.py::verify_environment_evidence",
+      "kind": "function",
+      "label": "ModelLab/mtf/mtf1_python_env_authority.py::verify_environment_evidence",
+      "language": "Python",
+      "line_end": 243,
+      "line_start": 212,
+      "locator": "ModelLab/mtf/mtf1_python_env_authority.py::verify_environment_evidence"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray",
+      "kind": "class",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray",
+      "language": "Python",
+      "line_end": 289,
+      "line_start": 226,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "kind": "method",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "language": "Python",
+      "line_end": 545,
+      "line_start": 543,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "language": "Python",
+      "line_end": 182,
+      "line_start": 167,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_scalar",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_scalar",
+      "language": "Python",
+      "line_end": 164,
+      "line_start": 144,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_scalar"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_unwrap",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_unwrap",
+      "language": "Python",
+      "line_end": 101,
+      "line_start": 90,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_unwrap"
+    },
+    {
+      "id": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
+      "kind": "method",
+      "label": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
+      "language": "Python",
+      "line_end": 91,
+      "line_start": 87,
+      "locator": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "language": "Python",
+      "line_end": 22,
+      "line_start": 21,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir",
+      "language": "Python",
+      "line_end": 25,
+      "line_start": 24,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::now",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::now",
+      "language": "Python",
+      "line_end": 20,
+      "line_start": 20,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "language": "Python",
+      "line_end": 38,
+      "line_start": 27,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "id": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
+      "kind": "method",
+      "label": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
+      "language": "Python",
+      "line_end": 104,
+      "line_start": 104,
+      "locator": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
+    }
+  ],
+  "observed_head": "4f002eeb01e4e423f087e19588d38c02cec6e463",
+  "schema_version": 1,
+  "source_digest": "0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20"
+}

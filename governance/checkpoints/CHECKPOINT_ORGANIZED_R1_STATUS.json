@@ -1,0 +1,35 @@
+{
+  "schema": "MAX_PACKAGE_ORGANIZATION_R1_CHECKPOINT_V1",
+  "generated_utc": "2026-09-14T06:10:42.909438+00:00",
+  "project": "Max Research Agent \u2014 ONNX Factory",
+  "version": "0.7.5 R6",
+  "authority": "STAGE_1_11_CLOSED_PACKAGE_ORGANIZED_R1",
+  "stage_12": "NOT_STARTED",
+  "package_layout": {
+    "revision": "ORGANIZED_R1",
+    "status": "CLOSED_EXACT_TREE",
+    "authority_file": "governance/PACKAGE_LAYOUT.json",
+    "root_loose_files": [
+      "README_FIRST.md"
+    ],
+    "tests": "ModelLab/tests",
+    "docs": "ModelLab/docs",
+    "evidence": "ModelLab/evidence",
+    "governance": "governance",
+    "owner_acceptance": "owner_acceptance",
+    "history": "history",
+    "migration_tools": "migration_tools"
+  },
+  "cumulative_acceptance": {
+    "status": "PASS",
+    "passed": 97,
+    "total": 97,
+    "first_failed_gate": null,
+    "source_tree_signature": "7193c27932a18539a9ac0486e39bcf85cfaa4880affacd18dc0f746ac44e06ca",
+    "suite_signature": "bd228572dda2dbbab657e7e16af976acc31e40026f454556b983419cc0a306d6",
+    "report": "ModelLab/evidence/current/BUILD_ACCEPTANCE_v0_7_5_R6.json"
+  },
+  "scientific_contract_changed": false,
+  "clear_chat_hotfix_preserved": true,
+  "next_required": "OWNER_RETEST_OR_STAGE12_ONLY_FROM_THIS_ORGANIZED_PACKAGE"
+}

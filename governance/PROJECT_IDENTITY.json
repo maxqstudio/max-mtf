@@ -1,0 +1,50 @@
+{
+  "schema": "MAX_MTF_PROJECT_IDENTITY_V1",
+  "project": "Max MTF",
+  "project_version": "2.0.1",
+  "ea_version": "2.00",
+  "fork_source": {
+    "project": "Max Research Agent \u2014 ONNX Factory",
+    "version": "1.4.5",
+    "status": "CLOSED_SINGLE_TF_EXCEPT_BUGFIX"
+  },
+  "active_ea": "EA_v2_00/baseline/Max_MTF.mq5",
+  "legacy_single_tf_reference": "EA_v1_06",
+  "initial_state": {
+    "strategy_champion": null,
+    "model_champion": null,
+    "active_release": "BASELINE-MTF-V2"
+  },
+  "baseline_is_champion": false,
+  "mtf_contract": {
+    "TF+2": "Trend / Regime / Volatility",
+    "TF+1": "Setup / Pullback / Breakout / Structure",
+    "TF": "Primary Decision",
+    "TF-1": "Entry Timing / Execution",
+    "example": {
+      "TF+2": "H4",
+      "TF+1": "H1",
+      "TF": "M15",
+      "TF-1": "M5"
+    }
+  },
+  "promotion_policy": "OWNER_MANUAL_ATOMIC_RELEASE",
+  "mt5_target_policy": "VERIFIED_TERMINAL_DATA_ROOT_ONLY_NOT_RAW_C_DRIVE",
+  "mtf_data_contract": {
+    "schema": "MAX_MTF_DATA_FOUNDATION_V1",
+    "phase": "MTF-1",
+    "source_value_authority": "M5",
+    "primary_decision_timeframe": "M15",
+    "role_to_timeframe": {
+      "TF+2": "H4",
+      "TF+1": "H1",
+      "TF": "M15",
+      "TF-1": "M5"
+    },
+    "canonical_timezone": "UTC",
+    "native_higher_tf_usage": "BOUNDARY_AND_PARITY_ONLY",
+    "closed_bar_only": true,
+    "forward_fill_market_bars": false,
+    "research_activation": false
+  }
+}

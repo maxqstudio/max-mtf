@@ -1,0 +1,3 @@
+# Champion Factory V2 · CPMF v0.7.0
+
+Discovery 2020–2022 searches a bounded exact 12-candidate qualified pool using internal chronological CV/OOF, Research Memory, Guided Research, and Scientist hypotheses. Tournament 2023–2025 is untouched during Discovery and opens once to select exactly one frozen winner. Fresh begins 2026-01-01 and ends at `AUTO_NEWEST`. Fresh tests only the frozen winner. If AUTO minimum trades is not met, status is `FRESH_INSUFFICIENT_SAMPLE`; the same winner may be checked again only after newer master data exists. Once sample is sufficient, Fresh PASS/FAIL is terminal. Runner-up fallback is forbidden.

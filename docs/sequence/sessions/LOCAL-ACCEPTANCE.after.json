@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "session_id": "LOCAL-ACCEPTANCE",
+  "phase": "LOCAL_ACCEPTANCE",
+  "mode": "DURING",
+  "scope": "CURRENT",
+  "critical": true,
+  "status": "CURRENT_FRESH_REPO_DURING",
+  "implementation_base_sha": "",
+  "plan": {
+    "required": false,
+    "frozen": false,
+    "contract": "",
+    "frozen_commit": "",
+    "sha256": "",
+    "diagram": ""
+  },
+  "actual": {
+    "graph": "docs/sequence/generated/LOCAL-ACCEPTANCE.actual.json",
+    "diagram": "docs/sequence/generated/LOCAL-ACCEPTANCE.actual.mmd",
+    "source_digest": "",
+    "entries": [
+      "ModelLab/acceptance/runners/run_acceptance.py::main"
+    ]
+  },
+  "test_traceability_required": true,
+  "tests": [
+    "ModelLab/tests/v201_local_acceptance_result_integrity_selftest.py",
+    "ModelLab/tests/v201_acceptance_runtime_immutability_selftest.py"
+  ],
+  "runtime_trace": {
+    "required": false,
+    "graph": ""
+  },
+  "acceptance_report": "artifacts/sequence/LOCAL-ACCEPTANCE.acceptance.json",
+  "migration_note": "Fresh max-mtf history begins after this implementation existed; DURING mode observes current source without retrospective BEFORE claims."
+}

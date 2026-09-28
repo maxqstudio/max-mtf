@@ -1,0 +1,2879 @@
+{
+  "coverage": {
+    "js_ts_http_module_scan": true,
+    "limitations": [
+      "dynamic dispatch",
+      "dependency injection",
+      "reflection",
+      "callbacks/events",
+      "framework magic not visible statically",
+      "JS/TS function-level call ownership is not fully resolved"
+    ],
+    "python_ast": true,
+    "python_parse_failures": [],
+    "python_route_decorators": true,
+    "runtime_trace": false
+  },
+  "edges": [
+    {
+      "action": "h.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "f.flush",
+      "evidence": "STATIC",
+      "from": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "action": "pd.isna",
+      "evidence": "STATIC",
+      "from": "ModelLab/research/sample_policy.py::effective_months",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna"
+    },
+    {
+      "action": "effective_months",
+      "evidence": "STATIC",
+      "from": "ModelLab/research/sample_policy.py::scaled_trade_requirement",
+      "resolver": "python_ast",
+      "to": "ModelLab/research/sample_policy.py::effective_months"
+    },
+    {
+      "action": "timeframe_minutes",
+      "evidence": "STATIC",
+      "from": "ModelLab/research/sample_policy.py::scaled_trade_requirement",
+      "resolver": "python_ast",
+      "to": "ModelLab/research/sample_policy.py::timeframe_minutes"
+    },
+    {
+      "action": "_plain_stat",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat"
+    },
+    {
+      "action": "_unwrap",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_unwrap"
+    },
+    {
+      "action": "_SafeArray",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray"
+    },
+    {
+      "action": "_scalar",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_scalar"
+    },
+    {
+      "action": "f.flush",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_atomic_json",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_code",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_sha",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "_atomic_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_atomic_json"
+    },
+    {
+      "action": "_read_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_read_json"
+    },
+    {
+      "action": "registry_path",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::registry_path"
+    },
+    {
+      "action": "utc_now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::utc_now"
+    },
+    {
+      "action": "os.close",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v125_strategy_champion_kpi_evidence_selftest.py::close"
+    },
+    {
+      "action": "_atomic_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_atomic_json"
+    },
+    {
+      "action": "_sha",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_sha"
+    },
+    {
+      "action": "utc_now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::utc_now"
+    },
+    {
+      "action": "apply_champion_to_canonical_ea",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea"
+    },
+    {
+      "action": "assert_champion_ea_set_parity",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity"
+    },
+    {
+      "action": "write_champion_tester_preset",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset"
+    },
+    {
+      "action": "_allocate_code",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_allocate_code"
+    },
+    {
+      "action": "_atomic_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_atomic_json"
+    },
+    {
+      "action": "_code",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_code"
+    },
+    {
+      "action": "_kpi_from_payload",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_kpi_from_payload"
+    },
+    {
+      "action": "_with_lock",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock"
+    },
+    {
+      "action": "_write_challenger_bundle",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle"
+    },
+    {
+      "action": "champion_payload",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::champion_payload"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_challenger_registry.py::utc_now",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "f.flush",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_atomic_write_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "_f",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_i",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_f"
+    },
+    {
+      "action": "_bounds_for_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_parameter_signature",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params"
+    },
+    {
+      "action": "split",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
+    },
+    {
+      "action": "token.split",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
+    },
+    {
+      "action": "_f",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_f"
+    },
+    {
+      "action": "_i",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_i"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "_strip_ns",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::_row_values",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_strip_ns"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "_atomic_write_text",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_atomic_write_text"
+    },
+    {
+      "action": "_format_ea_input_value",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value"
+    },
+    {
+      "action": "_normalized_strategy_logic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic"
+    },
+    {
+      "action": "canonical_ea_source",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source"
+    },
+    {
+      "action": "_same_numeric",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_same_numeric"
+    },
+    {
+      "action": "read_ea_optimizer_defaults",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults"
+    },
+    {
+      "action": "validate_champion_tester_preset_text",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text"
+    },
+    {
+      "action": "_refinement_score",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::best_near_miss",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_refinement_score"
+    },
+    {
+      "action": "_bounds_for_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space"
+    },
+    {
+      "action": "_format_set_value",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_format_set_value"
+    },
+    {
+      "action": "normalize_optimize_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params"
+    },
+    {
+      "action": "read_ea_optimizer_defaults",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults"
+    },
+    {
+      "action": "validate_search_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "canonical_ea_source",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "utc_now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::champion_payload",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::utc_now"
+    },
+    {
+      "action": "_bounds_for_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space"
+    },
+    {
+      "action": "best_near_miss",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::best_near_miss"
+    },
+    {
+      "action": "normalize_optimize_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params"
+    },
+    {
+      "action": "validate_search_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
+    },
+    {
+      "action": "discover_optimization_reports",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::discover_bootstrap_optimization_reports",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports"
+    },
+    {
+      "action": "is_max_generated_optimizer_report",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::discover_bootstrap_optimization_reports",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::is_max_generated_optimizer_report"
+    },
+    {
+      "action": "optimizer_metrics_sidecar_for_report",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::discover_bootstrap_optimization_reports",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_metrics_sidecar_for_report"
+    },
+    {
+      "action": "report_matches_request",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::report_matches_request"
+    },
+    {
+      "action": "ET.parse",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/research/research_architect.py::_intersect_envelope.parse"
+    },
+    {
+      "action": "_strip_ns",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_strip_ns"
+    },
+    {
+      "action": "ident.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "out.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "out.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "scaled_trade_requirement",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::optimizer_trade_sample",
+      "resolver": "python_ast",
+      "to": "ModelLab/research/sample_policy.py::scaled_trade_requirement"
+    },
+    {
+      "action": "optimizer_kpi_policy",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::optimizer_trade_sample",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_kpi_policy"
+    },
+    {
+      "action": "meta.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::optimizer_trade_sample",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "ET.parse",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/research/research_architect.py::_intersect_envelope.parse"
+    },
+    {
+      "action": "OptimizationPass",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::OptimizationPass"
+    },
+    {
+      "action": "_f",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_f"
+    },
+    {
+      "action": "_i",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_i"
+    },
+    {
+      "action": "_parameter_signature",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_parameter_signature"
+    },
+    {
+      "action": "_row_values",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_row_values"
+    },
+    {
+      "action": "_strip_ns",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_strip_ns"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "col",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.col"
+    },
+    {
+      "action": "value_at",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.value_at"
+    },
+    {
+      "action": "parse_optimizer_metrics_csv",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::parse_optimizer_metrics_csv"
+    },
+    {
+      "action": "_parameter_signature",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimizer_metrics_csv",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_parameter_signature"
+    },
+    {
+      "action": "_parse_frame_inputs_blob",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_optimizer_metrics_csv",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob"
+    },
+    {
+      "action": "line.split",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
+    },
+    {
+      "action": "rhs.split",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
+    },
+    {
+      "action": "canonical_ea_source",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "expected_report_identity",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::report_matches_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::expected_report_identity"
+    },
+    {
+      "action": "optimization_report_identity",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::report_matches_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity"
+    },
+    {
+      "action": "clean",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config.clean"
+    },
+    {
+      "action": "LLMScientist",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/core/scientist.py::LLMScientist"
+    },
+    {
+      "action": "_bounds_for_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space"
+    },
+    {
+      "action": "_extract_json_object",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_extract_json_object"
+    },
+    {
+      "action": "_refinement_score",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_refinement_score"
+    },
+    {
+      "action": "normalize_optimize_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params"
+    },
+    {
+      "action": "optimizer_kpi_policy",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_kpi_policy"
+    },
+    {
+      "action": "search_space_cardinality",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::search_space_cardinality"
+    },
+    {
+      "action": "validate_search_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
+    },
+    {
+      "action": "normalize_optimize_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::search_space_cardinality",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params"
+    },
+    {
+      "action": "validate_search_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::search_space_cardinality",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
+    },
+    {
+      "action": "_passes_nonweighted_gates",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::select_champion",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_passes_nonweighted_gates"
+    },
+    {
+      "action": "weighted_required",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::select_champion",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::select_champion.weighted_required"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::utc_now",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "_same_numeric",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_same_numeric"
+    },
+    {
+      "action": "parse_set_optimizer_entries",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries"
+    },
+    {
+      "action": "canonical_ea_identity",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_identity"
+    },
+    {
+      "action": "normalize_optimize_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params"
+    },
+    {
+      "action": "optimizer_bounds",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "action": "optimizer_default_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space"
+    },
+    {
+      "action": "optimizer_kpi_policy",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_kpi_policy"
+    },
+    {
+      "action": "optimizer_trade_sample",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_trade_sample"
+    },
+    {
+      "action": "read_ea_optimizer_defaults",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults"
+    },
+    {
+      "action": "sanitize_scientist_llm_config",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config"
+    },
+    {
+      "action": "search_space_cardinality",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::search_space_cardinality"
+    },
+    {
+      "action": "validate_search_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
+    },
+    {
+      "action": "normalize_optimize_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params"
+    },
+    {
+      "action": "validate_search_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
+    },
+    {
+      "action": "merged.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "_bounds_for_space",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::validate_search_space",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "_atomic_write_text",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::_atomic_write_text"
+    },
+    {
+      "action": "build_set_text",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::build_set_text"
+    },
+    {
+      "action": "validate_champion_tester_preset_text",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text"
+    },
+    {
+      "action": "atomic_write_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::_atomic",
+      "resolver": "python_ast",
+      "to": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::_now",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "_job_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::_path",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::_job_dir"
+    },
+    {
+      "action": "_job_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::_process_path",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::_job_dir"
+    },
+    {
+      "action": "_atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::_spawn_worker",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::_atomic"
+    },
+    {
+      "action": "_now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::_spawn_worker",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::_now"
+    },
+    {
+      "action": "_process_path",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::_spawn_worker",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::_process_path"
+    },
+    {
+      "action": "load_job",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::_spawn_worker",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::load_job"
+    },
+    {
+      "action": "err.close",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::_spawn_worker",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v125_strategy_champion_kpi_evidence_selftest.py::close"
+    },
+    {
+      "action": "out.close",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::_spawn_worker",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v125_strategy_champion_kpi_evidence_selftest.py::close"
+    },
+    {
+      "action": "_path",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::load_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::_path"
+    },
+    {
+      "action": "discover_bootstrap_optimization_reports",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::discover_bootstrap_optimization_reports"
+    },
+    {
+      "action": "optimizer_metrics_sidecar_for_report",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimizer_metrics_sidecar_for_report"
+    },
+    {
+      "action": "parse_optimizer_metrics_csv",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::parse_optimizer_metrics_csv"
+    },
+    {
+      "action": "validate_request",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_request"
+    },
+    {
+      "action": "_atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::_atomic"
+    },
+    {
+      "action": "_job_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::_job_dir"
+    },
+    {
+      "action": "_now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::_now"
+    },
+    {
+      "action": "_spawn_worker",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::_spawn_worker"
+    },
+    {
+      "action": "latest_job",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_jobs.py::latest_job"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "_evaluate_completed_round",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round"
+    },
+    {
+      "action": "_refine_for_next_round",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round"
+    },
+    {
+      "action": "_round_record",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_round_record"
+    },
+    {
+      "action": "_upsert_round_record",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_upsert_round_record"
+    },
+    {
+      "action": "compile_ea",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea"
+    },
+    {
+      "action": "run_round",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::run_round"
+    },
+    {
+      "action": "update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "register_optimizer_challenger",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger"
+    },
+    {
+      "action": "champion_payload",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::champion_payload"
+    },
+    {
+      "action": "_sha256_file",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_sha256_file"
+    },
+    {
+      "action": "atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "select_champion",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_eligibility_audit",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::select_champion"
+    },
+    {
+      "action": "best_near_miss",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::best_near_miss"
+    },
+    {
+      "action": "champion_payload",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::champion_payload"
+    },
+    {
+      "action": "select_champion",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::select_champion"
+    },
+    {
+      "action": "_apply_winner",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner"
+    },
+    {
+      "action": "_load_round_state",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_load_round_state"
+    },
+    {
+      "action": "_round_record",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_round_record"
+    },
+    {
+      "action": "_upsert_round_record",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_upsert_round_record"
+    },
+    {
+      "action": "update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "_report_stat_fingerprint",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_is_new_or_changed_report",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_report_stat_fingerprint"
+    },
+    {
+      "action": "_snapshot_index",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_is_new_or_changed_report",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_snapshot_index"
+    },
+    {
+      "action": "_round_state_path",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_load_round_state",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_round_state_path"
+    },
+    {
+      "action": "UserSettingsStore",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_load_scientist_secret",
+      "resolver": "python_ast",
+      "to": "ModelLab/core/settings_store.py::UserSettingsStore"
+    },
+    {
+      "action": "deterministic_refine",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine"
+    },
+    {
+      "action": "scientist_propose_ranges",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges"
+    },
+    {
+      "action": "validate_scientist_ranges",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges"
+    },
+    {
+      "action": "_load_scientist_secret",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_load_scientist_secret"
+    },
+    {
+      "action": "_write_proposal",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_write_proposal"
+    },
+    {
+      "action": "proposal.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "discover_optimization_reports",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_report_snapshot",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports"
+    },
+    {
+      "action": "_report_stat_fingerprint",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_report_snapshot",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_report_stat_fingerprint"
+    },
+    {
+      "action": "optimization_report_identity",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_round_record",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity"
+    },
+    {
+      "action": "_eligibility_audit",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_round_record",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_eligibility_audit"
+    },
+    {
+      "action": "_sha256_file",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_round_record",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_sha256_file"
+    },
+    {
+      "action": "rec.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_round_record",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "_round_state_path",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_save_round_state",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_round_state_path"
+    },
+    {
+      "action": "atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_save_round_state",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_save_round_state",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_save_round_state",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_sha256_file",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "h.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_sha256_file",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "discover_optimization_reports",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_wait_for_fresh_report",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports"
+    },
+    {
+      "action": "report_matches_request",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_wait_for_fresh_report",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::report_matches_request"
+    },
+    {
+      "action": "_expected_report_candidates",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_wait_for_fresh_report",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_expected_report_candidates"
+    },
+    {
+      "action": "_is_new_or_changed_report",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_wait_for_fresh_report",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_is_new_or_changed_report"
+    },
+    {
+      "action": "atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_write_proposal",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::_write_proposal",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "atomic_write_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "resolver": "python_ast",
+      "to": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "_compile_error_excerpt",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_error_excerpt"
+    },
+    {
+      "action": "_compile_summary",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_summary"
+    },
+    {
+      "action": "_read_compile_log",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_read_compile_log"
+    },
+    {
+      "action": "atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "re_search_error",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::re_search_error"
+    },
+    {
+      "action": "subprocess.run",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
+    },
+    {
+      "action": "validate_request",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::validate_request"
+    },
+    {
+      "action": "_advance_until_terminal",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal"
+    },
+    {
+      "action": "_load_round_state",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_load_round_state"
+    },
+    {
+      "action": "compile_ea",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "run_round",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::run_round"
+    },
+    {
+      "action": "update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "write_diagnostic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::main",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::write_diagnostic"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "build_set_text",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::build_set_text"
+    },
+    {
+      "action": "build_tester_ini",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::build_tester_ini"
+    },
+    {
+      "action": "discover_optimization_reports",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports"
+    },
+    {
+      "action": "optimization_report_identity",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity"
+    },
+    {
+      "action": "parse_optimization_xml",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml"
+    },
+    {
+      "action": "report_matches_request",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer.py::report_matches_request"
+    },
+    {
+      "action": "ReportPending",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::ReportPending"
+    },
+    {
+      "action": "_eligibility_audit",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_eligibility_audit"
+    },
+    {
+      "action": "_is_new_or_changed_report",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_is_new_or_changed_report"
+    },
+    {
+      "action": "_load_round_state",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_load_round_state"
+    },
+    {
+      "action": "_report_snapshot",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_report_snapshot"
+    },
+    {
+      "action": "_report_stat_fingerprint",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_report_stat_fingerprint"
+    },
+    {
+      "action": "_save_round_state",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_save_round_state"
+    },
+    {
+      "action": "_sha256_file",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_sha256_file"
+    },
+    {
+      "action": "_wait_for_fresh_report",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_wait_for_fresh_report"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "subprocess.run",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
+    },
+    {
+      "action": "atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "_compile_error_excerpt",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::write_diagnostic",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_error_excerpt"
+    },
+    {
+      "action": "atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::write_diagnostic",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::write_diagnostic",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::write_diagnostic",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "_BoolSeries",
+      "evidence": "STATIC",
+      "from": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_BoolSeries"
+    }
+  ],
+  "entries": [
+    "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+    "ModelLab/strategy/strategy_optimizer_worker.py::main"
+  ],
+  "generated": true,
+  "generated_by": "generate_sequence_actual.py",
+  "nodes": [
+    {
+      "id": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "language": "Python",
+      "line_end": 44,
+      "line_start": 39,
+      "locator": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "id": "ModelLab/core/settings_store.py::UserSettingsStore",
+      "kind": "class",
+      "label": "ModelLab/core/settings_store.py::UserSettingsStore",
+      "language": "Python",
+      "line_end": 280,
+      "line_start": 203,
+      "locator": "ModelLab/core/settings_store.py::UserSettingsStore"
+    },
+    {
+      "id": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "kind": "function",
+      "label": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "language": "Python",
+      "line_end": 58,
+      "line_start": 27,
+      "locator": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "id": "ModelLab/research/research_architect.py::_intersect_envelope.parse",
+      "kind": "method",
+      "label": "ModelLab/research/research_architect.py::_intersect_envelope.parse",
+      "language": "Python",
+      "line_end": 252,
+      "line_start": 245,
+      "locator": "ModelLab/research/research_architect.py::_intersect_envelope.parse"
+    },
+    {
+      "id": "ModelLab/research/sample_policy.py::effective_months",
+      "kind": "function",
+      "label": "ModelLab/research/sample_policy.py::effective_months",
+      "language": "Python",
+      "line_end": 41,
+      "line_start": 36,
+      "locator": "ModelLab/research/sample_policy.py::effective_months"
+    },
+    {
+      "id": "ModelLab/research/sample_policy.py::scaled_trade_requirement",
+      "kind": "function",
+      "label": "ModelLab/research/sample_policy.py::scaled_trade_requirement",
+      "language": "Python",
+      "line_end": 77,
+      "line_start": 44,
+      "locator": "ModelLab/research/sample_policy.py::scaled_trade_requirement"
+    },
+    {
+      "id": "ModelLab/research/sample_policy.py::timeframe_minutes",
+      "kind": "function",
+      "label": "ModelLab/research/sample_policy.py::timeframe_minutes",
+      "language": "Python",
+      "line_end": 33,
+      "line_start": 22,
+      "locator": "ModelLab/research/sample_policy.py::timeframe_minutes"
+    },
+    {
+      "id": "ModelLab/scientist/core/scientist.py::LLMScientist",
+      "kind": "class",
+      "label": "ModelLab/scientist/core/scientist.py::LLMScientist",
+      "language": "Python",
+      "line_end": 487,
+      "line_start": 176,
+      "locator": "ModelLab/scientist/core/scientist.py::LLMScientist"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray",
+      "kind": "class",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray",
+      "language": "Python",
+      "line_end": 289,
+      "line_start": 226,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "kind": "method",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "language": "Python",
+      "line_end": 545,
+      "line_start": 543,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "language": "Python",
+      "line_end": 182,
+      "line_start": 167,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_scalar",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_scalar",
+      "language": "Python",
+      "line_end": 164,
+      "line_start": 144,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_scalar"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_unwrap",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_unwrap",
+      "language": "Python",
+      "line_end": 101,
+      "line_start": 90,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_unwrap"
+    },
+    {
+      "id": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
+      "kind": "method",
+      "label": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
+      "language": "Python",
+      "line_end": 91,
+      "line_start": 87,
+      "locator": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::_allocate_code",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::_allocate_code",
+      "language": "Python",
+      "line_end": 220,
+      "line_start": 214,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::_allocate_code"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::_atomic_json",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::_atomic_json",
+      "language": "Python",
+      "line_end": 76,
+      "line_start": 64,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::_atomic_json"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::_code",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::_code",
+      "language": "Python",
+      "line_end": 211,
+      "line_start": 207,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::_code"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::_kpi_from_payload",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::_kpi_from_payload",
+      "language": "Python",
+      "line_end": 130,
+      "line_start": 114,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::_kpi_from_payload"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::_read_json",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::_read_json",
+      "language": "Python",
+      "line_end": 85,
+      "line_start": 83,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::_read_json"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::_sha",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::_sha",
+      "language": "Python",
+      "line_end": 39,
+      "line_start": 38,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::_sha"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock",
+      "language": "Python",
+      "line_end": 111,
+      "line_start": 88,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::_with_lock"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle",
+      "language": "Python",
+      "line_end": 241,
+      "line_start": 223,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::_write_challenger_bundle"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger",
+      "language": "Python",
+      "line_end": 260,
+      "line_start": 244,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::register_optimizer_challenger"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::registry_path",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::registry_path",
+      "language": "Python",
+      "line_end": 80,
+      "line_start": 79,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::registry_path"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_challenger_registry.py::utc_now",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_challenger_registry.py::utc_now",
+      "language": "Python",
+      "line_end": 35,
+      "line_start": 34,
+      "locator": "ModelLab/strategy/strategy_challenger_registry.py::utc_now"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::OptimizationPass",
+      "kind": "class",
+      "label": "ModelLab/strategy/strategy_optimizer.py::OptimizationPass",
+      "language": "Python",
+      "line_end": 186,
+      "line_start": 154,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::OptimizationPass"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_atomic_write_text",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_atomic_write_text",
+      "language": "Python",
+      "line_end": 280,
+      "line_start": 252,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_atomic_write_text"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params",
+      "language": "Python",
+      "line_end": 104,
+      "line_start": 95,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_params"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space",
+      "language": "Python",
+      "line_end": 92,
+      "line_start": 79,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_bounds_for_space"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_extract_json_object",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_extract_json_object",
+      "language": "Python",
+      "line_end": 1074,
+      "line_start": 1063,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_extract_json_object"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_f",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_f",
+      "language": "Python",
+      "line_end": 783,
+      "line_start": 773,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_f"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value",
+      "language": "Python",
+      "line_end": 289,
+      "line_start": 283,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_format_ea_input_value"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_format_set_value",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_format_set_value",
+      "language": "Python",
+      "line_end": 565,
+      "line_start": 560,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_format_set_value"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_i",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_i",
+      "language": "Python",
+      "line_end": 788,
+      "line_start": 786,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_i"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic",
+      "language": "Python",
+      "line_end": 300,
+      "line_start": 292,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_normalized_strategy_logic"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_parameter_signature",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_parameter_signature",
+      "language": "Python",
+      "line_end": 800,
+      "line_start": 792,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_parameter_signature"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob",
+      "language": "Python",
+      "line_end": 827,
+      "line_start": 802,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_parse_frame_inputs_blob"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_passes_nonweighted_gates",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_passes_nonweighted_gates",
+      "language": "Python",
+      "line_end": 1004,
+      "line_start": 998,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_passes_nonweighted_gates"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_refinement_score",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_refinement_score",
+      "language": "Python",
+      "line_end": 1016,
+      "line_start": 1006,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_refinement_score"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_row_values",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_row_values",
+      "language": "Python",
+      "line_end": 770,
+      "line_start": 765,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_row_values"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_same_numeric",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_same_numeric",
+      "language": "Python",
+      "line_end": 612,
+      "line_start": 607,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_same_numeric"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::_strip_ns",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::_strip_ns",
+      "language": "Python",
+      "line_end": 762,
+      "line_start": 761,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::_strip_ns"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea",
+      "language": "Python",
+      "line_end": 346,
+      "line_start": 303,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::apply_champion_to_canonical_ea"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity",
+      "language": "Python",
+      "line_end": 730,
+      "line_start": 712,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::assert_champion_ea_set_parity"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::best_near_miss",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::best_near_miss",
+      "language": "Python",
+      "line_end": 1036,
+      "line_start": 1033,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::best_near_miss"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::build_set_text",
+      "language": "Python",
+      "line_end": 605,
+      "line_start": 568,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::build_set_text"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::build_tester_ini",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::build_tester_ini",
+      "language": "Python",
+      "line_end": 758,
+      "line_start": 733,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::build_tester_ini"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_identity",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_identity",
+      "language": "Python",
+      "line_end": 250,
+      "line_start": 244,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_identity"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source",
+      "language": "Python",
+      "line_end": 241,
+      "line_start": 225,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::canonical_ea_source"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::champion_payload",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::champion_payload",
+      "language": "Python",
+      "line_end": 1173,
+      "line_start": 1157,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::champion_payload"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine",
+      "language": "Python",
+      "line_end": 1060,
+      "line_start": 1039,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::deterministic_refine"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::discover_bootstrap_optimization_reports",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::discover_bootstrap_optimization_reports",
+      "language": "Python",
+      "line_end": 529,
+      "line_start": 518,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::discover_bootstrap_optimization_reports"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports",
+      "language": "Python",
+      "line_end": 497,
+      "line_start": 484,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::discover_optimization_reports"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::expected_report_identity",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::expected_report_identity",
+      "language": "Python",
+      "line_end": 464,
+      "line_start": 463,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::expected_report_identity"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::is_max_generated_optimizer_report",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::is_max_generated_optimizer_report",
+      "language": "Python",
+      "line_end": 509,
+      "line_start": 500,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::is_max_generated_optimizer_report"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params",
+      "language": "Python",
+      "line_end": 443,
+      "line_start": 427,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::normalize_optimize_params"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity",
+      "language": "Python",
+      "line_end": 460,
+      "line_start": 445,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::optimization_report_identity"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds",
+      "language": "Python",
+      "line_end": 69,
+      "line_start": 65,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::optimizer_bounds"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space",
+      "language": "Python",
+      "line_end": 76,
+      "line_start": 72,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::optimizer_default_space"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::optimizer_kpi_policy",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::optimizer_kpi_policy",
+      "language": "Python",
+      "line_end": 212,
+      "line_start": 189,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::optimizer_kpi_policy"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::optimizer_metrics_sidecar_for_report",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::optimizer_metrics_sidecar_for_report",
+      "language": "Python",
+      "line_end": 515,
+      "line_start": 512,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::optimizer_metrics_sidecar_for_report"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::optimizer_trade_sample",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::optimizer_trade_sample",
+      "language": "Python",
+      "line_end": 222,
+      "line_start": 215,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::optimizer_trade_sample"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml",
+      "language": "Python",
+      "line_end": 995,
+      "line_start": 890,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.col",
+      "kind": "method",
+      "label": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.col",
+      "language": "Python",
+      "line_end": 911,
+      "line_start": 907,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.col"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.value_at",
+      "kind": "method",
+      "label": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.value_at",
+      "language": "Python",
+      "line_end": 928,
+      "line_start": 927,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimization_xml.value_at"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::parse_optimizer_metrics_csv",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::parse_optimizer_metrics_csv",
+      "language": "Python",
+      "line_end": 888,
+      "line_start": 829,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::parse_optimizer_metrics_csv"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries",
+      "language": "Python",
+      "line_end": 638,
+      "line_start": 615,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::parse_set_optimizer_entries"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults",
+      "language": "Python",
+      "line_end": 425,
+      "line_start": 414,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::read_ea_optimizer_defaults"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::report_matches_request",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::report_matches_request",
+      "language": "Python",
+      "line_end": 481,
+      "line_start": 467,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::report_matches_request"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config",
+      "language": "Python",
+      "line_end": 1091,
+      "line_start": 1077,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config.clean",
+      "kind": "method",
+      "label": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config.clean",
+      "language": "Python",
+      "line_end": 1090,
+      "line_start": 1085,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::sanitize_scientist_llm_config.clean"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges",
+      "language": "Python",
+      "line_end": 1135,
+      "line_start": 1094,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::scientist_propose_ranges"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::search_space_cardinality",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::search_space_cardinality",
+      "language": "Python",
+      "line_end": 125,
+      "line_start": 107,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::search_space_cardinality"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::select_champion",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::select_champion",
+      "language": "Python",
+      "line_end": 1030,
+      "line_start": 1018,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::select_champion"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::select_champion.weighted_required",
+      "kind": "method",
+      "label": "ModelLab/strategy/strategy_optimizer.py::select_champion.weighted_required",
+      "language": "Python",
+      "line_end": 1023,
+      "line_start": 1022,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::select_champion.weighted_required"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::utc_now",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::utc_now",
+      "language": "Python",
+      "line_end": 350,
+      "line_start": 349,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::utc_now"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text",
+      "language": "Python",
+      "line_end": 673,
+      "line_start": 641,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::validate_champion_tester_preset_text"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::validate_request",
+      "language": "Python",
+      "line_end": 1229,
+      "line_start": 1176,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::validate_request"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges",
+      "language": "Python",
+      "line_end": 1146,
+      "line_start": 1138,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::validate_scientist_ranges"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::validate_search_space",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::validate_search_space",
+      "language": "Python",
+      "line_end": 558,
+      "line_start": 531,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::validate_search_space"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset",
+      "language": "Python",
+      "line_end": 709,
+      "line_start": 676,
+      "locator": "ModelLab/strategy/strategy_optimizer.py::write_champion_tester_preset"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_jobs.py::_atomic",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_jobs.py::_atomic",
+      "language": "Python",
+      "line_end": 19,
+      "line_start": 18,
+      "locator": "ModelLab/strategy/strategy_optimizer_jobs.py::_atomic"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_jobs.py::_job_dir",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_jobs.py::_job_dir",
+      "language": "Python",
+      "line_end": 15,
+      "line_start": 15,
+      "locator": "ModelLab/strategy/strategy_optimizer_jobs.py::_job_dir"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_jobs.py::_now",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_jobs.py::_now",
+      "language": "Python",
+      "line_end": 14,
+      "line_start": 14,
+      "locator": "ModelLab/strategy/strategy_optimizer_jobs.py::_now"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_jobs.py::_path",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_jobs.py::_path",
+      "language": "Python",
+      "line_end": 16,
+      "line_start": 16,
+      "locator": "ModelLab/strategy/strategy_optimizer_jobs.py::_path"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_jobs.py::_process_path",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_jobs.py::_process_path",
+      "language": "Python",
+      "line_end": 17,
+      "line_start": 17,
+      "locator": "ModelLab/strategy/strategy_optimizer_jobs.py::_process_path"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_jobs.py::_spawn_worker",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_jobs.py::_spawn_worker",
+      "language": "Python",
+      "line_end": 63,
+      "line_start": 39,
+      "locator": "ModelLab/strategy/strategy_optimizer_jobs.py::_spawn_worker"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_jobs.py::latest_job",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_jobs.py::latest_job",
+      "language": "Python",
+      "line_end": 37,
+      "line_start": 31,
+      "locator": "ModelLab/strategy/strategy_optimizer_jobs.py::latest_job"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_jobs.py::load_job",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_jobs.py::load_job",
+      "language": "Python",
+      "line_end": 29,
+      "line_start": 26,
+      "locator": "ModelLab/strategy/strategy_optimizer_jobs.py::load_job"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job",
+      "language": "Python",
+      "line_end": 135,
+      "line_start": 88,
+      "locator": "ModelLab/strategy/strategy_optimizer_jobs.py::start_job"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::ReportPending",
+      "kind": "class",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::ReportPending",
+      "language": "Python",
+      "line_end": 145,
+      "line_start": 144,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::ReportPending"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal",
+      "language": "Python",
+      "line_end": 602,
+      "line_start": 575,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_advance_until_terminal"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner",
+      "language": "Python",
+      "line_end": 475,
+      "line_start": 447,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_apply_winner"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_error_excerpt",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_error_excerpt",
+      "language": "Python",
+      "line_end": 54,
+      "line_start": 48,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_error_excerpt"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_summary",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_summary",
+      "language": "Python",
+      "line_end": 89,
+      "line_start": 83,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_compile_summary"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_eligibility_audit",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_eligibility_audit",
+      "language": "Python",
+      "line_end": 274,
+      "line_start": 245,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_eligibility_audit"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round",
+      "language": "Python",
+      "line_end": 526,
+      "line_start": 477,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_evaluate_completed_round"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_expected_report_candidates",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_expected_report_candidates",
+      "language": "Python",
+      "line_end": 206,
+      "line_start": 196,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_expected_report_candidates"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_is_new_or_changed_report",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_is_new_or_changed_report",
+      "language": "Python",
+      "line_end": 194,
+      "line_start": 187,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_is_new_or_changed_report"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_load_round_state",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_load_round_state",
+      "language": "Python",
+      "line_end": 155,
+      "line_start": 152,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_load_round_state"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_load_scientist_secret",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_load_scientist_secret",
+      "language": "Python",
+      "line_end": 425,
+      "line_start": 416,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_load_scientist_secret"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_read_compile_log",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_read_compile_log",
+      "language": "Python",
+      "line_end": 46,
+      "line_start": 40,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_read_compile_log"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round",
+      "language": "Python",
+      "line_end": 572,
+      "line_start": 529,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_refine_for_next_round"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_report_snapshot",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_report_snapshot",
+      "language": "Python",
+      "line_end": 175,
+      "line_start": 170,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_report_snapshot"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_report_stat_fingerprint",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_report_stat_fingerprint",
+      "language": "Python",
+      "line_end": 168,
+      "line_start": 166,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_report_stat_fingerprint"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_round_record",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_round_record",
+      "language": "Python",
+      "line_end": 444,
+      "line_start": 434,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_round_record"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_round_state_path",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_round_state_path",
+      "language": "Python",
+      "line_end": 149,
+      "line_start": 148,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_round_state_path"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_save_round_state",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_save_round_state",
+      "language": "Python",
+      "line_end": 163,
+      "line_start": 158,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_save_round_state"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_sha256_file",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_sha256_file",
+      "language": "Python",
+      "line_end": 243,
+      "line_start": 238,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_sha256_file"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_snapshot_index",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_snapshot_index",
+      "language": "Python",
+      "line_end": 185,
+      "line_start": 177,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_snapshot_index"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_upsert_round_record",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_upsert_round_record",
+      "language": "Python",
+      "line_end": 413,
+      "line_start": 410,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_upsert_round_record"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_wait_for_fresh_report",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_wait_for_fresh_report",
+      "language": "Python",
+      "line_end": 236,
+      "line_start": 208,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_wait_for_fresh_report"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::_write_proposal",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::_write_proposal",
+      "language": "Python",
+      "line_end": 431,
+      "line_start": 428,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::_write_proposal"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "language": "Python",
+      "line_end": 22,
+      "line_start": 21,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea",
+      "language": "Python",
+      "line_end": 137,
+      "line_start": 91,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::compile_ea"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir",
+      "language": "Python",
+      "line_end": 25,
+      "line_start": 24,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::main",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::main",
+      "language": "Python",
+      "line_end": 637,
+      "line_start": 605,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::main"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::now",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::now",
+      "language": "Python",
+      "line_end": 20,
+      "line_start": 20,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::re_search_error",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::re_search_error",
+      "language": "Python",
+      "line_end": 142,
+      "line_start": 139,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::re_search_error"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::run_round",
+      "language": "Python",
+      "line_end": 408,
+      "line_start": 277,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::run_round"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "language": "Python",
+      "line_end": 38,
+      "line_start": 27,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::write_diagnostic",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::write_diagnostic",
+      "language": "Python",
+      "line_end": 81,
+      "line_start": 56,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::write_diagnostic"
+    },
+    {
+      "id": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
+      "kind": "method",
+      "label": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
+      "language": "Python",
+      "line_end": 104,
+      "line_start": 104,
+      "locator": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
+    },
+    {
+      "id": "ModelLab/tests/v125_strategy_champion_kpi_evidence_selftest.py::close",
+      "kind": "function",
+      "label": "ModelLab/tests/v125_strategy_champion_kpi_evidence_selftest.py::close",
+      "language": "Python",
+      "line_end": 13,
+      "line_start": 12,
+      "locator": "ModelLab/tests/v125_strategy_champion_kpi_evidence_selftest.py::close"
+    },
+    {
+      "id": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_BoolSeries",
+      "kind": "class",
+      "label": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_BoolSeries",
+      "language": "Python",
+      "line_end": 40,
+      "line_start": 38,
+      "locator": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_BoolSeries"
+    },
+    {
+      "id": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna",
+      "kind": "method",
+      "label": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna",
+      "language": "Python",
+      "line_end": 34,
+      "line_start": 34,
+      "locator": "ModelLab/tests/v201_inherited_v147_strategy_geometry_handoff_selftest.py::_Series.isna"
+    }
+  ],
+  "observed_head": "4f002eeb01e4e423f087e19588d38c02cec6e463",
+  "schema_version": 1,
+  "source_digest": "0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20"
+}

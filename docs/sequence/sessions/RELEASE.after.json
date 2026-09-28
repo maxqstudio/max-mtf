@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "session_id": "RELEASE",
+  "phase": "RELEASE_AUTHORITY",
+  "mode": "DURING",
+  "scope": "CURRENT",
+  "critical": true,
+  "status": "CURRENT_FRESH_REPO_DURING",
+  "implementation_base_sha": "",
+  "plan": {
+    "required": false,
+    "frozen": false,
+    "contract": "",
+    "frozen_commit": "",
+    "sha256": "",
+    "diagram": ""
+  },
+  "actual": {
+    "graph": "docs/sequence/generated/RELEASE.actual.json",
+    "diagram": "docs/sequence/generated/RELEASE.actual.mmd",
+    "source_digest": "",
+    "entries": [
+      "ModelLab/core/release_authority.py::load_active_release",
+      "ModelLab/core/release_authority.py::validate_active_release_record"
+    ]
+  },
+  "test_traceability_required": true,
+  "tests": [
+    "ModelLab/tests/v201_active_release_identity_selftest.py",
+    "ModelLab/tests/v201_active_release_version_parity_selftest.py",
+    "ModelLab/tests/v200_zero_champion_lifecycle_selftest.py"
+  ],
+  "runtime_trace": {
+    "required": false,
+    "graph": ""
+  },
+  "acceptance_report": "artifacts/sequence/RELEASE.acceptance.json",
+  "migration_note": "Fresh max-mtf history begins after this implementation existed; DURING mode observes current source without retrospective BEFORE claims."
+}

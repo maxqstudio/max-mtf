@@ -1,0 +1,1092 @@
+{
+  "version": "CP_MODEL_REGISTRY_V7_TRANSFORMER_FAMILY_EXPANSION",
+  "families": {
+    "xgboost": {
+      "enabled_key": "xgboost",
+      "deployable": true,
+      "search": {
+        "n_estimators": {
+          "min": 50,
+          "max": 5000,
+          "type": "int"
+        },
+        "max_depth": {
+          "min": 2,
+          "max": 16,
+          "type": "int"
+        },
+        "learning_rate": {
+          "min": 0.003,
+          "max": 0.3,
+          "type": "float",
+          "distribution": "log"
+        },
+        "min_child_weight": {
+          "min": 0.1,
+          "max": 500.0,
+          "type": "float",
+          "distribution": "log"
+        },
+        "subsample": {
+          "min": 0.35,
+          "max": 1.0,
+          "type": "float"
+        },
+        "colsample_bytree": {
+          "min": 0.35,
+          "max": 1.0,
+          "type": "float"
+        },
+        "reg_alpha": {
+          "min": 0.0,
+          "max": 100.0,
+          "type": "float"
+        },
+        "reg_lambda": {
+          "min": 0.001,
+          "max": 500.0,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "category": "ML",
+      "role": "policy",
+      "hybrid_compatible": true,
+      "requires_torch": false,
+      "size_parameters": [
+        "n_estimators",
+        "max_depth"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions."
+    },
+    "lightgbm": {
+      "enabled_key": "lightgbm",
+      "deployable": true,
+      "search": {
+        "n_estimators": {
+          "min": 50,
+          "max": 5000,
+          "type": "int"
+        },
+        "learning_rate": {
+          "min": 0.003,
+          "max": 0.3,
+          "type": "float",
+          "distribution": "log"
+        },
+        "num_leaves": {
+          "min": 4,
+          "max": 512,
+          "type": "int"
+        },
+        "max_depth": {
+          "min": 2,
+          "max": 16,
+          "type": "int"
+        },
+        "min_child_samples": {
+          "min": 5,
+          "max": 5000,
+          "type": "int"
+        },
+        "subsample": {
+          "min": 0.35,
+          "max": 1.0,
+          "type": "float"
+        },
+        "colsample_bytree": {
+          "min": 0.35,
+          "max": 1.0,
+          "type": "float"
+        },
+        "reg_alpha": {
+          "min": 0.0,
+          "max": 100.0,
+          "type": "float"
+        },
+        "reg_lambda": {
+          "min": 0.001,
+          "max": 500.0,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "category": "ML",
+      "role": "policy",
+      "hybrid_compatible": true,
+      "requires_torch": false,
+      "size_parameters": [
+        "n_estimators",
+        "num_leaves",
+        "max_depth"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions."
+    },
+    "random_forest": {
+      "enabled_key": "random_forest",
+      "deployable": true,
+      "search": {
+        "n_estimators": {
+          "min": 50,
+          "max": 2000,
+          "type": "int"
+        },
+        "max_depth": {
+          "min": 3,
+          "max": 40,
+          "type": "int"
+        },
+        "min_samples_leaf": {
+          "min": 1,
+          "max": 1000,
+          "type": "int"
+        },
+        "max_features": {
+          "min": 0.1,
+          "max": 1.0,
+          "type": "float"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "category": "ML",
+      "role": "policy",
+      "hybrid_compatible": true,
+      "requires_torch": false,
+      "size_parameters": [
+        "n_estimators",
+        "max_depth"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions."
+    },
+    "gru": {
+      "enabled_key": "gru",
+      "deployable": true,
+      "input_contract": "CP32_SEQUENCE_V1",
+      "search": {
+        "sequence_length": {
+          "min": 8,
+          "max": 512,
+          "type": "int"
+        },
+        "hidden_size": {
+          "min": 16,
+          "max": 512,
+          "type": "int"
+        },
+        "num_layers": {
+          "min": 1,
+          "max": 4,
+          "type": "int"
+        },
+        "dropout": {
+          "min": 0.0,
+          "max": 0.5,
+          "type": "float"
+        },
+        "learning_rate": {
+          "min": 5e-05,
+          "max": 0.01,
+          "type": "float",
+          "distribution": "log"
+        },
+        "batch_size": {
+          "min": 16,
+          "max": 1024,
+          "type": "int"
+        },
+        "epochs": {
+          "min": 4,
+          "max": 200,
+          "type": "int"
+        },
+        "weight_decay": {
+          "min": 0.0,
+          "max": 0.05,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "category": "DL",
+      "role": "temporal",
+      "hybrid_compatible": true,
+      "requires_torch": true,
+      "size_parameters": [
+        "hidden_size",
+        "num_layers"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions."
+    },
+    "hybrid_gru_xgboost": {
+      "enabled_key": "hybrid_xgboost",
+      "deployable": true,
+      "input_contract": "CP_HYBRID_GRU_CLASSICAL_V1",
+      "search": {
+        "gru_sequence_length": {
+          "min": 8,
+          "max": 24,
+          "type": "int"
+        },
+        "gru_hidden_size": {
+          "min": 16,
+          "max": 40,
+          "type": "int"
+        },
+        "gru_num_layers": {
+          "min": 1,
+          "max": 2,
+          "type": "int"
+        },
+        "gru_dropout": {
+          "min": 0.0,
+          "max": 0.2,
+          "type": "float"
+        },
+        "gru_learning_rate": {
+          "min": 0.0005,
+          "max": 0.003,
+          "type": "float",
+          "distribution": "log"
+        },
+        "gru_batch_size": {
+          "min": 64,
+          "max": 192,
+          "type": "int"
+        },
+        "gru_epochs": {
+          "min": 4,
+          "max": 10,
+          "type": "int"
+        },
+        "gru_weight_decay": {
+          "min": 0.0,
+          "max": 0.003,
+          "type": "float"
+        },
+        "policy_n_estimators": {
+          "min": 120,
+          "max": 900,
+          "type": "int"
+        },
+        "policy_max_depth": {
+          "min": 2,
+          "max": 7,
+          "type": "int"
+        },
+        "policy_learning_rate": {
+          "min": 0.01,
+          "max": 0.12,
+          "type": "float",
+          "distribution": "log"
+        },
+        "policy_min_child_weight": {
+          "min": 1.0,
+          "max": 30.0,
+          "type": "float",
+          "distribution": "log"
+        },
+        "policy_subsample": {
+          "min": 0.65,
+          "max": 1.0,
+          "type": "float"
+        },
+        "policy_colsample_bytree": {
+          "min": 0.65,
+          "max": 1.0,
+          "type": "float"
+        },
+        "policy_reg_alpha": {
+          "min": 0.0,
+          "max": 10.0,
+          "type": "float"
+        },
+        "policy_reg_lambda": {
+          "min": 0.1,
+          "max": 20.0,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 6,
+          "max": 72,
+          "type": "int"
+        }
+      },
+      "category": "HYBRID",
+      "role": "legacy_hybrid",
+      "legacy_alias": true,
+      "size_parameters": [
+        "gru_hidden_size",
+        "gru_num_layers",
+        "policy_n_estimators",
+        "policy_max_depth"
+      ],
+      "size_priority_note": "Legacy hybrid inherits GRU temporal slider and policy-family slider."
+    },
+    "hybrid_gru_lightgbm": {
+      "enabled_key": "hybrid_lightgbm",
+      "deployable": true,
+      "input_contract": "CP_HYBRID_GRU_CLASSICAL_V1",
+      "search": {
+        "gru_sequence_length": {
+          "min": 8,
+          "max": 24,
+          "type": "int"
+        },
+        "gru_hidden_size": {
+          "min": 16,
+          "max": 40,
+          "type": "int"
+        },
+        "gru_num_layers": {
+          "min": 1,
+          "max": 2,
+          "type": "int"
+        },
+        "gru_dropout": {
+          "min": 0.0,
+          "max": 0.2,
+          "type": "float"
+        },
+        "gru_learning_rate": {
+          "min": 0.0005,
+          "max": 0.003,
+          "type": "float",
+          "distribution": "log"
+        },
+        "gru_batch_size": {
+          "min": 64,
+          "max": 192,
+          "type": "int"
+        },
+        "gru_epochs": {
+          "min": 4,
+          "max": 10,
+          "type": "int"
+        },
+        "gru_weight_decay": {
+          "min": 0.0,
+          "max": 0.003,
+          "type": "float"
+        },
+        "policy_n_estimators": {
+          "min": 120,
+          "max": 1000,
+          "type": "int"
+        },
+        "policy_learning_rate": {
+          "min": 0.01,
+          "max": 0.12,
+          "type": "float",
+          "distribution": "log"
+        },
+        "policy_num_leaves": {
+          "min": 7,
+          "max": 95,
+          "type": "int"
+        },
+        "policy_max_depth": {
+          "min": 3,
+          "max": 9,
+          "type": "int"
+        },
+        "policy_min_child_samples": {
+          "min": 15,
+          "max": 160,
+          "type": "int"
+        },
+        "policy_subsample": {
+          "min": 0.65,
+          "max": 1.0,
+          "type": "float"
+        },
+        "policy_colsample_bytree": {
+          "min": 0.65,
+          "max": 1.0,
+          "type": "float"
+        },
+        "policy_reg_alpha": {
+          "min": 0.0,
+          "max": 10.0,
+          "type": "float"
+        },
+        "policy_reg_lambda": {
+          "min": 0.1,
+          "max": 20.0,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 6,
+          "max": 72,
+          "type": "int"
+        }
+      },
+      "category": "HYBRID",
+      "role": "legacy_hybrid",
+      "legacy_alias": true,
+      "size_parameters": [
+        "gru_hidden_size",
+        "gru_num_layers",
+        "policy_n_estimators",
+        "policy_num_leaves",
+        "policy_max_depth"
+      ],
+      "size_priority_note": "Legacy hybrid inherits GRU temporal slider and policy-family slider."
+    },
+    "hybrid_gru_random_forest": {
+      "enabled_key": "hybrid_random_forest",
+      "deployable": true,
+      "input_contract": "CP_HYBRID_GRU_CLASSICAL_V1",
+      "search": {
+        "gru_sequence_length": {
+          "min": 8,
+          "max": 24,
+          "type": "int"
+        },
+        "gru_hidden_size": {
+          "min": 16,
+          "max": 40,
+          "type": "int"
+        },
+        "gru_num_layers": {
+          "min": 1,
+          "max": 2,
+          "type": "int"
+        },
+        "gru_dropout": {
+          "min": 0.0,
+          "max": 0.2,
+          "type": "float"
+        },
+        "gru_learning_rate": {
+          "min": 0.0005,
+          "max": 0.003,
+          "type": "float",
+          "distribution": "log"
+        },
+        "gru_batch_size": {
+          "min": 64,
+          "max": 192,
+          "type": "int"
+        },
+        "gru_epochs": {
+          "min": 4,
+          "max": 10,
+          "type": "int"
+        },
+        "gru_weight_decay": {
+          "min": 0.0,
+          "max": 0.003,
+          "type": "float"
+        },
+        "policy_n_estimators": {
+          "min": 120,
+          "max": 600,
+          "type": "int"
+        },
+        "policy_max_depth": {
+          "min": 5,
+          "max": 20,
+          "type": "int"
+        },
+        "policy_min_samples_leaf": {
+          "min": 2,
+          "max": 30,
+          "type": "int"
+        },
+        "policy_max_features": {
+          "min": 0.25,
+          "max": 1.0,
+          "type": "float"
+        },
+        "training_memory_months": {
+          "min": 6,
+          "max": 72,
+          "type": "int"
+        }
+      },
+      "category": "HYBRID",
+      "role": "legacy_hybrid",
+      "legacy_alias": true,
+      "size_parameters": [
+        "gru_hidden_size",
+        "gru_num_layers",
+        "policy_n_estimators",
+        "policy_max_depth"
+      ],
+      "size_priority_note": "Legacy hybrid inherits GRU temporal slider and policy-family slider."
+    },
+    "lstm": {
+      "enabled_key": "lstm",
+      "deployable": true,
+      "input_contract": "CP32_SEQUENCE_V1",
+      "category": "DL",
+      "role": "temporal",
+      "hybrid_compatible": true,
+      "requires_torch": true,
+      "search": {
+        "sequence_length": {
+          "min": 8,
+          "max": 512,
+          "type": "int"
+        },
+        "hidden_size": {
+          "min": 16,
+          "max": 512,
+          "type": "int"
+        },
+        "num_layers": {
+          "min": 1,
+          "max": 4,
+          "type": "int"
+        },
+        "dropout": {
+          "min": 0.0,
+          "max": 0.5,
+          "type": "float"
+        },
+        "learning_rate": {
+          "min": 5e-05,
+          "max": 0.01,
+          "type": "float",
+          "distribution": "log"
+        },
+        "batch_size": {
+          "min": 16,
+          "max": 1024,
+          "type": "int"
+        },
+        "epochs": {
+          "min": 4,
+          "max": 200,
+          "type": "int"
+        },
+        "weight_decay": {
+          "min": 0.0,
+          "max": 0.05,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "size_parameters": [
+        "hidden_size",
+        "num_layers"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions."
+    },
+    "tcn": {
+      "enabled_key": "tcn",
+      "deployable": true,
+      "input_contract": "CP32_SEQUENCE_V1",
+      "category": "DL",
+      "role": "temporal",
+      "hybrid_compatible": true,
+      "requires_torch": true,
+      "search": {
+        "sequence_length": {
+          "min": 16,
+          "max": 512,
+          "type": "int"
+        },
+        "tcn_channels": {
+          "min": 16,
+          "max": 256,
+          "type": "int"
+        },
+        "tcn_blocks": {
+          "min": 1,
+          "max": 8,
+          "type": "int"
+        },
+        "kernel_size": {
+          "min": 2,
+          "max": 7,
+          "type": "int"
+        },
+        "dropout": {
+          "min": 0.0,
+          "max": 0.5,
+          "type": "float"
+        },
+        "learning_rate": {
+          "min": 5e-05,
+          "max": 0.01,
+          "type": "float",
+          "distribution": "log"
+        },
+        "batch_size": {
+          "min": 16,
+          "max": 1024,
+          "type": "int"
+        },
+        "epochs": {
+          "min": 4,
+          "max": 200,
+          "type": "int"
+        },
+        "weight_decay": {
+          "min": 0.0,
+          "max": 0.05,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "size_parameters": [
+        "tcn_channels",
+        "tcn_blocks",
+        "kernel_size"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions."
+    },
+    "transformer": {
+      "enabled_key": "transformer",
+      "deployable": true,
+      "input_contract": "CP32_SEQUENCE_V1",
+      "category": "DL",
+      "role": "temporal",
+      "hybrid_compatible": true,
+      "requires_torch": true,
+      "search": {
+        "sequence_length": {
+          "min": 16,
+          "max": 512,
+          "type": "int"
+        },
+        "d_model": {
+          "min": 16,
+          "max": 816,
+          "type": "int"
+        },
+        "num_layers": {
+          "min": 1,
+          "max": 6,
+          "type": "int"
+        },
+        "attention_heads": {
+          "min": 1,
+          "max": 8,
+          "type": "int"
+        },
+        "ffn_mult": {
+          "min": 2,
+          "max": 6,
+          "type": "int"
+        },
+        "dropout": {
+          "min": 0.0,
+          "max": 0.5,
+          "type": "float"
+        },
+        "learning_rate": {
+          "min": 2e-05,
+          "max": 0.005,
+          "type": "float",
+          "distribution": "log"
+        },
+        "batch_size": {
+          "min": 8,
+          "max": 512,
+          "type": "int"
+        },
+        "epochs": {
+          "min": 4,
+          "max": 150,
+          "type": "int"
+        },
+        "weight_decay": {
+          "min": 0.0,
+          "max": 0.05,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "architecture_note": "Vanilla causal Transformer Encoder; scientific control for Transformer-family comparisons.",
+      "size_parameters": [
+        "d_model",
+        "num_layers",
+        "ffn_mult"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions."
+    },
+    "transformer_moe": {
+      "enabled_key": "transformer_moe",
+      "deployable": true,
+      "input_contract": "CP32_SEQUENCE_V1",
+      "category": "DL",
+      "role": "temporal",
+      "hybrid_compatible": true,
+      "requires_torch": true,
+      "strategy_expert_prior": [
+        "TREND",
+        "RANGE",
+        "TRANSITION",
+        "SHOCK"
+      ],
+      "search": {
+        "sequence_length": {
+          "min": 16,
+          "max": 512,
+          "type": "int"
+        },
+        "d_model": {
+          "min": 16,
+          "max": 512,
+          "type": "int"
+        },
+        "num_layers": {
+          "min": 1,
+          "max": 6,
+          "type": "int"
+        },
+        "attention_heads": {
+          "min": 1,
+          "max": 8,
+          "type": "int"
+        },
+        "expert_ffn": {
+          "min": 32,
+          "max": 4096,
+          "type": "int"
+        },
+        "num_experts": {
+          "min": 2,
+          "max": 8,
+          "type": "int"
+        },
+        "top_k": {
+          "min": 1,
+          "max": 2,
+          "type": "int"
+        },
+        "router_temperature": {
+          "min": 0.25,
+          "max": 2.5,
+          "type": "float"
+        },
+        "load_balance_coef": {
+          "min": 0.0001,
+          "max": 0.2,
+          "type": "float",
+          "distribution": "log"
+        },
+        "dropout": {
+          "min": 0.0,
+          "max": 0.5,
+          "type": "float"
+        },
+        "learning_rate": {
+          "min": 2e-05,
+          "max": 0.005,
+          "type": "float",
+          "distribution": "log"
+        },
+        "batch_size": {
+          "min": 8,
+          "max": 512,
+          "type": "int"
+        },
+        "epochs": {
+          "min": 4,
+          "max": 150,
+          "type": "int"
+        },
+        "weight_decay": {
+          "min": 0.0,
+          "max": 0.05,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "architecture_note": "Experimental causal Transformer with latent learned Top-K FFN experts; TREND/RANGE/TRANSITION/SHOCK names are descriptive priors only and are not supervised expert identities; complexity must beat simpler Transformer/TCN/GRU baselines OOS.",
+      "size_parameters": [
+        "d_model",
+        "num_layers",
+        "expert_ffn",
+        "num_experts"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions.",
+      "strategy_expert_prior_semantics": "DESCRIPTIVE_PRIOR_ONLY_NOT_SUPERVISED_EXPERT_IDENTITY",
+      "expert_identity": "LATENT_LEARNED_EXPERTS_0_TO_N_MINUS_1"
+    },
+    "patchtst": {
+      "enabled_key": "patchtst",
+      "deployable": true,
+      "input_contract": "CP32_SEQUENCE_V1",
+      "category": "DL",
+      "role": "temporal",
+      "hybrid_compatible": true,
+      "requires_torch": true,
+      "architecture_note": "CPMF multivariate causal-patch adaptation: chronological patches + Transformer encoder; fixed CP32 historical input only.",
+      "search": {
+        "sequence_length": {
+          "min": 32,
+          "max": 512,
+          "type": "int"
+        },
+        "d_model": {
+          "min": 16,
+          "max": 384,
+          "type": "int"
+        },
+        "num_layers": {
+          "min": 1,
+          "max": 6,
+          "type": "int"
+        },
+        "attention_heads": {
+          "min": 1,
+          "max": 8,
+          "type": "int"
+        },
+        "ffn_mult": {
+          "min": 2,
+          "max": 6,
+          "type": "int"
+        },
+        "patch_len": {
+          "min": 4,
+          "max": 64,
+          "type": "int"
+        },
+        "patch_stride": {
+          "min": 2,
+          "max": 32,
+          "type": "int"
+        },
+        "dropout": {
+          "min": 0.0,
+          "max": 0.5,
+          "type": "float"
+        },
+        "learning_rate": {
+          "min": 2e-05,
+          "max": 0.005,
+          "type": "float",
+          "distribution": "log"
+        },
+        "batch_size": {
+          "min": 8,
+          "max": 512,
+          "type": "int"
+        },
+        "epochs": {
+          "min": 4,
+          "max": 150,
+          "type": "int"
+        },
+        "weight_decay": {
+          "min": 0.0,
+          "max": 0.05,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "size_parameters": [
+        "d_model",
+        "num_layers",
+        "ffn_mult"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions."
+    },
+    "itransformer": {
+      "enabled_key": "itransformer",
+      "deployable": true,
+      "input_contract": "CP32_SEQUENCE_V1",
+      "category": "DL",
+      "role": "temporal",
+      "hybrid_compatible": true,
+      "requires_torch": true,
+      "architecture_note": "iTransformer-style inverted variable tokens; each CP32 feature token summarizes the historical lookback.",
+      "search": {
+        "sequence_length": {
+          "min": 32,
+          "max": 512,
+          "type": "int"
+        },
+        "d_model": {
+          "min": 16,
+          "max": 384,
+          "type": "int"
+        },
+        "num_layers": {
+          "min": 1,
+          "max": 6,
+          "type": "int"
+        },
+        "attention_heads": {
+          "min": 1,
+          "max": 8,
+          "type": "int"
+        },
+        "ffn_mult": {
+          "min": 2,
+          "max": 6,
+          "type": "int"
+        },
+        "dropout": {
+          "min": 0.0,
+          "max": 0.5,
+          "type": "float"
+        },
+        "learning_rate": {
+          "min": 2e-05,
+          "max": 0.005,
+          "type": "float",
+          "distribution": "log"
+        },
+        "batch_size": {
+          "min": 8,
+          "max": 512,
+          "type": "int"
+        },
+        "epochs": {
+          "min": 4,
+          "max": 150,
+          "type": "int"
+        },
+        "weight_decay": {
+          "min": 0.0,
+          "max": 0.05,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "size_parameters": [
+        "d_model",
+        "num_layers",
+        "ffn_mult"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions."
+    },
+    "tft": {
+      "enabled_key": "tft",
+      "deployable": true,
+      "input_contract": "CP32_SEQUENCE_V1",
+      "category": "DL",
+      "role": "temporal",
+      "hybrid_compatible": true,
+      "requires_torch": true,
+      "architecture_note": "Observed-covariate TFT adaptation: variable selection + recurrent local processing + causal attention; no fabricated static/known-future covariates.",
+      "search": {
+        "sequence_length": {
+          "min": 32,
+          "max": 512,
+          "type": "int"
+        },
+        "d_model": {
+          "min": 16,
+          "max": 480,
+          "type": "int"
+        },
+        "num_layers": {
+          "min": 1,
+          "max": 4,
+          "type": "int"
+        },
+        "attention_heads": {
+          "min": 1,
+          "max": 8,
+          "type": "int"
+        },
+        "ffn_mult": {
+          "min": 2,
+          "max": 4,
+          "type": "int"
+        },
+        "tft_lstm_layers": {
+          "min": 1,
+          "max": 3,
+          "type": "int"
+        },
+        "dropout": {
+          "min": 0.0,
+          "max": 0.5,
+          "type": "float"
+        },
+        "learning_rate": {
+          "min": 2e-05,
+          "max": 0.005,
+          "type": "float",
+          "distribution": "log"
+        },
+        "batch_size": {
+          "min": 8,
+          "max": 512,
+          "type": "int"
+        },
+        "epochs": {
+          "min": 4,
+          "max": 150,
+          "type": "int"
+        },
+        "weight_decay": {
+          "min": 0.0,
+          "max": 0.05,
+          "type": "float",
+          "distribution": "log"
+        },
+        "training_memory_months": {
+          "min": 3,
+          "max": 120,
+          "type": "int"
+        }
+      },
+      "size_parameters": [
+        "d_model",
+        "num_layers",
+        "ffn_mult",
+        "tft_lstm_layers"
+      ],
+      "size_priority_note": "Owner 0..1 model-size preference; 0.50 preserves the full safe envelope, extremes bias/narrow only executable size dimensions."
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "flow_id": "MTF2-CONTRACT-V3",
+  "title": "MTF-2 V3 de-duplicated causal feature and directional label implementation",
+  "status": "FROZEN",
+  "nodes": [
+    {
+      "id": "dataset",
+      "label": "Build MTF-2 V3 dataset",
+      "locator": "ModelLab/mtf/mtf2.py::build_mtf2_dataset",
+      "kind": "actor"
+    },
+    {
+      "id": "features",
+      "label": "Build V3 registered role features",
+      "locator": "ModelLab/mtf/mtf2.py::build_role_feature_matrix"
+    },
+    {
+      "id": "causal",
+      "label": "Audit closed-bar feature causality",
+      "locator": "ModelLab/mtf/mtf2.py::audit_feature_causality"
+    },
+    {
+      "id": "labels",
+      "label": "Build future-M5 directional labels",
+      "locator": "ModelLab/mtf/mtf2.py::build_directional_labels"
+    },
+    {
+      "id": "ablations",
+      "label": "Build identical-row A/B/C/D views",
+      "locator": "ModelLab/mtf/mtf2.py::build_ablation_views"
+    }
+  ],
+  "edges": [
+    {
+      "from": "dataset",
+      "to": "features",
+      "action": "construct only V3 preregistered de-duplicated role features",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "MAX_MTF2_ROLE_FEATURE_LABEL_V3"
+    },
+    {
+      "from": "dataset",
+      "to": "causal",
+      "action": "reject role close times after M15 decision and invalid dependency metadata",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "closed-bar causality"
+    },
+    {
+      "from": "dataset",
+      "to": "labels",
+      "action": "construct SELL/SKIP/BUY labels from post-decision canonical M5 path under typed horizon",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "MTF2_DIRECTIONAL_LABEL_V1"
+    },
+    {
+      "from": "dataset",
+      "to": "ablations",
+      "action": "emit identical-row A/B/C/D feature views",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "same-sample ablation authority"
+    },
+    {
+      "from": "labels",
+      "to": "features",
+      "action": "future label path must never feed directional feature construction",
+      "requirement": "MUST_NOT",
+      "verification": "DOCUMENT",
+      "evidence": "future M5 directional leakage forbidden"
+    }
+  ]
+}

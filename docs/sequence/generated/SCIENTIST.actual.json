@@ -1,0 +1,1343 @@
+{
+  "coverage": {
+    "js_ts_http_module_scan": true,
+    "limitations": [
+      "dynamic dispatch",
+      "dependency injection",
+      "reflection",
+      "callbacks/events",
+      "framework magic not visible statically",
+      "JS/TS function-level call ownership is not fully resolved"
+    ],
+    "python_ast": true,
+    "python_parse_failures": [],
+    "python_route_decorators": true,
+    "runtime_trace": false
+  },
+  "edges": [
+    {
+      "action": "h.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "f.flush",
+      "evidence": "STATIC",
+      "from": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "action": "ProviderRequestError",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::_json_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::ProviderRequestError"
+    },
+    {
+      "action": "_headers",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::_json_request",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::_headers"
+    },
+    {
+      "action": "_json_request",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::chat_completion",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::_json_request"
+    },
+    {
+      "action": "chat_url",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::chat_completion",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::chat_url"
+    },
+    {
+      "action": "normalize_base_url",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::chat_url",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::normalize_base_url"
+    },
+    {
+      "action": "_as_int",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::estimate_api_cost_usd",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::_as_int"
+    },
+    {
+      "action": "estimate_token_count",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::estimate_message_tokens",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::estimate_token_count"
+    },
+    {
+      "action": "_as_int",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::extract_token_usage",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::_as_int"
+    },
+    {
+      "action": "estimate_message_tokens",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::extract_token_usage",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::estimate_message_tokens"
+    },
+    {
+      "action": "estimate_token_count",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::extract_token_usage",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::estimate_token_count"
+    },
+    {
+      "action": "ProviderRequestError",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::stream_chat_completion",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::ProviderRequestError"
+    },
+    {
+      "action": "_headers",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::stream_chat_completion",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::_headers"
+    },
+    {
+      "action": "chat_url",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::stream_chat_completion",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::chat_url"
+    },
+    {
+      "action": "extract_chat_text",
+      "evidence": "STATIC",
+      "from": "ModelLab/host/provider_catalog.py::stream_chat_completion",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::extract_chat_text"
+    },
+    {
+      "action": "chat_completion",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::_buffered_chat_call",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::chat_completion"
+    },
+    {
+      "action": "_api_key_for",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::_buffered_chat_call",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_api_key_for"
+    },
+    {
+      "action": "_compatible_kwargs",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::_buffered_chat_call",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_compatible_kwargs"
+    },
+    {
+      "action": "_normalized_route_entry",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::_chat_fallback_route_entries",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_normalized_route_entry"
+    },
+    {
+      "action": "normalize_base_url",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::_normalized_route_entry",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::normalize_base_url"
+    },
+    {
+      "action": "_normalized_route_entry",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::_route_entry",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_normalized_route_entry"
+    },
+    {
+      "action": "stream_chat_completion",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::_stream_chat_call",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::stream_chat_completion"
+    },
+    {
+      "action": "_api_key_for",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::_stream_chat_call",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_api_key_for"
+    },
+    {
+      "action": "_compatible_kwargs",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::_stream_chat_call",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_compatible_kwargs"
+    },
+    {
+      "action": "_ival",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::chat_model_profile",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::chat_model_profile._ival"
+    },
+    {
+      "action": "estimate_api_cost_usd",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::estimate_api_cost_usd"
+    },
+    {
+      "action": "extract_chat_text",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::extract_chat_text"
+    },
+    {
+      "action": "extract_token_usage",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::extract_token_usage"
+    },
+    {
+      "action": "fallback_error_category",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/host/provider_catalog.py::fallback_error_category"
+    },
+    {
+      "action": "_buffered_chat_call",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_buffered_chat_call"
+    },
+    {
+      "action": "_chat_fallback_route_entries",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_chat_fallback_route_entries"
+    },
+    {
+      "action": "_is_preanswer_stream_capability_failure",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_is_preanswer_stream_capability_failure"
+    },
+    {
+      "action": "_route_entry",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_route_entry"
+    },
+    {
+      "action": "_sanitize_response_text",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_sanitize_response_text"
+    },
+    {
+      "action": "_stream_chat_call",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_stream_chat_call"
+    },
+    {
+      "action": "chat_model_profile",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::chat_model_profile"
+    },
+    {
+      "action": "_messages_for",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::discuss._messages_for"
+    },
+    {
+      "action": "_progress",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::discuss._progress"
+    },
+    {
+      "action": "_route_key",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::discuss._route_key"
+    },
+    {
+      "action": "utcnow",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::utcnow"
+    },
+    {
+      "action": "authorized_analysis_inputs",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::authorized_analysis_inputs"
+    },
+    {
+      "action": "parse_python_analysis_request",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::parse_python_analysis_request"
+    },
+    {
+      "action": "python_analysis_evidence_for_llm",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::python_analysis_evidence_for_llm"
+    },
+    {
+      "action": "run_scientist_python_analysis",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis"
+    },
+    {
+      "action": "scientist_python_health",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health"
+    },
+    {
+      "action": "_chat_system_prompt",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss._messages_for",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_chat_system_prompt"
+    },
+    {
+      "action": "analysis_capability_instruction",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss._messages_for",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::analysis_capability_instruction"
+    },
+    {
+      "action": "python_analysis_evidence_for_llm",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss._messages_for",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::python_analysis_evidence_for_llm"
+    },
+    {
+      "action": "_process_step",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss._progress",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::_process_step"
+    },
+    {
+      "action": "utcnow",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss._progress",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/chat/scientist_chat.py::utcnow"
+    },
+    {
+      "action": "payload.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::discuss._progress",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/chat/scientist_chat.py::utcnow",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "_plain_stat",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat"
+    },
+    {
+      "action": "_unwrap",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_unwrap"
+    },
+    {
+      "action": "_SafeArray",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray"
+    },
+    {
+      "action": "_scalar",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_scalar"
+    },
+    {
+      "action": "_sha_bytes",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::_artifact_hashes",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_bytes"
+    },
+    {
+      "action": "line.split",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::_read_required_versions",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
+    },
+    {
+      "action": "hashlib.sha256",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_bytes",
+      "resolver": "python_ast",
+      "to": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "action": "_sha_bytes",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_json",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_bytes"
+    },
+    {
+      "action": "_analysis_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_analysis_dir"
+    },
+    {
+      "action": "_clean_child_env",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_clean_child_env"
+    },
+    {
+      "action": "_json_size",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_json_size"
+    },
+    {
+      "action": "_request_rejection",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_request_rejection"
+    },
+    {
+      "action": "_sha_bytes",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_bytes"
+    },
+    {
+      "action": "_sha_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_json"
+    },
+    {
+      "action": "_write_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_write_json"
+    },
+    {
+      "action": "finalize",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis.finalize"
+    },
+    {
+      "action": "scientist_python_health",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health"
+    },
+    {
+      "action": "utcnow",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::utcnow"
+    },
+    {
+      "action": "validate_scientist_code",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::validate_scientist_code"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "_artifact_hashes",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis.finalize",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_artifact_hashes"
+    },
+    {
+      "action": "_safe_excerpt",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis.finalize",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_safe_excerpt"
+    },
+    {
+      "action": "_sha_bytes",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis.finalize",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_bytes"
+    },
+    {
+      "action": "_sha_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis.finalize",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_json"
+    },
+    {
+      "action": "_write_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis.finalize",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_write_json"
+    },
+    {
+      "action": "scientist_python_executable",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis.finalize",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_executable"
+    },
+    {
+      "action": "scientist_python_home",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_executable",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_home"
+    },
+    {
+      "action": "_read_required_versions",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_read_required_versions"
+    },
+    {
+      "action": "_safe_excerpt",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_safe_excerpt"
+    },
+    {
+      "action": "_same_executable",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_same_executable"
+    },
+    {
+      "action": "scientist_python_executable",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_executable"
+    },
+    {
+      "action": "subprocess.run",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
+    },
+    {
+      "action": "_default_scientist_home",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_home",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_default_scientist_home"
+    },
+    {
+      "action": "datetime.now",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::utcnow",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "ast.parse",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::validate_scientist_code",
+      "resolver": "python_ast",
+      "to": "ModelLab/research/research_architect.py::_intersect_envelope.parse"
+    },
+    {
+      "action": "_Guard",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::validate_scientist_code",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/python/scientist_python_runtime.py::_Guard"
+    },
+    {
+      "action": "ast.walk",
+      "evidence": "STATIC",
+      "from": "ModelLab/scientist/python/scientist_python_runtime.py::validate_scientist_code",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/ui_information_hierarchy_selftest.py::nested_expander_count.walk"
+    },
+    {
+      "action": "atomic_write_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "resolver": "python_ast",
+      "to": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "action": "atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "action": "is_expander_call",
+      "evidence": "STATIC",
+      "from": "ModelLab/tests/ui_information_hierarchy_selftest.py::nested_expander_count.walk",
+      "resolver": "python_ast",
+      "to": "ModelLab/tests/ui_information_hierarchy_selftest.py::is_expander_call"
+    }
+  ],
+  "entries": [
+    "ModelLab/scientist/chat/scientist_chat.py::discuss",
+    "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis"
+  ],
+  "generated": true,
+  "generated_by": "generate_sequence_actual.py",
+  "nodes": [
+    {
+      "id": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "kind": "function",
+      "label": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256",
+      "language": "Python",
+      "line_end": 44,
+      "line_start": 39,
+      "locator": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py::sha256"
+    },
+    {
+      "id": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "kind": "function",
+      "label": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "language": "Python",
+      "line_end": 58,
+      "line_start": 27,
+      "locator": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::ProviderRequestError",
+      "kind": "class",
+      "label": "ModelLab/host/provider_catalog.py::ProviderRequestError",
+      "language": "Python",
+      "line_end": 16,
+      "line_start": 12,
+      "locator": "ModelLab/host/provider_catalog.py::ProviderRequestError"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::_as_int",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::_as_int",
+      "language": "Python",
+      "line_end": 297,
+      "line_start": 293,
+      "locator": "ModelLab/host/provider_catalog.py::_as_int"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::_headers",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::_headers",
+      "language": "Python",
+      "line_end": 119,
+      "line_start": 115,
+      "locator": "ModelLab/host/provider_catalog.py::_headers"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::_json_request",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::_json_request",
+      "language": "Python",
+      "line_end": 135,
+      "line_start": 122,
+      "locator": "ModelLab/host/provider_catalog.py::_json_request"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::chat_completion",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::chat_completion",
+      "language": "Python",
+      "line_end": 208,
+      "line_start": 198,
+      "locator": "ModelLab/host/provider_catalog.py::chat_completion"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::chat_url",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::chat_url",
+      "language": "Python",
+      "line_end": 108,
+      "line_start": 107,
+      "locator": "ModelLab/host/provider_catalog.py::chat_url"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::estimate_api_cost_usd",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::estimate_api_cost_usd",
+      "language": "Python",
+      "line_end": 372,
+      "line_start": 354,
+      "locator": "ModelLab/host/provider_catalog.py::estimate_api_cost_usd"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::estimate_message_tokens",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::estimate_message_tokens",
+      "language": "Python",
+      "line_end": 319,
+      "line_start": 310,
+      "locator": "ModelLab/host/provider_catalog.py::estimate_message_tokens"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::estimate_token_count",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::estimate_token_count",
+      "language": "Python",
+      "line_end": 307,
+      "line_start": 300,
+      "locator": "ModelLab/host/provider_catalog.py::estimate_token_count"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::extract_chat_text",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::extract_chat_text",
+      "language": "Python",
+      "line_end": 394,
+      "line_start": 375,
+      "locator": "ModelLab/host/provider_catalog.py::extract_chat_text"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::extract_token_usage",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::extract_token_usage",
+      "language": "Python",
+      "line_end": 351,
+      "line_start": 322,
+      "locator": "ModelLab/host/provider_catalog.py::extract_token_usage"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::fallback_error_category",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::fallback_error_category",
+      "language": "Python",
+      "line_end": 44,
+      "line_start": 19,
+      "locator": "ModelLab/host/provider_catalog.py::fallback_error_category"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::normalize_base_url",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::normalize_base_url",
+      "language": "Python",
+      "line_end": 104,
+      "line_start": 95,
+      "locator": "ModelLab/host/provider_catalog.py::normalize_base_url"
+    },
+    {
+      "id": "ModelLab/host/provider_catalog.py::stream_chat_completion",
+      "kind": "function",
+      "label": "ModelLab/host/provider_catalog.py::stream_chat_completion",
+      "language": "Python",
+      "line_end": 290,
+      "line_start": 211,
+      "locator": "ModelLab/host/provider_catalog.py::stream_chat_completion"
+    },
+    {
+      "id": "ModelLab/research/research_architect.py::_intersect_envelope.parse",
+      "kind": "method",
+      "label": "ModelLab/research/research_architect.py::_intersect_envelope.parse",
+      "language": "Python",
+      "line_end": 252,
+      "line_start": 245,
+      "locator": "ModelLab/research/research_architect.py::_intersect_envelope.parse"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_api_key_for",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_api_key_for",
+      "language": "Python",
+      "line_end": 646,
+      "line_start": 644,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_api_key_for"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_buffered_chat_call",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_buffered_chat_call",
+      "language": "Python",
+      "line_end": 700,
+      "line_start": 694,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_buffered_chat_call"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_chat_fallback_route_entries",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_chat_fallback_route_entries",
+      "language": "Python",
+      "line_end": 641,
+      "line_start": 628,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_chat_fallback_route_entries"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_chat_system_prompt",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_chat_system_prompt",
+      "language": "Python",
+      "line_end": 771,
+      "line_start": 729,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_chat_system_prompt"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_compatible_kwargs",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_compatible_kwargs",
+      "language": "Python",
+      "line_end": 691,
+      "line_start": 683,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_compatible_kwargs"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_is_preanswer_stream_capability_failure",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_is_preanswer_stream_capability_failure",
+      "language": "Python",
+      "line_end": 714,
+      "line_start": 713,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_is_preanswer_stream_capability_failure"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_normalized_route_entry",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_normalized_route_entry",
+      "language": "Python",
+      "line_end": 617,
+      "line_start": 609,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_normalized_route_entry"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_process_step",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_process_step",
+      "language": "Python",
+      "line_end": 726,
+      "line_start": 717,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_process_step"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_route_entry",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_route_entry",
+      "language": "Python",
+      "line_end": 625,
+      "line_start": 620,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_route_entry"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_sanitize_response_text",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_sanitize_response_text",
+      "language": "Python",
+      "line_end": 790,
+      "line_start": 774,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_sanitize_response_text"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::_stream_chat_call",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::_stream_chat_call",
+      "language": "Python",
+      "line_end": 710,
+      "line_start": 703,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::_stream_chat_call"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::chat_model_profile",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::chat_model_profile",
+      "language": "Python",
+      "line_end": 680,
+      "line_start": 649,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::chat_model_profile"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::chat_model_profile._ival",
+      "kind": "method",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::chat_model_profile._ival",
+      "language": "Python",
+      "line_end": 667,
+      "line_start": 664,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::chat_model_profile._ival"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::discuss",
+      "language": "Python",
+      "line_end": 999,
+      "line_start": 793,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::discuss"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::discuss._messages_for",
+      "kind": "method",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::discuss._messages_for",
+      "language": "Python",
+      "line_end": 881,
+      "line_start": 851,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::discuss._messages_for"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::discuss._progress",
+      "kind": "method",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::discuss._progress",
+      "language": "Python",
+      "line_end": 822,
+      "line_start": 815,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::discuss._progress"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::discuss._route_key",
+      "kind": "method",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::discuss._route_key",
+      "language": "Python",
+      "line_end": 887,
+      "line_start": 883,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::discuss._route_key"
+    },
+    {
+      "id": "ModelLab/scientist/chat/scientist_chat.py::utcnow",
+      "kind": "function",
+      "label": "ModelLab/scientist/chat/scientist_chat.py::utcnow",
+      "language": "Python",
+      "line_end": 50,
+      "line_start": 49,
+      "locator": "ModelLab/scientist/chat/scientist_chat.py::utcnow"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray",
+      "kind": "class",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray",
+      "language": "Python",
+      "line_end": 289,
+      "line_start": 226,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_SafeArray"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "kind": "method",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split",
+      "language": "Python",
+      "line_end": 545,
+      "line_start": 543,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_build_capabilities.split"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat",
+      "language": "Python",
+      "line_end": 182,
+      "line_start": 167,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_plain_stat"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_scalar",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_scalar",
+      "language": "Python",
+      "line_end": 164,
+      "line_start": 144,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_scalar"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_child.py::_unwrap",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_child.py::_unwrap",
+      "language": "Python",
+      "line_end": 101,
+      "line_start": 90,
+      "locator": "ModelLab/scientist/python/scientist_python_child.py::_unwrap"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_Guard",
+      "kind": "class",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_Guard",
+      "language": "Python",
+      "line_end": 312,
+      "line_start": 243,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_Guard"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_analysis_dir",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_analysis_dir",
+      "language": "Python",
+      "line_end": 431,
+      "line_start": 427,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_analysis_dir"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_artifact_hashes",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_artifact_hashes",
+      "language": "Python",
+      "line_end": 443,
+      "line_start": 438,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_artifact_hashes"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_clean_child_env",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_clean_child_env",
+      "language": "Python",
+      "line_end": 424,
+      "line_start": 415,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_clean_child_env"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_default_scientist_home",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_default_scientist_home",
+      "language": "Python",
+      "line_end": 124,
+      "line_start": 115,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_default_scientist_home"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_json_size",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_json_size",
+      "language": "Python",
+      "line_end": 107,
+      "line_start": 106,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_json_size"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_read_required_versions",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_read_required_versions",
+      "language": "Python",
+      "line_end": 159,
+      "line_start": 147,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_read_required_versions"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_request_rejection",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_request_rejection",
+      "language": "Python",
+      "line_end": 412,
+      "line_start": 403,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_request_rejection"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_safe_excerpt",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_safe_excerpt",
+      "language": "Python",
+      "line_end": 112,
+      "line_start": 110,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_safe_excerpt"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_same_executable",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_same_executable",
+      "language": "Python",
+      "line_end": 144,
+      "line_start": 138,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_same_executable"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_bytes",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_bytes",
+      "language": "Python",
+      "line_end": 98,
+      "line_start": 97,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_bytes"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_json",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_json",
+      "language": "Python",
+      "line_end": 103,
+      "line_start": 101,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_sha_json"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::_write_json",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::_write_json",
+      "language": "Python",
+      "line_end": 435,
+      "line_start": 434,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::_write_json"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::analysis_capability_instruction",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::analysis_capability_instruction",
+      "language": "Python",
+      "line_end": 385,
+      "line_start": 371,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::analysis_capability_instruction"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::authorized_analysis_inputs",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::authorized_analysis_inputs",
+      "language": "Python",
+      "line_end": 349,
+      "line_start": 337,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::authorized_analysis_inputs"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::parse_python_analysis_request",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::parse_python_analysis_request",
+      "language": "Python",
+      "line_end": 400,
+      "line_start": 388,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::parse_python_analysis_request"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::python_analysis_evidence_for_llm",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::python_analysis_evidence_for_llm",
+      "language": "Python",
+      "line_end": 608,
+      "line_start": 589,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::python_analysis_evidence_for_llm"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis",
+      "language": "Python",
+      "line_end": 586,
+      "line_start": 446,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis.finalize",
+      "kind": "method",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis.finalize",
+      "language": "Python",
+      "line_end": 538,
+      "line_start": 501,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis.finalize"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_executable",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_executable",
+      "language": "Python",
+      "line_end": 135,
+      "line_start": 133,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_executable"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health",
+      "language": "Python",
+      "line_end": 236,
+      "line_start": 162,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_health"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_home",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_home",
+      "language": "Python",
+      "line_end": 130,
+      "line_start": 127,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::scientist_python_home"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::utcnow",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::utcnow",
+      "language": "Python",
+      "line_end": 94,
+      "line_start": 93,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::utcnow"
+    },
+    {
+      "id": "ModelLab/scientist/python/scientist_python_runtime.py::validate_scientist_code",
+      "kind": "function",
+      "label": "ModelLab/scientist/python/scientist_python_runtime.py::validate_scientist_code",
+      "language": "Python",
+      "line_end": 334,
+      "line_start": 315,
+      "locator": "ModelLab/scientist/python/scientist_python_runtime.py::validate_scientist_code"
+    },
+    {
+      "id": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
+      "kind": "method",
+      "label": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
+      "language": "Python",
+      "line_end": 91,
+      "line_start": 87,
+      "locator": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "language": "Python",
+      "line_end": 22,
+      "line_start": 21,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir",
+      "language": "Python",
+      "line_end": 25,
+      "line_start": 24,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::now",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::now",
+      "language": "Python",
+      "line_end": 20,
+      "line_start": 20,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "language": "Python",
+      "line_end": 38,
+      "line_start": 27,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "id": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
+      "kind": "method",
+      "label": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run",
+      "language": "Python",
+      "line_end": 104,
+      "line_start": 104,
+      "locator": "ModelLab/tests/stage10_scientist_chat_backend_contract_selftest.py::test_job_cas_and_idempotency.run"
+    },
+    {
+      "id": "ModelLab/tests/ui_information_hierarchy_selftest.py::is_expander_call",
+      "kind": "function",
+      "label": "ModelLab/tests/ui_information_hierarchy_selftest.py::is_expander_call",
+      "language": "Python",
+      "line_end": 28,
+      "line_start": 25,
+      "locator": "ModelLab/tests/ui_information_hierarchy_selftest.py::is_expander_call"
+    },
+    {
+      "id": "ModelLab/tests/ui_information_hierarchy_selftest.py::nested_expander_count.walk",
+      "kind": "method",
+      "label": "ModelLab/tests/ui_information_hierarchy_selftest.py::nested_expander_count.walk",
+      "language": "Python",
+      "line_end": 44,
+      "line_start": 34,
+      "locator": "ModelLab/tests/ui_information_hierarchy_selftest.py::nested_expander_count.walk"
+    }
+  ],
+  "observed_head": "4f002eeb01e4e423f087e19588d38c02cec6e463",
+  "schema_version": 1,
+  "source_digest": "0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20"
+}

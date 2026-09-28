@@ -1,0 +1,5 @@
+# Dedicated Scientist Python Analysis Runtime V1. Never install into canonical MAX Python.
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.17.0
+scikit-learn==1.8.0

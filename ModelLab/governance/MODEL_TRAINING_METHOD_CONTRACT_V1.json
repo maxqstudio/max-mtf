@@ -1,0 +1,80 @@
+{
+  "schema": "MODEL_TRAINING_METHOD_CONTRACT_V1",
+  "version": "1",
+  "project_version": "MAX MTF v2.0.1",
+  "authority": "SINGLE_CANONICAL_TRAINING_METHOD_AUTHORITY",
+  "applies_to": [
+    "MANUAL",
+    "AUTO_DETERMINISTIC",
+    "FACTORY_DIRECTOR",
+    "ROUND_LLM_SCIENTIST",
+    "SCIENTIST_KNOWLEDGE_CHAT",
+    "ACCEPTANCE_TESTS"
+  ],
+  "candidate_admission": {
+    "llm_concrete_proposal": "STRICT_EFFECTIVE_BOUNDS_FAIL_CLOSED",
+    "rule": "A concrete LLM Scientist proposal outside effective_parameter_bounds is rejected, never clamped into a different experiment.",
+    "accepted_identity": "requested_params == executable_params except explicitly recorded semantically-equivalent canonicalization",
+    "required_evidence": [
+      "requested_params",
+      "executable_params",
+      "admission_status",
+      "rejection_reason",
+      "canonicalization"
+    ]
+  },
+  "label_horizon_authority": {
+    "source": "CANONICAL_STRATEGY_GEOMETRY_EFFECTIVE_LABEL_HORIZON",
+    "rule": "Do not invent a second horizon authority. Temporal leakage guards inherit the canonical Strategy geometry / effective label horizon."
+  },
+  "temporal_early_stop": {
+    "families": ["gru", "lstm", "tcn", "transformer", "patchtst", "itransformer", "tft", "transformer_moe", "temporal_to_tree_hybrids"],
+    "authority": "PURGED_INTERNAL_EARLY_VALIDATION",
+    "rule": "Internal supervised training target eligibility must be purged from the early-stop validation boundary by at least the canonical label horizon; causal historical feature context for validation is preserved.",
+    "small_sample": "FAIL_CLOSED_OR_EXPLICIT_PROJECT_SMALL_SAMPLE_FALLBACK_NEVER_UNPURGED"
+  },
+  "moe_routing": {
+    "expert_identity": "LATENT_LEARNED_EXPERTS_0_TO_N_MINUS_1",
+    "strategy_expert_prior_semantics": "DESCRIPTIVE_PRIOR_ONLY_NOT_SUPERVISED_EXPERT_IDENTITY",
+    "top1": "Selected raw soft gate magnitude remains differentiable; never renormalize a single selected gate to exactly 1 before task loss.",
+    "topk_gt1": "Selected raw soft gate weights remain differentiable and mathematically coherent; do not normalize away useful gate-magnitude gradients."
+  },
+  "moe_balance": {
+    "authority": "SOFT_ROUTER_PROBABILITY_COUPLED_WITH_HARD_DISPATCH_LOAD",
+    "rule": "Load-balance objective couples hard dispatch/load fraction per expert with mean raw soft router probability; post-renormalized one-hot usage alone is not sufficient."
+  },
+  "moe_diagnostics": {
+    "authority": "PER_MOE_BLOCK_FROM_RESTORED_BEST_CHECKPOINT",
+    "best_checkpoint_rule": "Routing statistics and deterministic router-gradient probe are recomputed after restoring the best early-stopping checkpoint.",
+    "per_block_required": [
+      "expert_dispatch_share",
+      "mean_soft_router_probability",
+      "routing_entropy",
+      "dispatch_entropy",
+      "maximum_expert_share",
+      "minimum_expert_share",
+      "dead_expert_count",
+      "effective_expert_count",
+      "effective_utilization",
+      "router_gradient_max",
+      "router_gradient_mean",
+      "router_gradient_status",
+      "routing_health_status"
+    ],
+    "overall_rule": "Overall health is conservative across independent MoE blocks; a healthy block may not hide collapse, dead implementation reachability, non-finite gradient, or effectively-zero router gradient in another block.",
+    "aggregate_statistics": "INFORMATIONAL_ONLY_NOT_SOLE_AUTHORITY"
+  },
+  "hybrid_stacking": {
+    "authority": "TEMPORAL_TO_TREE_PURGED_OOF_STACKING",
+    "rule": "Temporal encoder meta-features must be generated out-of-fold under leakage-safe inner purged chronology; in-sample stacking is forbidden. The temporal encoder inherits the same internal early-stop purge and repaired MoE contract when applicable."
+  },
+  "tree_models": {
+    "authority": "UNCHANGED",
+    "contracts": [
+      "XGBoost direct 3-class multi:softprob policy with existing balancing/utility weighting",
+      "LightGBM multiclass policy with existing weighting and regularization/search authority",
+      "RandomForest balanced_subsample with utility sample weighting",
+      "No early stopping is added to tree models"
+    ]
+  }
+}

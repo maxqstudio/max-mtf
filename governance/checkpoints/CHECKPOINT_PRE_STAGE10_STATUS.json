@@ -1,0 +1,21 @@
+{
+  "schema": "MAX_PRE_STAGE10_CHECKPOINT_R4",
+  "generated_utc": "2026-09-14T04:34:17+00:00",
+  "scientific_authority": "v0.7.5 R6",
+  "backend_stage_closed_through": 9,
+  "stage_10_status": "NOT_STARTED",
+  "cumulative_acceptance": {
+    "status": "PASS",
+    "passed": 95,
+    "total": 95,
+    "first_failed_gate": null,
+    "source_tree_signature": "9b31aa3568c349ad5f73b47e467949d3d72328078f2f5f511216454894d990b3",
+    "suite_signature": "9941e8a89af8bd06f9cdaf8ad95e6a9e5501443107bfab4d72e6704efd90c642",
+    "acceptance_revision": "BACKEND_E2E_AUDIT_R1_STAGE1_9"
+  },
+  "stage9_dedicated_gate": "STAGE9_LLM_SCIENTIST_BACKEND_CONTRACT PASS",
+  "scientist_knowledge": "PASS",
+  "workflow_contract_audit": "PASS",
+  "next_required": "STAGE10_SCIENTIST_CHAT_AUDIT",
+  "note": "Checkpoint copy adds only checkpoint metadata; accepted production/canonical tree is the exact source-tree signature recorded above. Stage 10 was not started when this checkpoint was created."
+}

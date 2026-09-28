@@ -1,0 +1,36 @@
+{
+  "acceptance_report": "artifacts/sequence/MTF2-CONTRACT-V3.acceptance.json",
+  "actual": {
+    "diagram": "docs/sequence/generated/MTF2-CONTRACT-V3.actual.mmd",
+    "entries": [
+      "ModelLab/mtf/mtf2.py::build_mtf2_dataset"
+    ],
+    "graph": "docs/sequence/generated/MTF2-CONTRACT-V3.actual.json",
+    "source_digest": "2794f13119e1dab671914aeea5609ae94ad51eebd7dac3c8623d6891aa6e93ce"
+  },
+  "critical": true,
+  "implementation_base_sha": "",
+  "mode": "AFTER",
+  "phase": "MTF_2_FEATURE_LABEL_IMPLEMENTATION_V3",
+  "plan": {
+    "required": false,
+    "frozen": false,
+    "contract": "",
+    "frozen_commit": "",
+    "sha256": "",
+    "diagram": ""
+  },
+  "runtime_trace": {
+    "graph": "",
+    "required": false
+  },
+  "schema_version": 1,
+  "scope": "HISTORICAL",
+  "session_id": "MTF2-CONTRACT-V3",
+  "status": "ACCEPTED_HISTORICAL_SUPERSEDED",
+  "test_traceability_required": true,
+  "tests": [
+    "ModelLab/tests/v202_mtf2_feature_label_contract_selftest.py"
+  ],
+  "migration_note": "Completed phase imported into fresh max-mtf without asserting old repository Git ancestry. Historical runtime provenance remains external."
+}

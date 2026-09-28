@@ -1,0 +1,383 @@
+{
+  "schema": "MAX_MTF_PACKAGE_MANIFEST_V1",
+  "project": "Max MTF",
+  "version": "2.0.1",
+  "ea_version": "2.00",
+  "source_baseline": "Current MAX MTF v2.0.1 authority; originally forked from exact Max single-TF v1.4.5 with preserved v1.4.6 Scientist recovery and selective v1.4.7 bugfix contracts ported without wholesale overwrite.",
+  "status": "MTF1_EXTERNAL_EXECUTION_PROOF_75_OF_75_EXTERNAL_EVIDENCE_PENDING",
+  "active_paths": {
+    "ea": "EA_v2_00/baseline/Max_MTF.mq5",
+    "ea_challengers": "EA_v2_00/challengers",
+    "ea_archive": "EA_v2_00/archive",
+    "model_baseline": "Models/baseline",
+    "model_challengers": "Models/challengers",
+    "model_archive": "Models/archive",
+    "release_active": "Releases/active",
+    "release_challengers": "Releases/challengers",
+    "release_archive": "Releases/archive",
+    "mtf_native": "Data/MTF/native",
+    "mtf_bundles": "Data/MTF/bundles"
+  },
+  "initial_state": {
+    "strategy_champion": null,
+    "model_champion": null,
+    "active_release": "BASELINE-MTF-V2",
+    "baseline_is_champion": false
+  },
+  "mt5_namespace": "Max_MTF",
+  "mt5_target_policy": "VERIFIED_TERMINAL_DATA_ROOT_ONLY_NOT_RAW_C_DRIVE",
+  "local_acceptance": {
+    "report": "ModelLab/evidence/current/BUILD_ACCEPTANCE_v2_0_1.json",
+    "gates": 75,
+    "required_status": "PASS",
+    "first_failed_gate": null,
+    "required_execution_mode_for_external_closure": "FRESH_FULL"
+  },
+  "mtf_data": {
+    "source_authority": "M5",
+    "derived": [
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "higher_tf_native_role": "BOUNDARY_AND_PARITY_ONLY",
+    "canonical_timezone": "UTC",
+    "closed_bar_only": true,
+    "forward_fill": false,
+    "research_enabled": false,
+    "real_volume_parity": "EXACT_WHEN_AVAILABLE_ZERO_ONLY_EXPLICIT_UNAVAILABLE",
+    "bundle_commit": "MANIFEST_BOUND_IMMUTABLE_STAGING_VERIFY_ATOMIC_RENAME",
+    "imported_m5_continuity": "EXACT_NATIVE_M5_REFERENCE_REQUIRED_AND_RECOMPUTED_AT_SEAL",
+    "source_kind_policy": "FAIL_CLOSED_EXPLICIT_ALLOWLIST"
+  },
+  "inherited_v145_scientific_core": "governance/MTF1_INHERITED_V145_SCIENTIFIC_CORE.json",
+  "runtime_authority_acceptance": "IMMUTABLE_DURING_ACCEPTANCE_FAIL_CLOSED",
+  "active_release_version_parity": "RECORD_EQUALS_EA_PROPERTY_EQUALS_PROJECT_IDENTITY",
+  "external_gates_registry": "governance/EXTERNAL_RUNTIME_GATES.json",
+  "external_gates": [
+    {
+      "gate": "LANGGRAPH_RUNTIME_CHECKPOINT_RESUME",
+      "status": "NOT_RUN_ENVIRONMENT_BLOCKED",
+      "reason": "Requires pinned LangGraph + SQLite checkpoint runtime execution. Static/source acceptance does not substitute for actual StateGraph checkpoint/resume evidence."
+    },
+    {
+      "gate": "STREAMLIT_1_63_RUNTIME_RENDER_ACCEPTANCE",
+      "status": "NOT_RUN_ENVIRONMENT_BLOCKED",
+      "reason": "Requires real Streamlit/Python browser rendering through RUN_UI_RUNTIME_ACCEPTANCE.ps1 on the Owner environment.",
+      "runner": "ModelLab/acceptance/runners/RUN_UI_RUNTIME_ACCEPTANCE.ps1",
+      "bootstrap_module": "acceptance.runners.ui_runtime_acceptance_bootstrap",
+      "browser_module": "acceptance.runners.ui_runtime_browser_acceptance",
+      "requirements": "ModelLab/requirements/requirements-ui-acceptance.txt",
+      "required_pin": "playwright==1.57.0",
+      "dependency_runtime": "acceptance-only ui-acceptance312 environment"
+    },
+    {
+      "gate": "OWNER_DESKTOP_EXACT_RESOLUTION_RENDER",
+      "status": "NOT_RUN",
+      "reason": "Requires the Owner primary-screen resolution and real rendered UI evidence."
+    },
+    {
+      "gate": "GOLDEN_RESEARCH_E2E_FULL_RUNTIME",
+      "status": "NOT_RUN_HERE",
+      "reason": "Requires the full runtime dependency stack and one-click ModelLab/tools/research/RUN_RESEARCH_E2E.cmd execution."
+    },
+    {
+      "gate": "PYTHON_ONNX_CONVERTER_RUNTIME_PARITY",
+      "status": "NOT_RUN_HERE",
+      "reason": "Requires real onnx/onnxruntime conversion and inference parity execution."
+    },
+    {
+      "gate": "TRANSFORMER_FAMILY_ONNX_RUNTIME_PARITY",
+      "status": "NOT_RUN_HERE",
+      "reason": "PatchTST/iTransformer/TFT real ONNX export and onnxruntime parity require the Owner runtime toolchain."
+    },
+    {
+      "gate": "CUDA_ACCELERATOR_BOOTSTRAP_RUNTIME",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Launcher must detect NVIDIA, install the pinned CUDA PyTorch stack, and execute an actual CUDA tensor probe; silent CPU fallback is not accepted when NVIDIA is detected."
+    },
+    {
+      "gate": "TRANSFORMER_FAMILY_CUDA_RUNTIME",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "CUDA training/runtime for supported temporal families must be accepted on the Owner GPU environment."
+    },
+    {
+      "gate": "MQL5_METAEDITOR_COMPILE",
+      "status": "NOT_RUN_HERE",
+      "reason": "Requires MetaEditor on the Owner MT5 environment."
+    },
+    {
+      "gate": "OWNER_MT5_DATA_QUALITY_RECONCILIATION_AND_GAP_REPAIR",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires actual same-broker MetaTrader5 reconciliation and Strategy Tester first-write-wins gap repair evidence."
+    },
+    {
+      "gate": "OWNER_MT5_RUNTIME_LIVE_PLUS_TESTER",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires real Owner MT5 terminal/live plus Strategy Tester runtime evidence."
+    },
+    {
+      "gate": "OWNER_MT5_STRATEGY_OPTIMIZER_V2_RUNTIME",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires real MetaEditor compile, native MT5 optimization report, R-accounting sidecar parity, and Strategy Challenger export evidence."
+    },
+    {
+      "gate": "OWNER_MT5_NATIVE_MTF_RESAMPLING_PARITY",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires actual Owner MT5 native M5/M15/H1/H4 bars for one exact broker/symbol/window. The MTF-1 closure contract archives those raw inputs, replays canonical resampling/parity/alignment/DQ/lineage, and production verification re-fetches the same Owner MT5 window and requires native-input identity.",
+      "runner": "ModelLab/RUN_MTF1_OWNER_ACCEPTANCE.cmd",
+      "evidence": "owner_acceptance/evidence/mtf1/OWNER_MTF1_RUNTIME_ACCEPTANCE.json",
+      "requirement": "REQUIRED_ON_OWNER_MACHINE",
+      "verifier": "ModelLab/acceptance/verification/VERIFY_MTF1_OWNER_ACCEPTANCE.cmd"
+    },
+    {
+      "gate": "OWNER_MT5_TERMINAL_DATA_ROOT_DETECTION",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires actual MT5 Python runtime provenance and terminal_info().data_path resolving to a verified terminal data root containing MQL5; MTF-1 closure evidence is closure-run-bound and live-revalidated, while raw drive roots/unverified paths fail closed.",
+      "runner": "ModelLab/RUN_MTF1_OWNER_ACCEPTANCE.cmd",
+      "evidence": "owner_acceptance/evidence/mtf1/OWNER_MTF1_RUNTIME_ACCEPTANCE.json",
+      "requirement": "REQUIRED_ON_OWNER_MACHINE",
+      "verifier": "ModelLab/acceptance/verification/VERIFY_MTF1_OWNER_ACCEPTANCE.cmd"
+    },
+    {
+      "gate": "METAEDITOR_MAX_MTF_V2_COMPILE",
+      "status": "REQUIRED_ON_OWNER_MACHINE",
+      "reason": "Requires actual MetaEditor compilation of the exact canonical Max_MTF.mq5 on the Owner Windows/MT5 toolchain. The MTF-1 closure verifier verifies the current configured MetaEditor executable/hash and size, exact command/source/deployed MQ5 identity, the exact signed subprocess process_returncode as DIAGNOSTIC_ONLY evidence matching the archived process record, a freshly reparsed zero-error compiler log identifying the expected source, and a fresh binary-like EX5 whose archived mtime is inside the compile execution window for the same closure_run_id. Compile PASS is reconstructed from log + fresh EX5 + execution provenance; process return code alone is not semantic compile authority.",
+      "requirement": "REQUIRED_ON_OWNER_MACHINE",
+      "runner": "ModelLab/RUN_MTF1_METAEDITOR_ACCEPTANCE.cmd",
+      "evidence": "owner_acceptance/evidence/mtf1/OWNER_MTF1_METAEDITOR_ACCEPTANCE.json",
+      "verifier": "ModelLab/acceptance/verification/VERIFY_MTF1_METAEDITOR_ACCEPTANCE.cmd"
+    },
+    {
+      "gate": "MTF_STRATEGY_RUNTIME",
+      "status": "NOT_APPLICABLE_MTF1",
+      "reason": "MTF-1 is data authority only; MTF strategy execution is intentionally not implemented or activated until later phases.",
+      "requirement": "NOT_APPLICABLE_MTF1"
+    }
+  ],
+  "owner_mtf1_runtime_acceptance": {
+    "runner": "ModelLab/RUN_MTF1_OWNER_ACCEPTANCE.cmd",
+    "evidence": "owner_acceptance/evidence/mtf1/OWNER_MTF1_RUNTIME_ACCEPTANCE.json",
+    "verifier": "ModelLab/acceptance/verification/VERIFY_MTF1_OWNER_ACCEPTANCE.cmd",
+    "raw_artifacts": "owner_acceptance/evidence/mtf1/owner_runtime/<closure_run_id>/",
+    "proof_contract": "ARCHIVE_ACTUAL_NATIVE_M5_M15_H1_H4_AND_MT5_PROVENANCE_REPLAY_CANONICAL_PARITY_REAL_VOLUME_ALIGNMENT_DQ_LINEAGE_BUNDLE_IDENTITY_THEN_LIVE_REFETCH_EXACT_WINDOW",
+    "required_for_mtf1_close": [
+      "OWNER_MT5_NATIVE_MTF_RESAMPLING_PARITY",
+      "OWNER_MT5_TERMINAL_DATA_ROOT_DETECTION"
+    ]
+  },
+  "external_gate_requirement_lock": {
+    "OWNER_MT5_NATIVE_MTF_RESAMPLING_PARITY": "REQUIRED_ON_OWNER_MACHINE",
+    "OWNER_MT5_TERMINAL_DATA_ROOT_DETECTION": "REQUIRED_ON_OWNER_MACHINE",
+    "METAEDITOR_MAX_MTF_V2_COMPILE": "REQUIRED_ON_OWNER_MACHINE",
+    "MTF_STRATEGY_RUNTIME": "NOT_APPLICABLE_MTF1"
+  },
+  "owner_mtf1_runtime_binding": "source_tree_signature+suite_signature+complete_74_gate_local_acceptance_sha256+external_registry_sha256+active_ea_identity+owner_config_sha256+closure_run_id+raw_execution_artifact_set_sha256",
+  "owner_mtf1_runtime_verifier": "ModelLab/acceptance/verification/VERIFY_MTF1_OWNER_ACCEPTANCE.cmd",
+  "scientist_json_recovery": "V1_4_6_BOUNDED_FORMAT_ONLY_ONE_RETRY_TEMPERATURE_ZERO_FAIL_CLOSED",
+  "metaeditor_mtf1_acceptance": {
+    "runner": "ModelLab/RUN_MTF1_METAEDITOR_ACCEPTANCE.cmd",
+    "evidence": "owner_acceptance/evidence/mtf1/OWNER_MTF1_METAEDITOR_ACCEPTANCE.json",
+    "verifier": "ModelLab/acceptance/verification/VERIFY_MTF1_METAEDITOR_ACCEPTANCE.cmd",
+    "config": "owner_acceptance/runtime/OWNER_MTF1_METAEDITOR_ACCEPTANCE_CONFIG.json",
+    "raw_artifacts": "owner_acceptance/evidence/mtf1/metaeditor/<closure_run_id>/",
+    "proof_contract": "CURRENT_CONFIGURED_METAEDITOR_EXECUTABLE_HASH_AND_SIZE_EXACT_DEPLOYED_MQ5_COMMAND_DIAGNOSTIC_ONLY_SIGNED_PROCESS_RETURNCODE_EXACT_MATCH_ARCHIVED_LOG_REPARSE_ZERO_ERRORS_FRESH_BINARY_EX5_WITHIN_COMPILE_WINDOW_CLOSURE_RUN_ID"
+  },
+  "mtf1_final_closure": {
+    "one_click": "ModelLab/RUN_MTF1_FINAL_CLOSURE.cmd",
+    "verifier": "ModelLab/acceptance/verification/VERIFY_MTF1_FINAL_CLOSURE.cmd",
+    "evidence": "owner_acceptance/evidence/mtf1/OWNER_MTF1_FINAL_CLOSURE.json",
+    "closure_run": "owner_acceptance/runtime/MTF1_CLOSURE_RUN.json",
+    "verify_semantics": "READ_ONLY_VERIFY_EXISTING",
+    "rule": "FRESH_LOCAL_75_OF_75_PASS + OWNER_MT5_ARCHIVE_REPLAY_AND_LIVE_REVALIDATION_PASS + METAEDITOR_TOOL_LOG_EX5_EXECUTION_PROOF_PASS + SAME_CLOSURE_RUN_ID = MTF_1_CLOSED"
+  },
+  "local_acceptance_proof": "EXACT_ORDERED_75_GATE_SCRIPT_RESULTS_ALL_PASS_EXIT_ZERO_FRESH_FULL_REQUIRED_FOR_EXTERNAL_CLOSURE",
+  "external_execution_proof": "ARCHIVED_RAW_RUNTIME_ARTIFACTS_DETERMINISTIC_RECOMPUTATION_CURRENT_TOOL_RUNTIME_REVALIDATION_SHARED_CLOSURE_RUN_ID",
+  "inherited_bugfix_rebase": {
+    "v1_4_6": "SCIENTIST_STRUCTURED_JSON_RECOVERY_PRESERVED",
+    "v1_4_7_selective": [
+      "STRATEGY_GEOMETRY_HANDOFF",
+      "FAILED_CPCV_RESUME_RECOVERY",
+      "CPCV_LIVE_KPI_TELEMETRY"
+    ],
+    "wholesale_single_tf_overwrite": false
+  },
+  "training_science_repair": {
+    "dl_internal_earlystop": "PURGED_BY_CANONICAL_LABEL_HORIZON",
+    "transformer_moe_top1": "DIFFERENTIABLE_SELECTED_GATE_MAGNITUDE_PLUS_SWITCH_STYLE_BALANCE",
+    "routing_diagnostics": "RESTORED_BEST_CHECKPOINT_LOCAL_SCIENTIFIC_EVIDENCE"
+  },
+  "closure_python_environment_authority": {
+    "schema": "MAX_MTF1_CLOSURE_PYTHON_ENV_V1",
+    "one_click": "ModelLab/RUN_MTF1_FINAL_CLOSURE.cmd",
+    "bootstrap": "ModelLab/mtf/mtf1_closure_bootstrap.py",
+    "authority": "CANONICAL_MAX_PYTHON_3_12_VENV_ONE_INTERPRETER_FULL_CLOSURE_CHAIN",
+    "evidence": "owner_acceptance/runtime/MTF1_CLOSURE_PYTHON_ENV.json",
+    "fail_closed": true
+  },
+  "dynamic_model_capacity": {
+    "schema": "MAX_MTF_V201_DYNAMIC_MODEL_CAPACITY_AUTHORITY_V1",
+    "authority": "min(LEGAL_ARCHITECTURE,RESOURCE_EXECUTION,SCIENTIFIC_INFORMATION) on actual executable temporal parameter count",
+    "recommended_envelopes": "RECOMMENDED_STARTING_GUIDANCE_NOT_HARD_MAXIMUM",
+    "model_size_priority": "SEARCH_PREFERENCE_INSIDE_CURRENT_DYNAMIC_CAPACITY",
+    "required_gate": "V201_DYNAMIC_MODEL_CAPACITY_AUTHORITY",
+    "capacity_evidence_authority": "CUMULATIVE_COMMITTED_FULL_WFA_CURRENT_FACTORY",
+    "capacity_evidence_eligibility": "FIDELITY_STAGE_STARTS_WITH_FULL_WFA",
+    "capacity_evidence_dedupe": "EXPERIMENT_FINGERPRINT_WHERE_AVAILABLE_NEVER_FAMILY_OR_PARAMETER_COUNT",
+    "capacity_evidence_scope": "CURRENT_EXACT_FACTORY_RESEARCH_CONTRACT_LINEAGE_ONLY",
+    "capacity_evidence_gate": "V201_DYNAMIC_CAPACITY_SEARCH_DIVERSITY_FAMILY_EVIDENCE"
+  },
+  "scientist_python_analysis_runtime": {
+    "version": "V1",
+    "status": "OPTIONAL_ANALYTICAL_SUPPORT",
+    "mandatory_gate": "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+    "dedicated_interpreter_required": true,
+    "security_boundary": "CAPABILITY_ALLOWLIST_PROXY_PLUS_HOST_AST_AND_CHILD_DEFENSE_IN_DEPTH",
+    "raw_scientific_module_objects_exposed": false,
+    "transitive_native_authority": "DENIED",
+    "os_secure_sandbox_claimed": false,
+    "failure_fallback": "REASONING_ONLY",
+    "factory_decision_authority_change": false,
+    "mtf2_status": "BLOCKED",
+    "owner_acceptance_runner": "ModelLab/RUN_SCIENTIST_PYTHON_OWNER_ACCEPTANCE.cmd",
+    "owner_acceptance_verifier": "ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py",
+    "owner_acceptance_read_only_verifier": "ModelLab/acceptance/verification/VERIFY_SCIENTIST_PYTHON_OWNER_ACCEPTANCE.cmd",
+    "owner_acceptance_evidence": "owner_acceptance/evidence/scientist_python/OWNER_SCIENTIST_PYTHON_RUNTIME_ACCEPTANCE.json",
+    "owner_runtime_status": "PENDING_OWNER_WINDOWS_ACCEPTANCE"
+  },
+  "modellab_layout": {
+    "status": "CANONICAL_DOMAIN_LAYOUT_OPERATOR_ROOT_ONLY",
+    "build_scope": "MAX_MTF_V2_0_1_OWNER_ACCEPTANCE_CANONICAL_MAX_PYTHON_BINDING_REPAIR",
+    "manifest": "ModelLab/governance/MODELLAB_LAYOUT_MANIFEST.json",
+    "root_authority": "OPERATOR_SURFACE_ONLY",
+    "allowed_root_files": [
+      "RUN_ACCEPTANCE.cmd",
+      "RUN_CUDA_ACCEPTANCE.cmd",
+      "RUN_LANGGRAPH_ACCEPTANCE.cmd",
+      "RUN_MTF1_ACCEPTANCE.cmd",
+      "RUN_MTF1_FINAL_CLOSURE.cmd",
+      "RUN_MTF1_METAEDITOR_ACCEPTANCE.cmd",
+      "RUN_MTF1_OWNER_ACCEPTANCE.cmd",
+      "RUN_SCIENTIST_PYTHON_OWNER_ACCEPTANCE.cmd",
+      "START_UI.cmd"
+    ],
+    "allowed_root_directories": [
+      "acceptance",
+      "config",
+      "core",
+      "data",
+      "docs",
+      "evidence",
+      "factory",
+      "governance",
+      "max_graph",
+      "models",
+      "mtf",
+      "host",
+      "requirements",
+      "research",
+      "runtime",
+      "scientist",
+      "skills",
+      "strategy",
+      "tests",
+      "tools",
+      "ui"
+    ],
+    "direct_root_python_files": 0,
+    "direct_root_json_files": 0,
+    "direct_root_ps1_files": 0,
+    "implementation_authority": "DOMAIN_PACKAGES_ONLY_NO_ROOT_COMPATIBILITY_SHIMS",
+    "mtf2_status": "BLOCKED"
+  },
+  "owner_acceptance_canonical_max_python_binding": {
+    "build_scope": "MAX_MTF_V2_0_1_OWNER_ACCEPTANCE_CANONICAL_MAX_PYTHON_BINDING_REPAIR",
+    "authority": "ui.ui_bootstrap.ensure_python312 + ui.ui_launcher.ensure_env/venv_python",
+    "run_acceptance_parity": true,
+    "owner_scientist_acceptance_parity": true,
+    "legacy_modellab_dot_venv_authority": false,
+    "scientist_python_separate": true
+  },
+  "ui_acceptance_runtime_import_classification": {
+    "build_scope": "MAX_MTF_V2_0_1_UI_ACCEPTANCE_RUNTIME_IMPORT_CLASSIFICATION_REPAIR",
+    "browser_module": "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py",
+    "bootstrap_module": "ModelLab/acceptance/runners/ui_runtime_acceptance_bootstrap.py",
+    "requirements": "ModelLab/requirements/requirements-ui-acceptance.txt",
+    "required_pin": "playwright==1.57.0",
+    "external_gate": "STREAMLIT_1_63_RUNTIME_RENDER_ACCEPTANCE",
+    "classification": "ACCEPTANCE_ONLY_EXTERNAL_RUNTIME_GATED"
+  },
+  "windows_acceptance_utf8_process_contract": {
+    "build_scope": "MAX_MTF_V2_0_1_WINDOWS_ACCEPTANCE_UTF8_PROCESS_CONTRACT_REPAIR",
+    "authority": "ACCEPTANCE_PROCESS_TEXT_IO_UTF8_ONLY",
+    "shared_helper": "ModelLab/acceptance/runners/acceptance_process_env.py",
+    "required_python_environment": {
+      "PYTHONUTF8": "1",
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "acceptance_marker": "MAX_MTF_ACCEPTANCE_UTF8=1",
+    "parent_capture_decoding": "UTF-8 errors=replace for captured Python acceptance output",
+    "mandatory_gate": "V201_RELEASE_PORTABILITY",
+    "cumulative_gate_count": 75,
+    "regression_cases": [
+      "UTF-A",
+      "UTF-B",
+      "UTF-C",
+      "UTF-D",
+      "UTF-E",
+      "UTF-F",
+      "UTF-G"
+    ],
+    "negative_fixture": "CP1252-like child must fail with UnicodeEncodeError when canonical UTF-8 env is removed",
+    "normal_runtime_global_change": false,
+    "scientific_semantics_change": false,
+    "scientist_python_separate": true,
+    "owner_windows_status": "PENDING_OWNER_WINDOWS_ACCEPTANCE",
+    "mtf2_status": "BLOCKED"
+  },
+  "windows_utf8_newline_portability_selftest": {
+    "build_scope": "MAX_MTF_V2_0_1_WINDOWS_UTF8_NEWLINE_PORTABILITY_SELFTEST_REPAIR",
+    "authority": "V201_RELEASE_PORTABILITY_SELFTEST_NEWLINE_SEMANTICS_ONLY",
+    "required_gate": "V201_RELEASE_PORTABILITY",
+    "cumulative_gate_count": 75,
+    "strict_utf8_decode": "errors=strict",
+    "newline_semantics": "NORMALIZE_STANDARD_CRLF_CR_LF_ONLY",
+    "utf_c_cases": [
+      "UTF-C1_LF_PASS",
+      "UTF-C2_CRLF_PASS",
+      "UTF-C3_MALFORMED_UTF8_FAIL",
+      "UTF-C4_CONTENT_CHANGE_FAIL"
+    ],
+    "real_cpcv_redirected_regression": true,
+    "previous_utf8_process_contract_preserved": true,
+    "global_lf_forcing": false,
+    "scientific_semantics_change": false,
+    "mtf2_status": "BLOCKED"
+  },
+  "owner_acceptance_postseal_evidence_exitcode_repair": {
+    "build_scope": "MAX_MTF_V2_0_1_OWNER_ACCEPTANCE_POSTSEAL_EVIDENCE_AND_EXITCODE_REPAIR",
+    "current_acceptance_report": "ModelLab/evidence/current/BUILD_ACCEPTANCE_v2_0_1.json",
+    "single_mutable_current_claim": "ModelLab/evidence/current/CANDIDATE_BUILD_v2_0_1.json",
+    "current_sync_record": "ModelLab/evidence/current/CURRENT_EVIDENCE_SYNC_v2_0_1.json",
+    "historical_build_repair_location": "ModelLab/evidence/history/build_repairs/",
+    "report_sha_lifecycle": "VOLATILE_PER_FRESH_ACCEPTANCE_RUN",
+    "immutable_identity_bindings": [
+      "source_tree_signature",
+      "suite_signature",
+      "gate_count",
+      "ordered_75_results",
+      "all_gate_status_pass",
+      "all_gate_exit_code_zero",
+      "execution_mode_FRESH_FULL"
+    ],
+    "owner_cmd_exitcode_authority": "EXACT_ONE_CLICK_CHILD_RETURNCODE",
+    "bootstrap_unavailable_exit_code": 103,
+    "required_existing_gates": [
+      "V201_LOCAL_ACCEPTANCE_RESULT_INTEGRITY",
+      "V201_SCIENTIST_PYTHON_ANALYSIS_RUNTIME"
+    ],
+    "cumulative_gate_count": 75,
+    "scientific_semantics_change": false,
+    "mtf2_status": "BLOCKED"
+  }
+}

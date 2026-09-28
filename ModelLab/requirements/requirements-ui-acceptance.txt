@@ -1,0 +1,2 @@
+# Acceptance-only dependency. Not imported by app.py and not part of research runtime.
+playwright==1.57.0

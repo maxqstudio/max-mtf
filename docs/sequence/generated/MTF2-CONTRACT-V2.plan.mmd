@@ -1,0 +1,14 @@
+%% GENERATED FILE - DO NOT EDIT
+%% PLAN_SHA256: a513b6ea6b2cc5ec6caf974869ee4eb70e43d4e06f490986bac41945826f236c
+%% FLOW_ID: MTF2-CONTRACT-V2
+sequenceDiagram
+    actor dataset_0 as Build MTF-2 V2 dataset
+    participant features_1 as Build V2 registered role features
+    participant causal_2 as Audit closed-bar feature causality
+    participant labels_3 as Build future-M5 directional labels
+    participant ablations_4 as Build identical-row A/B/C/D views
+    dataset_0->>features_1: construct only V2 preregistered compact role features [MUST,MAX_MTF2_ROLE_FEATURE_LABEL_V2]
+    dataset_0->>causal_2: reject role close times after M15 decision and invalid dependency metadata [MUST,closed-bar causality]
+    dataset_0->>labels_3: construct SELL/SKIP/BUY labels from post-decision canonical M5 path under typed horizon [MUST,MTF2_DIRECTIONAL_LABEL_V1]
+    dataset_0->>ablations_4: emit identical-row A/B/C/D feature views [MUST,same-sample ablation authority]
+    labels_3->>features_1: future label path must never feed directional feature construction [MUST_NOT,future M5 directional leakage forbidden]

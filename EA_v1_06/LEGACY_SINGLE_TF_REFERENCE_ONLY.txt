@@ -1,0 +1,1 @@
+Frozen source reference inherited from Max single-TF v1.4.5. Max MTF runtime/optimizer authority MUST NOT use this directory.

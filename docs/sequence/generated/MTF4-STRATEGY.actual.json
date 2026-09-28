@@ -1,0 +1,219 @@
+{
+  "coverage": {
+    "js_ts_http_module_scan": true,
+    "limitations": [
+      "dynamic dispatch",
+      "dependency injection",
+      "reflection",
+      "callbacks/events",
+      "framework magic not visible statically",
+      "JS/TS function-level call ownership is not fully resolved"
+    ],
+    "python_ast": true,
+    "python_parse_failures": [],
+    "python_route_decorators": true,
+    "runtime_trace": false
+  },
+  "edges": [
+    {
+      "action": "f.flush",
+      "evidence": "STATIC",
+      "from": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "resolver": "python_ast",
+      "to": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "action": "_utc",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/mtf4_strategy.py::_causal_role",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/mtf4_strategy.py::_utc"
+    },
+    {
+      "action": "MTF4StrategyError",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/mtf4_strategy.py::_utc",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/mtf4_strategy.py::MTF4StrategyError"
+    },
+    {
+      "action": "MTF4StrategyError",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/mtf4_strategy.py::MTF4StrategyError"
+    },
+    {
+      "action": "_causal_role",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/mtf4_strategy.py::_causal_role"
+    },
+    {
+      "action": "_utc",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/mtf4_strategy.py::_utc"
+    },
+    {
+      "action": "validate_mtf4_params",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/mtf4_strategy.py::validate_mtf4_params"
+    },
+    {
+      "action": "MTF4StrategyError",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/mtf4_strategy.py::validate_mtf4_params",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/mtf4_strategy.py::MTF4StrategyError"
+    },
+    {
+      "action": "source.update",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/mtf4_strategy.py::validate_mtf4_params",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    },
+    {
+      "action": "atomic_write_json",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "resolver": "python_ast",
+      "to": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "action": "atomic",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "action": "evidence_dir",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "action": "now",
+      "evidence": "STATIC",
+      "from": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "resolver": "python_ast",
+      "to": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    }
+  ],
+  "entries": [
+    "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy"
+  ],
+  "generated": true,
+  "generated_by": "generate_sequence_actual.py",
+  "nodes": [
+    {
+      "id": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "kind": "function",
+      "label": "ModelLab/factory/factory_jobs.py::atomic_write_json",
+      "language": "Python",
+      "line_end": 58,
+      "line_start": 27,
+      "locator": "ModelLab/factory/factory_jobs.py::atomic_write_json"
+    },
+    {
+      "id": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
+      "kind": "method",
+      "label": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush",
+      "language": "Python",
+      "line_end": 91,
+      "line_start": 87,
+      "locator": "ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush"
+    },
+    {
+      "id": "ModelLab/strategy/mtf4_strategy.py::MTF4StrategyError",
+      "kind": "class",
+      "label": "ModelLab/strategy/mtf4_strategy.py::MTF4StrategyError",
+      "language": "Python",
+      "line_end": 31,
+      "line_start": 30,
+      "locator": "ModelLab/strategy/mtf4_strategy.py::MTF4StrategyError"
+    },
+    {
+      "id": "ModelLab/strategy/mtf4_strategy.py::_causal_role",
+      "kind": "function",
+      "label": "ModelLab/strategy/mtf4_strategy.py::_causal_role",
+      "language": "Python",
+      "line_end": 86,
+      "line_start": 77,
+      "locator": "ModelLab/strategy/mtf4_strategy.py::_causal_role"
+    },
+    {
+      "id": "ModelLab/strategy/mtf4_strategy.py::_utc",
+      "kind": "function",
+      "label": "ModelLab/strategy/mtf4_strategy.py::_utc",
+      "language": "Python",
+      "line_end": 61,
+      "line_start": 51,
+      "locator": "ModelLab/strategy/mtf4_strategy.py::_utc"
+    },
+    {
+      "id": "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+      "kind": "function",
+      "label": "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy",
+      "language": "Python",
+      "line_end": 174,
+      "line_start": 128,
+      "locator": "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy"
+    },
+    {
+      "id": "ModelLab/strategy/mtf4_strategy.py::validate_mtf4_params",
+      "kind": "function",
+      "label": "ModelLab/strategy/mtf4_strategy.py::validate_mtf4_params",
+      "language": "Python",
+      "line_end": 48,
+      "line_start": 34,
+      "locator": "ModelLab/strategy/mtf4_strategy.py::validate_mtf4_params"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::atomic",
+      "language": "Python",
+      "line_end": 22,
+      "line_start": 21,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::atomic"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir",
+      "language": "Python",
+      "line_end": 25,
+      "line_start": 24,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::now",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::now",
+      "language": "Python",
+      "line_end": 20,
+      "line_start": 20,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::now"
+    },
+    {
+      "id": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "kind": "function",
+      "label": "ModelLab/strategy/strategy_optimizer_worker.py::update",
+      "language": "Python",
+      "line_end": 38,
+      "line_start": 27,
+      "locator": "ModelLab/strategy/strategy_optimizer_worker.py::update"
+    }
+  ],
+  "observed_head": "4f002eeb01e4e423f087e19588d38c02cec6e463",
+  "schema_version": 1,
+  "source_digest": "0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20"
+}

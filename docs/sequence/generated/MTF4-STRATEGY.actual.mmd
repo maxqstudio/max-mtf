@@ -1,0 +1,29 @@
+%% GENERATED FILE - DO NOT EDIT
+%% SOURCE_DIGEST: 0ab27bdab697a9654d90e678f6914e3e59c8781c33655460c50c188625676a20
+%% OBSERVED_HEAD: 4f002eeb01e4e423f087e19588d38c02cec6e463
+%% GENERATED_BY: generate_sequence_actual.py
+sequenceDiagram
+    participant ModelLab_factory_factory_jobs_py__atomic_write_json_0 as ModelLab/factory/factory_jobs.py::atomic_write_json
+    participant ModelLab_scientist_skills_max_scientist_skills_py___section_map_flush_1 as ModelLab/scientist/skills/max_scientist_skills.py::_section_map.flush
+    participant ModelLab_strategy_mtf4_strategy_py__MTF4StrategyError_2 as ModelLab/strategy/mtf4_strategy.py::MTF4StrategyError
+    participant ModelLab_strategy_mtf4_strategy_py___causal_role_3 as ModelLab/strategy/mtf4_strategy.py::_causal_role
+    participant ModelLab_strategy_mtf4_strategy_py___utc_4 as ModelLab/strategy/mtf4_strategy.py::_utc
+    participant ModelLab_strategy_mtf4_strategy_py__evaluate_mtf4_strategy_5 as ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy
+    participant ModelLab_strategy_mtf4_strategy_py__validate_mtf4_params_6 as ModelLab/strategy/mtf4_strategy.py::validate_mtf4_params
+    participant ModelLab_strategy_strategy_optimizer_worker_py__atomic_7 as ModelLab/strategy/strategy_optimizer_worker.py::atomic
+    participant ModelLab_strategy_strategy_optimizer_worker_py__evidence_dir_8 as ModelLab/strategy/strategy_optimizer_worker.py::evidence_dir
+    participant ModelLab_strategy_strategy_optimizer_worker_py__now_9 as ModelLab/strategy/strategy_optimizer_worker.py::now
+    participant ModelLab_strategy_strategy_optimizer_worker_py__update_10 as ModelLab/strategy/strategy_optimizer_worker.py::update
+    ModelLab_factory_factory_jobs_py__atomic_write_json_0->>ModelLab_scientist_skills_max_scientist_skills_py___section_map_flush_1: f.flush [STATIC]
+    ModelLab_strategy_mtf4_strategy_py___causal_role_3->>ModelLab_strategy_mtf4_strategy_py___utc_4: _utc [STATIC]
+    ModelLab_strategy_mtf4_strategy_py___utc_4->>ModelLab_strategy_mtf4_strategy_py__MTF4StrategyError_2: MTF4StrategyError [STATIC]
+    ModelLab_strategy_mtf4_strategy_py__evaluate_mtf4_strategy_5->>ModelLab_strategy_mtf4_strategy_py__MTF4StrategyError_2: MTF4StrategyError [STATIC]
+    ModelLab_strategy_mtf4_strategy_py__evaluate_mtf4_strategy_5->>ModelLab_strategy_mtf4_strategy_py___causal_role_3: _causal_role [STATIC]
+    ModelLab_strategy_mtf4_strategy_py__evaluate_mtf4_strategy_5->>ModelLab_strategy_mtf4_strategy_py___utc_4: _utc [STATIC]
+    ModelLab_strategy_mtf4_strategy_py__evaluate_mtf4_strategy_5->>ModelLab_strategy_mtf4_strategy_py__validate_mtf4_params_6: validate_mtf4_params [STATIC]
+    ModelLab_strategy_mtf4_strategy_py__validate_mtf4_params_6->>ModelLab_strategy_mtf4_strategy_py__MTF4StrategyError_2: MTF4StrategyError [STATIC]
+    ModelLab_strategy_mtf4_strategy_py__validate_mtf4_params_6->>ModelLab_strategy_strategy_optimizer_worker_py__update_10: source.update [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__atomic_7->>ModelLab_factory_factory_jobs_py__atomic_write_json_0: atomic_write_json [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_10->>ModelLab_strategy_strategy_optimizer_worker_py__atomic_7: atomic [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_10->>ModelLab_strategy_strategy_optimizer_worker_py__evidence_dir_8: evidence_dir [STATIC]
+    ModelLab_strategy_strategy_optimizer_worker_py__update_10->>ModelLab_strategy_strategy_optimizer_worker_py__now_9: now [STATIC]

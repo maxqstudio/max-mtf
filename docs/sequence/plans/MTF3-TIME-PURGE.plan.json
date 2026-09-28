@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "flow_id": "MTF3-TIME-PURGE",
+  "title": "MTF-3 exact timestamp dependency and purge authority",
+  "status": "FROZEN",
+  "nodes": [
+    {
+      "id": "authority",
+      "label": "Build complete MTF-3 split authority",
+      "locator": "ModelLab/mtf/mtf3.py::build_mtf3_split_authority",
+      "kind": "actor"
+    },
+    {
+      "id": "intervals",
+      "label": "Build D-common sample intervals",
+      "locator": "ModelLab/mtf/mtf3.py::build_comparison_intervals"
+    },
+    {
+      "id": "purge",
+      "label": "Purge train rows by exact protected overlap",
+      "locator": "ModelLab/mtf/mtf3.py::purge_train_against_protected"
+    },
+    {
+      "id": "audit",
+      "label": "Audit zero protected overlap",
+      "locator": "ModelLab/mtf/mtf3.py::audit_time_purge_split"
+    },
+    {
+      "id": "wfa",
+      "label": "Build exact-time expanding WFA folds",
+      "locator": "ModelLab/mtf/mtf3.py::mtf3_expanding_folds"
+    },
+    {
+      "id": "cpcv",
+      "label": "Build exact-time 15-split CPCV",
+      "locator": "ModelLab/mtf/mtf3.py::mtf3_cpcv_splits"
+    },
+    {
+      "id": "legacy",
+      "label": "Legacy bar-count CPCV",
+      "locator": "ModelLab/research/cpcv.py::cpcv_splits"
+    }
+  ],
+  "edges": [
+    {
+      "from": "authority",
+      "to": "intervals",
+      "action": "construct one D-common exact timestamp interval table",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "MAX_MTF3_TIME_DEPENDENCY_PURGE_V1"
+    },
+    {
+      "from": "authority",
+      "to": "wfa",
+      "action": "construct exact-time expanding WFA folds",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "MTF3 WFA authority"
+    },
+    {
+      "from": "authority",
+      "to": "cpcv",
+      "action": "construct exact-time 15-split CPCV",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "MTF3 CPCV authority"
+    },
+    {
+      "from": "wfa",
+      "to": "purge",
+      "action": "purge expanding train complement against validation outcome timestamps",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "MTF3 WFA authority"
+    },
+    {
+      "from": "cpcv",
+      "to": "purge",
+      "action": "purge each CPCV train complement against test outcome timestamps",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "15 split MTF3 CPCV authority"
+    },
+    {
+      "from": "purge",
+      "to": "audit",
+      "action": "prove remaining train intervals do not touch protected outcome windows",
+      "requirement": "MUST",
+      "verification": "SOURCE",
+      "evidence": "exact timestamp overlap audit"
+    },
+    {
+      "from": "cpcv",
+      "to": "legacy",
+      "action": "must not delegate MTF purge authority to legacy bar-count CPCV",
+      "requirement": "MUST_NOT",
+      "verification": "DOCUMENT",
+      "evidence": "no bar-count fallback"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# Reproducible Windows research/conversion base stack for v0.7.1. Accelerator use is capability-resolved at runtime.
+# Python 3.11 or 3.12 only.
+numpy>=2.0,<3
+pandas>=2.2,<3
+scikit-learn==1.8.0
+xgboost==3.4.1
+lightgbm==4.7.0
+joblib>=1.4,<2
+onnx==1.22.0
+onnxruntime==1.29.0
+skl2onnx==1.20.0
+onnxmltools==1.16.0
+
+# GRU/hybrid temporal research/deployment is installed deterministically by accelerator_bootstrap.py.
+# NVIDIA hosts: torch==2.6.0 from official cu124 index; non-NVIDIA hosts: pinned CPU wheel.
+
+# v1.3.1 stateful orchestration (LangChain is not required)
+-r requirements-langgraph.txt

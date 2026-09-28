@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "session_id": "MTF4-STRATEGY",
+  "phase": "MTF_4_DETERMINISTIC_STRATEGY_CHALLENGER",
+  "mode": "DURING",
+  "scope": "CURRENT",
+  "critical": true,
+  "status": "IMPLEMENTATION_IN_PROGRESS",
+  "implementation_base_sha": "",
+  "plan": {
+    "required": false,
+    "frozen": false,
+    "contract": "",
+    "frozen_commit": "",
+    "sha256": "",
+    "diagram": ""
+  },
+  "actual": {
+    "graph": "docs/sequence/generated/MTF4-STRATEGY.actual.json",
+    "diagram": "docs/sequence/generated/MTF4-STRATEGY.actual.mmd",
+    "entries": [
+      "ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy"
+    ]
+  },
+  "runtime_trace": {
+    "required": false,
+    "graph": ""
+  },
+  "test_traceability_required": true,
+  "tests": [
+    "ModelLab/tests/v204_mtf4_strategy_contract_selftest.py"
+  ],
+  "acceptance_report": "artifacts/sequence/MTF4-STRATEGY.acceptance.json",
+  "migration_note": "Imported MTF-4 design plan predates this fresh repository but cannot satisfy fresh-repo BEFORE ancestry; current acceptance uses DURING generated actual evidence."
+}

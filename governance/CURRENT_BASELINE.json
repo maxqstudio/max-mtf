@@ -1,0 +1,44 @@
+{
+  "schema": "MAX_MTF_GITHUB_BASELINE_V2",
+  "project": "MAX MTF",
+  "repository": "maxqstudio/max_research_agent",
+  "canonical_version": "MAX MTF v2.0.1",
+  "accepted_branch": "main",
+  "accepted_candidate": {
+    "zip_sha256": "6ce067da5cb22d7809905df2743d242fd291b0c643e8df81228c8be767cbe164",
+    "size_bytes": 4235610,
+    "package_member_count": 939,
+    "drive_file_id": "1fiR6yGpTUfFFjauLrnKw87lLf7yCMmM7",
+    "source_tree_signature": "4e34f7202aa4137d660c953be2fa57d16898e1052ca3790990dc8e7637907b3f",
+    "suite_signature": "1a29b4c5db502a49fbc4ecefbde8772f400ac836b051505ce1c4c44f6246f1c1",
+    "build_scope": "MAX_MTF_V2_0_1_OWNER_ACCEPTANCE_POSTSEAL_EVIDENCE_AND_EXITCODE_REPAIR",
+    "build_id": "V201_4E34F7202AA4_1A29B4C5",
+    "cumulative_acceptance": "75/75 PASS",
+    "execution_mode": "FRESH_FULL"
+  },
+  "github_source_baseline": {
+    "package_mirror_commit": "08bb7a9207614d30457ccd1c65dc9ac084494b54",
+    "package_paths_checked": 939,
+    "missing_paths": 0,
+    "byte_mismatch_count": 0,
+    "authority": "FULL_EXTRACTED_ACCEPTED_PACKAGE_MIRROR"
+  },
+  "owner_runtime": {
+    "scientist_python": "READY_PASS",
+    "mtf1_final_closure": "PENDING"
+  },
+  "phase_state": {
+    "mtf0": "FOUNDATION_ESTABLISHED",
+    "mtf1": "IMPLEMENTATION_ACCEPTED_FINAL_CLOSURE_PENDING",
+    "mtf2": "BLOCKED",
+    "mtf3": "BLOCKED"
+  },
+  "branch_policy": {
+    "accepted": "main",
+    "unaccepted_prefixes": [
+      "work/",
+      "repair/"
+    ],
+    "merge_rule": "CONTROL_ROOM_AND_REQUIRED_OWNER_ACCEPTANCE_BEFORE_MAIN"
+  }
+}

@@ -1,0 +1,2548 @@
+{
+  "schema": "MAX_SCIENTIST_KNOWLEDGE_V1",
+  "knowledge_revision": "SCIENTIST_KNOWLEDGE_MAX_MTF_V201_WINDOWS_ACCEPTANCE_UTF8_PROCESS_CONTRACT_REPAIR",
+  "scientific_authority": "Max MTF v2.0.1 — canonical MTF-1 data foundation plus shared MODEL_TRAINING_METHOD_CONTRACT_V1 for Manual, AUTO, LLM Scientist and Scientist Chat",
+  "control_revision": "Research Control R1",
+  "generated_utc": "2026-09-27T07:14:36.301562+00:00",
+  "purpose": "Machine-readable Max-native knowledge for read-only Scientist Chat and room-transfer contract audit.",
+  "authority": {
+    "scientist_may_recommend_outside_current_contract": true,
+    "scientist_must_know_existing_capabilities_before_recommending": true,
+    "scientist_must_not_duplicate_existing_capability": true,
+    "scientist_must_label_evidence_vs_inference": true,
+    "scientist_can_modify_research": false,
+    "deterministic_code_owns_pass_fail": true,
+    "locked_fresh_evidence_may_not_be_used_for_same_snapshot_tuning": true
+  },
+  "workflow": [
+    {
+      "id": "STRATEGY_OPTIMIZER",
+      "order": 0,
+      "purpose": "Upstream MT5 EA parameter search that produces Strategy Challengers; only explicit Owner promotion changes the current Max_MTF.mq5 Strategy Champion.",
+      "authority": "MT5_NATIVE_PARAMETER_SEARCH_SEPARATE_FROM_RESEARCH",
+      "contracts": [
+        "This is not Discovery and does not run WFA/CPCV/Tournament/Monte Carlo/Fresh Forward",
+        "PF >= 1, RF >= 0, Mean R >= frozen threshold, Weighted R >= frozen threshold",
+        "AUTO minimum trades uses H1 baseline 20 trades/month, timeframe sqrt scaling, integer round-up monthly rate and integer round-up exact-range requirement",
+        "MT5 genetic fitness is Custom max from Max OnTester arithmetic Mean R, so the MT5 Result column is Mean R; Weighted R = sum(net P/L)/sum(initial risk) is transported per pass through MT5 optimization frames and is an independent Python hard gate; Recovery Factor remains an independent hard gate sourced from the dedicated MT5 statistic",
+        "when an eligible winner is found the Optimizer creates a human-readable Strategy Challenger EA + fixed .set + metadata bundle, leaves current Max_MTF.mq5/Max_MTF.set/strategy authority unchanged, enters STRATEGY_CHALLENGER_FOUND, then STOPS",
+        "Owner manually runs the MT5 backtest to write training data, then explicitly STARTs ModelLab Research; Optimizer never auto-backtests, auto-generates the dataset, or auto-starts Research",
+        "one Max round launches one native MT5 optimization; MT5 owns genetic population/job/task scheduling across tester agents, so Tasks/Passed counts are native passes inside the round rather than extra Max rounds",
+        "each Optimizer round has durable PREPARED/MT5_RUNNING/MT5_COMPLETE/REPORT_READY/PARSED checkpoints; START/RESUME process compatible existing evidence first and Resume never reruns the checkpointed MT5 round",
+        "after any parsed round with no eligible winner and remaining frozen round budget, Optimizer automatically performs bounded refinement and launches the next native MT5 round; no manual Continue authority exists",
+        "Scientist is only next-range advisory on that automatic no-winner refinement: OFF=DETERMINISTIC_ONLY; actual successful LLM proposal=SCIENTIST_PROPOSAL with persisted deterministic acceptance/rejection; requested provider/model/call failure=DETERMINISTIC_FALLBACK with explicit reason",
+        "if existing evidence already yields an eligible winner, Scientist is never called and no next round is launched; Strategy Challenger registration is an immediate hard stop and promotion remains explicit Owner authority",
+        "if the frozen maximum round count is exhausted without a winner, terminal state is NO_CHAMPION_MAX_ROUNDS",
+        "Windows atomic writes use unique same-directory temp files plus bounded WinError 5/32 retry, and launcher PID metadata is separated from worker-owned status.json",
+        "MT5 SpreadsheetML Created is provenance only, not round-freshness authority; every launched round snapshots compatible report fingerprints before MT5 starts, prefers its unique requested report name, and accepts only a new/changed compatible XML while still enforcing internal EA+Symbol+Timeframe+From+To identity",
+        "canonical runtime naming is Max_MTF.mq5/Max_MTF.ex5 with Max_MTF.xml and Max_MTF.set; round identity lives in checkpoint/evidence rather than R1/R2/R3 filename suffixes; new runtime flows never emit legacy ComplexPolicy_ONNXReady_EA or MAX_StrategyOptimizer_* names",
+        "a brand-new Optimizer job may bootstrap only from compatible external/manual MT5 XML that has an explicitly paired <stem>.metrics.csv Weighted-R sidecar; XML-only legacy evidence is not v0.8.6 Champion-compatible; prior Max-generated reports remain usable only through the owning job checkpoint/recovery path",
+        "Strategy Optimizer operator settings use durable shadow-state so Streamlit hidden-page widget cleanup cannot erase saved strategy_opt_* values; missing keys are rehydrated before page render while active jobs remain frozen",
+        "round evidence persists report SHA, selection provenance, parsed-pass count, eligible-pass count, frozen KPI thresholds and per-gate counts; eligible_passes > 0 without a deterministic Strategy Challenger selection is a hard invariant failure rather than a no-winner continuation",
+        "active Optimizer request freezes KPI, search-space/selected parameters, maximum rounds, native optimizer mode, date/symbol/timeframe and non-secret Scientist routing; later UI edits apply only to a new run"
+      ],
+      "evidence": [
+        "runtime/strategy_optimizer_runs/*/strategy_challenger.json",
+        "EA_v2_00/challengers/Max_Challenger_*.mq5",
+        "EA_v2_00/challengers/Max_Challenger_*.set",
+        "runtime/strategy_challenger_registry.json"
+      ],
+      "next": "OWNER_MT5_BACKTEST_AND_DATASET"
+    },
+    {
+      "id": "DATA_QUALITY",
+      "order": 1,
+      "purpose": "Prove the CP32 dataset is structurally valid and same-broker source continuity is verified before research.",
+      "authority": "DETERMINISTIC_FAIL_CLOSED",
+      "inputs": [
+        "master dataset CSV",
+        "same-broker MT5 history for reconciliation"
+      ],
+      "contracts": [
+        "Required CP32_V1 columns and 32 features",
+        "one symbol/timeframe only",
+        "no duplicate identity rows",
+        "finite features; valid OHLC/ATR/decision quotes",
+        "ask >= bid; zero spread is warning, not hard failure",
+        "broker reconciliation must be verified",
+        "source-backed missing bars or dataset-only timestamps block readiness",
+        "repair may use verified MT5 writer data only; no interpolation/forward-fill authority"
+      ],
+      "evidence": [
+        "data-quality report",
+        "dataset_quality_context.json"
+      ],
+      "next": "RESEARCH_PLAN_FREEZE"
+    },
+    {
+      "id": "RESEARCH_PLAN_FREEZE",
+      "order": 2,
+      "purpose": "Freeze chronology, hardware/data capacity, topology/family search authority and immutable research contract.",
+      "authority": "DETERMINISTIC",
+      "contracts": [
+        "Discovery < Tournament < Fresh/Forward windows must be chronological and non-overlapping",
+        "Dynamic Capacity Governor admits temporal candidates by min(LEGAL, RESOURCE, SCIENTIFIC) actual-parameter-count authority; model-size priority is search preference only",
+        "current Owner config is distinct from frozen active research_plan",
+        "AUTO and MANUAL proposal authorities are explicit and provenance-recorded"
+      ],
+      "evidence": [
+        "research_plan.json",
+        "hardware_profile.json",
+        "dataset_capacity_profile.json",
+        "factory_manifest.json"
+      ],
+      "next": "DISCOVERY_FULL_WFA"
+    },
+    {
+      "id": "DISCOVERY_FULL_WFA",
+      "order": 3,
+      "purpose": "Generate/evaluate candidate hypotheses without opening downstream holdouts.",
+      "authority": "AUTO: Factory + deterministic Discovery with optional LLM proposals; MANUAL: Owner exact candidates. PASS/FAIL always deterministic.",
+      "contracts": [
+        "Topology allocation already supports Single/Hybrid priority including 0=single-only, 1=hybrid-only and intermediate percentages/AUTO allocation",
+        "Per-family Small/Balanced/Large priority biases search location inside dynamic capacity and never hard-slices or widens executable ceilings",
+        "Fidelity cheap screen may allocate compute but can never qualify a candidate",
+        "Only Full chronological WFA can qualify a candidate for Pool",
+        "Policy Discovery/window discovery/experiment blocks/research memory are existing Discovery capabilities when enabled",
+        "LLM proposals never own admission or PASS/FAIL",
+        "Discovery qualification uses gate_kpis.discovery; thresholds are frozen with the Factory scientific contract",
+        "Research AUTO minimum trades uses H1 baseline 8 trades/month with timeframe scaling and integer round-up"
+      ],
+      "evidence": [
+        "research_runs/*/cv_leaderboard.json",
+        "all_trials.jsonl",
+        "failure_topology.json",
+        "research_memory.json"
+      ],
+      "next": "POOL"
+    },
+    {
+      "id": "POOL",
+      "order": 4,
+      "purpose": "Freeze WFA-qualified candidates before downstream validation.",
+      "authority": "DETERMINISTIC",
+      "defaults": {
+        "target_pool": 12,
+        "minimum_pool": 12,
+        "pool_diversity_weight": 0.15
+      },
+      "contracts": [
+        "Only independently revalidated Full-WFA PASS candidates enter",
+        "AUTO Pool authority is exactly 12 candidates",
+        "pool evidence plus Discovery/Tournament/refit-history snapshots are hash-sealed before CPCV",
+        "CPCV results cannot retroactively tune active Discovery"
+      ],
+      "evidence": [
+        "candidate_pool.json",
+        "factory_manifest.json"
+      ],
+      "next": "CPCV"
+    },
+    {
+      "id": "CPCV",
+      "order": 5,
+      "purpose": "Robustness qualification on purged combinatorial partitions after Pool freeze.",
+      "authority": "DETERMINISTIC_HARD_GATE",
+      "defaults": {
+        "groups": 6,
+        "test_groups": 2,
+        "max_combinations": 15,
+        "purge_bars": 24,
+        "embargo_bars": 24,
+        "target_survivors": 3,
+        "minimum_survivors_to_tournament": 1
+      },
+      "contracts": [
+        "Finalist ranking is frozen from WFA OOF evidence before CPCV opens",
+        "exactly 15 purged+embargoed splits for N=6,k=2; CPCV cannot be disabled",
+        "purge_bars and embargo_bars must each be >= label horizon",
+        "5 canonical reconstructed chronological paths feed path-dependent Advanced KPI",
+        "DL/hybrid fixed seed confirmation = 42 -> 11 -> 77; all required seeds PASS; progressive stop on failure; no seed mining",
+        "CPCV hard gates come from gate_kpis.cpcv and cannot be offset by ranking score",
+        "PBO is CPCV-only and optional by default. v1.3.2 can compute cross-strategy CSCV-style PBO from the six-group CPCV OOS expectancy matrix when enough finalists exist; candidate-local pseudo-PBO remains forbidden. If Owner enables the hard gate and matrix evidence is insufficient, CPCV fails closed."
+      ],
+      "evidence": [
+        "cpcv_finalist_plan.json",
+        "cpcv_qualification_evidence.json",
+        "cpcv_survivors.json"
+      ],
+      "next": "TOURNAMENT"
+    },
+    {
+      "id": "TOURNAMENT",
+      "order": 6,
+      "purpose": "Apply frozen Tournament hard eligibility to every CPCV survivor, then rank PASS survivors; Tournament is not the untouched Fresh/OOS validation stage.",
+      "authority": "DETERMINISTIC_HARD_GATE",
+      "contracts": [
+        "Tournament does not select a single winner; every KPI survivor proceeds",
+        "stage verifies CPCV terminal seal and exact survivor identity",
+        "stage uses the Tournament snapshot frozen before downstream validation",
+        "base threshold or frozen CP_POLICY_V1 is replayed exactly",
+        "Tournament eligibility uses gate_kpis.tournament; temporal/regime/stress evidence cannot be rescued by ranking",
+        "all hard-gate survivors proceed; Tournament ranking does not impose Top-K elimination"
+      ],
+      "evidence": [
+        "tournament_immutable.csv",
+        "tournament_leaderboard.json",
+        "tournament_survivors.json"
+      ],
+      "next": "MONTE_CARLO"
+    },
+    {
+      "id": "MONTE_CARLO",
+      "order": 7,
+      "purpose": "Bootstrap Tournament trade outcomes and reject candidates whose robust tail distribution violates survival gates.",
+      "authority": "DETERMINISTIC_HARD_GATE",
+      "defaults": {
+        "simulations": 10000
+      },
+      "contracts": [
+        "Tournament terminal seal and exact survivor↔trade-return set are verified before simulation",
+        "minimum 100 simulations",
+        "Monte Carlo uses gate_kpis.monte_carlo independently: tail PF/expectancy/recovery, P95 DD, and configured probability loss/ruin/survival",
+        "all Monte-Carlo survivors preserve model/seed/threshold/policy identity and proceed to Forward",
+        "terminal Monte Carlo evidence is hash-sealed"
+      ],
+      "evidence": [
+        "monte_carlo_evidence.json",
+        "monte_carlo_survivors.json"
+      ],
+      "next": "FRESH_FORWARD"
+    },
+    {
+      "id": "FRESH_FORWARD",
+      "order": 8,
+      "purpose": "Evaluate frozen survivors on new/locked Fresh Forward data that was not used for selection.",
+      "authority": "DETERMINISTIC_HARD_GATE_NO_TUNING",
+      "contracts": [
+        "Fresh/Forward evidence is not a tuning input for the same snapshot",
+        "Fresh start boundary and pre-Forward refit history are frozen before OOS",
+        "each Fresh extension must pass canonical Data Quality and same-symbol/timeframe authority",
+        "committed Forward checks are append-only and individually sealed",
+        "insufficient sample waits for new data rather than fabricating PASS",
+        "every Monte-Carlo survivor is evaluated; Fresh Forward uses gate_kpis.fresh_forward independently and only PASS candidates may be ranked for Champion",
+        "sufficient sample with zero PASS survivors is terminal for that Factory, not a fake wait state",
+        "no runner-up substitution after a failed Forward candidate unless an explicit future contract says otherwise"
+      ],
+      "evidence": [
+        "forward_immutable_*.csv",
+        "forward_evidence_*.json",
+        "forward_leaderboard_*.json",
+        "forward_check_*_terminal_seal.json"
+      ],
+      "next": "CHAMPION"
+    },
+    {
+      "id": "CHAMPION",
+      "order": 9,
+      "purpose": "Select top-ranked Forward PASS candidate, export executable ONNX runtime and verify parity.",
+      "authority": "DETERMINISTIC_SELECTION_AND_RUNTIME_GATE",
+      "promotion_contract_source": "gate_kpis.champion_promotion",
+      "contracts": [
+        "Champion adds no new market/backtest dataset test; it verifies gate_kpis.champion_promotion",
+        "Forward PASS precedes ranking",
+        "Champion is the exact top-ranked Forward PASS identity and final fit uses only frozen pre-Forward history",
+        "runtime manifest locks CP32 feature order and SELL/SKIP/BUY class order",
+        "policy-qualified Champion exports a separately hashed CP_POLICY_V1 artifact",
+        "ONNX parity tolerance comes from acceptance.max_onnx_abs_error",
+        "FACTORY_WINNER_RUNTIME_BLOCKED means research selection passed but runtime export/parity failed; do not rerun research to hide a runtime defect",
+        "Model Research outputs Challenger artifacts first; it never self-promotes a research winner into Production Champion",
+        "v0.10.0 Challenger filenames are human-readable family+UTC identities; hash remains integrity evidence only, never operator-facing filename identity",
+        "Owner promotion is explicit from the Champion registry after existing deterministic parity/test/shadow/promotion gates pass",
+        "Model Challenger promotion is independent from Strategy Challenger promotion; model promotion cannot change SL/TP/MaxHold or Strategy execution geometry"
+      ],
+      "evidence": [
+        "champion.json",
+        "champion_runtime/runtime_manifest.json",
+        "champion_terminal_seal.json",
+        "factory_manifest.json"
+      ],
+      "next": "RUNTIME_EXTERNAL_VALIDATION"
+    }
+  ],
+  "data_contract": {
+    "feature_contract": "CP32_V1",
+    "feature_count": 32,
+    "classes": [
+      "SELL",
+      "SKIP",
+      "BUY"
+    ],
+    "label_method": "ATR-scaled first-barrier/timeout outcome using Strategy Optimizer/Max EA execution geometry inherited from uniform CP32 sl_atr/tp_atr/max_hold_bars; ambiguous dual-hit bars are dropped by default; SKIP when edge/margin requirements are not met. Execution geometry is not a Model Research knob.",
+    "current_label_defaults": {
+      "min_edge_r": 0.15,
+      "min_margin_r": 0.1,
+      "ambiguous_policy": "drop",
+      "utility_weight_enabled": true,
+      "utility_weight_scale": 0.5,
+      "utility_weight_cap_r": 2.0
+    },
+    "data_quality_fail_closed": true
+  },
+  "models": {
+    "standalone_deployable": [
+      {
+        "family": "xgboost",
+        "category": "ML",
+        "role": "policy",
+        "input_contract": null,
+        "hybrid_compatible": true,
+        "architecture_note": null,
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "lightgbm",
+        "category": "ML",
+        "role": "policy",
+        "input_contract": null,
+        "hybrid_compatible": true,
+        "architecture_note": null,
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "random_forest",
+        "category": "ML",
+        "role": "policy",
+        "input_contract": null,
+        "hybrid_compatible": true,
+        "architecture_note": null,
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "gru",
+        "category": "DL",
+        "role": "temporal",
+        "input_contract": "CP32_SEQUENCE_V1",
+        "hybrid_compatible": true,
+        "architecture_note": null,
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "lstm",
+        "category": "DL",
+        "role": "temporal",
+        "input_contract": "CP32_SEQUENCE_V1",
+        "hybrid_compatible": true,
+        "architecture_note": null,
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "tcn",
+        "category": "DL",
+        "role": "temporal",
+        "input_contract": "CP32_SEQUENCE_V1",
+        "hybrid_compatible": true,
+        "architecture_note": null,
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "transformer",
+        "category": "DL",
+        "role": "temporal",
+        "input_contract": "CP32_SEQUENCE_V1",
+        "hybrid_compatible": true,
+        "architecture_note": "Vanilla causal Transformer Encoder; scientific control for Transformer-family comparisons.",
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "transformer_moe",
+        "category": "DL",
+        "role": "temporal",
+        "input_contract": "CP32_SEQUENCE_V1",
+        "hybrid_compatible": true,
+        "architecture_note": "Experimental causal Transformer with latent learned Top-K FFN experts; TREND/RANGE/TRANSITION/SHOCK names are descriptive priors only and are not supervised expert identities; complexity must beat simpler Transformer/TCN/GRU baselines OOS.",
+        "strategy_expert_prior": [
+          "TREND",
+          "RANGE",
+          "TRANSITION",
+          "SHOCK"
+        ],
+        "strategy_expert_prior_semantics": "DESCRIPTIVE_PRIOR_ONLY_NOT_SUPERVISED_EXPERT_IDENTITY",
+        "expert_identity": "LATENT_LEARNED_EXPERTS_0_TO_N_MINUS_1"
+      },
+      {
+        "family": "patchtst",
+        "category": "DL",
+        "role": "temporal",
+        "input_contract": "CP32_SEQUENCE_V1",
+        "hybrid_compatible": true,
+        "architecture_note": "CPMF multivariate causal-patch adaptation: chronological patches + Transformer encoder; fixed CP32 historical input only.",
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "itransformer",
+        "category": "DL",
+        "role": "temporal",
+        "input_contract": "CP32_SEQUENCE_V1",
+        "hybrid_compatible": true,
+        "architecture_note": "iTransformer-style inverted variable tokens; each CP32 feature token summarizes the historical lookback.",
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "tft",
+        "category": "DL",
+        "role": "temporal",
+        "input_contract": "CP32_SEQUENCE_V1",
+        "hybrid_compatible": true,
+        "architecture_note": "Observed-covariate TFT adaptation: variable selection + recurrent local processing + causal attention; no fabricated static/known-future covariates.",
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      }
+    ],
+    "temporal_families": [
+      "gru",
+      "lstm",
+      "tcn",
+      "transformer",
+      "transformer_moe",
+      "patchtst",
+      "itransformer",
+      "tft"
+    ],
+    "policy_families": [
+      "xgboost",
+      "lightgbm",
+      "random_forest"
+    ],
+    "legacy_hybrid_aliases": [
+      {
+        "family": "hybrid_gru_xgboost",
+        "category": "HYBRID",
+        "role": "legacy_hybrid",
+        "input_contract": "CP_HYBRID_GRU_CLASSICAL_V1",
+        "hybrid_compatible": false,
+        "architecture_note": null,
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "hybrid_gru_lightgbm",
+        "category": "HYBRID",
+        "role": "legacy_hybrid",
+        "input_contract": "CP_HYBRID_GRU_CLASSICAL_V1",
+        "hybrid_compatible": false,
+        "architecture_note": null,
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      },
+      {
+        "family": "hybrid_gru_random_forest",
+        "category": "HYBRID",
+        "role": "legacy_hybrid",
+        "input_contract": "CP_HYBRID_GRU_CLASSICAL_V1",
+        "hybrid_compatible": false,
+        "architecture_note": null,
+        "strategy_expert_prior": [],
+        "strategy_expert_prior_semantics": null,
+        "expert_identity": null
+      }
+    ],
+    "dynamic_hybrid_rule": "Any registered hybrid-compatible temporal family may be composed with any registered hybrid-compatible policy family when legal/capacity-feasible.",
+    "family_size_dimensions": {
+      "xgboost": [
+        "n_estimators",
+        "max_depth"
+      ],
+      "lightgbm": [
+        "n_estimators",
+        "num_leaves",
+        "max_depth"
+      ],
+      "random_forest": [
+        "n_estimators",
+        "max_depth"
+      ],
+      "gru": [
+        "hidden_size",
+        "num_layers"
+      ],
+      "hybrid_gru_xgboost": [
+        "gru_hidden_size",
+        "gru_num_layers",
+        "policy_n_estimators",
+        "policy_max_depth"
+      ],
+      "hybrid_gru_lightgbm": [
+        "gru_hidden_size",
+        "gru_num_layers",
+        "policy_n_estimators",
+        "policy_num_leaves",
+        "policy_max_depth"
+      ],
+      "hybrid_gru_random_forest": [
+        "gru_hidden_size",
+        "gru_num_layers",
+        "policy_n_estimators",
+        "policy_max_depth"
+      ],
+      "lstm": [
+        "hidden_size",
+        "num_layers"
+      ],
+      "tcn": [
+        "tcn_channels",
+        "tcn_blocks",
+        "kernel_size"
+      ],
+      "transformer": [
+        "d_model",
+        "num_layers",
+        "ffn_mult"
+      ],
+      "transformer_moe": [
+        "d_model",
+        "num_layers",
+        "expert_ffn",
+        "num_experts"
+      ],
+      "patchtst": [
+        "d_model",
+        "num_layers",
+        "ffn_mult"
+      ],
+      "itransformer": [
+        "d_model",
+        "num_layers",
+        "ffn_mult"
+      ],
+      "tft": [
+        "d_model",
+        "num_layers",
+        "ffn_mult",
+        "tft_lstm_layers"
+      ]
+    },
+    "final_decision_contract": {
+      "classes": [
+        "SELL",
+        "SKIP",
+        "BUY"
+      ],
+      "shape": "[N,3]"
+    },
+    "hybrid_runtime_contract": "Temporal predicts DOWN/UP out-of-fold; policy consumes CP32 plus temporal probabilities/signals and emits SELL/SKIP/BUY. In-sample stacking is forbidden."
+  },
+  "model_training_method_contract": {
+    "schema": "MODEL_TRAINING_METHOD_CONTRACT_V1",
+    "authority": "SINGLE_CANONICAL_TRAINING_METHOD_AUTHORITY",
+    "contract_sha256": "9cff380177ef82771aa2f2e74634a35c1db472ca1a2d00cb0e4bab06507cf99d",
+    "candidate_admission": {
+      "llm_concrete_proposal": "STRICT_EFFECTIVE_BOUNDS_FAIL_CLOSED",
+      "rule": "A concrete LLM Scientist proposal outside effective_parameter_bounds is rejected, never clamped into a different experiment.",
+      "accepted_identity": "requested_params == executable_params except explicitly recorded semantically-equivalent canonicalization",
+      "required_evidence": [
+        "requested_params",
+        "executable_params",
+        "admission_status",
+        "rejection_reason",
+        "canonicalization"
+      ]
+    },
+    "label_horizon_authority": {
+      "source": "CANONICAL_STRATEGY_GEOMETRY_EFFECTIVE_LABEL_HORIZON",
+      "rule": "Do not invent a second horizon authority. Temporal leakage guards inherit the canonical Strategy geometry / effective label horizon."
+    },
+    "temporal_early_stop": {
+      "families": [
+        "gru",
+        "lstm",
+        "tcn",
+        "transformer",
+        "patchtst",
+        "itransformer",
+        "tft",
+        "transformer_moe",
+        "temporal_to_tree_hybrids"
+      ],
+      "authority": "PURGED_INTERNAL_EARLY_VALIDATION",
+      "rule": "Internal supervised training target eligibility must be purged from the early-stop validation boundary by at least the canonical label horizon; causal historical feature context for validation is preserved.",
+      "small_sample": "FAIL_CLOSED_OR_EXPLICIT_PROJECT_SMALL_SAMPLE_FALLBACK_NEVER_UNPURGED"
+    },
+    "moe_routing": {
+      "expert_identity": "LATENT_LEARNED_EXPERTS_0_TO_N_MINUS_1",
+      "strategy_expert_prior_semantics": "DESCRIPTIVE_PRIOR_ONLY_NOT_SUPERVISED_EXPERT_IDENTITY",
+      "top1": "Selected raw soft gate magnitude remains differentiable; never renormalize a single selected gate to exactly 1 before task loss.",
+      "topk_gt1": "Selected raw soft gate weights remain differentiable and mathematically coherent; do not normalize away useful gate-magnitude gradients."
+    },
+    "moe_balance": {
+      "authority": "SOFT_ROUTER_PROBABILITY_COUPLED_WITH_HARD_DISPATCH_LOAD",
+      "rule": "Load-balance objective couples hard dispatch/load fraction per expert with mean raw soft router probability; post-renormalized one-hot usage alone is not sufficient."
+    },
+    "moe_diagnostics": {
+      "authority": "PER_MOE_BLOCK_FROM_RESTORED_BEST_CHECKPOINT",
+      "best_checkpoint_rule": "Routing statistics and deterministic router-gradient probe are recomputed after restoring the best early-stopping checkpoint.",
+      "per_block_required": [
+        "expert_dispatch_share",
+        "mean_soft_router_probability",
+        "routing_entropy",
+        "dispatch_entropy",
+        "maximum_expert_share",
+        "minimum_expert_share",
+        "dead_expert_count",
+        "effective_expert_count",
+        "effective_utilization",
+        "router_gradient_max",
+        "router_gradient_mean",
+        "router_gradient_status",
+        "routing_health_status"
+      ],
+      "overall_rule": "Overall health is conservative across independent MoE blocks; a healthy block may not hide collapse, dead implementation reachability, non-finite gradient, or effectively-zero router gradient in another block.",
+      "aggregate_statistics": "INFORMATIONAL_ONLY_NOT_SOLE_AUTHORITY"
+    },
+    "hybrid_stacking": {
+      "authority": "TEMPORAL_TO_TREE_PURGED_OOF_STACKING",
+      "rule": "Temporal encoder meta-features must be generated out-of-fold under leakage-safe inner purged chronology; in-sample stacking is forbidden. The temporal encoder inherits the same internal early-stop purge and repaired MoE contract when applicable."
+    },
+    "tree_models": {
+      "authority": "UNCHANGED",
+      "contracts": [
+        "XGBoost direct 3-class multi:softprob policy with existing balancing/utility weighting",
+        "LightGBM multiclass policy with existing weighting and regularization/search authority",
+        "RandomForest balanced_subsample with utility sample weighting",
+        "No early stopping is added to tree models"
+      ]
+    }
+  },
+  "research_controls": {
+    "research_mode": [
+      "AUTO",
+      "MANUAL"
+    ],
+    "research_architecture": {
+      "mode": "SCIENTIST_HARDWARE_ADAPTIVE",
+      "require_baseline": true,
+      "allow_dynamic_hybrids": true,
+      "safe_ram_fraction": 0.75,
+      "safe_vram_fraction": 0.8,
+      "max_single_experiment_minutes": 120,
+      "note": "v1.3.1: SCIENTIST_DIRECTED freezes the Owner allow-list while persistent LangGraph Scientist may switch families/topologies within that legal universe; deterministic hardware, leakage, KPI and capacity gates remain authority.",
+      "family_selection_mode": "SCIENTIST_DIRECTED",
+      "allowed_families": [
+        "lightgbm",
+        "xgboost",
+        "random_forest",
+        "gru",
+        "lstm",
+        "tcn",
+        "transformer",
+        "transformer_moe",
+        "patchtst",
+        "itransformer",
+        "tft"
+      ],
+      "sequence_capacity_hint": 128,
+      "capacity_governor": "EVIDENCE_AWARE_DYNAMIC_MODEL_CAPACITY_V3",
+      "capacity_note": "Temporal capacity is admitted per candidate by min(LEGAL architecture, RESOURCE execution, SCIENTIFIC effective-information) on actual executable parameter count. Historical recommended envelopes are starting guidance only; preferred/extended bands guide search but never override hard ceilings.",
+      "hybrid_priority": 0.5,
+      "topology_priority_schema": "CP_TOPOLOGY_PRIORITY_V1",
+      "topology_priority_note": "Owner slider controls candidate allocation only: 0.00=100% single, 0.50=50/50, 1.00=100% hybrid. It is not prediction blending; Scientist selects families/compositions inside the allowed topology budget.",
+      "family_size_priority_schema": "CP_FAMILY_SIZE_PRIORITY_V1",
+      "family_size_priorities": {
+        "xgboost": 0.5,
+        "lightgbm": 0.5,
+        "random_forest": 0.5,
+        "gru": 0.5,
+        "lstm": 0.5,
+        "tcn": 0.5,
+        "transformer": 0.5,
+        "transformer_moe": 0.5,
+        "patchtst": 0.5,
+        "itransformer": 0.5,
+        "tft": 0.5
+      },
+      "family_size_priority_note": "Per-family Owner slider: 0.00=Small preference, 0.50=balanced, 1.00=Large preference toward the upper currently justified region. It biases candidate generation only and never hard-slices or widens LEGAL/RESOURCE/SCIENTIFIC ceilings.",
+      "topology_selection_mode": "SCIENTIST_DIRECTED"
+    },
+    "model_size_advisor": {
+      "schema": "MAX_MODEL_SIZE_ADVISOR_V1",
+      "authority": "ADVISORY_ONLY_NEVER_AUTO_APPLY",
+      "auto_slider_semantics": "0_TO_1_STEP_0_05_SEARCH_PREFERENCE; executable bounds are not hard-sliced by the slider; dynamic candidate capacity remains authoritative",
+      "manual_semantics": "Exact Owner numeric values; tooltip shows suggested/legal range only",
+      "data_scope": "Discovery window only; no Fresh/Locked/Shadow/Promotion feedback",
+      "wfa_min_train_authority": "split.min_train_rows"
+    },
+    "trade_sample_policy": {
+      "mode": "AUTO",
+      "base_h1_trades_per_month": 8,
+      "sufficiency_ratio": 1.0,
+      "timeframe_scaling": "SQRT",
+      "min_timeframe_factor": 0.2,
+      "max_timeframe_factor": 4.0,
+      "absolute_floor_discovery": 0,
+      "absolute_floor_tournament": 0,
+      "absolute_floor_fresh": 0,
+      "note": "v0.7.9: H1 research baseline 8 trades/month. Timeframe-scaled monthly rate is rounded up to integer, then exact evaluated months are prorated and final required trades are rounded up. No hidden sufficiency haircut.",
+      "rounding": "CEIL_MONTHLY_RATE_AND_FINAL_REQUIREMENT"
+    },
+    "strategy_optimizer_kpi": {
+      "schema": "MAX_STRATEGY_OPTIMIZER_KPI_V2",
+      "min_profit_factor": 1.0,
+      "min_recovery_factor": 0.0,
+      "min_expectancy_r": 0.0,
+      "base_h1_trades_per_month": 20,
+      "timeframe_scaling": "SQRT",
+      "min_timeframe_factor": 0.2,
+      "max_timeframe_factor": 4.0,
+      "rounding": "CEIL_MONTHLY_RATE_AND_FINAL_REQUIREMENT",
+      "min_weighted_r": 0.0
+    },
+    "gate_kpis": {
+      "schema": "MAX_GATE_KPI_PROFILES_V1",
+      "discovery": {
+        "profile_version": "DISCOVERY_KPI_V1",
+        "max_drawdown_r": 12.0,
+        "cv_max_worst_fold_drawdown_r": 18.0,
+        "cv_min_median_recovery_factor": 1.5,
+        "cv_min_worst_fold_recovery_factor": 1.0,
+        "cv_min_median_profit_factor": 1.25,
+        "cv_min_median_expectancy_r": 0.1,
+        "cv_min_worst_expectancy_r": 0.0,
+        "cv_min_positive_fold_ratio": 0.66,
+        "min_positive_month_ratio": 0.55,
+        "min_positive_quarter_ratio": 0.6,
+        "max_dominant_positive_regime_share": 0.75,
+        "max_top10_win_profit_share": 0.55,
+        "stress_min_expectancy_r": {
+          "spread_x1.25": 0.08,
+          "spread_x1.50": 0.05
+        },
+        "sensitivity_min_profitable_ratio": 0.66,
+        "risk_kpis": {
+          "sharpe": {
+            "label": "Sharpe Ratio",
+            "enabled": true,
+            "threshold": 0.15,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R_NON_ANNUALIZED",
+            "wfa_metric": "median_sharpe_ratio",
+            "point_metric": "sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 10.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "sortino": {
+            "label": "Sortino Ratio",
+            "enabled": true,
+            "threshold": 0.25,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R; MAR=0.00R",
+            "wfa_metric": "median_sortino_ratio",
+            "point_metric": "sortino_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 20.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "calmar": {
+            "label": "Calmar / MAR",
+            "enabled": false,
+            "threshold": 1.0,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "LINEAR_ANNUALIZED_R_OVER_MAX_DD_R",
+            "wfa_metric": "median_calmar_mar_ratio",
+            "point_metric": "calmar_mar_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -10.0,
+            "ui_max": 50.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_sample_years": 0.25
+          },
+          "psr": {
+            "label": "PSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "PROBABILISTIC_SHARPE",
+            "benchmark_sharpe": 0.2,
+            "wfa_metric": "median_probabilistic_sharpe_ratio",
+            "point_metric": "probabilistic_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 50
+          },
+          "dsr": {
+            "label": "DSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "DEFLATED_SHARPE; PREDECLARED_CYCLE_BUDGET",
+            "wfa_metric": "median_deflated_sharpe_ratio",
+            "point_metric": "deflated_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 100
+          },
+          "ulcer": {
+            "label": "Ulcer Index",
+            "enabled": true,
+            "threshold": 8.0,
+            "direction": "lower",
+            "unit": "R",
+            "basis": "CHRONOLOGICAL_EQUITY_DRAWDOWN_R",
+            "wfa_metric": "median_ulcer_index_r",
+            "point_metric": "ulcer_index_r",
+            "canonical_aggregate": "worst",
+            "ui_min": 0.0,
+            "ui_max": 100.0,
+            "ui_step": 0.1,
+            "min_trades": 20
+          },
+          "cvar": {
+            "label": "CVaR / Expected Shortfall 95%",
+            "enabled": false,
+            "threshold": -2.0,
+            "direction": "higher",
+            "unit": "R/day",
+            "basis": "DAILY_AGGREGATED_R; WORST_5_PERCENT_DAYS",
+            "wfa_metric": "median_daily_cvar95_r",
+            "point_metric": "daily_cvar95_r",
+            "canonical_aggregate": "worst",
+            "ui_min": -20.0,
+            "ui_max": 0.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_active_days": 40,
+            "min_tail_days": 2,
+            "allow_positive_tail_floor": false
+          }
+        },
+        "cv_min_overall_expectancy_r": 0.1
+      },
+      "cpcv": {
+        "profile_version": "CPCV_KPI_V1",
+        "cv_min_median_profit_factor": 1.25,
+        "cv_min_median_expectancy_r": 0.1,
+        "cpcv_min_worst_expectancy_r": 0.0,
+        "cv_max_worst_fold_drawdown_r": 18.0,
+        "cv_min_median_recovery_factor": 1.5,
+        "cv_min_worst_fold_recovery_factor": 1.0,
+        "cv_min_positive_fold_ratio": 0.66,
+        "cpcv_min_path_sample_ratio": 0.66,
+        "worst_expectancy_epsilon": 1e-09,
+        "pbo_enabled": false,
+        "pbo_max": 0.2,
+        "pbo_status": "COMPUTABLE_FROM_CROSS_STRATEGY_CPCV_GROUP_MATRIX_WHEN_ENABLED",
+        "risk_kpis": {
+          "sharpe": {
+            "label": "Sharpe Ratio",
+            "enabled": true,
+            "threshold": 0.2,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R_NON_ANNUALIZED",
+            "wfa_metric": "median_sharpe_ratio",
+            "point_metric": "sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 10.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "sortino": {
+            "label": "Sortino Ratio",
+            "enabled": true,
+            "threshold": 0.3,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R; MAR=0.00R",
+            "wfa_metric": "median_sortino_ratio",
+            "point_metric": "sortino_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 20.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "calmar": {
+            "label": "Calmar / MAR",
+            "enabled": false,
+            "threshold": 1.0,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "LINEAR_ANNUALIZED_R_OVER_MAX_DD_R",
+            "wfa_metric": "median_calmar_mar_ratio",
+            "point_metric": "calmar_mar_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -10.0,
+            "ui_max": 50.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_sample_years": 0.25
+          },
+          "psr": {
+            "label": "PSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "PROBABILISTIC_SHARPE",
+            "benchmark_sharpe": 0.2,
+            "wfa_metric": "median_probabilistic_sharpe_ratio",
+            "point_metric": "probabilistic_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 50
+          },
+          "dsr": {
+            "label": "DSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "DEFLATED_SHARPE; PREDECLARED_CYCLE_BUDGET",
+            "wfa_metric": "median_deflated_sharpe_ratio",
+            "point_metric": "deflated_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 100
+          },
+          "ulcer": {
+            "label": "Ulcer Index",
+            "enabled": true,
+            "threshold": 8.0,
+            "direction": "lower",
+            "unit": "R",
+            "basis": "CHRONOLOGICAL_EQUITY_DRAWDOWN_R",
+            "wfa_metric": "median_ulcer_index_r",
+            "point_metric": "ulcer_index_r",
+            "canonical_aggregate": "worst",
+            "ui_min": 0.0,
+            "ui_max": 100.0,
+            "ui_step": 0.1,
+            "min_trades": 20
+          },
+          "cvar": {
+            "label": "CVaR / Expected Shortfall 95%",
+            "enabled": true,
+            "threshold": -2.5,
+            "direction": "higher",
+            "unit": "R/day",
+            "basis": "DAILY_AGGREGATED_R; WORST_5_PERCENT_DAYS",
+            "wfa_metric": "median_daily_cvar95_r",
+            "point_metric": "daily_cvar95_r",
+            "canonical_aggregate": "worst",
+            "ui_min": -20.0,
+            "ui_max": 0.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_active_days": 40,
+            "min_tail_days": 2,
+            "allow_positive_tail_floor": false
+          }
+        },
+        "pbo_min_candidates": 4
+      },
+      "tournament": {
+        "profile_version": "TOURNAMENT_KPI_V1",
+        "max_drawdown_r": 12.0,
+        "min_recovery_factor": 2.0,
+        "min_profit_factor": 1.35,
+        "min_expectancy_r": 0.15,
+        "require_every_year_nonnegative": true,
+        "min_positive_month_ratio": 0.55,
+        "min_positive_quarter_ratio": 0.6,
+        "max_dominant_positive_regime_share": 0.75,
+        "max_top10_win_profit_share": 0.55,
+        "stress_x1_50_min_expectancy_r": 0.05,
+        "risk_kpis": {
+          "sharpe": {
+            "label": "Sharpe Ratio",
+            "enabled": true,
+            "threshold": 0.3,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R_NON_ANNUALIZED",
+            "wfa_metric": "median_sharpe_ratio",
+            "point_metric": "sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 10.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "sortino": {
+            "label": "Sortino Ratio",
+            "enabled": true,
+            "threshold": 0.5,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R; MAR=0.00R",
+            "wfa_metric": "median_sortino_ratio",
+            "point_metric": "sortino_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 20.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "calmar": {
+            "label": "Calmar / MAR",
+            "enabled": true,
+            "threshold": 1.0,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "LINEAR_ANNUALIZED_R_OVER_MAX_DD_R",
+            "wfa_metric": "median_calmar_mar_ratio",
+            "point_metric": "calmar_mar_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -10.0,
+            "ui_max": 50.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_sample_years": 0.25
+          },
+          "psr": {
+            "label": "PSR",
+            "enabled": true,
+            "threshold": 0.8,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "PROBABILISTIC_SHARPE",
+            "benchmark_sharpe": 0.2,
+            "wfa_metric": "median_probabilistic_sharpe_ratio",
+            "point_metric": "probabilistic_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 50
+          },
+          "dsr": {
+            "label": "DSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "DEFLATED_SHARPE; PREDECLARED_CYCLE_BUDGET",
+            "wfa_metric": "median_deflated_sharpe_ratio",
+            "point_metric": "deflated_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 100
+          },
+          "ulcer": {
+            "label": "Ulcer Index",
+            "enabled": true,
+            "threshold": 6.0,
+            "direction": "lower",
+            "unit": "R",
+            "basis": "CHRONOLOGICAL_EQUITY_DRAWDOWN_R",
+            "wfa_metric": "median_ulcer_index_r",
+            "point_metric": "ulcer_index_r",
+            "canonical_aggregate": "worst",
+            "ui_min": 0.0,
+            "ui_max": 100.0,
+            "ui_step": 0.1,
+            "min_trades": 20
+          },
+          "cvar": {
+            "label": "CVaR / Expected Shortfall 95%",
+            "enabled": true,
+            "threshold": -2.0,
+            "direction": "higher",
+            "unit": "R/day",
+            "basis": "DAILY_AGGREGATED_R; WORST_5_PERCENT_DAYS",
+            "wfa_metric": "median_daily_cvar95_r",
+            "point_metric": "daily_cvar95_r",
+            "canonical_aggregate": "worst",
+            "ui_min": -20.0,
+            "ui_max": 0.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_active_days": 40,
+            "min_tail_days": 2,
+            "allow_positive_tail_floor": false
+          }
+        },
+        "ranking_only_after_hard_pass": true,
+        "top_k_elimination": false
+      },
+      "monte_carlo": {
+        "profile_version": "MONTE_CARLO_KPI_V1",
+        "min_p05_profit_factor": 1.35,
+        "min_p05_expectancy_r": 0.15,
+        "max_p95_drawdown_r": 12.0,
+        "min_p05_recovery_factor": 2.0,
+        "max_probability_loss": 1.0,
+        "max_probability_ruin": 1.0,
+        "min_survival_rate": 0.0,
+        "ruin_floor_r": -20.0
+      },
+      "fresh_forward": {
+        "profile_version": "FRESH_FORWARD_KPI_V2_PRODUCTION",
+        "max_drawdown_r": 10.0,
+        "min_recovery_factor": 3.0,
+        "min_profit_factor": 1.5,
+        "min_expectancy_r": 0.5,
+        "risk_kpis": {
+          "sharpe": {
+            "label": "Sharpe Ratio",
+            "enabled": true,
+            "threshold": 0.4,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R_NON_ANNUALIZED",
+            "wfa_metric": "median_sharpe_ratio",
+            "point_metric": "sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 10.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "sortino": {
+            "label": "Sortino Ratio",
+            "enabled": true,
+            "threshold": 0.65,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R; MAR=0.00R",
+            "wfa_metric": "median_sortino_ratio",
+            "point_metric": "sortino_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 20.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "calmar": {
+            "label": "Calmar / MAR",
+            "enabled": true,
+            "threshold": 1.25,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "LINEAR_ANNUALIZED_R_OVER_MAX_DD_R",
+            "wfa_metric": "median_calmar_mar_ratio",
+            "point_metric": "calmar_mar_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -10.0,
+            "ui_max": 50.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_sample_years": 0.25
+          },
+          "psr": {
+            "label": "PSR",
+            "enabled": true,
+            "threshold": 0.85,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "PROBABILISTIC_SHARPE",
+            "benchmark_sharpe": 0.2,
+            "wfa_metric": "median_probabilistic_sharpe_ratio",
+            "point_metric": "probabilistic_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 50
+          },
+          "dsr": {
+            "label": "DSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "DEFLATED_SHARPE; PREDECLARED_CYCLE_BUDGET",
+            "wfa_metric": "median_deflated_sharpe_ratio",
+            "point_metric": "deflated_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 100
+          },
+          "ulcer": {
+            "label": "Ulcer Index",
+            "enabled": true,
+            "threshold": 5.0,
+            "direction": "lower",
+            "unit": "R",
+            "basis": "CHRONOLOGICAL_EQUITY_DRAWDOWN_R",
+            "wfa_metric": "median_ulcer_index_r",
+            "point_metric": "ulcer_index_r",
+            "canonical_aggregate": "worst",
+            "ui_min": 0.0,
+            "ui_max": 100.0,
+            "ui_step": 0.1,
+            "min_trades": 20
+          },
+          "cvar": {
+            "label": "CVaR / Expected Shortfall 95%",
+            "enabled": true,
+            "threshold": -1.5,
+            "direction": "higher",
+            "unit": "R/day",
+            "basis": "DAILY_AGGREGATED_R; WORST_5_PERCENT_DAYS",
+            "wfa_metric": "median_daily_cvar95_r",
+            "point_metric": "daily_cvar95_r",
+            "canonical_aggregate": "worst",
+            "ui_min": -20.0,
+            "ui_max": 0.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_active_days": 40,
+            "min_tail_days": 2,
+            "allow_positive_tail_floor": false
+          }
+        },
+        "degradation_enabled": false,
+        "max_expectancy_degradation_ratio": 1.0,
+        "max_pf_degradation_ratio": 1.0,
+        "max_drawdown_expansion_ratio": 999.0
+      },
+      "champion_promotion": {
+        "profile_version": "CHAMPION_PROMOTION_V1",
+        "require_all_upstream_pass": true,
+        "require_artifact_integrity": true,
+        "require_no_post_forward_tuning": true,
+        "require_onnx_export": true,
+        "require_onnx_parity": true
+      }
+    },
+    "kpi_ui_visibility_contract": {
+      "schema": "MAX_KPI_UI_FULL_AUTHORITY_V1",
+      "rule": "Every active configurable hard PASS/FAIL threshold and enabled risk-KPI evidence-sufficiency requirement must be visible/editable in Advanced -> KPI by Gate; methodology invariants remain non-editable.",
+      "evaluation_formula_change": false,
+      "inactive_fields_are_not_presented_as_active_kpi": true
+    },
+    "model_inspector_live_runtime": {
+      "schema": "MAX_MODEL_INSPECTOR_LIVE_RUNTIME_V1",
+      "authority": "READ_ONLY_OBSERVABILITY_ONLY",
+      "model_detail": "Stored candidate setup plus executable temporal trainable-parameter count when computable; tree models expose structural complexity and never fabricate neural parameter counts.",
+      "research_polling": "2-second read-only lifecycle polling while active.",
+      "optimizer_polling": "2-second read-only lifecycle polling while active.",
+      "ui_rule": "Research and Strategy Optimizer live status are flat/outside card.",
+      "forbidden": [
+        "MUTATE_CANDIDATE_FROM_INSPECTOR",
+        "MUTATE_RESEARCH_STATE_FROM_POLL",
+        "INVENT_TREE_PARAMETER_COUNT"
+      ]
+    },
+    "fidelity_ladder": {
+      "enabled": true,
+      "schema": "CP_FIDELITY_LADDER_V1",
+      "cheap_folds": 2,
+      "cheap_resource_scale": 0.5,
+      "promote_fraction": 0.33,
+      "min_promote_per_round": 2,
+      "max_promote_per_round": 3,
+      "qualification_authority": "FULL_WFA_ONLY",
+      "note": "Cheap screen allocates CPU only. It can never qualify a candidate. Promoted candidates are re-run with the original full CandidateSpec and full WFA contract."
+    },
+    "policy_discovery": {
+      "enabled": true,
+      "require_classification_signal": true,
+      "min_balanced_accuracy": 0.36,
+      "max_policies": 72,
+      "take_threshold_grid": [
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9
+      ],
+      "direction_threshold_grid": [
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7
+      ],
+      "directional_margin_grid": [
+        0.0,
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.25
+      ],
+      "max_entropy_grid": [
+        1.1,
+        1.0,
+        0.9,
+        0.8,
+        0.7,
+        0.6
+      ],
+      "regime_modes": [
+        "ALL",
+        "NON_SHOCK",
+        "TREND_RANGE",
+        "TREND",
+        "RANGE",
+        "TRANSITION",
+        "TREND_TRANSITION",
+        "RANGE_TRANSITION"
+      ]
+    },
+    "window_discovery": {
+      "enabled": true,
+      "mode": "INTEGRATED_CANDIDATE_SEARCH",
+      "min_months": 6,
+      "max_months": 72,
+      "note": "training_memory_months is sampled per candidate; locked/fresh holdouts are never opened for selection."
+    },
+    "experiment_blocks": {
+      "enabled": true,
+      "schema": "CP_EXPERIMENT_BLOCK_V3_CREATIVITY_PARITY",
+      "budget_per_block": 6,
+      "control_recheck_ratio": 0.1,
+      "active_hypothesis_limit": 1,
+      "qualification_authority": "FULL_WFA_ONLY",
+      "note": "R5: bounded hypothesis blocks include executable dynamic HYBRID_ABLATION and SEED_STABILITY. Blocks can change what is tested, never qualification authority."
+    },
+    "research_memory": {
+      "enabled": true,
+      "schema": "CP_RESEARCH_MEMORY_V1",
+      "note": "New generations inherit OOF-only elites, failure gates, scientist agenda, and guided evidence. Locked/fresh holdout evidence is excluded."
+    },
+    "learning_system": {
+      "schema": "MAX_AGENTIC_RESEARCH_LEARNING_V1",
+      "skills": {
+        "enabled": true,
+        "pack": "MAX_DATA_SCIENTIST_SKILL_PACK_V1",
+        "authority": "ADVISORY_METHOD_ONLY",
+        "verify_hashes": true
+      },
+      "structured_research_memory": {
+        "enabled": true,
+        "schema": "MAX_STRUCTURED_RESEARCH_MEMORY_V1",
+        "max_experiences": 2048,
+        "protected_stage_learning": "DENIED"
+      },
+      "learning_policy": {
+        "enabled": true,
+        "schema": "MAX_DETERMINISTIC_LEARNING_POLICY_V1",
+        "mode": "DETERMINISTIC_STRUCTURED_MEMORY_RANKING",
+        "authority": "ADVISORY_NEXT_EXPERIMENT_RANKING_ONLY",
+        "max_recommendations": 5
+      },
+      "future_foundations": {
+        "embedder": {
+          "enabled": false,
+          "provider": "NONE",
+          "interface": "MAX_EMBEDDER_INTERFACE_V1"
+        },
+        "rag": {
+          "enabled": false,
+          "backend": "NONE",
+          "interface": "MAX_RAG_INTERFACE_V1",
+          "requires_embedder": true
+        },
+        "rl": {
+          "enabled": false,
+          "mode": "OFF",
+          "interface": "MAX_RL_POLICY_INTERFACE_V1",
+          "replay_schema": "MAX_RESEARCH_EXPERIENCE_V1"
+        },
+        "note": "Foundation interfaces only in v1.4.0. Enabling any future component before its dedicated implementation release fails closed."
+      }
+    },
+    "research_feedback": {
+      "enabled": true,
+      "schema": "CP_RESEARCH_FEEDBACK_V1",
+      "max_exposures": {
+        "POOL": 4,
+        "CPCV": 3,
+        "TOURNAMENT": 2,
+        "MONTE_CARLO": 2
+      },
+      "forward_same_snapshot_learning": false,
+      "note": "Committed downstream failures may inform the next Discovery only under the exact research-contract hash. Fresh Forward remains report-only for the same snapshot."
+    }
+  },
+  "kpi": {
+    "authority": "PER_GATE_NOT_GLOBAL",
+    "scientist_policy": {
+      "authority": "ADVISORY_INTERPRETATION_ONLY_LIVE_GATE_KPIS_REMAIN_RUNTIME_AUTHORITY",
+      "principles": [
+        "Current gate_kpis are runtime authority; enabled=true describes current Owner config, not proof that the metric is scientifically well placed.",
+        "Do not copy one KPI set across gates. Each gate answers a different scientific question.",
+        "Do not enable many correlated risk metrics merely because they exist. Distinguish hard gates from diagnostics and preserve Discovery diversity.",
+        "Never recommend lowering a frozen active-generation threshold after seeing its result. Changes apply only to a new configuration revision/generation.",
+        "Use exact metric units. Do not silently convert percentage drawdown policy into R drawdown or vice versa."
+      ],
+      "owner_policy_references": {
+        "strategy_optimizer": {
+          "h1_min_trades_per_month": 20,
+          "scope": "UPSTREAM_MT5_ONLY"
+        },
+        "research_trade_sample": {
+          "h1_min_trades_per_month": 8,
+          "scope": "MODELLAB_RESEARCH_AUTO_SCALED"
+        },
+        "fresh_production_reference": {
+          "expectancy_r_min": 0.5,
+          "profit_factor_min": 1.5,
+          "recovery_factor_min": 3.0,
+          "max_drawdown_percent_lt": 10.0,
+          "note": "Policy reference from Owner contract. Live Fresh gate_kpis remain execution authority; percent-DD must not be equated to max_drawdown_r without an explicit mapping."
+        }
+      },
+      "gate_roles": {
+        "discovery": {
+          "question": "Can a candidate survive inexpensive screening and full chronological 3-fold WFA with enough trades and acceptable fold consistency?",
+          "preferred_hard_gate_families": [
+            "expectancy/PF/RF/DD",
+            "AUTO trade sufficiency",
+            "worst-fold/non-negative evidence",
+            "fold consistency"
+          ],
+          "risk_metric_policy": "Sharpe/Sortino/Calmar/Ulcer/CVaR are supplementary diagnostics by default; PSR/DSR should not be mandatory early-Discovery defaults.",
+          "anti_pattern": "Do not turn every available risk metric ON and create a correlated zero-survivor filter."
+        },
+        "cpcv": {
+          "question": "Does the frozen candidate remain robust across purged combinatorial partitions and reconstructed paths?",
+          "preferred_hard_gate_families": [
+            "median/aggregate PF and expectancy",
+            "worst-path expectancy/PF/DD",
+            "positive-path ratio",
+            "path sample sufficiency"
+          ],
+          "pbo_policy": "PBO is CPCV-only and OFF by default. When enabled, compute it from the six-group cross-strategy CPCV OOS expectancy matrix with the configured minimum finalist count; insufficient matrix evidence fails closed. Never fabricate candidate-level pseudo-PBO.",
+          "anti_pattern": "Do not simply clone every Discovery risk gate into CPCV."
+        },
+        "tournament": {
+          "question": "Which CPCV survivors remain eligible under the frozen Tournament evaluation and how should PASS survivors be ranked?",
+          "dataset_semantics": "Tournament is not a new untouched OOS/Fresh dataset. It is a deterministic hard-eligibility plus ranking stage after CPCV.",
+          "ranking_policy": "Ranking can order PASS survivors but cannot rescue a hard-gate failure; no Top-K elimination unless a future explicit contract changes this.",
+          "psr_dsr_policy": "PSR may be considered only with predeclared benchmark and adequate sample. DSR requires defensible trial-universe/effective-trials accounting; otherwise leave it OFF/not authoritative."
+        },
+        "monte_carlo": {
+          "question": "Does the candidate survive adverse resampling/path realizations?",
+          "preferred_hard_gate_families": [
+            "P05 expectancy/PF/recovery",
+            "P95 drawdown",
+            "probability of loss",
+            "probability of ruin",
+            "survival rate"
+          ],
+          "anti_pattern": "Do not treat PSR/DSR as Monte Carlo-native metrics; they answer statistical-confidence/multiple-testing questions, not path robustness."
+        },
+        "fresh_forward": {
+          "question": "Does the frozen survivor generalize on untouched Fresh data without same-snapshot tuning?",
+          "policy": "Use strict predeclared absolute production floors plus any predeclared degradation checks. Never relax Fresh after observing failure.",
+          "owner_reference": "Expectancy >=0.50R, PF >=1.50, RF >=3.00, Max DD <10%, H1 trade-sample baseline 8/month (AUTO scaled). Flag unit/schema mismatches instead of silently translating them."
+        },
+        "champion": {
+          "question": "May an upstream PASS candidate be promoted as an executable artifact?",
+          "policy": "No sixth statistical market test. Verify all upstream PASS, artifact integrity, no post-Fresh tuning/config drift, ONNX export and parity/runtime contract."
+        }
+      },
+      "metric_roles": {
+        "sharpe_sortino_calmar_ulcer_cvar": "Useful diagnostics and optionally predeclared hard gates when sample/role justify them; existence in config is not a recommendation to enable them everywhere.",
+        "psr": "Statistical confidence metric; avoid mandatory early-Discovery use by default. If promoted to hard gate, benchmark/sample policy must be explicit.",
+        "dsr": "Multiple-testing/selection-bias metric; requires canonical trial accounting/effective trial universe. Do not compute from only the small survivor pool or pretend migrated enabled=true proves validity.",
+        "pbo": "CPCV/CSCV selection-overfit metric requiring canonical cross-strategy matrix; NOT_COMPUTABLE is distinct from Owner intentionally disabling the concept."
+      }
+    },
+    "gate_profiles": {
+      "schema": "MAX_GATE_KPI_PROFILES_V1",
+      "discovery": {
+        "profile_version": "DISCOVERY_KPI_V1",
+        "max_drawdown_r": 12.0,
+        "cv_max_worst_fold_drawdown_r": 18.0,
+        "cv_min_median_recovery_factor": 1.5,
+        "cv_min_worst_fold_recovery_factor": 1.0,
+        "cv_min_median_profit_factor": 1.25,
+        "cv_min_median_expectancy_r": 0.1,
+        "cv_min_worst_expectancy_r": 0.0,
+        "cv_min_positive_fold_ratio": 0.66,
+        "min_positive_month_ratio": 0.55,
+        "min_positive_quarter_ratio": 0.6,
+        "max_dominant_positive_regime_share": 0.75,
+        "max_top10_win_profit_share": 0.55,
+        "stress_min_expectancy_r": {
+          "spread_x1.25": 0.08,
+          "spread_x1.50": 0.05
+        },
+        "sensitivity_min_profitable_ratio": 0.66,
+        "risk_kpis": {
+          "sharpe": {
+            "label": "Sharpe Ratio",
+            "enabled": true,
+            "threshold": 0.15,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R_NON_ANNUALIZED",
+            "wfa_metric": "median_sharpe_ratio",
+            "point_metric": "sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 10.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "sortino": {
+            "label": "Sortino Ratio",
+            "enabled": true,
+            "threshold": 0.25,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R; MAR=0.00R",
+            "wfa_metric": "median_sortino_ratio",
+            "point_metric": "sortino_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 20.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "calmar": {
+            "label": "Calmar / MAR",
+            "enabled": false,
+            "threshold": 1.0,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "LINEAR_ANNUALIZED_R_OVER_MAX_DD_R",
+            "wfa_metric": "median_calmar_mar_ratio",
+            "point_metric": "calmar_mar_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -10.0,
+            "ui_max": 50.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_sample_years": 0.25
+          },
+          "psr": {
+            "label": "PSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "PROBABILISTIC_SHARPE",
+            "benchmark_sharpe": 0.2,
+            "wfa_metric": "median_probabilistic_sharpe_ratio",
+            "point_metric": "probabilistic_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 50
+          },
+          "dsr": {
+            "label": "DSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "DEFLATED_SHARPE; PREDECLARED_CYCLE_BUDGET",
+            "wfa_metric": "median_deflated_sharpe_ratio",
+            "point_metric": "deflated_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 100
+          },
+          "ulcer": {
+            "label": "Ulcer Index",
+            "enabled": true,
+            "threshold": 8.0,
+            "direction": "lower",
+            "unit": "R",
+            "basis": "CHRONOLOGICAL_EQUITY_DRAWDOWN_R",
+            "wfa_metric": "median_ulcer_index_r",
+            "point_metric": "ulcer_index_r",
+            "canonical_aggregate": "worst",
+            "ui_min": 0.0,
+            "ui_max": 100.0,
+            "ui_step": 0.1,
+            "min_trades": 20
+          },
+          "cvar": {
+            "label": "CVaR / Expected Shortfall 95%",
+            "enabled": false,
+            "threshold": -2.0,
+            "direction": "higher",
+            "unit": "R/day",
+            "basis": "DAILY_AGGREGATED_R; WORST_5_PERCENT_DAYS",
+            "wfa_metric": "median_daily_cvar95_r",
+            "point_metric": "daily_cvar95_r",
+            "canonical_aggregate": "worst",
+            "ui_min": -20.0,
+            "ui_max": 0.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_active_days": 40,
+            "min_tail_days": 2,
+            "allow_positive_tail_floor": false
+          }
+        },
+        "cv_min_overall_expectancy_r": 0.1
+      },
+      "cpcv": {
+        "profile_version": "CPCV_KPI_V1",
+        "cv_min_median_profit_factor": 1.25,
+        "cv_min_median_expectancy_r": 0.1,
+        "cpcv_min_worst_expectancy_r": 0.0,
+        "cv_max_worst_fold_drawdown_r": 18.0,
+        "cv_min_median_recovery_factor": 1.5,
+        "cv_min_worst_fold_recovery_factor": 1.0,
+        "cv_min_positive_fold_ratio": 0.66,
+        "cpcv_min_path_sample_ratio": 0.66,
+        "worst_expectancy_epsilon": 1e-09,
+        "pbo_enabled": false,
+        "pbo_max": 0.2,
+        "pbo_status": "COMPUTABLE_FROM_CROSS_STRATEGY_CPCV_GROUP_MATRIX_WHEN_ENABLED",
+        "risk_kpis": {
+          "sharpe": {
+            "label": "Sharpe Ratio",
+            "enabled": true,
+            "threshold": 0.2,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R_NON_ANNUALIZED",
+            "wfa_metric": "median_sharpe_ratio",
+            "point_metric": "sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 10.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "sortino": {
+            "label": "Sortino Ratio",
+            "enabled": true,
+            "threshold": 0.3,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R; MAR=0.00R",
+            "wfa_metric": "median_sortino_ratio",
+            "point_metric": "sortino_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 20.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "calmar": {
+            "label": "Calmar / MAR",
+            "enabled": false,
+            "threshold": 1.0,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "LINEAR_ANNUALIZED_R_OVER_MAX_DD_R",
+            "wfa_metric": "median_calmar_mar_ratio",
+            "point_metric": "calmar_mar_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -10.0,
+            "ui_max": 50.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_sample_years": 0.25
+          },
+          "psr": {
+            "label": "PSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "PROBABILISTIC_SHARPE",
+            "benchmark_sharpe": 0.2,
+            "wfa_metric": "median_probabilistic_sharpe_ratio",
+            "point_metric": "probabilistic_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 50
+          },
+          "dsr": {
+            "label": "DSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "DEFLATED_SHARPE; PREDECLARED_CYCLE_BUDGET",
+            "wfa_metric": "median_deflated_sharpe_ratio",
+            "point_metric": "deflated_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 100
+          },
+          "ulcer": {
+            "label": "Ulcer Index",
+            "enabled": true,
+            "threshold": 8.0,
+            "direction": "lower",
+            "unit": "R",
+            "basis": "CHRONOLOGICAL_EQUITY_DRAWDOWN_R",
+            "wfa_metric": "median_ulcer_index_r",
+            "point_metric": "ulcer_index_r",
+            "canonical_aggregate": "worst",
+            "ui_min": 0.0,
+            "ui_max": 100.0,
+            "ui_step": 0.1,
+            "min_trades": 20
+          },
+          "cvar": {
+            "label": "CVaR / Expected Shortfall 95%",
+            "enabled": true,
+            "threshold": -2.5,
+            "direction": "higher",
+            "unit": "R/day",
+            "basis": "DAILY_AGGREGATED_R; WORST_5_PERCENT_DAYS",
+            "wfa_metric": "median_daily_cvar95_r",
+            "point_metric": "daily_cvar95_r",
+            "canonical_aggregate": "worst",
+            "ui_min": -20.0,
+            "ui_max": 0.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_active_days": 40,
+            "min_tail_days": 2,
+            "allow_positive_tail_floor": false
+          }
+        },
+        "pbo_min_candidates": 4
+      },
+      "tournament": {
+        "profile_version": "TOURNAMENT_KPI_V1",
+        "max_drawdown_r": 12.0,
+        "min_recovery_factor": 2.0,
+        "min_profit_factor": 1.35,
+        "min_expectancy_r": 0.15,
+        "require_every_year_nonnegative": true,
+        "min_positive_month_ratio": 0.55,
+        "min_positive_quarter_ratio": 0.6,
+        "max_dominant_positive_regime_share": 0.75,
+        "max_top10_win_profit_share": 0.55,
+        "stress_x1_50_min_expectancy_r": 0.05,
+        "risk_kpis": {
+          "sharpe": {
+            "label": "Sharpe Ratio",
+            "enabled": true,
+            "threshold": 0.3,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R_NON_ANNUALIZED",
+            "wfa_metric": "median_sharpe_ratio",
+            "point_metric": "sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 10.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "sortino": {
+            "label": "Sortino Ratio",
+            "enabled": true,
+            "threshold": 0.5,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R; MAR=0.00R",
+            "wfa_metric": "median_sortino_ratio",
+            "point_metric": "sortino_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 20.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "calmar": {
+            "label": "Calmar / MAR",
+            "enabled": true,
+            "threshold": 1.0,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "LINEAR_ANNUALIZED_R_OVER_MAX_DD_R",
+            "wfa_metric": "median_calmar_mar_ratio",
+            "point_metric": "calmar_mar_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -10.0,
+            "ui_max": 50.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_sample_years": 0.25
+          },
+          "psr": {
+            "label": "PSR",
+            "enabled": true,
+            "threshold": 0.8,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "PROBABILISTIC_SHARPE",
+            "benchmark_sharpe": 0.2,
+            "wfa_metric": "median_probabilistic_sharpe_ratio",
+            "point_metric": "probabilistic_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 50
+          },
+          "dsr": {
+            "label": "DSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "DEFLATED_SHARPE; PREDECLARED_CYCLE_BUDGET",
+            "wfa_metric": "median_deflated_sharpe_ratio",
+            "point_metric": "deflated_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 100
+          },
+          "ulcer": {
+            "label": "Ulcer Index",
+            "enabled": true,
+            "threshold": 6.0,
+            "direction": "lower",
+            "unit": "R",
+            "basis": "CHRONOLOGICAL_EQUITY_DRAWDOWN_R",
+            "wfa_metric": "median_ulcer_index_r",
+            "point_metric": "ulcer_index_r",
+            "canonical_aggregate": "worst",
+            "ui_min": 0.0,
+            "ui_max": 100.0,
+            "ui_step": 0.1,
+            "min_trades": 20
+          },
+          "cvar": {
+            "label": "CVaR / Expected Shortfall 95%",
+            "enabled": true,
+            "threshold": -2.0,
+            "direction": "higher",
+            "unit": "R/day",
+            "basis": "DAILY_AGGREGATED_R; WORST_5_PERCENT_DAYS",
+            "wfa_metric": "median_daily_cvar95_r",
+            "point_metric": "daily_cvar95_r",
+            "canonical_aggregate": "worst",
+            "ui_min": -20.0,
+            "ui_max": 0.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_active_days": 40,
+            "min_tail_days": 2,
+            "allow_positive_tail_floor": false
+          }
+        },
+        "ranking_only_after_hard_pass": true,
+        "top_k_elimination": false
+      },
+      "monte_carlo": {
+        "profile_version": "MONTE_CARLO_KPI_V1",
+        "min_p05_profit_factor": 1.35,
+        "min_p05_expectancy_r": 0.15,
+        "max_p95_drawdown_r": 12.0,
+        "min_p05_recovery_factor": 2.0,
+        "max_probability_loss": 1.0,
+        "max_probability_ruin": 1.0,
+        "min_survival_rate": 0.0,
+        "ruin_floor_r": -20.0
+      },
+      "fresh_forward": {
+        "profile_version": "FRESH_FORWARD_KPI_V2_PRODUCTION",
+        "max_drawdown_r": 10.0,
+        "min_recovery_factor": 3.0,
+        "min_profit_factor": 1.5,
+        "min_expectancy_r": 0.5,
+        "risk_kpis": {
+          "sharpe": {
+            "label": "Sharpe Ratio",
+            "enabled": true,
+            "threshold": 0.4,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R_NON_ANNUALIZED",
+            "wfa_metric": "median_sharpe_ratio",
+            "point_metric": "sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 10.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "sortino": {
+            "label": "Sortino Ratio",
+            "enabled": true,
+            "threshold": 0.65,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "PER_TRADE_R; MAR=0.00R",
+            "wfa_metric": "median_sortino_ratio",
+            "point_metric": "sortino_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -5.0,
+            "ui_max": 20.0,
+            "ui_step": 0.05,
+            "min_trades": 30
+          },
+          "calmar": {
+            "label": "Calmar / MAR",
+            "enabled": true,
+            "threshold": 1.25,
+            "direction": "higher",
+            "unit": "ratio",
+            "basis": "LINEAR_ANNUALIZED_R_OVER_MAX_DD_R",
+            "wfa_metric": "median_calmar_mar_ratio",
+            "point_metric": "calmar_mar_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": -10.0,
+            "ui_max": 50.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_sample_years": 0.25
+          },
+          "psr": {
+            "label": "PSR",
+            "enabled": true,
+            "threshold": 0.85,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "PROBABILISTIC_SHARPE",
+            "benchmark_sharpe": 0.2,
+            "wfa_metric": "median_probabilistic_sharpe_ratio",
+            "point_metric": "probabilistic_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 50
+          },
+          "dsr": {
+            "label": "DSR",
+            "enabled": false,
+            "threshold": 0.95,
+            "direction": "higher",
+            "unit": "probability",
+            "basis": "DEFLATED_SHARPE; PREDECLARED_CYCLE_BUDGET",
+            "wfa_metric": "median_deflated_sharpe_ratio",
+            "point_metric": "deflated_sharpe_ratio",
+            "canonical_aggregate": "median",
+            "ui_min": 0.0,
+            "ui_max": 1.0,
+            "ui_step": 0.01,
+            "min_trades": 100
+          },
+          "ulcer": {
+            "label": "Ulcer Index",
+            "enabled": true,
+            "threshold": 5.0,
+            "direction": "lower",
+            "unit": "R",
+            "basis": "CHRONOLOGICAL_EQUITY_DRAWDOWN_R",
+            "wfa_metric": "median_ulcer_index_r",
+            "point_metric": "ulcer_index_r",
+            "canonical_aggregate": "worst",
+            "ui_min": 0.0,
+            "ui_max": 100.0,
+            "ui_step": 0.1,
+            "min_trades": 20
+          },
+          "cvar": {
+            "label": "CVaR / Expected Shortfall 95%",
+            "enabled": true,
+            "threshold": -1.5,
+            "direction": "higher",
+            "unit": "R/day",
+            "basis": "DAILY_AGGREGATED_R; WORST_5_PERCENT_DAYS",
+            "wfa_metric": "median_daily_cvar95_r",
+            "point_metric": "daily_cvar95_r",
+            "canonical_aggregate": "worst",
+            "ui_min": -20.0,
+            "ui_max": 0.0,
+            "ui_step": 0.1,
+            "min_trades": 30,
+            "min_active_days": 40,
+            "min_tail_days": 2,
+            "allow_positive_tail_floor": false
+          }
+        },
+        "degradation_enabled": false,
+        "max_expectancy_degradation_ratio": 1.0,
+        "max_pf_degradation_ratio": 1.0,
+        "max_drawdown_expansion_ratio": 999.0
+      },
+      "champion_promotion": {
+        "profile_version": "CHAMPION_PROMOTION_V1",
+        "require_all_upstream_pass": true,
+        "require_artifact_integrity": true,
+        "require_no_post_forward_tuning": true,
+        "require_onnx_export": true,
+        "require_onnx_parity": true
+      }
+    },
+    "research_trade_sample": {
+      "mode": "AUTO",
+      "base_h1_trades_per_month": 8,
+      "sufficiency_ratio": 1.0,
+      "timeframe_scaling": "SQRT",
+      "min_timeframe_factor": 0.2,
+      "max_timeframe_factor": 4.0,
+      "absolute_floor_discovery": 0,
+      "absolute_floor_tournament": 0,
+      "absolute_floor_fresh": 0,
+      "note": "v0.7.9: H1 research baseline 8 trades/month. Timeframe-scaled monthly rate is rounded up to integer, then exact evaluated months are prorated and final required trades are rounded up. No hidden sufficiency haircut.",
+      "rounding": "CEIL_MONTHLY_RATE_AND_FINAL_REQUIREMENT"
+    },
+    "strategy_optimizer_kpi": {
+      "schema": "MAX_STRATEGY_OPTIMIZER_KPI_V2",
+      "min_profit_factor": 1.0,
+      "min_recovery_factor": 0.0,
+      "min_expectancy_r": 0.0,
+      "base_h1_trades_per_month": 20,
+      "timeframe_scaling": "SQRT",
+      "min_timeframe_factor": 0.2,
+      "max_timeframe_factor": 4.0,
+      "rounding": "CEIL_MONTHLY_RATE_AND_FINAL_REQUIREMENT",
+      "min_weighted_r": 0.0
+    },
+    "champion_rule": "Champion is promotion/integrity/runtime authority; it performs no sixth statistical market test.",
+    "ranking_rule": "Ranking/utility may order survivors but can never compensate for a failed hard gate.",
+    "pbo_rule": "PBO belongs only to CPCV. v1.3.2 provides optional cross-strategy six-group computation; it is authoritative only when Owner enables it and minimum matrix evidence exists, otherwise it remains disabled/not-computable rather than approximated."
+  },
+  "existing_capabilities": [
+    {
+      "id": "DATA_QUALITY_CP32",
+      "status": "EXISTING",
+      "summary": "CP32 schema, physical integrity, feature health, market sanity and broker reconciliation gate research. v0.11.1 stages Data Quality as local/exact-SHA cached audit first: AUDIT and initial Auto Research preflight never open MT5; PASS proceeds directly to Research, while a repairable FAIL alone enters MT5 verify/repair. The repair stage uses the same verified broker/feed, dedicated training-enabled Max_MTF_GapRepair.set, preserves MT5 UTF-16/UTF-8 preset encoding, verifies missing=0 afterward, and caches that broker proof only for the exact repaired CSV SHA. v0.9.1 first-write-wins EA repair remains the writer authority; interpolation/synthetic rows remain forbidden."
+    },
+    {
+      "id": "ONNX_RUNTIME_TRADE_AUDIT",
+      "status": "EXISTING",
+      "summary": "v0.9.1 EA runtime exposes the complete deployable tree/temporal model-family identity for Champion and Shadow, validates hybrid temporal→tree topology without changing tensor/decision authority, writes actual Max-owned MT5 Champion deals to Max_MTF_Champion_Trades.csv, and writes non-executing Shadow entry candidates with executed=0 to Max_MTF_Shadow_Trades.csv. Optimizer and gap-repair presets disable both audit writers; OnTester history rebuild remains the only optimizer R-fitness authority."
+    },
+    {
+      "id": "CHALLENGER_LIFECYCLE",
+      "status": "EXISTING",
+      "summary": "Model lifecycle: v1.3.3 enforces Factory-winner retention end-to-end. Every sealed LangGraph AUTO FACTORY_WINNER must be registered as a persistent ELIGIBLE_CHALLENGER before terminal success. Registration is append/retain and idempotent; later winners never delete/replace older Challengers and PROMOTED status survives replay. Model Champion still requires explicit Owner promotion after deterministic promotion gates PASS. Factory/LangGraph has no promotion authority."
+    },
+    {
+      "id": "GOLDEN_RESEARCH_E2E",
+      "status": "EXISTING",
+      "summary": "v1.2.5 keeps E2E_WORKFLOW_TEST_V1 sandbox-only, preserves separated Model/Strategy authority pages and 1:1 Forward-to-Challenger KPI evidence, and adds verified current Strategy Champion KPI evidence from Owner XML + Weighted-R sidecar. Synthetic sandbox-only promotion proofs remain explicitly labelled SYNTHETIC_E2E; production broker reconciliation and promotion KPI authority are unchanged. E2E artifacts are never production scientific evidence."
+    },
+    {
+      "id": "STRATEGY_CHALLENGER_LIFECYCLE",
+      "status": "EXISTING",
+      "summary": "v0.11.0 separates Strategy Optimizer winner from current Strategy Champion. Eligible winners become human-readable Max_Challenger_STRAT-<UTC>-R<round>-P<pass>.mq5 + fixed .set + metadata with PF/RF/Mean R/Weighted R/Profit/Trades and exact setup. Current Max_MTF.mq5 remains unchanged until explicit Owner promotion. Promotion atomically commits Max_MTF.mq5, canonical Max_MTF.set, compile/deploy and Python strategy authority while demoting the prior Champion to a new Challenger. Only non-Champion Challengers may be deleted; audit tombstones remain."
+    },
+    {
+      "id": "AUTO_AND_MANUAL_RESEARCH",
+      "status": "EXISTING",
+      "summary": "AUTO Factory and Owner-exact MANUAL Research are explicit proposal authorities; deterministic validation remains mandatory."
+    },
+    {
+      "id": "TOPOLOGY_ALLOCATION",
+      "status": "EXISTING",
+      "summary": "Single/Hybrid candidate allocation already exists as a 0.00..1.00 Owner priority with single-only, hybrid-only and mixed allocations.",
+      "current_default": 0.5
+    },
+    {
+      "id": "FAMILY_SIZE_PRIORITY",
+      "status": "EXISTING",
+      "summary": "Per-family Small<->Large priority biases deterministic search inside dynamic capacity; it is not an executable hard-bound slice.",
+      "current_default": {
+        "xgboost": 0.5,
+        "lightgbm": 0.5,
+        "random_forest": 0.5,
+        "gru": 0.5,
+        "lstm": 0.5,
+        "tcn": 0.5,
+        "transformer": 0.5,
+        "transformer_moe": 0.5,
+        "patchtst": 0.5,
+        "itransformer": 0.5,
+        "tft": 0.5
+      }
+    },
+    {
+      "id": "MODEL_SIZE_ADVISOR",
+      "status": "EXISTING",
+      "summary": "v1.4.2 adds advisory-only dataset-aware Suggested 0.xx guidance for AUTO size sliders plus canonical current-slider parameter-range tooltips and MANUAL per-parameter suggested/legal ranges. Suggestions never mutate Owner controls; temporal parameter-count estimates use executable model constructors and tree parameter count remains N/A/data-dependent."
+    },
+    {
+      "id": "STRATEGY_NAVIGATION_LIFECYCLE",
+      "status": "EXISTING",
+      "summary": "v1.4.3 binds Strategy Optimizer, Strategy Challengers and Strategy Champion navigation pages to one contextual Optimizer lifecycle/status authority while all non-Strategy pages remain on the Research lifecycle."
+    },
+    {
+      "id": "KPI_UI_FULL_AUTHORITY",
+      "status": "EXISTING",
+      "summary": "v1.4.4 requires every active configurable Research hard PASS/FAIL threshold and enabled advanced-risk evidence-sufficiency requirement to be visible/editable in Advanced -> KPI by Gate. The UI edits the same frozen gate_kpis stage profiles consumed by deterministic evaluators; evaluation formulas are unchanged."
+    },
+    {
+      "id": "MODEL_DETAIL_INSPECTOR_LIVE_RUNTIME",
+      "status": "EXISTING",
+      "summary": "v1.4.5 adds a read-only Model Detail Inspector across Research model/candidate lists and 2-second flat live status polling for Research and Strategy Optimizer; it does not change scientific evaluation, search, worker state or promotion authority. Tree models expose structural complexity instead of fabricated neural parameter counts."
+    },
+    {
+      "id": "DYNAMIC_HYBRIDS",
+      "status": "EXISTING",
+      "summary": "Temporal and policy families can be composed into executable dynamic hybrids when registry/capacity-compatible."
+    },
+    {
+      "id": "HARDWARE_DATA_CAPACITY",
+      "status": "EXISTING",
+      "summary": "Evidence-aware dynamic Capacity Governor separates LEGAL architecture, RESOURCE execution, and candidate-aware SCIENTIFIC information ceilings; historical recommended envelopes are starting guidance only."
+    },
+    {
+      "id": "FIDELITY_LADDER",
+      "status": "EXISTING",
+      "summary": "Cheap screen exists for compute allocation; qualification authority remains Full WFA.",
+      "enabled": true
+    },
+    {
+      "id": "POLICY_DISCOVERY",
+      "status": "EXISTING",
+      "summary": "Bounded OOF policy/selectivity search exists and cannot open locked/fresh holdout.",
+      "enabled": true
+    },
+    {
+      "id": "TRAINING_MEMORY_WINDOW_DISCOVERY",
+      "status": "EXISTING",
+      "summary": "training_memory_months is an integrated candidate-search dimension within declared bounds.",
+      "enabled": true
+    },
+    {
+      "id": "SCIENTIFIC_CREATIVITY",
+      "status": "EXISTING",
+      "summary": "Scientific creativity controls proposal/search breadth only; it cannot alter KPI, chronology, CPCV seeds, Forward or PASS/FAIL.",
+      "current": 0.5
+    },
+    {
+      "id": "EXPERIMENT_BLOCKS_HYPOTHESES",
+      "status": "EXISTING",
+      "summary": "Bounded hypothesis experiment blocks, including hybrid ablation and seed stability, already exist.",
+      "enabled": true,
+      "hypothesis_kinds": [
+        "LABEL_GEOMETRY",
+        "FEATURE_ABLATION",
+        "TRAINING_MEMORY",
+        "SELECTIVITY_POLICY",
+        "REGIME_POLICY",
+        "MODEL_ARCHITECTURE",
+        "HYBRID_ABLATION",
+        "SEED_STABILITY",
+        "OBJECTIVE_RESEARCH"
+      ]
+    },
+    {
+      "id": "RESEARCH_MEMORY",
+      "status": "EXISTING",
+      "summary": "Discovery-side research memory stores elites/failure topology/hypothesis lifecycle while excluding locked/fresh evidence.",
+      "enabled": true
+    },
+    {
+      "id": "DOWNSTREAM_FAILURE_FEEDBACK",
+      "status": "EXISTING",
+      "summary": "Pool/CPCV/Tournament/Monte-Carlo failures may produce bounded learning for a new Discovery cycle; Forward is report-only for the same snapshot.",
+      "enabled": true
+    },
+    {
+      "id": "CPCV_PROGRESSIVE_FINALISTS",
+      "status": "EXISTING",
+      "summary": "Pool freezes before a separate progressive CPCV finalist stage with hard PASS/FAIL and fixed seed confirmation for DL/hybrid."
+    },
+    {
+      "id": "GATE_KPI_PROFILES",
+      "status": "EXISTING",
+      "summary": "v0.7.9 stores independent Discovery, CPCV, Tournament, Monte Carlo and Fresh Forward statistical profiles plus a non-statistical Champion Promotion contract; the complete profile snapshot is frozen with the Factory."
+    },
+    {
+      "id": "STRATEGY_OPTIMIZER_KPI",
+      "status": "EXISTING",
+      "summary": "Upstream MT5 Strategy Optimizer has separate editable PF/RF/Mean-R/Weighted-R/AUTO minimum-trade authority, defaults to H1 baseline 20/month, uses Custom max / OnTester Mean R as native genetic fitness, transports Weighted R through MT5 optimization frames as an independent hard gate, and keeps Recovery Factor separate. v0.8.6 history-rebuild R accounting from complete tester history instead of OnTradeTransaction event ordering remains in force. In v0.8.7, Strategy Optimizer/CP32 is the sole SL/TP/MaxHold authority: Model Research no longer exposes or stores duplicate execution-geometry label knobs, and purge/embargo automatically respect upstream MaxHold. Model Research label research owns only Min edge R / Min margin R / ambiguous policy. Discovery/WFA expectancy acceptance requires editable Overall OOF Mean R plus Median Fold Mean R plus Worst Fold Mean R, all as mandatory AND gates. Mixed/stale geometry fails closed, and adaptive lot/risk remains outside model features/targets. v0.8.8 binds every MT5 Weighted-R optimization frame to its exact FrameInputs parameter vector; the opaque unsigned 64-bit (uint64) frame pass ID is provenance only and must never be converted through float or joined directly to the SpreadsheetML display Pass column. v0.8.9 disables MT5 optimization-cache reuse because cached XML results can bypass frame replay; rows without Weighted-R frame evidence remain ineligible, unresolved native-gate contenders block Champion promotion, and are retained for next-round refinement. v0.9.0 established transactional EA↔Max_MTF.set parity for direct Champion commit. v0.11.0 supersedes the automatic commit step: an eligible Optimizer winner is first registered as a Strategy Challenger and cannot mutate canonical Max_MTF.mq5/Max_MTF.set/Python strategy authority. Explicit Owner promotion is transactional across canonical EA defaults, canonical Strategy Tester Max_MTF.set, compiled/deployed EX5, Python execution-geometry authority and the Strategy registry; the prior Champion is demoted into a uniquely coded Challenger, and any failure restores the pre-promotion authority. v0.9.1 keeps canonical Max_MTF.set immutable during Data Quality repair and uses a separate training-enabled Max_MTF_GapRepair.set so CP32 gaps can be filled without weakening current Champion tester parity. The same v0.9.1 authority also makes ONNX runtime family identity generic across current deployable tree/temporal families and isolates actual Champion deal audit from non-executing Shadow candidate audit; neither audit ledger can mutate optimizer fitness, strategy geometry, or live execution authority. v1.2.5 records the existing Strategy Champion KPI from uniquely matched Owner Max_MTF.xml + Max_MTF_metrics.csv evidence, including independent Weighted R arithmetic and R-trade parity, without changing strategy parameters or execution logic."
+    },
+    {
+      "id": "ADVANCED_RISK_KPI",
+      "status": "EXISTING",
+      "summary": "Sharpe, Sortino, Calmar/MAR, PSR, DSR, Ulcer Index and daily CVaR are data-driven hard-gate metrics where enabled."
+    },
+    {
+      "id": "MONTE_CARLO",
+      "status": "EXISTING",
+      "summary": "Configurable bootstrap robustness stage exists after Tournament."
+    },
+    {
+      "id": "FRESH_FORWARD",
+      "status": "EXISTING",
+      "summary": "Fresh/Forward holdout is separated from tuning and can wait for new data when sample is insufficient."
+    },
+    {
+      "id": "ONNX_RUNTIME_PARITY",
+      "status": "EXISTING",
+      "summary": "Champion export/parity gate exists; runtime-only failures produce FACTORY_WINNER_RUNTIME_BLOCKED rather than rewriting research results."
+    },
+    {
+      "id": "SCIENTIST_PYTHON_ANALYSIS_RUNTIME",
+      "status": "EXISTING",
+      "summary": "v2.0.1 optional Scientist Python Analysis Runtime V1 provides one shared guarded analytical executor for autonomous LLM Scientist/Director and Scientist Chat. Generated scientific import spellings resolve to a deterministic capability allowlist/proxy surface rather than raw third-party module objects, closing transitive ctypes/native file/process/network authority while preserving approved in-memory NumPy/pandas/SciPy/sklearn analysis. It uses a dedicated user-local interpreter/environment separate from canonical MAX Python, accepts only host-authorized in-memory evidence IDs, records exact code/input/runtime provenance, and falls back to REASONING_ONLY on unavailable/rejected/error/timeout. Python output is ANALYTICAL_EVIDENCE_ONLY and can never own deterministic PASS/FAIL, candidate admission, promotion, training, acceptance, MT5, governance, or Factory state.",
+      "live_authority": "scientist_python_health() plus deterministic run_scientist_python_analysis(); static Knowledge never proves interpreter availability"
+    },
+    {
+      "id": "SCIENTIST_CHAT_READ_ONLY",
+      "status": "EXISTING",
+      "summary": "Scientist Chat is read-only, model-selectable, per-model profiled and separate from autonomous Research Scientist routing."
+    },
+    {
+      "id": "SCIENTIST_CHAT_STATE_RECONCILIATION",
+      "status": "EXISTING",
+      "summary": "Scientist Chat uses persistent thread identity, stale-event/result rejection, immutable terminal job state and explicit client reconciliation so completed replies settle without an operator Stop click."
+    },
+    {
+      "id": "SCIENTIST_CHAT_BACKEND_INTEGRITY",
+      "status": "EXISTING",
+      "summary": "Scientist Chat enforces cross-process thread/request idempotency, monotonic terminal CAS, duplicate-call-safe provider compatibility/fallback, sealed deterministic evidence, route provenance and visible-history parity."
+    },
+    {
+      "id": "LANGGRAPH_AGENTIC_SCIENTIST",
+      "status": "EXISTING",
+      "summary": "v1.3.3 AUTO Factory orchestration uses LangGraph and requires persistent Model Challenger registration before terminal Factory-winner success. The Research Director persists hypothesis memory and proposal lineage, requests bounded read-only evidence, attributes actual prior outcomes, designs the next experiments and can escape family/topology local optima inside the Owner allow-list. Deterministic code still owns legality and PASS/FAIL; Owner still owns promotion."
+    },
+    {
+      "id": "SCIENTIST_DIRECTED_SEARCH",
+      "status": "EXISTING",
+      "summary": "SCIENTIST_DIRECTED family/topology authority keeps every Owner-allowed feasible path available across the Factory so the Scientist can choose local refinement, structural escape, family escape or topology escape without mutating hard KPI, Strategy geometry, Locked/Fresh evidence, CPCV seeds, live risk or promotion."
+    },
+    {
+      "id": "AUTONOMOUS_LLM_SCIENTIST_ROUTING",
+      "status": "EXISTING",
+      "summary": "AUTO Factory Research Scientist/Director is ordered-fallback routed and exact-contract-memory scoped. In v1.3.3 it is agentic for bounded research direction, while deterministic validation remains the sole scientific PASS/FAIL authority and retryable stack exhaustion may fall back deterministically."
+    }
+  ],
+  "novelty_policy": {
+    "required_before_recommendation": true,
+    "classes": {
+      "EXISTING": "Max already has the requested capability. Do not propose building it again; explain/configure/use the existing authority.",
+      "EXTENSION": "An existing capability covers the core idea but a scientifically distinct extension may be useful. State the existing capability first, then the exact gap.",
+      "EXPERIMENT": "No new feature is required; the idea can be tested with existing Factory controls/evidence. Propose an experiment, not a duplicate feature.",
+      "NEW": "Capability is not present. It may be proposed as a new architecture/contract with expected integration points and validation burden.",
+      "CONFLICT": "Suggestion would violate a hard scientific/governance invariant. Explain the conflict and offer a compliant alternative.",
+      "OUTSIDE_CURRENT_CONTRACT": "Scientifically plausible but needs an explicit contract/revision before implementation."
+    },
+    "rule": "Scientist may recommend beyond Max, but must first name overlapping EXISTING capability and avoid duplicate implementation suggestions."
+  },
+  "scientist_chat_contract": {
+    "chat_state_revision": "Chat State R1",
+    "terminal_reconciliation": "Pending V2 component updates a hidden reconcile state on a bounded cadence; the registered state callback reruns the Scientist fragment so partial/terminal worker state settles automatically without operator Stop.",
+    "clear_semantics": "Clear Chat cancels active work, atomically empties history and rotates persistent thread_id.",
+    "stale_isolation": "UI events and background jobs carry thread_id; stale pre-clear sends/results are rejected and cannot repopulate the new thread.",
+    "terminal_immutability": "Late Stop cannot overwrite COMPLETED/FAILED/CANCELLED job state."
+  },
+  "scientist_response_contract": {
+    "before_recommending": [
+      "Identify relevant existing Max capability from this knowledge base.",
+      "Compare current Owner config vs frozen active research plan when available.",
+      "Classify suggestion as EXISTING / EXTENSION / EXPERIMENT / NEW / CONFLICT / OUTSIDE_CURRENT_CONTRACT.",
+      "State evidence that supports the recommendation and what remains hypothesis/speculation.",
+      "Do not invent warning causes, numeric ratings, thresholds or stage results absent from evidence."
+    ],
+    "preferred_format": [
+      "Current Max capability",
+      "Observed evidence/gap",
+      "Classification",
+      "Recommendation",
+      "Why",
+      "Trade-off",
+      "How to validate"
+    ]
+  },
+  "project_mtf": {
+    "schema": "MAX_MTF_PROJECT_CONTEXT_V2",
+    "project": "Max MTF",
+    "version": "2.0.1",
+    "ea_version": "2.00",
+    "fork_source": "Max single-TF v1.4.5",
+    "single_tf_status": "CLOSED_EXCEPT_BUGFIX",
+    "strategy_champion": null,
+    "model_champion": null,
+    "baseline": "BASELINE-MTF-V2",
+    "baseline_is_champion": false,
+    "active_ea": "EA_v2_00/baseline/Max_MTF.mq5",
+    "mtf_roles": {
+      "TF+2": "Trend / Regime / Volatility",
+      "TF+1": "Setup / Pullback / Breakout / Structure",
+      "TF": "Primary Decision",
+      "TF-1": "Entry Timing / Execution"
+    },
+    "reference_ladder": [
+      "H4",
+      "H1",
+      "M15",
+      "M5"
+    ],
+    "mt5_target": "VERIFIED_TERMINAL_DATA_ROOT_ONLY_NOT_RAW_C_DRIVE",
+    "mtf_logic_status": "MTF1_DATA_FOUNDATION_IMPLEMENTED_NOT_RESEARCH_ACTIVE",
+    "mtf_data": {
+      "schema": "MAX_MTF_DATA_CONFIG_V1",
+      "enabled_for_research": false,
+      "phase": "MTF-1_DATA_FOUNDATION",
+      "source_timeframe": "M5",
+      "primary_timeframe": "M15",
+      "role_to_timeframe": {
+        "TF+2": "H4",
+        "TF+1": "H1",
+        "TF": "M15",
+        "TF-1": "M5"
+      },
+      "canonical_timezone": "UTC",
+      "native_higher_tf_usage": "BOUNDARY_AND_PARITY_ONLY",
+      "closed_bar_only": true,
+      "forward_fill_market_bars": false,
+      "require_native_m5_reference_for_imported_source": true,
+      "require_native_higher_tf_parity": true,
+      "price_parity_atol": 1e-10,
+      "future_m5_directional_use": "FORBIDDEN"
+    }
+  },
+  "source_manifest": {
+    "EA_v2_00/baseline/Max_MTF.mq5": "9fa6e50231cec4d907b14e3237a118bf3bac22c55682f83ea06303e73c140345",
+    "ModelLab/acceptance/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/acceptance/runners/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/acceptance/runners/acceptance_process_env.py": "429eee5e7ebfd7a5dcace17d1eb87c20edb557cce718abcb10acdbfad9f2b509",
+    "ModelLab/acceptance/runners/cuda_runtime_acceptance.py": "bbf88624201b3ce932225b1745f288bb2e33956565266954553a7db7c32affad",
+    "ModelLab/acceptance/runners/langgraph_runtime_acceptance.py": "fe890989b3b9ddabe2177a09e384b7fc67699ec8763f3b2fd9963b48c6f1b69e",
+    "ModelLab/acceptance/runners/max_python_bootstrap.py": "95d2ea5714fb6d5700033c152cfc09b87ed709dd7804a5a2da7a495d9bf4dbab",
+    "ModelLab/acceptance/runners/owner_mtf1_metaeditor_acceptance.py": "64f845b2fc213b4df923a614a5c8c1af3ef7ecc0eb76f90ea579d4b7a09fd61f",
+    "ModelLab/acceptance/runners/owner_mtf1_runtime_acceptance.py": "c1d8ea3b85eee2cc03f8f00c961b0d5e4f90e6e3d8f76f99801b79274839a96d",
+    "ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py": "f680dda31df0265edab304fb73e581089c009538d2977f010fc978a361da50bc",
+    "ModelLab/acceptance/runners/run_acceptance.py": "76c0ba6b90e157dddf29f419edd60a54b56af1dd239b541028ba97dc933e5403",
+    "ModelLab/acceptance/runners/ui_runtime_acceptance_bootstrap.py": "406acba4e8dd894bf03ba9d8d276b5e4256fe21875c9479f25a4d71c0cfb5906",
+    "ModelLab/acceptance/runners/ui_runtime_browser_acceptance.py": "c9870f0d7ffba79ef130cf776517bc50fe419edf0202a2dfc575fdb3eccd82ed",
+    "ModelLab/acceptance/verification/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/acceptance/verification/modellab_layout_verify.py": "7ae1bcce869aa404204c25ec5f3b5ecb2598ad3f2b29f9cef5036e546acd2f52",
+    "ModelLab/config/config.json": "f2ea51163ef598766f6d13f1fdd6bf1b8ddff8db38596e6e86251853948ada49",
+    "ModelLab/config/models/model_registry.json": "b72bbd312cb5eefcae129cbdecf09d73fd8aa248f088fe53be109c8d8e1d0754",
+    "ModelLab/core/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/core/artifact_paths.py": "de1a213734d3749fd766f587f9378f7cf9c66d0f02e6c316d4c776845d0aa3b6",
+    "ModelLab/core/checkpoint_integrity.py": "6fe60d037d96f23854b21de568d5422c7f78195e0b60d5c7ee1f2dfd35f66470",
+    "ModelLab/core/contract.py": "ae0b075f628c1abc8c4bc1cc1074dae46551af6bea2b7d8e49451d67cb1fb2fa",
+    "ModelLab/core/inherited_v147.py": "c0e0537425a9521a1bacc5e75875bff0c6106afd62039df07649ab833d59a192",
+    "ModelLab/core/project_paths.py": "744417c85e1439d4363a936e4c2b342c620b21e2bf096d649f64d1c122f06162",
+    "ModelLab/core/release_authority.py": "68778ca309e08de35b4b3fe8b75c1f577f245654f2cde5513bfc2159e2bb8ba0",
+    "ModelLab/core/settings_store.py": "3285f6a0432c05b6dcc16b83066787f91fe538afd2738a7eeacdfc245ffd624e",
+    "ModelLab/core/temporal_index.py": "7e8ad66644723ca5cc730cfa7a92aa64d5ea8020c92f10a274fa0be17acb9e54",
+    "ModelLab/core/training_method_contract.py": "cb23e6e4030a9b14c80c0b97129e8bc81e0296f9ff5a487f5d7a74ef1d898d8a",
+    "ModelLab/data/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/data/data_quality.py": "c29bcc14a1a3fe3a2142ca56b8d9de8ba0e2622c2941b3e97571fef801c466a1",
+    "ModelLab/data/dataset_integrity.py": "40c2f2728c9fad0bad748f28350a8ec280b6f152d16424425872116ebc727126",
+    "ModelLab/data/feature_label_audit.py": "260ae6b39394ef7e07a61fa092e058fb564ff9915f8781c37853750c48087bc4",
+    "ModelLab/data/labels.py": "a9eddad0b743cb50bc56685be834b0cb70e4e31e8ee2b20a6a5aabd7853ce50a",
+    "ModelLab/data/leakage_adversarial_ci.py": "bcd2b2f6b18872b3224ea240930e24eaf30ad13e3f3575a0ee09b0796f3d309f",
+    "ModelLab/factory/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/factory/challenger_registry.py": "3e072db575c73823947c39ba1148765ccb943593d89d9faa138a3f5a55521b76",
+    "ModelLab/factory/champion_factory.py": "5c10af1e4db19d91bc3a05092f9ccda49335bcba8635e6dfc0b7663f83e0a240",
+    "ModelLab/factory/factory_challenger_bridge.py": "f0654b05a210abed0327389bc347a10665932ea67f13e35ab1a600ba854630cd",
+    "ModelLab/factory/factory_control.py": "8ae160a92c39105f6156ede58c2bf01b140c8840a962e6b542d83b1648b5058a",
+    "ModelLab/factory/factory_jobs.py": "0fdbfa65c5b2a90dae60a133e35346b4f99a9f1f700fe606197029386976df5d",
+    "ModelLab/factory/factory_orchestrator.py": "d227bd94f74ac7286cd182cbf476d93d972f79f298fd0ead5e85b97e8f679451",
+    "ModelLab/factory/factory_worker.py": "ad744bfad0c0110b74b8bd3964528ff4a6123fbdab7b84ce9bba08be03fc8ab6",
+    "ModelLab/factory/governance.py": "438dc3cd66c936bedb5518a3618d23a6113b1414e4610457f3203b5d4cd1290f",
+    "ModelLab/factory/supervisor_agent.py": "3714bae3efdda654dad7737fd3df6d3e7438ea86e09c79c24790d2d7092ff87c",
+    "ModelLab/host/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/host/accelerator_bootstrap.py": "e1d33bee43b9be9ac665fcd2145a0bb390d63a20238af0a13be2e3a7047e8dc8",
+    "ModelLab/host/compute_backend.py": "4d576124cd837493dc46b3b90aa090fa944129cbb0cf75799918e29327e16131",
+    "ModelLab/host/cpu_resource.py": "de9085bf533a24b15d5ca157590a75e4dfe768b8b467d298e27c0ccf9b219fb0",
+    "ModelLab/host/hardware_profile.py": "3787e6f1f5b45c725bcbca2974af682b629fad645da139ea5e9eb5b83c68cb27",
+    "ModelLab/host/mt5_gap_repair.py": "4ea2939ad91527e4310ab39a3dd9d0b41e184f8c0be9cddb0bebeab7e2537ab7",
+    "ModelLab/host/mt5_installation.py": "daa218182e1720ee9139adb382bb75d2e24bbcd510dd647e7af462872087fa2e",
+    "ModelLab/host/preflight.py": "a28199cf2933898f0e9ea6711d7c221d4d890fcc0e4c6eab379841461e172639",
+    "ModelLab/host/provider_catalog.py": "f5f73cab9a72bdfbf8242b0fed91898f467db5ecc609de4c1f0e1eae9faaeb4b",
+    "ModelLab/host/resource_preflight.py": "d9bbb3954ceb53c36384d8a8366b7e6c2ab1572f8e9e15c1616abcf44d540745",
+    "ModelLab/host/workflow_router.py": "e2bf8faec0ed9cd3389614e7a7e1cdc17f065decd26c939ab1905dc4711caaed",
+    "ModelLab/max_graph/__init__.py": "aab38e39d01d351a1d12ab4991f79593bb2559495cd6c4cb817324be72233cf6",
+    "ModelLab/max_graph/evidence_tools.py": "8708e6279731e2af870837e61283ea4e82eae4f817e61a45d3cb9716a50d6f19",
+    "ModelLab/max_graph/factory_graph.py": "7e4613d62c14d01f6850b65764020da72d102538aa8bc3d86a807ff70c93686d",
+    "ModelLab/max_graph/runtime.py": "541eaf5e33d3fe5aa51c039361df3ad9f840b470622ce920b903a0e228e100e2",
+    "ModelLab/max_graph/scientist_chat_graph.py": "49a2ac8fb1fbcd93f74812c7e4889d21e1a7a8c581346eb9bb10fec16350497e",
+    "ModelLab/max_graph/scientist_director_graph.py": "abd4122dfbf73c375614c5f74b8042e7bebf07987a8d771f037e93bb8e8f0c8d",
+    "ModelLab/max_graph/state.py": "b50fafcc4160f3126af79c0f763b8675413b82c4583d9d5e8bf56cd366abc418",
+    "ModelLab/models/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/models/capacity_governor.py": "9b1554a7485d570e94b9e6137f3d957b33c3b606a05e719be55d0e7b4d10ada1",
+    "ModelLab/models/model_inspector.py": "1cd52a8b3c57d7556812275fa123483a94d8f10e834472da29d7660fd95420fb",
+    "ModelLab/models/model_lab.py": "8ee56ec412625bed112538b1d44f7b2a5cb43c1e5a82f2c37bc078f7f6e75560",
+    "ModelLab/models/model_registry.py": "c80d41add47fe6871c8ab8b80ef265865d81303b57c3e305443466f519a67515",
+    "ModelLab/models/model_size_advisor.py": "a883b7425d1b37dbcb922e400fa388bada36f2a6f8b7c232e043efc663ccdc46",
+    "ModelLab/models/models.py": "19224595c31b35418ea8ad254cb44cc24bf6a0aeba1d733590ec431157e07a98",
+    "ModelLab/models/onnx_export.py": "720d0da44ef646618875742b51460946f7ce92a5055f16ac7d558b35b6fcde60",
+    "ModelLab/models/topology_allocation.py": "c6818cf4dffdaebf94da71feb3dfdb3f2acc15ccfa9e383b86967e2717132f26",
+    "ModelLab/mtf/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/mtf/mtf1_closure_authority.py": "5af8690a663158134e79248d0c5b19c4bed59dab704bc14251364b901c8bdedc",
+    "ModelLab/mtf/mtf1_closure_bootstrap.py": "6e73ab4df6866c9ed44d6a65159e4fe53e21a663d2f1a3d620c87d1569684a9f",
+    "ModelLab/mtf/mtf1_closure_run.py": "c3a0f7ad4f7803b576214ec601543f30746f957c38f4277994aaa1fb359e7f2c",
+    "ModelLab/mtf/mtf1_final_closure.py": "90b34ed735bac39d1a9a93fb5b9ff78b4a7eb38db54e52d3fdb313c2c2052ceb",
+    "ModelLab/mtf/mtf1_python_env_authority.py": "46622a87f93ed21f8325873ed9963804cff0759f6e426c6a6d5c87fcbc25643e",
+    "ModelLab/mtf/mtf2.py": "fea6947bb41d530ced74e3b66a35575f2f887fe0a71eb3a499b233ae00d6ba4c",
+    "ModelLab/mtf/mtf3.py": "977bfb24f1bc020b4263b37fc7c59d61ed93b7343f987ead76818df466a383e5",
+    "ModelLab/mtf/mtf_data.py": "a93e77aaec83d06b41f72896fbe9be44af2dde2837f20f8fc04db5b2eb020061",
+    "ModelLab/mtf/mtf_data_quality.py": "54339caddaf031e05decf2df747abeb63497524136f70489e3059f681a4a5ba5",
+    "ModelLab/mtf/mtf_names.py": "16762360c4151196f99a188e5533b1ad4d7ae02846fbc876552c66a63f423c04",
+    "ModelLab/research/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/research/cpcv.py": "4d3fd350621377cc7c95be062dd5c9b7c1bb78c3a9abcc94efa806f33fb9f5f6",
+    "ModelLab/research/creativity_governor.py": "7d384577dbc0fced371e6fb4a7fca5311902cc491fadc46412349eec3b7845f0",
+    "ModelLab/research/evaluation.py": "c0a134648c4388345d2f38367aa27c83a20e288dbf8ebcadfa1133950e99119d",
+    "ModelLab/research/experiment_blocks.py": "73014b77be33f199e49946b3c97da964140ce424aa6c81c9956a4eed71250ed0",
+    "ModelLab/research/future_learning_foundation.py": "9ba23dbfead9cc63f45d8c119fb3656ee2f919e0d3234f5142136d8b9cfe41b4",
+    "ModelLab/research/gate_kpi.py": "720d19fcf1b89aeba6e850e88114fe6ff6f58073f8371229ce9f7d2d9e66493b",
+    "ModelLab/research/gru_research.py": "a35d5a4515fb6df5ba9acc318a5f5f0f3f9686fb18ff542c26876957289c60ed",
+    "ModelLab/research/guided_research.py": "c3d31e0ec3f068196c422004a92ab88e9bb27f4b37ae9c0618c1e8cb7c303d1c",
+    "ModelLab/research/hybrid_research.py": "9a2481cb5013760ec5a7a0bf80209262a34a55decad1fb34257670679ff30f09",
+    "ModelLab/research/kpi.py": "82bcbe4308e9416a301d7ff132b584d1c90745f9ba9f1060636b3d3a6b1816d3",
+    "ModelLab/research/learning_policy.py": "48552246a82f5a48c31ae1af86e7f9f5ca00a65faf90d0de5e33022137fbba9d",
+    "ModelLab/research/pbo.py": "269c442c53f79a67aa190ce6b4767697ef3a774538d7fabec28f1cb2dc21c4d2",
+    "ModelLab/research/policy_discovery.py": "1605270d5af87535e5ec04a081613724db8269aba5a670957ce0aa9c2b9d69d3",
+    "ModelLab/research/research_architect.py": "0804e2bbc591d4178e059d1d3d39865b293f25cd8cec5dfc35440bac24b4317e",
+    "ModelLab/research/research_checkpoint.py": "82612f23ec76a84a536027f683dd53a87c65b21008fd3ac571c4e4ea6a7e6167",
+    "ModelLab/research/research_control.py": "2867df7b044b75540fb87f730224898c45091fc92705828c365f2bee6b59e36b",
+    "ModelLab/research/research_e2e.py": "85893545bb8f8e1d6fc81a8754dbb0bd44989007293b56d0bcfa37949e08a5e5",
+    "ModelLab/research/research_engine_v3.py": "8276f5a3d6c35a3818de54eee5474535e68c27f86f456cb56d34d1e345614dcf",
+    "ModelLab/research/research_feedback.py": "d51be852aa356f39e5ddc08b157100beb90049100ca70f8c54a1db9cba78efbc",
+    "ModelLab/research/research_memory.py": "9f6a07e9ecb3a83dbc691b9a6a0c1d328fe8e58f31d52a6b01388246c97cd38e",
+    "ModelLab/research/research_planner.py": "56e30b9d5d6550279ed978b30b3a90faf793f2aad75757e3b1f39902ed3460d8",
+    "ModelLab/research/risk_kpi.py": "c09b2dacea4b06f5aea4dea2588778bf7c437e25fc432c8ef72dd97ec6083b2d",
+    "ModelLab/research/sample_policy.py": "f461061ba21530d5b5fb005e44662ee7332b0d0dea72349ff7266aada33e616e",
+    "ModelLab/research/scientific_hypotheses.py": "fc714ccefac6597806ecc4e9980da28e43fca23aa3ab82d3a69808cbe8354c3b",
+    "ModelLab/research/structured_research_memory.py": "b9ec56fb3a106b44049faa3f346888247e10495bdd4bd7a40d783d52a80e06bf",
+    "ModelLab/research/temporal_research.py": "c7582b745235d0d34255a8095752ea4280e031079619352f871f67a7c4c5935b",
+    "ModelLab/scientist/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/scientist/chat/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/scientist/chat/scientist_chat.py": "f2adc164e2d7afa04d55933caf95ca83384a49e0bdd93b0cae0a7572bd45204c",
+    "ModelLab/scientist/chat/scientist_chat_component.py": "1335b085bd3cba09fae07cc9cf72034fc99d7428e554bf6ab20afbfcfb6d7ce4",
+    "ModelLab/scientist/chat/scientist_chat_jobs.py": "f8563313fa885d25576b3bf63a871a2f573b295e6da0064cb76ec0b931ce6c25",
+    "ModelLab/scientist/chat/scientist_chat_worker.py": "c475d489655a30ebb27d833e5c1d5ca6a9a34615948b4151a66ba50398fa69bf",
+    "ModelLab/scientist/core/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/scientist/core/llm_health.py": "9a0b9855da2ab487b6db46d2e11b2327a8f8f195a1df43c30ecc923b0e4105e4",
+    "ModelLab/scientist/core/scientist.py": "3eb6219ff09f2a24cd88f51e2424bea864f846bf17eb4ed12f3b80956e2b6553",
+    "ModelLab/scientist/knowledge/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/scientist/knowledge/scientist_knowledge.py": "24c77851f6b14bb67102fe27a54e449fa3368c9eb490ad953503de44723be003",
+    "ModelLab/scientist/python/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/scientist/python/scientist_python_capabilities.py": "1311202cd4d85917821b0a044723d93880d2508333d2ce268cc03046b9483503",
+    "ModelLab/scientist/python/scientist_python_child.py": "d18d6a5fdc0b5c5d8a4c45cc638d0a6a15f34fac2374923462bcbe9973fe7e14",
+    "ModelLab/scientist/python/scientist_python_runtime.py": "f84217bdf7e4b4ad501edad164543bf1664156c5c8d0b8560e7891f0bac52c94",
+    "ModelLab/scientist/python/scientist_python_setup.py": "7af22337c271a3f23e70d90eb536bdf169a7d997f7d2d8cc050d7ce97ba910e2",
+    "ModelLab/scientist/skills/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/scientist/skills/max_scientist_skills.py": "8a00b6b4fb7178d21b2147d5b58d903b45f272adbdfc70bbe2d96c2f109a3720",
+    "ModelLab/strategy/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/strategy/strategy_challenger_registry.py": "8ce1f812e7b09e58b96b122c0c48ff21b5520f90a0003c356fdf686425e2b053",
+    "ModelLab/strategy/strategy_geometry.py": "1f4eff70be2810c07005b9b9575cb32e951bb73ddc19200f55ddee84a6fde859",
+    "ModelLab/strategy/strategy_inspector.py": "5b3f2e4b03d07e53c028591fc61afc7b9799d32e5cedcb93dc0c6182030c1fbc",
+    "ModelLab/strategy/strategy_optimizer.py": "ecda243bfe76ee83551f77cee52f4dc5dd444879d40b929de228da3a5d5b9692",
+    "ModelLab/strategy/strategy_optimizer_jobs.py": "459682e43337d77716c4fb5d75a4258d8476775872f6304673cc3890f70b255c",
+    "ModelLab/strategy/strategy_optimizer_runtime_acceptance.py": "f1e7aec8f6b3f8d9f56f697ffd1ec19423902c22f82b0f4506cc249d03ddf24d",
+    "ModelLab/strategy/strategy_optimizer_worker.py": "f235779d4a0d092fd6a9ae0fae4b977699775a67ca7226f0c29acb93dd18149c",
+    "ModelLab/tools/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/tools/calibration/CALIBRATE_CPU.py": "ea4ec515ba97f6d23d9b16ed9c1ba1b2f204cfca8e68f9d8eb6b055fc35e44cc",
+    "ModelLab/tools/calibration/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/tools/dataset/BUILD_MTF_DATASET.py": "869f5b129421943687e516a8301e80243736821bf524bf3d5eac3759a09d8f5a",
+    "ModelLab/tools/dataset/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/tools/maintenance/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/tools/research/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/tools/scientist_python/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/ui/__init__.py": "58837ed6b8f4f420cc2532d77c55ef84972abd7c5372a6d05e037b2eb2a9b26f",
+    "ModelLab/ui/app.py": "3500583f6042355076b3f4abfc86128d617094256a9d5003f8b9a448e8aa0d3c",
+    "ModelLab/ui/ui_bootstrap.py": "797e4b81a654012b3099158d0d6d51b5997b95630df676d895f1981e10cde1c0",
+    "ModelLab/ui/ui_launcher.py": "165e794d1925a52271ad093e33263bcfd5d8cde134d4572dbc5bc34a02c300a6",
+    "ModelLab/docs/mtf/MAX_MTF_V2_FOUNDATION.md": "cafe33014b56f12c88b09b34efe6c04f366bc02b5ecd8d1723fb25faedb5df54",
+    "ModelLab/docs/mtf/MTF_DATA_FOUNDATION_V1.md": "0b9c5f96b111b22df68cf3d0ffdc0ff06ee5d00382bfca421601053a3a91fab8",
+    "ModelLab/docs/mtf/MTF_RESEARCH_ARCHITECTURE_V1_ROADMAP.md": "4254f41d4d4514eab03c07898946189c08397cc3fe99c332d734fe5c8f526a41",
+    "governance/PACKAGE_MANIFEST.json": "4b169cc49ced17631a44d2b859564ebf495b0f1d694f2de802fbc0f8af86c7d0",
+    "README_FIRST.md": "a0c0d0f4c73e0d83296408c97352b4b57584a6d3103554b71077bf3097813602",
+    "governance/PROJECT_HANDOFF_CURRENT.md": "e0349dbd90a22fa76eaa34c4aed60a9349676519baa4e2604a99d0e433158ead",
+    "governance/CONTRACT_AUDIT_INDEX.md": "b32a095bc56fca06d19e2b2de8521b938d45d709e60ace01d81e71e79e5157d2",
+    "governance/CURRENT_AUTHORITY.json": "1d5d4595acb7a817617009bf90b01b2c6337094904168dc7a87081e0fc9d2fce",
+    "governance/PACKAGE_LAYOUT.json": "c9ff4fab05bbda155c54741d1a1875451fe3342b3b66395b7c4afd28a67182ad",
+    "governance/PACKAGE_LAYOUT.md": "e6021756905d75445b6cd4da689fed753512cf7a7339a24cf51c8d4ec7e08c36",
+    "ModelLab/governance/MODELLAB_LAYOUT_MANIFEST.json": "4b6b907aa85b1dc13ddc7a675cabefecf1ff091e649c3db1ee9a0b18d9a04b01",
+    "ModelLab/docs/contracts/MAX_WORKFLOW_CONTRACT_E2E.md": "51347d48e1be9e421ee68f86f13d36cf36bbac749213359e7baebc0fa6841819",
+    "ModelLab/docs/reference/README.md": "1ee1c54d185b50ed1ac809dd0ad2e5b3fd864217a037cdfce1a4ade659c841b2",
+    "ModelLab/docs/contracts/AGENT_ARCHITECTURE.md": "43e2c9a5f6d63baf299a0c20205959a92de32b23ea635d2dec62cc1d723681e1",
+    "ModelLab/docs/research/RESEARCH_WORKFLOW_V3.md": "da03b1420f041b87af4d79ad3a90675eb5a94fe7a5c55f8c964503ff3a873fd0",
+    "ModelLab/docs/research/RESEARCH_CONTROL_R1.md": "4aac6e070f2310443e98f5552770821896ff70f51a145a1e8045106c194e3e2f",
+    "ModelLab/docs/contracts/MANUAL_RESEARCH_V1.md": "754e341d45c65bbbdc299f9c5454f9bfb399322f7cdc0fa3f5865c21f813afcf",
+    "ModelLab/docs/research/CHAMPION_FACTORY_V3.md": "2f61119c7d7c9f7cbd64251aec71858f3abac751ab8422a28174c1dd9c9735d4",
+    "ModelLab/docs/contracts/KPI_ACCEPTANCE_V6.md": "17a467ee96dc3ab128ef03152a13015188979884ecec57bc3a554688a39a7e51",
+    "ModelLab/docs/contracts/KPI_BY_GATE_V079.md": "6dc58c98602396667cb3485ab7af5053c00a10ea45cc209338faf34f345158e1",
+    "ModelLab/docs/repairs/REPAIR_v0_7_9.md": "45958e3f99602bd696a078fd6835927b6e804554f3489f45193bb53335228f0c",
+    "ModelLab/docs/repairs/REPAIR_v0_8_0.md": "8d16daccf42b360536d2a1f690c8ce58dcbbce0fa20f4fda654dc7143600426d",
+    "ModelLab/docs/repairs/REPAIR_v0_8_1.md": "16f5c16c1d938e82ecdb328f31f2cbc7b2bbc58c871019b8976057f55f4727bb",
+    "ModelLab/docs/repairs/REPAIR_v0_8_2.md": "cebf211913828c99cb98804ec0e78c38191b901678f98f603352135c80219727",
+    "ModelLab/docs/repairs/REPAIR_v0_8_3.md": "b8e09c38fd75df3e62992baea1f3bd384dc3bf2f129b814bea95327c231e9d4b",
+    "ModelLab/docs/repairs/REPAIR_v0_8_4.md": "5c5b0dc1f676821f0e477162c54065118c01e55350379acb31a10131d0130816",
+    "ModelLab/docs/repairs/REPAIR_v0_8_5.md": "581f8e1fa8adb4960e551861ce35170c967a4e9b2d41b70fd9c531142574728e",
+    "ModelLab/docs/repairs/REPAIR_v0_8_6.md": "f341886abfbf708ba0dd2dc1d892ca7053e413c9646664962c49ba85264df801",
+    "ModelLab/docs/repairs/REPAIR_v0_8_7.md": "cf1b807c1839b77966eba647e0a24a88ecc0af6c1f4f86154080adfb6a472741",
+    "ModelLab/docs/repairs/REPAIR_v0_8_8.md": "d8d7daf74e4a085999eb37b255340f45bcefb1aa205433a8b106a47f38fbe208",
+    "ModelLab/docs/repairs/REPAIR_v0_8_9.md": "54312df83898900e600beb94842bb4bf18ffc80625129a1b5c4f8e13272f2211",
+    "ModelLab/docs/repairs/REPAIR_v0_9_0.md": "3d3f1c5540ebe028a88f18653d6db55b1d336b621e7f917b938060926bdf8618",
+    "ModelLab/docs/repairs/REPAIR_v0_9_1.md": "c2cb149ecd1df825665ba1f03dbd7b65ebfd5f4dc998a5f16fff463f0627b469",
+    "ModelLab/docs/repairs/REPAIR_v0_10_0.md": "c76eae2fb4583eb89880807272a12b5627ed936da7a8e82f861513e89a4d6ba2",
+    "ModelLab/docs/repairs/REPAIR_v0_11_0.md": "f7a0ef72f8dccdcedba42d95b66df8bffe85e4a098dbaef89e0d316a5307405e",
+    "ModelLab/docs/repairs/REPAIR_v1_3_0.md": "0f01f243419f130f643b9f6e33b27d5242ead64074de97feb79c8099f0d336cc",
+    "ModelLab/docs/repairs/REPAIR_v1_3_1.md": "b520ac52a412ccb3d8d69aafec6b245c65708b5a07045a80e4205fc8548848f4",
+    "ModelLab/docs/repairs/REPAIR_v1_3_2.md": "8bb3cc30c11694a16be3ef5a54f271119922ec2947fdbbdfa9cc0f157aedc710",
+    "ModelLab/docs/repairs/REPAIR_v1_3_3.md": "5e3777f93e32966f2218193fb5312fa1f15cdeaefde216361f2fdf530ae9c48b",
+    "ModelLab/docs/repairs/REPAIR_v1_3_4.md": "87d7f25084dd9dfbb0debd2c315c927288e67d32366678f5d0464fb5c506e250",
+    "ModelLab/docs/repairs/REPAIR_v1_4_0.md": "6ac5b645cc103aa046ef261c376f835fd49371e8c319f0289b94325e7cb4a983",
+    "ModelLab/docs/repairs/REPAIR_v1_4_1.md": "06b81fdefd0cb53d82d76024d57a3eaa1aacd8c21caa14a735f8de25a8e0536a",
+    "ModelLab/docs/repairs/REPAIR_v1_4_2.md": "7936bb4118fcdc114d017977b9c3df481c0d6c33d56100c33e8ae527c5ccbf64",
+    "ModelLab/docs/repairs/REPAIR_v1_4_3.md": "4e4a727ffb3ff1de639a583a8661be97726e0df6472b765c7b7d9081b1009081",
+    "ModelLab/docs/repairs/REPAIR_v1_4_4.md": "c382923120c46b94b37612bf5ea1171a0278f704c00c002ea80292a6779cd6bd",
+    "ModelLab/docs/repairs/REPAIR_v1_4_5.md": "a799bc85999b336e51bec0542d911789534255479ca5dbd4e4ae63eb55ccdacf",
+    "ModelLab/docs/repairs/V201_WINDOWS_ACCEPTANCE_UTF8_PROCESS_CONTRACT_REPAIR.md": "feb9c632451cfacb2dabda937cb28380d7fd41066db1df161fae57718e25289c",
+    "ModelLab/docs/research/SCIENTIFIC_WORKFLOW_AUDIT_v1_3_1.md": "af0b2d3705aba7e24d53ca89cce0aac1d63e2629cdf7fb1772501d99e65beaa5",
+    "ModelLab/docs/research/MODEL_SIZE_PRIORITY_V1.md": "22bd0a273ac20af25c17cb4f3e611a7606f0b6d094a1f73baca14052a2e3bfdd",
+    "ModelLab/docs/research/POLICY_DISCOVERY_V1.md": "fa1a732dbfb8c4ea6d111dac4061e11b2aba552f04b1ad793c1f04264d70f2bb",
+    "ModelLab/docs/ui/SCIENTIST_CHAT_R2_STREAMING_CONTRACT.md": "3cf2398c8919fffdeeabef0ea7c0b1466811a38b5f54a71d715fabe2d4690c40",
+    "ModelLab/docs/contracts/SCIENTIST_KNOWLEDGE_UPDATE_POLICY.md": "82ff86fa4f030881f5a27c996407b9c8b8223eb0e91967365a6c25042231be49",
+    "ModelLab/docs/contracts/SCIENTIST_PYTHON_ANALYSIS_RUNTIME_V1.md": "55fc50f9054ff9ad3a5d01043da2cecd2aa74731d86cf24b8e96425872317302",
+    "ModelLab/docs/reference/LLM_SCIENTIST_R1.md": "902594b4b53fd852be84dcdb87aa1df2e32867c8cbdb25d1d3c26a50b69014da",
+    "ModelLab/docs/ui/UI_GROUPING_R1.md": "453d419ac1ccd54a37bb6fda19740d3c996cf61304267bf8c61b926be42216f7",
+    "ModelLab/docs/research/STRATEGY_OPTIMIZER_V2.md": "3536aa6471fa7d9f559d21ac5add56aa88768b7af4b1d4c5d4e06ba2c62277d6",
+    "owner_acceptance/runtime/OWNER_MT5_STRATEGY_OPTIMIZER_V2_ACCEPTANCE.md": "7ab22b0a31b088bfc1234578cc8fc960462cda16e0451ea6c6043f37c61d2158",
+    "governance/handoffs/STAGE12_STRATEGY_OPTIMIZER_V2_REBASE_AUDIT.md": "66111c13667d90265fef3d675e6494500932ca9267bae1aaefdda0b4fa3f5075",
+    "ModelLab/governance/MODEL_TRAINING_METHOD_CONTRACT_V1.json": "9cff380177ef82771aa2f2e74634a35c1db472ca1a2d00cb0e4bab06507cf99d"
+  }
+}
