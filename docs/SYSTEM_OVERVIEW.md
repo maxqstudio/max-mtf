@@ -275,7 +275,7 @@ Known blockers:
 - MTF-4 deterministic source is implemented in EA_v2_00/baseline/Max_MTF.mq5 and ModelLab/strategy/mtf4_strategy.py: M15 owns direction while H4/H1/M5 are fail-closed veto gates.
 - MTF-4 Strategy Optimizer profile plumbing preserves the legacy 16-parameter universe and adds the complete seven-parameter MTF role profile only when MTF mode is explicit.
 - V204 MTF-4 source contract covers role causality, no-direction-reversal invariants, missing/future role fail-closed behavior, 16/23 optimizer identity and Challenger-only lifecycle.
-- Vendored STRICT governance tooling is aligned to Skill_Workflow 1f9b48b9a3bf29bf2929a7d38b1ec9a645dfb720, including deterministic LF truth sync and current strict selftest.
+- Vendored STRICT governance tooling is aligned to Skill_Workflow 2148313678f476c4990e447b4d657724f071adff, including deterministic LF Project Truth and sequence actual outputs with Windows byte-level selftest coverage.
 - Skill_Workflow STRICT generated documentation, MTF-4 DURING sequence sessions, and cross-document/reference consistency passed on the adoption branch before deterministic sync commit.
 - The synchronized MTF-4 public source/governance tree passed Windows Source CI for source-safety, V202/V203/V204 contracts, exact Skill_Workflow selftests, STRICT docs/handoff/sequence/cross-document validation, and the intentional fail-closed Owner-runtime boundary before public-history scrub.
 - Public-history scrub is tree-preserving for product source/governance semantics and must be followed by exact final-root Windows Source CI before Owner runtime acceptance.

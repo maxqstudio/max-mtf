@@ -7,12 +7,12 @@
 Public GitHub source tests and deterministic governance validators prove only the exact checked-out source/spec snapshot. MTF-4 Owner MT5/MetaEditor runtime, identical-window control/challenger backtest and Strategy Challenger production evidence remain external phase-end gates and are NOT_PROVEN.
 
 Final tested source: external final acceptance evidence.
-Current source digest: c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee
+Current source digest: 1cc47241f7ab6dcd34259d2b750a05d04d9091f902f6949f695b5e2e6fd0c2cb
 
 | Requirement | Contract | Evidence | Status |
 |---|---|---|---|
 | PUBLIC-SOURCE-BOUNDARY | Public Git must contain source/governance/tests only and exclude Owner runtime evidence, private data, compiled/model artifacts, calibration and secrets. | tools/public_source_guard.py + .github/workflows/windows-source-ci.yml | PASS |
-| SKILL-WORKFLOW | Vendored STRICT workflow tools used by this project must match Skill_Workflow authority 1f9b48b9a3bf29bf2929a7d38b1ec9a645dfb720 for current files. | .workflow/tools/sync_project_truth.py + .workflow/tools/selftest_strict_project_workflow.py | PASS |
+| SKILL-WORKFLOW | Vendored STRICT workflow tools used by this project must match Skill_Workflow authority 2148313678f476c4990e447b4d657724f071adff, including deterministic LF Project Truth and sequence actual outputs. | .workflow/tools/{sequence_contract.py,generate_sequence_actual.py,sync_project_truth.py,selftest_strict_project_workflow.py} | PASS |
 | MTF2-V202 | MTF-2 V3 role feature/label source contract remains regression-safe. | ModelLab/tests/v202_mtf2_feature_label_contract_selftest.py | PASS |
 | MTF3-V203 | MTF-3 exact timestamp dependency/purge source contract and legacy split byte authority remain regression-safe. | ModelLab/tests/v203_mtf3_timestamp_overlap_purge_selftest.py | PASS |
 | MTF4-V204 | MTF-4 deterministic role gates, closed-bar causality, M15 direction ownership, 16/23 optimizer profile identity and Challenger-only lifecycle must pass targeted source acceptance. | ModelLab/tests/v204_mtf4_strategy_contract_selftest.py | PASS |

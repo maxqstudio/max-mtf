@@ -23,9 +23,9 @@
       "status": "PASS"
     },
     {
-      "evidence": ".workflow/tools/sync_project_truth.py + .workflow/tools/selftest_strict_project_workflow.py",
+      "evidence": ".workflow/tools/{sequence_contract.py,generate_sequence_actual.py,sync_project_truth.py,selftest_strict_project_workflow.py}",
       "id": "SKILL-WORKFLOW",
-      "requirement": "Vendored STRICT workflow tools used by this project must match Skill_Workflow authority 1f9b48b9a3bf29bf2929a7d38b1ec9a645dfb720 for current files.",
+      "requirement": "Vendored STRICT workflow tools used by this project must match Skill_Workflow authority 2148313678f476c4990e447b4d657724f071adff, including deterministic LF Project Truth and sequence actual outputs.",
       "status": "PASS"
     },
     {

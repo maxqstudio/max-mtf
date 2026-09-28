@@ -3,7 +3,7 @@
 # MODULE MAP
 
 Authority SHA: external final acceptance evidence
-Source digest: c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee
+Source digest: 1cc47241f7ab6dcd34259d2b750a05d04d9091f902f6949f695b5e2e6fd0c2cb
 Generated/refreshed: current compiler run
 
 | Module / File | Language | Lines | Directory | Test file |
@@ -17,7 +17,7 @@ Generated/refreshed: current compiler run
 | ModelLab/acceptance/runners/max_python_bootstrap.py | Python | 144 | ModelLab/acceptance/runners | NO |
 | ModelLab/acceptance/runners/owner_mtf1_metaeditor_acceptance.py | Python | 399 | ModelLab/acceptance/runners | NO |
 | ModelLab/acceptance/runners/owner_mtf1_runtime_acceptance.py | Python | 779 | ModelLab/acceptance/runners | NO |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | Python | 558 | ModelLab/acceptance/runners | NO |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | Python | 562 | ModelLab/acceptance/runners | NO |
 | ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py | Python | 727 | ModelLab/acceptance/runners | NO |
 | ModelLab/acceptance/runners/run_acceptance.py | Python | 521 | ModelLab/acceptance/runners | NO |
 | ModelLab/acceptance/runners/ui_runtime_acceptance_bootstrap.py | Python | 89 | ModelLab/acceptance/runners | NO |

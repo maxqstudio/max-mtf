@@ -3,7 +3,7 @@
 # SYMBOL INDEX
 
 Authority SHA: external final acceptance evidence
-Source digest: c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee
+Source digest: 1cc47241f7ab6dcd34259d2b750a05d04d9091f902f6949f695b5e2e6fd0c2cb
 Status: CURRENT
 
 | File | Symbol | Kind | Lines@SHA | Responsibility | Reads/Writes | Called By | Tests |
@@ -75,30 +75,30 @@ Status: CURRENT
 | ModelLab/acceptance/runners/owner_mtf1_runtime_acceptance.py | _write | function | 662-664 | Observed Python symbol | | | |
 | ModelLab/acceptance/runners/owner_mtf1_runtime_acceptance.py | _run_owner_runtime | function | 667-761 | Observed Python symbol | | | |
 | ModelLab/acceptance/runners/owner_mtf1_runtime_acceptance.py | main | function | 764-775 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | MTF4OwnerAcceptanceError | class | 43-44 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | sha256_file | function | 47-52 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _json | function | 55-62 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _write_json | function | 65-67 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _git | function | 70-74 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | source_binding | function | 77-98 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _read_config | function | 101-112 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _resolve_installation | function | 115-131 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _candidate_metadata | function | 134-160 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | resolve_challenger | function | 163-184 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | verify_challenger_source_identity | function | 187-214 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _compile_current_ea | function | 217-254 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _append_acceptance_inputs | function | 257-258 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _build_backtest_ini | function | 261-282 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _common_files_dir | function | 285-291 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _wait_file | function | 294-300 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _run_backtest | function | 303-308 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | read_metrics | function | 311-326 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | challenger_hard_gates | function | 329-339 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | replay_mtf4_audit | function | 342-383 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | replay_mtf4_audit.stamp | method | 353-354 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _registry_snapshot | function | 386-396 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | run | function | 399-542 | Observed Python symbol | | | |
-| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | main | function | 545-554 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | MTF4OwnerAcceptanceError | class | 47-48 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | sha256_file | function | 51-56 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _json | function | 59-66 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _write_json | function | 69-71 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _git | function | 74-78 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | source_binding | function | 81-102 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _read_config | function | 105-116 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _resolve_installation | function | 119-135 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _candidate_metadata | function | 138-164 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | resolve_challenger | function | 167-188 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | verify_challenger_source_identity | function | 191-218 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _compile_current_ea | function | 221-258 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _append_acceptance_inputs | function | 261-262 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _build_backtest_ini | function | 265-286 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _common_files_dir | function | 289-295 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _wait_file | function | 298-304 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _run_backtest | function | 307-312 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | read_metrics | function | 315-330 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | challenger_hard_gates | function | 333-343 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | replay_mtf4_audit | function | 346-387 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | replay_mtf4_audit.stamp | method | 357-358 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | _registry_snapshot | function | 390-400 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | run | function | 403-546 | Observed Python symbol | | | |
+| ModelLab/acceptance/runners/owner_mtf4_strategy_acceptance.py | main | function | 549-558 | Observed Python symbol | | | |
 | ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py | OwnerScientistPythonAcceptanceError | class | 74-75 | Observed Python symbol | | | |
 | ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py | _canonical_max_python | function | 78-82 | Observed Python symbol | | | |
 | ModelLab/acceptance/runners/owner_scientist_python_runtime_acceptance.py | _bootstrap_python_identity | function | 85-87 | Observed Python symbol | | | |

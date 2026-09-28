@@ -143,3 +143,11 @@ Type: acceptance
 - Exact Skill_Workflow selftests and STRICT docs/handoff/human/sequence/cross-document validators passed on the same candidate.
 - Sequence/source acceptance is now proven; Owner MetaEditor/MT5 runtime and control-versus-Challenger evidence remain NOT_PROVEN and are the only phase-closing runtime boundary.
 - Project Truth advances to READY_FOR_OWNER_MTF4_FINAL_ACCEPTANCE subject to one final exact readiness-candidate CI and main revalidation.
+
+## 2026-09-28 — Skill Workflow deterministic sequence LF repair adopted
+
+Type: governance
+
+- Adopted Skill_Workflow 2148313678f476c4990e447b4d657724f071adff after Windows selftest proved deterministic LF for generated sequence JSON and Mermaid outputs.
+- Vendored sequence_contract.py, generate_sequence_actual.py and STRICT selftest were synchronized to the exact upstream authority.
+- This removes Windows CRLF diff noise without weakening sequence digest, source entrypoint or fail-closed runtime validation.

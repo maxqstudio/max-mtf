@@ -2,7 +2,7 @@
 
 # ARCHITECTURE
 
-Current source digest: c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee
+Current source digest: 1cc47241f7ab6dcd34259d2b750a05d04d9091f902f6949f695b5e2e6fd0c2cb
 
 ## Components
 
@@ -41,7 +41,7 @@ Current source digest: c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a
 ## Observed implementation inventory
 
 Source files: 371
-Source lines: 60607
+Source lines: 60611
 Languages: PowerShell=7, Python=364
 
 Structural facts come from the code extractor. Component meaning comes from

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from core.project_paths import EA_CHALLENGERS_DIR, MODELLAB_ROOT
 import argparse
 import csv
 import hashlib
@@ -16,6 +15,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Mapping
 
+_MODELLAB_BOOTSTRAP = Path(__file__).resolve().parents[2]
+if str(_MODELLAB_BOOTSTRAP) not in sys.path:
+    sys.path.insert(0, str(_MODELLAB_BOOTSTRAP))
+
+from core.project_paths import EA_CHALLENGERS_DIR, MODELLAB_ROOT
 from host.mt5_installation import validate_mt5_data_root
 from mtf.mtf_names import EXPERT_SUBDIR
 from strategy.mtf4_strategy import MTF4_PARAM_BOUNDS, evaluate_mtf4_strategy

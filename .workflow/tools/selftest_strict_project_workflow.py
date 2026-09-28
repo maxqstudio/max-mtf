@@ -631,6 +631,18 @@ notes:
             "app.py::health",
         )
 
+        actual_json_bytes = actual_json.read_bytes()
+        actual_mmd_bytes = actual_mmd.read_bytes()
+        if b"\r\n" in actual_json_bytes:
+            raise RuntimeError("generate_sequence_actual wrote CRLF into actual JSON")
+        if b"\r\n" in actual_mmd_bytes:
+            raise RuntimeError("generate_sequence_actual wrote CRLF into actual Mermaid")
+        if not actual_json_bytes.endswith(b"\n"):
+            raise RuntimeError("generate_sequence_actual actual JSON missing final LF")
+        if not actual_mmd_bytes.endswith(b"\n"):
+            raise RuntimeError("generate_sequence_actual actual Mermaid missing final LF")
+        print("DETERMINISTIC_SEQUENCE_LF=PASS")
+
         actual = json.loads(actual_json.read_text(encoding="utf-8"))
         write_json(
             root / "docs" / "sequence" / "sessions" / "health.json",

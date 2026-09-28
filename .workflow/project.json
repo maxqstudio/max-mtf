@@ -101,6 +101,6 @@
     "Editable configuration does not rewrite frozen execution evidence.",
     "MTF-1 closure prerequisite for later phases is historical external evidence; every later implementation, research, runtime and promotion claim requires phase-specific proof.",
     "Generated canonical documentation under docs/ is a deterministic projection of .workflow specs plus observed source facts.",
-    "Current Skill_Workflow authority is maxqstudio/Skill_Workflow@1f9b48b9a3bf29bf2929a7d38b1ec9a645dfb720."
+    "Current Skill_Workflow authority is maxqstudio/Skill_Workflow@2148313678f476c4990e447b4d657724f071adff."
   ]
 }

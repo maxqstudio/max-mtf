@@ -13,7 +13,7 @@ Repository: maxqstudio/max-mtf
 Active branch: work/mtf4-final-acceptance-tooling
 Current authoritative SHA: external final acceptance evidence
 Last accepted SHA: 93e3a7cfa6fd073c593a5ee1bc55e49edf49badc
-Current source digest: c2be475349bc95834267c5902ab1a6287e091d884d36a4e333ca1f68a0fb3eee
+Current source digest: 1cc47241f7ab6dcd34259d2b750a05d04d9091f902f6949f695b5e2e6fd0c2cb
 
 ## Authorities
 Source authority: Public source authority is maxqstudio/max-mtf main. Work branches are candidates until required GitHub source/governance checks pass and they are merged.
@@ -74,4 +74,4 @@ Generated from PROJECT_PROFILE.yaml.
 - Editable configuration does not rewrite frozen execution evidence.
 - MTF-1 closure prerequisite for later phases is historical external evidence; every later implementation, research, runtime and promotion claim requires phase-specific proof.
 - Generated canonical documentation under docs/ is a deterministic projection of .workflow specs plus observed source facts.
-- Current Skill_Workflow authority is maxqstudio/Skill_Workflow@1f9b48b9a3bf29bf2929a7d38b1ec9a645dfb720.
+- Current Skill_Workflow authority is maxqstudio/Skill_Workflow@2148313678f476c4990e447b4d657724f071adff.
