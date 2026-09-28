@@ -37,6 +37,26 @@ jobs:
           git rm -f .github/workflows/diagnose-project-truth.yml
           git rm -f .github/workflows/repair-mtf4-project-truth.yml
 
+      - name: Regenerate CURRENT DURING actual sequences
+        shell: pwsh
+        run: |
+          python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/LOCAL-ACCEPTANCE.actual.json --output-mermaid docs/sequence/generated/LOCAL-ACCEPTANCE.actual.mmd --entry ModelLab/acceptance/runners/run_acceptance.py::main
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/MODEL-FACTORY.actual.json --output-mermaid docs/sequence/generated/MODEL-FACTORY.actual.mmd --entry ModelLab/factory/factory_orchestrator.py::run_auto_factory --entry ModelLab/max_graph/factory_graph.py::run_auto_factory_graph
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/MTF4-STRATEGY.actual.json --output-mermaid docs/sequence/generated/MTF4-STRATEGY.actual.mmd --entry ModelLab/strategy/mtf4_strategy.py::evaluate_mtf4_strategy
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/PROMOTION.actual.json --output-mermaid docs/sequence/generated/PROMOTION.actual.mmd --entry ModelLab/strategy/strategy_challenger_registry.py::promote_strategy_challenger --entry ModelLab/factory/governance.py::promote
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/RELEASE.actual.json --output-mermaid docs/sequence/generated/RELEASE.actual.mmd --entry ModelLab/core/release_authority.py::load_active_release --entry ModelLab/core/release_authority.py::validate_active_release_record
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/SCIENTIST.actual.json --output-mermaid docs/sequence/generated/SCIENTIST.actual.mmd --entry ModelLab/scientist/chat/scientist_chat.py::discuss --entry ModelLab/scientist/python/scientist_python_runtime.py::run_scientist_python_analysis
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/STRATEGY-OPTIMIZER.actual.json --output-mermaid docs/sequence/generated/STRATEGY-OPTIMIZER.actual.mmd --entry ModelLab/strategy/strategy_optimizer_jobs.py::start_job --entry ModelLab/strategy/strategy_optimizer_worker.py::main
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python .workflow/tools/generate_sequence_actual.py --root . --output-json docs/sequence/generated/UI-BOOTSTRAP.actual.json --output-mermaid docs/sequence/generated/UI-BOOTSTRAP.actual.mmd --entry ModelLab/ui/ui_bootstrap.py::main --entry ModelLab/ui/ui_launcher.py::main
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
       - name: Regenerate Project Truth from current source
         shell: pwsh
         run: |
